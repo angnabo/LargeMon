@@ -1,0 +1,3 @@
+/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir

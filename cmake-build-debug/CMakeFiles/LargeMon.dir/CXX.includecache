@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/angelica/Development/CLion/LargeMon/src/FireLM.cpp
+LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
+FireLM.h
+/home/angelica/Development/CLion/LargeMon/src/FireLM.h
+
+/home/angelica/Development/CLion/LargeMon/src/FireLM.h
+string
+-
+LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
+
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.cpp
+LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
+
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
+string
+-
+
+/home/angelica/Development/CLion/LargeMon/src/main.cpp
+string
+-
+iostream
+-
+FireLM.h
+/home/angelica/Development/CLion/LargeMon/src/FireLM.h
+

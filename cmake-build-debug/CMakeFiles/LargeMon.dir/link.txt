@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/LargeMon.dir/src/main.cpp.o CMakeFiles/LargeMon.dir/src/LargeMon.cpp.o CMakeFiles/LargeMon.dir/src/FireLM.cpp.o  -o LargeMon 
