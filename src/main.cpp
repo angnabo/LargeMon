@@ -1,18 +1,15 @@
 #include <string>
 #include <iostream>
-#include "FireLM.h"
+#include "LargeMonGenerator.h"
 
 
 using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
 
-    double size = 10;
-    double hp = 10;
-    double damage = 10;
-    std:string type = "fire";
+    LargeMonGenerator gen;
+    LargeMon f = gen.generateLargeMon();
+    cout << "Health: " <<f.getHp() << ", Damage: " << f.getDamage() << ", Size: " << f.getSize() << ", Type: " << f.getType();
 
-    FireLM fire(&hp, &damage, &size, &type);
     return 0;
 }

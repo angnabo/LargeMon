@@ -123,32 +123,32 @@ LargeMon/fast:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/build
 .PHONY : LargeMon/fast
 
-src/FireLM.o: src/FireLM.cpp.o
+src/BattleInstance.o: src/BattleInstance.cpp.o
 
-.PHONY : src/FireLM.o
+.PHONY : src/BattleInstance.o
 
 # target to build an object file
-src/FireLM.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/FireLM.cpp.o
-.PHONY : src/FireLM.cpp.o
+src/BattleInstance.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o
+.PHONY : src/BattleInstance.cpp.o
 
-src/FireLM.i: src/FireLM.cpp.i
+src/BattleInstance.i: src/BattleInstance.cpp.i
 
-.PHONY : src/FireLM.i
+.PHONY : src/BattleInstance.i
 
 # target to preprocess a source file
-src/FireLM.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/FireLM.cpp.i
-.PHONY : src/FireLM.cpp.i
+src/BattleInstance.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.i
+.PHONY : src/BattleInstance.cpp.i
 
-src/FireLM.s: src/FireLM.cpp.s
+src/BattleInstance.s: src/BattleInstance.cpp.s
 
-.PHONY : src/FireLM.s
+.PHONY : src/BattleInstance.s
 
 # target to generate assembly for a file
-src/FireLM.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/FireLM.cpp.s
-.PHONY : src/FireLM.cpp.s
+src/BattleInstance.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.s
+.PHONY : src/BattleInstance.cpp.s
 
 src/LargeMon.o: src/LargeMon.cpp.o
 
@@ -176,6 +176,33 @@ src/LargeMon.s: src/LargeMon.cpp.s
 src/LargeMon.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/LargeMon.cpp.s
 .PHONY : src/LargeMon.cpp.s
+
+src/LargeMonGenerator.o: src/LargeMonGenerator.cpp.o
+
+.PHONY : src/LargeMonGenerator.o
+
+# target to build an object file
+src/LargeMonGenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o
+.PHONY : src/LargeMonGenerator.cpp.o
+
+src/LargeMonGenerator.i: src/LargeMonGenerator.cpp.i
+
+.PHONY : src/LargeMonGenerator.i
+
+# target to preprocess a source file
+src/LargeMonGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.i
+.PHONY : src/LargeMonGenerator.cpp.i
+
+src/LargeMonGenerator.s: src/LargeMonGenerator.cpp.s
+
+.PHONY : src/LargeMonGenerator.s
+
+# target to generate assembly for a file
+src/LargeMonGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.s
+.PHONY : src/LargeMonGenerator.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -213,12 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... LargeMon"
-	@echo "... src/FireLM.o"
-	@echo "... src/FireLM.i"
-	@echo "... src/FireLM.s"
+	@echo "... src/BattleInstance.o"
+	@echo "... src/BattleInstance.i"
+	@echo "... src/BattleInstance.s"
 	@echo "... src/LargeMon.o"
 	@echo "... src/LargeMon.i"
 	@echo "... src/LargeMon.s"
+	@echo "... src/LargeMonGenerator.o"
+	@echo "... src/LargeMonGenerator.i"
+	@echo "... src/LargeMonGenerator.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -84,16 +84,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/FireLM.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/BattleInstance.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/FireLM.h">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMon.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMon.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/main.cpp">

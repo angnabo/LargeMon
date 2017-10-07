@@ -12,20 +12,26 @@ using namespace std;
 
 class LargeMon {
 public:
-    //virtual LargeMon(const double *, const double *, const double*, const char* type);
-    double attack();
+    LargeMon(const double *hp, const double *damage, const double *size, string type);
+
+    void recieveDamage(double*);
+    double dealDamage();
     void defend();
 
-    virtual std::string getCounterLM() = 0;
+    double getDamage(){ return damage; }
+    double getHp(){ return hp; }
+    double getSize() { return size; }
+    string getType() { return type; }
+
 
     ~LargeMon();
 
-protected:
-    double hp;
-    double damage;
-    double size;
-    std::string type;
-    double couterLM;
+private:
+    double hp{};
+    double damage{};
+    double size{};
+    string type; //make Type into class
+    double couterLM{};
 };
 
 
