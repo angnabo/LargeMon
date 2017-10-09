@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/angelica/Development/CLion/LargeMon/src/BattleInstance.cpp
+iostream
+-
+LargeMonGenerator.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h
+LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
+BattleInstance.h
+/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h
+
+/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h
+
 /home/angelica/Development/CLion/LargeMon/src/LargeMon.cpp
 LargeMon.h
 /home/angelica/Development/CLion/LargeMon/src/LargeMon.h
@@ -37,4 +49,6 @@ iostream
 -
 LargeMonGenerator.h
 /home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h
+BattleInstance.h
+/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h
 

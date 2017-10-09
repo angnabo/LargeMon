@@ -7,7 +7,9 @@
 
 
 class BattleInstance {
-
+public:
+    BattleInstance();
+    void fight();
 };
 
 

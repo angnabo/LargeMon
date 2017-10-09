@@ -13,8 +13,8 @@ LargeMon::LargeMon(const double* hp, const double* damage, const double* size, s
     this->type = type;
 }
 
-void LargeMon::recieveDamage(double* damage) {
-    hp -= *damage;
+void LargeMon::recieveDamage(double damage) {
+    hp -= damage;
 }
 
 double LargeMon::dealDamage() {

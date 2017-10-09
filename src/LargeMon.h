@@ -14,7 +14,7 @@ class LargeMon {
 public:
     LargeMon(const double *hp, const double *damage, const double *size, string type);
 
-    void recieveDamage(double*);
+    void recieveDamage(double);
     double dealDamage();
     void defend();
 
