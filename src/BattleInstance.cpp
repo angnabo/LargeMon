@@ -36,6 +36,8 @@ void BattleInstance::fight() {
                 player.defend();
                 cout << "Player healed for 20hp" << endl;
                 break;
+            default:
+                break;
         }
         if(computer.getHp() <= 0){
             cout << "Player wins.";
