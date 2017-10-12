@@ -13,17 +13,17 @@ LargeMon LargeMonGenerator::generateLargeMon() {
     //health
      // define the range
 
-    double health = randomInRange(MIN_HEALTH, MAX_HEALTH);
+    int health = randomInRange(MIN_HEALTH, MAX_HEALTH);
 
     //damage
-    double damage = 0;
+    int damage = 0;
     if (health < 300){
-        damage = randomInRange(50, 80);
+        damage = (int) randomInRange(50, 80);
     } else {
-        damage = randomInRange(30, 55);
+        damage = (int) randomInRange(30, 55);
     }
 
-    double size = randomInRange(1, 10);;
+    int size = (int) randomInRange(1, 10);;
 
     string type = generateType();
 
@@ -33,11 +33,11 @@ LargeMon LargeMonGenerator::generateLargeMon() {
 
 }
 
-double LargeMonGenerator::randomInRange(int min, int max){
+int LargeMonGenerator::randomInRange(int min, int max){
     std::random_device rd; // obtain a random number from hardware
     std::mt19937 eng(rd()); // seed the generator
     std::uniform_int_distribution<> distr(min, max);
-    return distr(eng);
+    return (int) distr(eng);
 }
 
 string LargeMonGenerator::generateType() {

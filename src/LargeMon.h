@@ -12,26 +12,25 @@ using namespace std;
 
 class LargeMon {
 public:
-    LargeMon(const double *hp, const double *damage, const double *size, string type);
-
-    void recieveDamage(double);
-    double dealDamage();
+    LargeMon(const int *hp, const int *damage, const int *size, string type);
+    void recieveDamage(int);
+    int dealDamage();
     void defend();
-
-    double getDamage(){ return damage; }
-    double getHp(){ return hp; }
-    double getSize() { return size; }
+    int getDamage(){ return damage; }
+    int getHp(){ return hp; }
+    int getSize() { return size; }
     string getType() { return type; }
 
 
     ~LargeMon();
 
 private:
-    double hp{};
-    double damage{};
-    double size{};
+    int hp{};
+    int damage{};
+    int size{};
     string type; //make Type into class
-    double couterLM{};
+    int couterLM{};
+    string description;
 };
 
 

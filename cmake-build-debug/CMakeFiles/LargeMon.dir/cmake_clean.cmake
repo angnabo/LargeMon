@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LargeMon.dir/src/LargeMon.cpp.o"
   "CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o"
   "CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/DescriptGen.cpp.o"
   "LargeMon.pdb"
   "LargeMon"
 )

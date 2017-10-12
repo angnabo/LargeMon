@@ -6,18 +6,18 @@
 
 //using namespace std;
 
-LargeMon::LargeMon(const double* hp, const double* damage, const double* size, string type){
+LargeMon::LargeMon(const int* hp, const int* damage, const int* size, string type){
     this->hp = *hp;
     this->damage = *damage;
     this->size = *size;
     this->type = type;
 }
 
-void LargeMon::recieveDamage(double damage) {
+void LargeMon::recieveDamage(int damage) {
     hp -= damage;
 }
 
-double LargeMon::dealDamage() {
+int LargeMon::dealDamage() {
     return damage;
 }
 

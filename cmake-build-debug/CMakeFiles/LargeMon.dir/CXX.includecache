@@ -6,49 +6,61 @@
 
 #IncludeRegexTransform: 
 
-/home/angelica/Development/CLion/LargeMon/src/BattleInstance.cpp
+/home/angelica/CLionProjects/LargeMon/src/BattleInstance.cpp
 iostream
 -
 LargeMonGenerator.h
-/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h
+/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h
 LargeMon.h
-/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
+/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
 BattleInstance.h
-/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h
+/home/angelica/CLionProjects/LargeMon/src/BattleInstance.h
 
-/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h
+/home/angelica/CLionProjects/LargeMon/src/BattleInstance.h
 
-/home/angelica/Development/CLion/LargeMon/src/LargeMon.cpp
-LargeMon.h
-/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
+/home/angelica/CLionProjects/LargeMon/src/DescriptGen.cpp
+DescriptGen.h
+/home/angelica/CLionProjects/LargeMon/src/DescriptGen.h
 
-/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
-string
--
-
-/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.cpp
-iostream
--
-random
--
-LargeMonGenerator.h
-/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h
-
-/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h
-LargeMon.h
-/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
+/home/angelica/CLionProjects/LargeMon/src/DescriptGen.h
 string
 -
 vector
 -
 
-/home/angelica/Development/CLion/LargeMon/src/main.cpp
+/home/angelica/CLionProjects/LargeMon/src/LargeMon.cpp
+LargeMon.h
+/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
+
+/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
+string
+-
+
+/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.cpp
+iostream
+-
+random
+-
+LargeMonGenerator.h
+/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h
+
+/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h
+LargeMon.h
+/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
+string
+-
+vector
+-
+
+/home/angelica/CLionProjects/LargeMon/src/main.cpp
 string
 -
 iostream
 -
 LargeMonGenerator.h
-/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h
+/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h
 BattleInstance.h
-/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h
+/home/angelica/CLionProjects/LargeMon/src/BattleInstance.h
+DescriptGen.h
+/home/angelica/CLionProjects/LargeMon/src/DescriptGen.h
 

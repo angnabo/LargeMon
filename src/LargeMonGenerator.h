@@ -17,12 +17,12 @@ class LargeMonGenerator {
 public:
     LargeMonGenerator();
     LargeMon generateLargeMon();
-    double randomInRange(int, int);
+    int randomInRange(int, int);
     string generateType();
 private:
     const int MIN_HEALTH = 200;
     const int MAX_HEALTH = 400;
-    std::vector<std::string> largeMonTypes = {"fire", "water", "wood"};
+    vector<string> largeMonTypes = {"fire", "water", "wood"};
 };
 
 

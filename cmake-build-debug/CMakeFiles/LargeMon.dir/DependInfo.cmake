@@ -4,10 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/angelica/Development/CLion/LargeMon/src/BattleInstance.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o"
-  "/home/angelica/Development/CLion/LargeMon/src/LargeMon.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/LargeMon.cpp.o"
-  "/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o"
-  "/home/angelica/Development/CLion/LargeMon/src/main.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/main.cpp.o"
+  "/home/angelica/CLionProjects/LargeMon/src/BattleInstance.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o"
+  "/home/angelica/CLionProjects/LargeMon/src/DescriptGen.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/DescriptGen.cpp.o"
+  "/home/angelica/CLionProjects/LargeMon/src/LargeMon.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/LargeMon.cpp.o"
+  "/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o"
+  "/home/angelica/CLionProjects/LargeMon/src/main.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
