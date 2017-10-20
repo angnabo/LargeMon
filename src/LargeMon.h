@@ -13,8 +13,10 @@ using namespace std;
 class LargeMon {
 public:
     LargeMon(const int *hp, const int *damage, const int *size, string type);
+
+    LargeMon();
+
     void recieveDamage(int);
-    int dealDamage();
     void defend();
     int getDamage(){ return damage; }
     int getHp(){ return hp; }
@@ -25,11 +27,11 @@ public:
     ~LargeMon();
 
 private:
-    int hp{};
-    int damage{};
-    int size{};
+    int hp;
+    int damage;
+    int size;
     string type; //make Type into class
-    int couterLM{};
+    int couterLM;
     string description;
 };
 

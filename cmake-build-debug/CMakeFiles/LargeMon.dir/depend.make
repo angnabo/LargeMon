@@ -6,6 +6,9 @@ CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o: ../src/BattleInstance.h
 CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o: ../src/LargeMon.h
 CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o: ../src/LargeMonGenerator.h
 
+CMakeFiles/LargeMon.dir/src/DescriptGen.cpp.o: ../src/DescriptGen.cpp
+CMakeFiles/LargeMon.dir/src/DescriptGen.cpp.o: ../src/DescriptGen.h
+
 CMakeFiles/LargeMon.dir/src/LargeMon.cpp.o: ../src/LargeMon.cpp
 CMakeFiles/LargeMon.dir/src/LargeMon.cpp.o: ../src/LargeMon.h
 
@@ -14,6 +17,7 @@ CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o: ../src/LargeMonGenerator.cp
 CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o: ../src/LargeMonGenerator.h
 
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/BattleInstance.h
+CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/DescriptGen.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/LargeMon.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/LargeMonGenerator.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/main.cpp

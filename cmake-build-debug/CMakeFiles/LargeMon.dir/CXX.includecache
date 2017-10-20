@@ -9,6 +9,8 @@
 /home/angelica/CLionProjects/LargeMon/src/BattleInstance.cpp
 iostream
 -
+random
+-
 LargeMonGenerator.h
 /home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h
 LargeMon.h
@@ -17,6 +19,8 @@ BattleInstance.h
 /home/angelica/CLionProjects/LargeMon/src/BattleInstance.h
 
 /home/angelica/CLionProjects/LargeMon/src/BattleInstance.h
+LargeMon.h
+/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
 
 /home/angelica/CLionProjects/LargeMon/src/DescriptGen.cpp
 DescriptGen.h

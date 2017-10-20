@@ -3,15 +3,16 @@
 //
 
 #include <iostream>
+#include <random>
 #include "LargeMonGenerator.h"
-#include "LargeMon.h"
 #include "BattleInstance.h"
-BattleInstance::BattleInstance() = default;
+BattleInstance::BattleInstance() {
+    LargeMonGenerator generator;
+    this->player = generator.generateLargeMon();
+    this->computer = generator.generateLargeMon();
+}
 
 void BattleInstance::fight() {
-    LargeMonGenerator generator;
-    LargeMon player = generator.generateLargeMon();
-    LargeMon computer = generator.generateLargeMon();
 
     cout << "Player: health: " << player.getHp() << ", Damage: " <<
          player.getDamage() << ", Size: " << player.getSize() << ", Type: " << player.getType() << endl;
@@ -39,8 +40,33 @@ void BattleInstance::fight() {
             default:
                 break;
         }
+        computerMove();
         if(computer.getHp() <= 0){
             cout << "Player wins.";
         }
+        if(player.getHp() <= 0){
+            cout << "Enemy wins.";
+        }
     }
 }
+
+//to do: make in seperate class
+int BattleInstance::randomInRange(int min, int max){
+    std::random_device rd; // obtain a random number from hardware
+    std::mt19937 eng(rd()); // seed the generator
+    std::uniform_int_distribution<> distr(min, max);
+    return (int) distr(eng);
+}
+
+void BattleInstance::computerMove() {
+    int random = randomInRange(1, 4);
+    if (random == 1){
+        computer.defend();
+        cout << "The enemy healed for 20 hp. Enemy hp is: " << computer.getHp() << endl;
+    } else {
+        player.recieveDamage(computer.getDamage());
+        cout << "The enemy attacked for " << computer.getDamage() << endl;
+        cout << "Player hp is: " << player.getHp() << endl;
+    }
+}
+

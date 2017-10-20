@@ -17,13 +17,11 @@ void LargeMon::recieveDamage(int damage) {
     hp -= damage;
 }
 
-int LargeMon::dealDamage() {
-    return damage;
-}
-
 void LargeMon::defend(){
     hp += 20;
 }
+
+LargeMon::LargeMon() {}
 
 //std::string LargeMon::getCounterLM() {
 //    return type;

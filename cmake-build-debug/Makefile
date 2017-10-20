@@ -150,6 +150,33 @@ src/BattleInstance.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.s
 .PHONY : src/BattleInstance.cpp.s
 
+src/Controller.o: src/Controller.cpp.o
+
+.PHONY : src/Controller.o
+
+# target to build an object file
+src/Controller.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/Controller.cpp.o
+.PHONY : src/Controller.cpp.o
+
+src/Controller.i: src/Controller.cpp.i
+
+.PHONY : src/Controller.i
+
+# target to preprocess a source file
+src/Controller.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/Controller.cpp.i
+.PHONY : src/Controller.cpp.i
+
+src/Controller.s: src/Controller.cpp.s
+
+.PHONY : src/Controller.s
+
+# target to generate assembly for a file
+src/Controller.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/Controller.cpp.s
+.PHONY : src/Controller.cpp.s
+
 src/DescriptGen.o: src/DescriptGen.cpp.o
 
 .PHONY : src/DescriptGen.o
@@ -231,6 +258,33 @@ src/LargeMonGenerator.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.s
 .PHONY : src/LargeMonGenerator.cpp.s
 
+src/View.o: src/View.cpp.o
+
+.PHONY : src/View.o
+
+# target to build an object file
+src/View.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/View.cpp.o
+.PHONY : src/View.cpp.o
+
+src/View.i: src/View.cpp.i
+
+.PHONY : src/View.i
+
+# target to preprocess a source file
+src/View.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/View.cpp.i
+.PHONY : src/View.cpp.i
+
+src/View.s: src/View.cpp.s
+
+.PHONY : src/View.s
+
+# target to generate assembly for a file
+src/View.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/View.cpp.s
+.PHONY : src/View.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -270,6 +324,9 @@ help:
 	@echo "... src/BattleInstance.o"
 	@echo "... src/BattleInstance.i"
 	@echo "... src/BattleInstance.s"
+	@echo "... src/Controller.o"
+	@echo "... src/Controller.i"
+	@echo "... src/Controller.s"
 	@echo "... src/DescriptGen.o"
 	@echo "... src/DescriptGen.i"
 	@echo "... src/DescriptGen.s"
@@ -279,6 +336,9 @@ help:
 	@echo "... src/LargeMonGenerator.o"
 	@echo "... src/LargeMonGenerator.i"
 	@echo "... src/LargeMonGenerator.s"
+	@echo "... src/View.o"
+	@echo "... src/View.i"
+	@echo "... src/View.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

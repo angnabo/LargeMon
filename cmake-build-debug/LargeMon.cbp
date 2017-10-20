@@ -90,6 +90,12 @@
 		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/BattleInstance.h">
 			<Option target="LargeMon"/>
 		</Unit>
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/Controller.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/Controller.h">
+			<Option target="LargeMon"/>
+		</Unit>
 		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/DescriptGen.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
@@ -106,6 +112,12 @@
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/View.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/View.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/main.cpp">
