@@ -12,12 +12,13 @@ using namespace std;
 
 class LargeMon {
 public:
-    LargeMon(const int *hp, const int *damage, const int *size, string type);
+    LargeMon(const int *, const int *, const int *);
 
     LargeMon();
 
-    void recieveDamage(int);
+    void takeDamage(int);
     void defend();
+    virtual int specialAttack() const = 0;
     int getDamage(){ return damage; }
     int getHp(){ return hp; }
     int getSize() { return size; }
@@ -26,7 +27,7 @@ public:
 
     ~LargeMon();
 
-private:
+protected:
     int hp;
     int damage;
     int size;

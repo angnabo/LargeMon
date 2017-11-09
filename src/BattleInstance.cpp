@@ -8,18 +8,21 @@
 #include "BattleInstance.h"
 BattleInstance::BattleInstance() {
     LargeMonGenerator generator;
-    this->player = generator.generateLargeMon();
-    this->computer = generator.generateLargeMon();
+//    LargeMon * lmptr = generator.generateLargeMon();
+//    LargeMon * lmaiptr = generator.generateLargeMon();
+//
+//    player = generator.generateLargeMon();
+//    computer = generator.generateLargeMon();
 }
 
 void BattleInstance::fight() {
 
-    cout << "Player: health: " << player.getHp() << ", Damage: " <<
-         player.getDamage() << ", Size: " << player.getSize() << ", Type: " << player.getType() << endl;
-    cout << "Computer: health: " << computer.getHp() << ", Damage: " <<
-         computer.getDamage() << ", Size: " << computer.getSize() << ", Type: " << computer.getType() << endl;
+    cout << "Player: health: " << player->getHp() << ", Damage: " <<
+         player->getDamage() << ", Size: " << player->getSize() << ", Type: "  << endl;
+    cout << "Computer: health: " << computer->getHp() << ", Damage: " <<
+         computer->getDamage() << ", Size: " << computer->getSize() << ", Type: " << endl;
 
-    while((player.getHp() > 0 && computer.getHp() > 0)){
+    while((player->getHp() > 0 && computer->getHp() > 0)){
         cout << "Enter command." << endl;
         int command;
         cin >> command;
@@ -29,22 +32,27 @@ void BattleInstance::fight() {
         }
         switch(command){
             case 1: //attack
-                computer.recieveDamage(player.getDamage());
-                cout << "Player dealt " << player.getDamage() << " to the enemy." << endl;
-                cout << "Enemy health: " << computer.getHp() << endl;
+                computer->takeDamage(player->getDamage());
+                cout << "Player dealt " << player->getDamage() << " to the enemy." << endl;
+                cout << "Enemy health: " << computer->getHp() << endl;
                 break;
-            case 2: //defend
-                player.defend();
+            case 2: //defend1
+                player->defend();
                 cout << "Player healed for 20hp" << endl;
+                break;
+            case 3: //defend
+                //playerPtr = &player;
+                computer->takeDamage(player->specialAttack());
+                cout << "Player used special attack for " << player->specialAttack() << endl;
                 break;
             default:
                 break;
         }
         computerMove();
-        if(computer.getHp() <= 0){
+        if(computer->getHp() <= 0){
             cout << "Player wins.";
         }
-        if(player.getHp() <= 0){
+        if(player->getHp() <= 0){
             cout << "Enemy wins.";
         }
     }
@@ -61,12 +69,12 @@ int BattleInstance::randomInRange(int min, int max){
 void BattleInstance::computerMove() {
     int random = randomInRange(1, 4);
     if (random == 1){
-        computer.defend();
-        cout << "The enemy healed for 20 hp. Enemy hp is: " << computer.getHp() << endl;
+        computer->defend();
+        cout << "The enemy healed for 20 hp. Enemy hp is: " << computer->getHp() << endl;
     } else {
-        player.recieveDamage(computer.getDamage());
-        cout << "The enemy attacked for " << computer.getDamage() << endl;
-        cout << "Player hp is: " << player.getHp() << endl;
+        player->takeDamage(computer->getDamage());
+        cout << "The enemy attacked for " << computer->getDamage() << endl;
+        cout << "Player hp is: " << player->getHp() << endl;
     }
 }
 

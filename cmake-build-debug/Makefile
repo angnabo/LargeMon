@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake
+CMAKE_COMMAND = /opt/clion-2017.2.1/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
+RM = /opt/clion-2017.2.1/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/angelica/CLionProjects/LargeMon
+CMAKE_SOURCE_DIR = /home/angelica/Development/CLion/LargeMon
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/angelica/CLionProjects/LargeMon/cmake-build-debug
+CMAKE_BINARY_DIR = /home/angelica/Development/CLion/LargeMon/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/angelica/CLionProjects/LargeMon/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/clion-2017.2.1/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/opt/clion-2017.2.1/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles /home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles /home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -204,6 +204,33 @@ src/DescriptGen.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/DescriptGen.cpp.s
 .PHONY : src/DescriptGen.cpp.s
 
+src/FireLM.o: src/FireLM.cpp.o
+
+.PHONY : src/FireLM.o
+
+# target to build an object file
+src/FireLM.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/FireLM.cpp.o
+.PHONY : src/FireLM.cpp.o
+
+src/FireLM.i: src/FireLM.cpp.i
+
+.PHONY : src/FireLM.i
+
+# target to preprocess a source file
+src/FireLM.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/FireLM.cpp.i
+.PHONY : src/FireLM.cpp.i
+
+src/FireLM.s: src/FireLM.cpp.s
+
+.PHONY : src/FireLM.s
+
+# target to generate assembly for a file
+src/FireLM.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/FireLM.cpp.s
+.PHONY : src/FireLM.cpp.s
+
 src/LargeMon.o: src/LargeMon.cpp.o
 
 .PHONY : src/LargeMon.o
@@ -285,6 +312,60 @@ src/View.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/View.cpp.s
 .PHONY : src/View.cpp.s
 
+src/WaterLM.o: src/WaterLM.cpp.o
+
+.PHONY : src/WaterLM.o
+
+# target to build an object file
+src/WaterLM.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/WaterLM.cpp.o
+.PHONY : src/WaterLM.cpp.o
+
+src/WaterLM.i: src/WaterLM.cpp.i
+
+.PHONY : src/WaterLM.i
+
+# target to preprocess a source file
+src/WaterLM.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/WaterLM.cpp.i
+.PHONY : src/WaterLM.cpp.i
+
+src/WaterLM.s: src/WaterLM.cpp.s
+
+.PHONY : src/WaterLM.s
+
+# target to generate assembly for a file
+src/WaterLM.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/WaterLM.cpp.s
+.PHONY : src/WaterLM.cpp.s
+
+src/WoodLM.o: src/WoodLM.cpp.o
+
+.PHONY : src/WoodLM.o
+
+# target to build an object file
+src/WoodLM.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/WoodLM.cpp.o
+.PHONY : src/WoodLM.cpp.o
+
+src/WoodLM.i: src/WoodLM.cpp.i
+
+.PHONY : src/WoodLM.i
+
+# target to preprocess a source file
+src/WoodLM.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/WoodLM.cpp.i
+.PHONY : src/WoodLM.cpp.i
+
+src/WoodLM.s: src/WoodLM.cpp.s
+
+.PHONY : src/WoodLM.s
+
+# target to generate assembly for a file
+src/WoodLM.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/WoodLM.cpp.s
+.PHONY : src/WoodLM.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -330,6 +411,9 @@ help:
 	@echo "... src/DescriptGen.o"
 	@echo "... src/DescriptGen.i"
 	@echo "... src/DescriptGen.s"
+	@echo "... src/FireLM.o"
+	@echo "... src/FireLM.i"
+	@echo "... src/FireLM.s"
 	@echo "... src/LargeMon.o"
 	@echo "... src/LargeMon.i"
 	@echo "... src/LargeMon.s"
@@ -339,6 +423,12 @@ help:
 	@echo "... src/View.o"
 	@echo "... src/View.i"
 	@echo "... src/View.s"
+	@echo "... src/WaterLM.o"
+	@echo "... src/WaterLM.i"
+	@echo "... src/WaterLM.s"
+	@echo "... src/WoodLM.o"
+	@echo "... src/WoodLM.i"
+	@echo "... src/WoodLM.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

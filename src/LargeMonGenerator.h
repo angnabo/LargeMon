@@ -4,6 +4,7 @@
 
 
 #include "LargeMon.h"
+#include "WaterLM.h"
 #include <string>
 #include <vector>
 
@@ -16,7 +17,9 @@ using namespace std;
 class LargeMonGenerator {
 public:
     LargeMonGenerator();
-    LargeMon generateLargeMon();
+    //LargeMon * generateLargeMon(LargeMon *);
+    LargeMon * generateLargeMon();
+    //WaterLM generateWaterLM();
     int randomInRange(int, int);
     string generateType();
 private:

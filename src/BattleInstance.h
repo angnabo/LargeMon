@@ -14,8 +14,9 @@ public:
     void computerMove();
     int randomInRange(int, int);
 private:
-    LargeMon player;
-    LargeMon computer;
+    LargeMon * player;
+    LargeMon * computer;
+    //LargeMon * playerPtr;
 };
 
 

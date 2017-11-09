@@ -6,6 +6,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/LargeMon.dir/src/DescriptGen.cpp.o"
   "CMakeFiles/LargeMon.dir/src/View.cpp.o"
   "CMakeFiles/LargeMon.dir/src/Controller.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/WaterLM.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/FireLM.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/WoodLM.cpp.o"
   "LargeMon.pdb"
   "LargeMon"
 )

@@ -6,14 +6,14 @@
 
 //using namespace std;
 
-LargeMon::LargeMon(const int* hp, const int* damage, const int* size, string type){
+LargeMon::LargeMon(const int* hp, const int* damage, const int* size){
     this->hp = *hp;
     this->damage = *damage;
     this->size = *size;
     this->type = type;
 }
 
-void LargeMon::recieveDamage(int damage) {
+void LargeMon::takeDamage(int damage) {
     hp -= damage;
 }
 
@@ -21,7 +21,11 @@ void LargeMon::defend(){
     hp += 20;
 }
 
-LargeMon::LargeMon() {}
+int LargeMon::specialAttack() const {
+    return 0;
+}
+
+LargeMon::LargeMon() = default;
 
 //std::string LargeMon::getCounterLM() {
 //    return type;
