@@ -25,6 +25,16 @@ int LargeMon::specialAttack() const {
     return 0;
 }
 
+void LargeMon::notify() {
+    for (int i = 0; i < views.size(); i++){
+        views[i]->update();
+    }
+}
+
+void LargeMon::attach(Observer * obs) {
+    views.push_back(obs);
+}
+
 LargeMon::LargeMon() = default;
 
 //string LargeMon::getType() {

@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LargeMon.dir/src/WaterLM.cpp.o"
   "CMakeFiles/LargeMon.dir/src/FireLM.cpp.o"
   "CMakeFiles/LargeMon.dir/src/WoodLM.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/Observer.cpp.o"
   "LargeMon.pdb"
   "LargeMon"
 )

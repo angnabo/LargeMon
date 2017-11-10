@@ -8,6 +8,8 @@ using namespace std;
 
 int main() {
 
+    //2 observers, one for the view and one for saving, updated by the subject notifying the observer
+
     LargeMonGenerator gen;
 
     LargeMon * f = gen.generateLargeMon();

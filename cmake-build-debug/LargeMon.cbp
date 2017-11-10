@@ -120,6 +120,12 @@
 		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h">
 			<Option target="LargeMon"/>
 		</Unit>
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/Observer.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/Observer.h">
+			<Option target="LargeMon"/>
+		</Unit>
 		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/View.cpp">
 			<Option target="LargeMon"/>
 		</Unit>

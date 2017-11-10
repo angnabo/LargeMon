@@ -3,6 +3,8 @@
 //
 
 #include <string>
+#include <vector>
+#include "Observer.h"
 
 using namespace std;
 
@@ -25,6 +27,9 @@ public:
     int getSize() { return size; }
     //string getType() { return type; }
 
+    void attach(class Observer *);
+    void notify();
+
     ~LargeMon();
 
 protected:
@@ -34,6 +39,7 @@ protected:
     //string type; //make Type into class
     int couterLM;
     string description;
+    vector<class Observer *> views;
 };
 
 

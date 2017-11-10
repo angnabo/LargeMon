@@ -285,6 +285,33 @@ src/LargeMonGenerator.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.s
 .PHONY : src/LargeMonGenerator.cpp.s
 
+src/Observer.o: src/Observer.cpp.o
+
+.PHONY : src/Observer.o
+
+# target to build an object file
+src/Observer.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/Observer.cpp.o
+.PHONY : src/Observer.cpp.o
+
+src/Observer.i: src/Observer.cpp.i
+
+.PHONY : src/Observer.i
+
+# target to preprocess a source file
+src/Observer.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/Observer.cpp.i
+.PHONY : src/Observer.cpp.i
+
+src/Observer.s: src/Observer.cpp.s
+
+.PHONY : src/Observer.s
+
+# target to generate assembly for a file
+src/Observer.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/Observer.cpp.s
+.PHONY : src/Observer.cpp.s
+
 src/View.o: src/View.cpp.o
 
 .PHONY : src/View.o
@@ -420,6 +447,9 @@ help:
 	@echo "... src/LargeMonGenerator.o"
 	@echo "... src/LargeMonGenerator.i"
 	@echo "... src/LargeMonGenerator.s"
+	@echo "... src/Observer.o"
+	@echo "... src/Observer.i"
+	@echo "... src/Observer.s"
 	@echo "... src/View.o"
 	@echo "... src/View.i"
 	@echo "... src/View.s"

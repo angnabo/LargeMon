@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/angelica/CLionProjects/LargeMon/src/FireLM.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/FireLM.cpp.o"
   "/home/angelica/CLionProjects/LargeMon/src/LargeMon.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/LargeMon.cpp.o"
   "/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o"
+  "/home/angelica/CLionProjects/LargeMon/src/Observer.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/Observer.cpp.o"
   "/home/angelica/CLionProjects/LargeMon/src/View.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/View.cpp.o"
   "/home/angelica/CLionProjects/LargeMon/src/WaterLM.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/WaterLM.cpp.o"
   "/home/angelica/CLionProjects/LargeMon/src/WoodLM.cpp" "/home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/WoodLM.cpp.o"
