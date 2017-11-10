@@ -10,7 +10,7 @@ LargeMon::LargeMon(const int* hp, const int* damage, const int* size){
     this->hp = *hp;
     this->damage = *damage;
     this->size = *size;
-    this->type = type;
+    //this->type = type;
 }
 
 void LargeMon::takeDamage(int damage) {
@@ -27,8 +27,8 @@ int LargeMon::specialAttack() const {
 
 LargeMon::LargeMon() = default;
 
-//std::string LargeMon::getCounterLM() {
-//    return type;
+//string LargeMon::getType() {
+//    return "";
 //}
 
 LargeMon::~LargeMon() = default;

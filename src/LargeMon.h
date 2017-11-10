@@ -19,11 +19,11 @@ public:
     void takeDamage(int);
     void defend();
     virtual int specialAttack() const = 0;
+    virtual string getType() const = 0;
     int getDamage(){ return damage; }
     int getHp(){ return hp; }
     int getSize() { return size; }
-    string getType() { return type; }
-
+    //string getType() { return type; }
 
     ~LargeMon();
 
@@ -31,7 +31,7 @@ protected:
     int hp;
     int damage;
     int size;
-    string type; //make Type into class
+    //string type; //make Type into class
     int couterLM;
     string description;
 };

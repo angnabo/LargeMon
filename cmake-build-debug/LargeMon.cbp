@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/angelica/Development/CLion/LargeMon/cmake-build-debug"/>
+				<Option working_dir="/home/angelica/CLionProjects/LargeMon/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/angelica/Development/CLion/LargeMon/cmake-build-debug"/>
+				<Option working_dir="/home/angelica/CLionProjects/LargeMon/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/angelica/Development/CLion/LargeMon/cmake-build-debug"/>
+				<Option working_dir="/home/angelica/CLionProjects/LargeMon/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="LargeMon">
-				<Option output="/home/angelica/Development/CLion/LargeMon/cmake-build-debug/LargeMon" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/angelica/Development/CLion/LargeMon/cmake-build-debug"/>
+				<Option output="/home/angelica/CLionProjects/LargeMon/cmake-build-debug/LargeMon" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/angelica/CLionProjects/LargeMon/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 LargeMon"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 LargeMon"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="LargeMon/fast">
-				<Option output="/home/angelica/Development/CLion/LargeMon/cmake-build-debug/LargeMon" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/angelica/Development/CLion/LargeMon/cmake-build-debug"/>
+				<Option output="/home/angelica/CLionProjects/LargeMon/cmake-build-debug/LargeMon" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/angelica/CLionProjects/LargeMon/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,71 +77,71 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 LargeMon/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/angelica/Development/CLion/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 LargeMon/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/angelica/CLionProjects/LargeMon/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/BattleInstance.cpp">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/BattleInstance.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/BattleInstance.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/Controller.cpp">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/Controller.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/Controller.h">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/Controller.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/DescriptGen.cpp">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/DescriptGen.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/DescriptGen.h">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/DescriptGen.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/FireLM.cpp">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/FireLM.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/FireLM.h">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/FireLM.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMon.cpp">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/LargeMon.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMon.h">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/LargeMon.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.cpp">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/View.cpp">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/View.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/View.h">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/View.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/WaterLM.cpp">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/WaterLM.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/WaterLM.h">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/WaterLM.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/WoodLM.cpp">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/WoodLM.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/WoodLM.h">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/WoodLM.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/main.cpp">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/src/main.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/CMakeLists.txt">
+		<Unit filename="/home/angelica/CLionProjects/LargeMon/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

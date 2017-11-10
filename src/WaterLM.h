@@ -13,6 +13,7 @@ public:
     WaterLM(const int *hp, const int *damage, const int *size);
 
     int specialAttack() const;
+    string getType() const;
 private:
 
 };

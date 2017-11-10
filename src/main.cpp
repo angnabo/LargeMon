@@ -12,11 +12,11 @@ int main() {
 
     LargeMon * f = gen.generateLargeMon();
     cout << "Health: " <<f->getHp() << ", Damage: " << f->getDamage() << ", Size: " << f->getSize()
-         << ", Special Attack: " << f->specialAttack();
+         << ", Special Attack: " << f->specialAttack() << ", type: " << f->getType();
     DescriptGen descript(f->getType(), f->getSize());
     cout << "\n" << descript.getDescription() << endl;
     BattleInstance battle;
-    //battle.fight();
+    battle.fight();
 
     return 0;
 }

@@ -12,3 +12,7 @@ WoodLM::WoodLM(const int *hp, const int *damage, const int *size)
 int WoodLM::specialAttack() const {
     return damage*1.40;//damage against fire types is 40% more effective
 }
+
+string WoodLM::getType() const {
+    return "wood";
+}

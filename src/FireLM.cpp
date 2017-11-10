@@ -12,3 +12,8 @@ FireLM::FireLM(const int *hp, const int *damage, const int *size)
 int FireLM::specialAttack() const {
     return (int)damage*1.40;
 }
+
+string FireLM::getType() const {
+    string s = "fire";
+    return s;
+}

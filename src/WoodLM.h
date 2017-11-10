@@ -14,6 +14,7 @@ public:
     WoodLM(const int *, const int *, const int *);
 
     int specialAttack() const;
+    string getType() const;
 
 };
 

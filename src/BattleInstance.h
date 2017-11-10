@@ -13,9 +13,13 @@ public:
     void fight();
     void computerMove();
     int randomInRange(int, int);
+    bool determineCounter(string *, string *);
+    virtual ~BattleInstance();
 private:
     LargeMon * player;
     LargeMon * computer;
+    int playerSpecAttkCount;
+    int computerSpecAttkCounter;
     //LargeMon * playerPtr;
 };
 

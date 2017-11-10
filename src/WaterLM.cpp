@@ -12,3 +12,7 @@ WaterLM::WaterLM(const int *hp, const int *damage, const int *size)
 int WaterLM::specialAttack() const {
     return damage*1.40;//damage against fire types is 40% more effective
 }
+
+string WaterLM::getType() const {
+    return "water";
+}
