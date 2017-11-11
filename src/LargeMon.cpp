@@ -15,10 +15,12 @@ LargeMon::LargeMon(const int* hp, const int* damage, const int* size){
 
 void LargeMon::takeDamage(int damage) {
     hp -= damage;
+    notify();
 }
 
 void LargeMon::defend(){
     hp += 20;
+    notify();
 }
 
 int LargeMon::specialAttack() const {

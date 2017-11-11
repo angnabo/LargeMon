@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake
+CMAKE_COMMAND = /opt/clion-2017.2.1/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
+RM = /opt/clion-2017.2.1/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/angelica/CLionProjects/LargeMon
+CMAKE_SOURCE_DIR = /home/angelica/Development/CLion/LargeMon
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/angelica/CLionProjects/LargeMon/cmake-build-debug
+CMAKE_BINARY_DIR = /home/angelica/Development/CLion/LargeMon/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/angelica/CLionProjects/LargeMon/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/clion-2017.2.1/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/opt/clion-2017.2.1/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles /home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles /home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/angelica/CLionProjects/LargeMon/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -312,32 +312,32 @@ src/Observer.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/Observer.cpp.s
 .PHONY : src/Observer.cpp.s
 
-src/View.o: src/View.cpp.o
+src/ViewObserver.o: src/ViewObserver.cpp.o
 
-.PHONY : src/View.o
+.PHONY : src/ViewObserver.o
 
 # target to build an object file
-src/View.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/View.cpp.o
-.PHONY : src/View.cpp.o
+src/ViewObserver.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/ViewObserver.cpp.o
+.PHONY : src/ViewObserver.cpp.o
 
-src/View.i: src/View.cpp.i
+src/ViewObserver.i: src/ViewObserver.cpp.i
 
-.PHONY : src/View.i
+.PHONY : src/ViewObserver.i
 
 # target to preprocess a source file
-src/View.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/View.cpp.i
-.PHONY : src/View.cpp.i
+src/ViewObserver.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/ViewObserver.cpp.i
+.PHONY : src/ViewObserver.cpp.i
 
-src/View.s: src/View.cpp.s
+src/ViewObserver.s: src/ViewObserver.cpp.s
 
-.PHONY : src/View.s
+.PHONY : src/ViewObserver.s
 
 # target to generate assembly for a file
-src/View.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/View.cpp.s
-.PHONY : src/View.cpp.s
+src/ViewObserver.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/ViewObserver.cpp.s
+.PHONY : src/ViewObserver.cpp.s
 
 src/WaterLM.o: src/WaterLM.cpp.o
 
@@ -450,9 +450,9 @@ help:
 	@echo "... src/Observer.o"
 	@echo "... src/Observer.i"
 	@echo "... src/Observer.s"
-	@echo "... src/View.o"
-	@echo "... src/View.i"
-	@echo "... src/View.s"
+	@echo "... src/ViewObserver.o"
+	@echo "... src/ViewObserver.i"
+	@echo "... src/ViewObserver.s"
 	@echo "... src/WaterLM.o"
 	@echo "... src/WaterLM.i"
 	@echo "... src/WaterLM.s"

@@ -4,6 +4,13 @@
 
 #include "Observer.h"
 
-void Observer::update() {
-    
+Observer::Observer(LargeMon *lm) {
+    largeMon = lm;
+    largeMon->attach(this);
 }
+
+Observer::~Observer() {
+
+}
+
+//Observer::Observer() {}

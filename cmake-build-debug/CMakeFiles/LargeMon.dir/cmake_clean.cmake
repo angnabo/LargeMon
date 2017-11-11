@@ -4,12 +4,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o"
   "CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o"
   "CMakeFiles/LargeMon.dir/src/DescriptGen.cpp.o"
-  "CMakeFiles/LargeMon.dir/src/View.cpp.o"
   "CMakeFiles/LargeMon.dir/src/Controller.cpp.o"
   "CMakeFiles/LargeMon.dir/src/WaterLM.cpp.o"
   "CMakeFiles/LargeMon.dir/src/FireLM.cpp.o"
   "CMakeFiles/LargeMon.dir/src/WoodLM.cpp.o"
   "CMakeFiles/LargeMon.dir/src/Observer.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/ViewObserver.cpp.o"
   "LargeMon.pdb"
   "LargeMon"
 )

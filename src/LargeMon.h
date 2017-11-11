@@ -11,7 +11,6 @@ using namespace std;
 #ifndef LARGEMON_LARGEMON_H
 #define LARGEMON_LARGEMON_H
 
-
 class LargeMon {
 public:
     LargeMon(const int *, const int *, const int *);

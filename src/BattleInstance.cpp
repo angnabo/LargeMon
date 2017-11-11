@@ -9,13 +9,20 @@
 BattleInstance::BattleInstance() {
     LargeMonGenerator generator;
 
+
     playerSpecAttkCount = 0;
     computerSpecAttkCounter = 0;
     player = generator.generateLargeMon();
     computer = generator.generateLargeMon();
+
+//    playerView = ViewObserver(player);
+//    enemyView = ViewObserver(computer);
 }
 
 void BattleInstance::fight() {
+
+    ViewObserver playerView(player);
+    ViewObserver enemyView(computer);
 
     cout << "Player: health: " << player->getHp() << ", Damage: " <<
          player->getDamage() << ", Size: " << player->getSize() <<

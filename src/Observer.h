@@ -6,9 +6,18 @@
 #define LARGEMON_OBSERVER_H
 
 
+#include "LargeMon.h"
+
 class Observer {
 public:
-    void update();
+    Observer(LargeMon *);
+
+//    Observer();
+
+    virtual ~Observer();
+
+    virtual void update() const = 0;
+    LargeMon *largeMon;
 
 };
 

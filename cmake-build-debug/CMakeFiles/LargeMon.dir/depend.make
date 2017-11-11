@@ -5,6 +5,8 @@ CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o: ../src/BattleInstance.cpp
 CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o: ../src/BattleInstance.h
 CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o: ../src/LargeMon.h
 CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o: ../src/LargeMonGenerator.h
+CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o: ../src/Observer.h
+CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o: ../src/ViewObserver.h
 CMakeFiles/LargeMon.dir/src/BattleInstance.cpp.o: ../src/WaterLM.h
 
 CMakeFiles/LargeMon.dir/src/Controller.cpp.o: ../src/Controller.cpp
@@ -16,25 +18,36 @@ CMakeFiles/LargeMon.dir/src/DescriptGen.cpp.o: ../src/DescriptGen.h
 CMakeFiles/LargeMon.dir/src/FireLM.cpp.o: ../src/FireLM.cpp
 CMakeFiles/LargeMon.dir/src/FireLM.cpp.o: ../src/FireLM.h
 CMakeFiles/LargeMon.dir/src/FireLM.cpp.o: ../src/LargeMon.h
+CMakeFiles/LargeMon.dir/src/FireLM.cpp.o: ../src/Observer.h
 
 CMakeFiles/LargeMon.dir/src/LargeMon.cpp.o: ../src/LargeMon.cpp
 CMakeFiles/LargeMon.dir/src/LargeMon.cpp.o: ../src/LargeMon.h
+CMakeFiles/LargeMon.dir/src/LargeMon.cpp.o: ../src/Observer.h
 
 CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o: ../src/FireLM.h
 CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o: ../src/LargeMon.h
 CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o: ../src/LargeMonGenerator.cpp
 CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o: ../src/LargeMonGenerator.h
+CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o: ../src/Observer.h
 CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o: ../src/WaterLM.h
 CMakeFiles/LargeMon.dir/src/LargeMonGenerator.cpp.o: ../src/WoodLM.h
 
-CMakeFiles/LargeMon.dir/src/View.cpp.o: ../src/View.cpp
-CMakeFiles/LargeMon.dir/src/View.cpp.o: ../src/View.h
+CMakeFiles/LargeMon.dir/src/Observer.cpp.o: ../src/LargeMon.h
+CMakeFiles/LargeMon.dir/src/Observer.cpp.o: ../src/Observer.cpp
+CMakeFiles/LargeMon.dir/src/Observer.cpp.o: ../src/Observer.h
+
+CMakeFiles/LargeMon.dir/src/ViewObserver.cpp.o: ../src/LargeMon.h
+CMakeFiles/LargeMon.dir/src/ViewObserver.cpp.o: ../src/Observer.h
+CMakeFiles/LargeMon.dir/src/ViewObserver.cpp.o: ../src/ViewObserver.cpp
+CMakeFiles/LargeMon.dir/src/ViewObserver.cpp.o: ../src/ViewObserver.h
 
 CMakeFiles/LargeMon.dir/src/WaterLM.cpp.o: ../src/LargeMon.h
+CMakeFiles/LargeMon.dir/src/WaterLM.cpp.o: ../src/Observer.h
 CMakeFiles/LargeMon.dir/src/WaterLM.cpp.o: ../src/WaterLM.cpp
 CMakeFiles/LargeMon.dir/src/WaterLM.cpp.o: ../src/WaterLM.h
 
 CMakeFiles/LargeMon.dir/src/WoodLM.cpp.o: ../src/LargeMon.h
+CMakeFiles/LargeMon.dir/src/WoodLM.cpp.o: ../src/Observer.h
 CMakeFiles/LargeMon.dir/src/WoodLM.cpp.o: ../src/WoodLM.cpp
 CMakeFiles/LargeMon.dir/src/WoodLM.cpp.o: ../src/WoodLM.h
 
@@ -42,6 +55,8 @@ CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/BattleInstance.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/DescriptGen.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/LargeMon.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/LargeMonGenerator.h
+CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/Observer.h
+CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/ViewObserver.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/WaterLM.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/main.cpp
 

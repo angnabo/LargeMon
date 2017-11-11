@@ -6,107 +6,125 @@
 
 #IncludeRegexTransform: 
 
-/home/angelica/CLionProjects/LargeMon/src/BattleInstance.cpp
+/home/angelica/Development/CLion/LargeMon/src/BattleInstance.cpp
 iostream
 -
 random
 -
 LargeMonGenerator.h
-/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h
 BattleInstance.h
-/home/angelica/CLionProjects/LargeMon/src/BattleInstance.h
+/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h
 
-/home/angelica/CLionProjects/LargeMon/src/BattleInstance.h
+/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h
 LargeMon.h
-/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
+ViewObserver.h
+/home/angelica/Development/CLion/LargeMon/src/ViewObserver.h
 
-/home/angelica/CLionProjects/LargeMon/src/Controller.cpp
+/home/angelica/Development/CLion/LargeMon/src/Controller.cpp
 Controller.h
-/home/angelica/CLionProjects/LargeMon/src/Controller.h
+/home/angelica/Development/CLion/LargeMon/src/Controller.h
 
-/home/angelica/CLionProjects/LargeMon/src/Controller.h
+/home/angelica/Development/CLion/LargeMon/src/Controller.h
 
-/home/angelica/CLionProjects/LargeMon/src/DescriptGen.cpp
+/home/angelica/Development/CLion/LargeMon/src/DescriptGen.cpp
 DescriptGen.h
-/home/angelica/CLionProjects/LargeMon/src/DescriptGen.h
+/home/angelica/Development/CLion/LargeMon/src/DescriptGen.h
 
-/home/angelica/CLionProjects/LargeMon/src/DescriptGen.h
+/home/angelica/Development/CLion/LargeMon/src/DescriptGen.h
 string
 -
 vector
 -
 
-/home/angelica/CLionProjects/LargeMon/src/FireLM.cpp
+/home/angelica/Development/CLion/LargeMon/src/FireLM.cpp
 FireLM.h
-/home/angelica/CLionProjects/LargeMon/src/FireLM.h
+/home/angelica/Development/CLion/LargeMon/src/FireLM.h
 
-/home/angelica/CLionProjects/LargeMon/src/FireLM.h
+/home/angelica/Development/CLion/LargeMon/src/FireLM.h
 LargeMon.h
-/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
 
-/home/angelica/CLionProjects/LargeMon/src/LargeMon.cpp
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.cpp
 LargeMon.h
-/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
 
-/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
 string
 -
+vector
+-
+Observer.h
+/home/angelica/Development/CLion/LargeMon/src/Observer.h
 
-/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.cpp
+/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.cpp
 iostream
 -
 random
 -
 LargeMonGenerator.h
-/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h
 WaterLM.h
-/home/angelica/CLionProjects/LargeMon/src/WaterLM.h
+/home/angelica/Development/CLion/LargeMon/src/WaterLM.h
 FireLM.h
-/home/angelica/CLionProjects/LargeMon/src/FireLM.h
+/home/angelica/Development/CLion/LargeMon/src/FireLM.h
 WoodLM.h
-/home/angelica/CLionProjects/LargeMon/src/WoodLM.h
+/home/angelica/Development/CLion/LargeMon/src/WoodLM.h
 
-/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h
 LargeMon.h
-/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
 WaterLM.h
-/home/angelica/CLionProjects/LargeMon/src/WaterLM.h
+/home/angelica/Development/CLion/LargeMon/src/WaterLM.h
 string
 -
 vector
 -
 
-/home/angelica/CLionProjects/LargeMon/src/View.cpp
-View.h
-/home/angelica/CLionProjects/LargeMon/src/View.h
+/home/angelica/Development/CLion/LargeMon/src/Observer.cpp
+Observer.h
+/home/angelica/Development/CLion/LargeMon/src/Observer.h
 
-/home/angelica/CLionProjects/LargeMon/src/View.h
+/home/angelica/Development/CLion/LargeMon/src/Observer.h
+LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
 
-/home/angelica/CLionProjects/LargeMon/src/WaterLM.cpp
+/home/angelica/Development/CLion/LargeMon/src/ViewObserver.cpp
+iostream
+-
+ViewObserver.h
+/home/angelica/Development/CLion/LargeMon/src/ViewObserver.h
+
+/home/angelica/Development/CLion/LargeMon/src/ViewObserver.h
+Observer.h
+/home/angelica/Development/CLion/LargeMon/src/Observer.h
+
+/home/angelica/Development/CLion/LargeMon/src/WaterLM.cpp
 WaterLM.h
-/home/angelica/CLionProjects/LargeMon/src/WaterLM.h
+/home/angelica/Development/CLion/LargeMon/src/WaterLM.h
 
-/home/angelica/CLionProjects/LargeMon/src/WaterLM.h
+/home/angelica/Development/CLion/LargeMon/src/WaterLM.h
 LargeMon.h
-/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
 
-/home/angelica/CLionProjects/LargeMon/src/WoodLM.cpp
+/home/angelica/Development/CLion/LargeMon/src/WoodLM.cpp
 WoodLM.h
-/home/angelica/CLionProjects/LargeMon/src/WoodLM.h
+/home/angelica/Development/CLion/LargeMon/src/WoodLM.h
 
-/home/angelica/CLionProjects/LargeMon/src/WoodLM.h
+/home/angelica/Development/CLion/LargeMon/src/WoodLM.h
 LargeMon.h
-/home/angelica/CLionProjects/LargeMon/src/LargeMon.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMon.h
 
-/home/angelica/CLionProjects/LargeMon/src/main.cpp
+/home/angelica/Development/CLion/LargeMon/src/main.cpp
 string
 -
 iostream
 -
 LargeMonGenerator.h
-/home/angelica/CLionProjects/LargeMon/src/LargeMonGenerator.h
+/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h
 BattleInstance.h
-/home/angelica/CLionProjects/LargeMon/src/BattleInstance.h
+/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h
 DescriptGen.h
-/home/angelica/CLionProjects/LargeMon/src/DescriptGen.h
+/home/angelica/Development/CLion/LargeMon/src/DescriptGen.h
 
