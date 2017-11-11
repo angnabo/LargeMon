@@ -4,10 +4,10 @@
 
 #include <iostream>
 #include <random>
-#include "LargeMonGenerator.h"
-#include "WaterLM.h"
-#include "FireLM.h"
-#include "WoodLM.h"
+#include "../include/LargeMonGenerator.h"
+#include "../include/largeMonHeader/WaterLM.h"
+#include "../include/largeMonHeader/FireLM.h"
+#include "../include/largeMonHeader/WoodLM.h"
 
 LargeMonGenerator::LargeMonGenerator() = default;
 

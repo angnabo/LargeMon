@@ -1,8 +1,8 @@
 #include <string>
 #include <iostream>
-#include "LargeMonGenerator.h"
-#include "BattleInstance.h"
-#include "DescriptGen.h"
+#include "../include/LargeMonGenerator.h"
+#include "../include/BattleInstance.h"
+#include "../include/DescriptGen.h"
 
 using namespace std;
 

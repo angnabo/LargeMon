@@ -4,8 +4,8 @@
 
 #include <iostream>
 #include <random>
-#include "LargeMonGenerator.h"
-#include "BattleInstance.h"
+#include "../include/LargeMonGenerator.h"
+#include "../include/BattleInstance.h"
 BattleInstance::BattleInstance() {
     LargeMonGenerator generator;
 
@@ -43,7 +43,7 @@ void BattleInstance::fight() {
             case 1: //attack
                 computer->takeDamage(player->getDamage());
                 cout << "Player dealt " << player->getDamage() << " to the enemy." << endl;
-                cout << "Enemy health: " << computer->getHp() << endl;
+                //cout << "Enemy health: " << computer->getHp() << endl;
                 break;
             case 2: //defend1
                 player->defend();
@@ -95,18 +95,18 @@ void BattleInstance::computerMove() {
             if (computerSpecAttkCounter == 0) {
                 player->takeDamage(computer->specialAttack());
                 cout << "The enemy used the special attack for: " << computer->specialAttack() << endl;
-                cout << "The player hp is: " << player->getHp() << endl;
+                //cout << "The player hp is: " << player->getHp() << endl;
                 computerSpecAttkCounter++;
             }
         } else {
             player->takeDamage(computer->getDamage());
             cout << "The enemy attacked for " << computer->getDamage() << endl;
-            cout << "Player hp is: " << player->getHp() << endl;
+            //cout << "Player hp is: " << player->getHp() << endl;
         }
     } else {
         player->takeDamage(computer->getDamage());
         cout << "The enemy attacked for " << computer->getDamage() << endl;
-        cout << "Player hp is: " << player->getHp() << endl;
+        //cout << "Player hp is: " << player->getHp() << endl;
     }
 }
 

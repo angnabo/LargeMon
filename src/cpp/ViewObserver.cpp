@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "ViewObserver.h"
+#include "../include/ViewObserver.h"
 
 ViewObserver::ViewObserver(LargeMon *lm) : Observer(lm) {
     //largeMon->attach(this);
@@ -14,7 +14,7 @@ ViewObserver::~ViewObserver() {
 }
 
 void ViewObserver::update() const {
-    cout << "LagrgeMon health: " << largeMon->getHp();
+    cout << "LagrgeMon health: " << largeMon->getHp() << endl;
 }
 
 //ViewObserver::ViewObserver() = default;

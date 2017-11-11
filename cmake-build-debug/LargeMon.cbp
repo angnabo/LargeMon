@@ -84,67 +84,67 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/BattleInstance.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/BattleInstance.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/BattleInstance.h">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/Controller.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/Controller.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/DescriptGen.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/Controller.h">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/FireLM.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/DescriptGen.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/LargeMon.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/DescriptGen.h">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonGenerator.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/FireLM.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/Observer.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/FireLM.h">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/ViewObserver.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMon.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/WaterLM.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMon.h">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/WoodLM.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/main.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMonGenerator.h">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/include/BattleInstance.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/Observer.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/include/Controller.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/Observer.h">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/include/DescriptGen.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/ViewObserver.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/include/FireLM.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/ViewObserver.h">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/include/LargeMon.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/WaterLM.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/include/LargeMonGenerator.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/WaterLM.h">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/include/Observer.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/WoodLM.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/include/ViewObserver.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/WoodLM.h">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/include/WaterLM.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/main.cpp">
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/include/WoodLM.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/CMakeLists.txt">

@@ -2,7 +2,7 @@
 // Created by angelica on 12/10/17.
 //
 
-#include "DescriptGen.h"
+#include "../include/DescriptGen.h"
 
 DescriptGen::DescriptGen(string type, int size) {
     string sizeStr;
