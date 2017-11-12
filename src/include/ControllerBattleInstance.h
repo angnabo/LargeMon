@@ -17,6 +17,7 @@ public:
     void computerMove();
     int randomInRange(int, int);
     bool determineCounter(string *, string *);
+    bool isGameOver();
     string getEnemyLargeMonName();
     virtual ~ControllerBattleInstance();
 private:
@@ -27,6 +28,7 @@ private:
     ViewObserver * playerView;
     ViewObserver * enemyView;
     //LargeMon * playerPtr;
+    bool isOver;
 };
 
 

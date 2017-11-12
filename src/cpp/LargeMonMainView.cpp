@@ -11,6 +11,7 @@
 #include<SDL2/SDL_ttf.h>
 #include <stdio.h>
 #include <string>
+#include <iostream>
 #include "../include/LTexture.h"
 #include "../include/ButtonTexture.h"
 #include "../include/ControllerBattleInstance.h"
@@ -53,6 +54,7 @@ ButtonTexture gBottomLeftButton;
 ButtonTexture gBottomRightButton;
 
 LTexture gBottomTextPanel;
+LTexture gBottomPanelFull;
 
 LTexture gTopLeftButtonText;
 LTexture gTopRightButtonText;
@@ -158,6 +160,12 @@ bool loadMedia(string panel_text)
     }
     //Load bottom panel
     if( !gBottomTextPanel.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/bottom_panel.bmp" ) )
+    {
+        printf( "Failed to load background texture image!\n" );
+        success = false;
+    }
+    //Load large bottom panel
+    if( !gBottomPanelFull.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/bottom_panel_full.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
@@ -299,14 +307,23 @@ bool updateText(string text)
 {
     SDL_Color textColor = { 0, 0, 0 };
     bool success = true;
+    //Load large bottom panel
+    if( !gBottomPanelFull.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/bottom_panel_full.bmp" ) )
+    {
+        printf( "Failed to load background texture image!\n" );
+        success = false;
+    }
     if( !gPanelText.loadFromRenderedText( gRenderer, gFont, text, textColor ) )
     {
         printf( "Failed to render text texture!\n" );
         success = false;
     }
+    gBottomPanelFull.render(gRenderer, 10, 0);
     gPanelText.render(gRenderer,30, 10);
     return success;
 }
+
+
 void close()
 {
     //Free loaded images
@@ -314,11 +331,18 @@ void close()
     gEnemyTexture.free();
     gBackgroundTexture.free();
     gBottomTextPanel.free();
+    gBottomPanelFull.free();
 
     gTopRightButtonText.free();
     gTopLeftButtonText.free();
     gBottomRightButtonText.free();
     gBottomLeftButtonText.free();
+
+    gBottomLeftButton.free();
+    gBottomRightButton.free();
+    gTopLeftButton.free();
+    gTopRightButton.free();
+
     gPanelText.free();
 
     //Free global font
@@ -463,8 +487,15 @@ int main( int argc, char* args[] ) {
 
                         }
                         if(e.key.keysym.sym == SDLK_RETURN){
-                            string textUpdate = battleInstance.action(&selectedButton);
-                            updateText(textUpdate);
+                            string textUpdate = "";
+                            if(!battleInstance.isGameOver()) {
+                                textUpdate = battleInstance.action(&selectedButton);
+                                updateText(textUpdate);
+                            } else {
+                                if(!updateText("game over")) {
+                                    cout << "failed to load media";
+                                }
+                            }
                         }
                     }
                 }
@@ -519,6 +550,8 @@ int main( int argc, char* args[] ) {
                 gBottomRightButtonText.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth(),
                                               Y_BUTTON_OFFSET+gTopRightButton.getHeight()+14);
 
+                //gBottomPanelFull.render(gRenderer, 10,0);
+                //gBottomPanelFull.setColor();
 //                gTopLeftButton.setColor(r, g, b);
 //                gTopRightButton.setColor(r, g, b);
 //                gBottomLeftButton.setColor(r, g, b);

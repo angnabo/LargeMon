@@ -22,8 +22,9 @@ ControllerBattleInstance::ControllerBattleInstance() {
 //    ViewObserver enemyView(computer);
 
     playerView = new ViewObserver(player);
-    enemyView =
-            new ViewObserver(computer);
+    enemyView = new ViewObserver(computer);
+
+    isOver = false;
 }
 
 void ControllerBattleInstance::fight() {
@@ -141,7 +142,7 @@ ControllerBattleInstance::~ControllerBattleInstance() {
 
 string ControllerBattleInstance::action(int * actionID) {
 
-    if(player->getHp() > 0 && computer->getHp() > 0) {
+    if(!isGameOver()) {
 
         string action = "";
 
@@ -156,6 +157,12 @@ string ControllerBattleInstance::action(int * actionID) {
 //            cout << "Enter command." << endl;
 //            cin >> command;
 //        }
+        if (player->getHp() <= 0) {
+            cout << "Enemy wins.";
+            action = "Enemy wins!";
+            isOver = true;
+            return action;
+        }
         switch (*actionID) {
             case 0: //attack
                 action = "Player dealt " + to_string(player->getDamage()) + " to the enemy";
@@ -190,16 +197,16 @@ string ControllerBattleInstance::action(int * actionID) {
         if (computer->getHp() <= 0) {
             cout << "Player wins.";
             action = "Player wins!";
-            return action;
-        }
-        if (player->getHp() <= 0) {
-            cout << "Enemy wins.";
-            action = "Enemy wins!";
+            isOver = true;
             return action;
         }
         computerMove();
         return action;
     }
+}
+
+bool ControllerBattleInstance::isGameOver() {
+    return isOver;
 }
 
 
