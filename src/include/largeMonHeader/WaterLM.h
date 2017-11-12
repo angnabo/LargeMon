@@ -14,6 +14,8 @@ public:
 
     int specialAttack() const;
     string getType() const;
+
+
 private:
 
 };

@@ -2,6 +2,7 @@
 // Created by angelica on 07/10/17.
 //
 
+#include <iostream>
 #include "../../include/largeMonHeader/LargeMon.h"
 
 //using namespace std;
@@ -12,6 +13,10 @@ LargeMon::LargeMon(const int* hp, const int* damage, const int* size){
     this->size = *size;
     //this->type = type;
 }
+
+//string LargeMon::getName() const {
+//    return "largemon name";
+//}
 
 void LargeMon::takeDamage(int damage) {
     hp -= damage;
@@ -37,11 +42,7 @@ void LargeMon::attach(Observer * obs) {
     views.push_back(obs);
 }
 
-LargeMon::LargeMon() = default;
-
 //string LargeMon::getType() {
 //    return "";
 //}
-
-LargeMon::~LargeMon() = default;
 

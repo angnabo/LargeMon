@@ -13,11 +13,15 @@ public:
     ViewObserver(LargeMon *);
 
     //ViewObserver();
+    string getName() const;
+
+    int getCurrentHp() const;
 
     virtual ~ViewObserver();
     void update() const;
 private:
     //int health = 0;
+
 };
 
 

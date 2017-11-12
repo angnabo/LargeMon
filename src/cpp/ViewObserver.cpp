@@ -14,7 +14,15 @@ ViewObserver::~ViewObserver() {
 }
 
 void ViewObserver::update() const {
-    cout << "LagrgeMon health: " << largeMon->getHp() << endl;
+    cout << largeMon->getType() << "LargeMon health: " << largeMon->getHp() << endl;
+}
+
+int ViewObserver::getCurrentHp() const{
+    return largeMon->getHp();
+}
+
+string ViewObserver::getName() const{
+    return "A wild " + largeMon->getName() + " appears!";
 }
 
 //ViewObserver::ViewObserver() = default;

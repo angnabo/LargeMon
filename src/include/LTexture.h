@@ -3,8 +3,9 @@
 //
 
 //Using SDL, SDL_image, standard IO, and strings
-#include <SDL.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include<SDL_ttf.h>
 #include <stdio.h>
 #include <string>
 
@@ -43,6 +44,9 @@ public:
     int getWidth();
     int getHeight();
 
+//The window renderer
+bool loadFromRenderedText(SDL_Renderer *gRenderer, TTF_Font *gFont, std::string textureText, SDL_Color textColor);
+
 private:
     //The actual hardware texture
     SDL_Texture* mTexture;
@@ -50,7 +54,6 @@ private:
     //Image dimensions
     int mWidth;
     int mHeight;
-    //The window renderer
 };
 
 

@@ -204,6 +204,33 @@ src/cpp/Controller.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.s
 .PHONY : src/cpp/Controller.cpp.s
 
+src/cpp/ControllerBattleInstance.o: src/cpp/ControllerBattleInstance.cpp.o
+
+.PHONY : src/cpp/ControllerBattleInstance.o
+
+# target to build an object file
+src/cpp/ControllerBattleInstance.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o
+.PHONY : src/cpp/ControllerBattleInstance.cpp.o
+
+src/cpp/ControllerBattleInstance.i: src/cpp/ControllerBattleInstance.cpp.i
+
+.PHONY : src/cpp/ControllerBattleInstance.i
+
+# target to preprocess a source file
+src/cpp/ControllerBattleInstance.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.i
+.PHONY : src/cpp/ControllerBattleInstance.cpp.i
+
+src/cpp/ControllerBattleInstance.s: src/cpp/ControllerBattleInstance.cpp.s
+
+.PHONY : src/cpp/ControllerBattleInstance.s
+
+# target to generate assembly for a file
+src/cpp/ControllerBattleInstance.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.s
+.PHONY : src/cpp/ControllerBattleInstance.cpp.s
+
 src/cpp/DescriptGen.o: src/cpp/DescriptGen.cpp.o
 
 .PHONY : src/cpp/DescriptGen.o
@@ -519,6 +546,9 @@ help:
 	@echo "... src/cpp/Controller.o"
 	@echo "... src/cpp/Controller.i"
 	@echo "... src/cpp/Controller.s"
+	@echo "... src/cpp/ControllerBattleInstance.o"
+	@echo "... src/cpp/ControllerBattleInstance.i"
+	@echo "... src/cpp/ControllerBattleInstance.s"
 	@echo "... src/cpp/DescriptGen.o"
 	@echo "... src/cpp/DescriptGen.i"
 	@echo "... src/cpp/DescriptGen.s"

@@ -2,21 +2,28 @@
 // Created by angelica on 11/11/17.
 //
 
-#include "LargeMonMainView.h"
+#include "../include/LargeMonMainView.h"
 //Using SDL, SDL_image, standard IO, and strings
-#include <SDL.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL_ttf.h>
+//#include <SDL_ttf.h>
+#include<SDL2/SDL_ttf.h>
 #include <stdio.h>
 #include <string>
 #include "../include/LTexture.h"
 #include "../include/ButtonTexture.h"
+#include "../include/ControllerBattleInstance.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
-//Texture wrapper class
+//Globally used font
+TTF_Font *gFont = NULL;
 
+//Battle Instance Controller
+ControllerBattleInstance battleInstance;
 
 //Starts up SDL and creates window
 bool init();
@@ -33,6 +40,9 @@ SDL_Window* gWindow = NULL;
 //The window renderer
 SDL_Renderer* gRenderer = NULL;
 
+//Bottom Panel Text
+string panelTextString;
+
 //Scene textures
 LTexture gPlayerTexture;
 LTexture gEnemyTexture;
@@ -41,6 +51,15 @@ ButtonTexture gTopLeftButton;
 ButtonTexture gTopRightButton;
 ButtonTexture gBottomLeftButton;
 ButtonTexture gBottomRightButton;
+
+LTexture gBottomTextPanel;
+
+LTexture gTopLeftButtonText;
+LTexture gTopRightButtonText;
+LTexture gBottomLeftButtonText;
+LTexture gBottomRightButtonText;
+LTexture gPanelText;
+
 ButtonTexture buttons[4];
 SDL_Rect gSpriteClips[ 4 ];
 LTexture gSpriteSheetTexture;
@@ -100,6 +119,13 @@ bool init()
                     printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
                     success = false;
                 }
+
+                //Initialize SDL_ttf
+                if( TTF_Init() == -1 )
+                {
+                    printf( "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError() );
+                    success = false;
+                }
             }
         }
     }
@@ -107,21 +133,19 @@ bool init()
     return success;
 }
 
-bool loadMedia()
+bool loadMedia(string panel_text)
 {
     //Loading success flag
     bool success = true;
 
-
-
     //Load player texture
-    if( !gPlayerTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/onion.bmp" ) )
+    if( !gPlayerTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/shiba-inu2.bmp" ) )
     {
         printf( "Failed to load Foo' texture image!\n" );
         success = false;
     }
     //Load enemy texture
-    if( !gEnemyTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/onion.bmp" ) )
+    if( !gEnemyTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/shiba-inu2.bmp" ) )
     {
         printf( "Failed to load Foo' texture image!\n" );
         success = false;
@@ -132,27 +156,87 @@ bool loadMedia()
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
+    //Load bottom panel
+    if( !gBottomTextPanel.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/bottom_panel.bmp" ) )
+    {
+        printf( "Failed to load background texture image!\n" );
+        success = false;
+    }
 
-    //Load background texture
+//    //Load Text BackgroundTexture
+//    if( !gTopLeftButtonText.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
+//    {
+//        printf( "Failed to load background texture image!\n" );
+//        success = false;
+//    }
+//    if( !gTopRightButtonText.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
+//    {
+//        printf( "Failed to load background texture image!\n" );
+//        success = false;
+//    }
+//    if( !gBottomLeftButtonText.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
+//    {
+//        printf( "Failed to load background texture image!\n" );
+//        success = false;
+//    }
+//    if( !gPanelText.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/bottom_panel.bmp" ) )
+//    {
+//        printf( "Failed to load background texture image!\n" );
+//        success = false;
+//    }
+
+    //Load Font
+    gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/src/resources/alterebro-pixel-font.ttf", 30 );
+    if( gFont == NULL )
+    {
+        printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
+        success = false;
+    } else {
+        //Render text
+        SDL_Color textColor = { 0, 0, 0 };
+        if( !gTopLeftButtonText.loadFromRenderedText( gRenderer, gFont, "Attack", textColor ) )
+        {
+            printf( "Failed to render text texture!\n" );
+            success = false;
+        }
+        if( !gTopRightButtonText.loadFromRenderedText( gRenderer, gFont, "Defend", textColor ) )
+        {
+            printf( "Failed to render text texture!\n" );
+            success = false;
+        }
+        if( !gBottomLeftButtonText.loadFromRenderedText( gRenderer, gFont, "Special Attack 1", textColor ) )
+        {
+            printf( "Failed to render text texture!\n" );
+            success = false;
+        }
+        if( !gBottomRightButtonText.loadFromRenderedText( gRenderer, gFont, "Special Attack 2", textColor ) )
+        {
+            printf( "Failed to render text texture!\n" );
+            success = false;
+        }
+        if( !gPanelText.loadFromRenderedText( gRenderer, gFont, panel_text, textColor ) )
+        {
+            printf( "Failed to render text texture!\n" );
+            success = false;
+        }
+    }
+
+    //Load Button Textures
     if( !gTopLeftButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
-    gTopRightButton.setSelected(true);
-    //Load background texture
     if( !gTopRightButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
-    //Load background texture
     if( !gBottomLeftButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
-    //Load background texture
     if( !gBottomRightButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
@@ -211,12 +295,36 @@ bool loadMedia()
     return success;
 }
 
+bool updateText(string text)
+{
+    SDL_Color textColor = { 0, 0, 0 };
+    bool success = true;
+    if( !gPanelText.loadFromRenderedText( gRenderer, gFont, text, textColor ) )
+    {
+        printf( "Failed to render text texture!\n" );
+        success = false;
+    }
+    gPanelText.render(gRenderer,30, 10);
+    return success;
+}
 void close()
 {
     //Free loaded images
     gPlayerTexture.free();
     gEnemyTexture.free();
     gBackgroundTexture.free();
+    gBottomTextPanel.free();
+
+    gTopRightButtonText.free();
+    gTopLeftButtonText.free();
+    gBottomRightButtonText.free();
+    gBottomLeftButtonText.free();
+    gPanelText.free();
+
+    //Free global font
+    TTF_CloseFont( gFont );
+    gFont = NULL;
+
     //Free loaded image
     SDL_DestroyTexture( gTexture );
     gTexture = NULL;
@@ -228,38 +336,11 @@ void close()
     gRenderer = NULL;
 
     //Quit SDL subsystems
+    TTF_Quit();
     IMG_Quit();
     SDL_Quit();
 }
 
-
-
-//SDL_Texture* loadTexture( std::string path )
-//{
-//    //The final texture
-//    SDL_Texture* newTexture = NULL;
-//
-//    //Load image at specified path
-//    SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
-//    if( loadedSurface == NULL )
-//    {
-//        printf( "Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError() );
-//    }
-//    else
-//    {
-//        //Create texture from surface pixels
-//        newTexture = SDL_CreateTextureFromSurface( gRenderer, loadedSurface );
-//        if( newTexture == NULL )
-//        {
-//            printf( "Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
-//        }
-//
-//        //Get rid of old loaded surface
-//        SDL_FreeSurface( loadedSurface );
-//    }
-//
-//    return newTexture;
-//}
 
 int getSelected(){
     for (int i = 0; i < 4; i ++){
@@ -312,12 +393,13 @@ int handleLeft(int* selected){
 
 
 int main( int argc, char* args[] ) {
+    panelTextString = "A wild " + battleInstance.getEnemyLargeMonName() + " appears!";
     //Start up SDL and create window
     if (!init()) {
         printf("Failed to initialize!\n");
     } else {
         //Load media
-        if (!loadMedia()) {
+        if (!loadMedia(panelTextString)) {
             printf("Failed to load media!\n");
         } else {
             //Main loop flag
@@ -380,6 +462,10 @@ int main( int argc, char* args[] ) {
                                 break;
 
                         }
+                        if(e.key.keysym.sym == SDLK_RETURN){
+                            string textUpdate = battleInstance.action(&selectedButton);
+                            updateText(textUpdate);
+                        }
                     }
                 }
 
@@ -399,28 +485,40 @@ int main( int argc, char* args[] ) {
                 gBackgroundTexture.render(gRenderer, 0, 0);
 
                 //Render player to the screen
-                gPlayerTexture.render(gRenderer, 60, 190);
+                gPlayerTexture.render(gRenderer, 60, 90);
 
                 //Render enemy to the screen
-                gEnemyTexture.render(gRenderer, 340, 190);
+                gEnemyTexture.render(gRenderer, 340, 90);
 
 
                 //Bottom viewport
                 SDL_Rect bottomViewport;
                 bottomViewport.x = 0;
-                bottomViewport.y = static_cast<int>(SCREEN_HEIGHT / 1.5);
+                bottomViewport.y = static_cast<int>(SCREEN_HEIGHT / 1.4);
                 bottomViewport.w = SCREEN_WIDTH;
                 bottomViewport.h = SCREEN_HEIGHT / 3;
                 SDL_RenderSetViewport(gRenderer, &bottomViewport);
 
                 SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
+                int X_BUTTON_OFFSET = 270;
+                int Y_BUTTON_OFFSET = 20;
 
-                gTopLeftButton.render(gRenderer, 0, 0);
-                gTopRightButton.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth(), 0);
-                gBottomLeftButton.render(gRenderer, 0, SCREEN_HEIGHT / 3 - gBottomLeftButton.getHeight());
-                gBottomRightButton.render(gRenderer, SCREEN_WIDTH - gBottomRightButton.getWidth(),
-                                          SCREEN_HEIGHT / 3 - gBottomRightButton.getHeight());
+                gBottomTextPanel.render(gRenderer, 10, 0);
+                gPanelText.render(gRenderer,30, 10);
+
+                gTopLeftButton.render(gRenderer, X_BUTTON_OFFSET, Y_BUTTON_OFFSET);
+                gTopRightButton.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth()-10, Y_BUTTON_OFFSET);
+                gBottomLeftButton.render(gRenderer, X_BUTTON_OFFSET, Y_BUTTON_OFFSET+gTopRightButton.getHeight()+5);
+                gBottomRightButton.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth()-10,
+                                          Y_BUTTON_OFFSET+gTopRightButton.getHeight()+5);
+
+                gTopLeftButtonText.render(gRenderer, X_BUTTON_OFFSET+10, Y_BUTTON_OFFSET+9);
+                gTopRightButtonText.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth(), Y_BUTTON_OFFSET+9);
+                gBottomLeftButtonText.render(gRenderer, X_BUTTON_OFFSET+10, Y_BUTTON_OFFSET+gTopRightButton.getHeight()+14);
+                gBottomRightButtonText.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth(),
+                                              Y_BUTTON_OFFSET+gTopRightButton.getHeight()+14);
+
 //                gTopLeftButton.setColor(r, g, b);
 //                gTopRightButton.setColor(r, g, b);
 //                gBottomLeftButton.setColor(r, g, b);

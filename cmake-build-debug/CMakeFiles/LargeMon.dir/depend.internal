@@ -29,7 +29,6 @@ CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o
  /usr/include/SDL2/SDL_gesture.h
  /usr/include/SDL2/SDL_haptic.h
  /usr/include/SDL2/SDL_hints.h
- /usr/include/SDL2/SDL_image.h
  /usr/include/SDL2/SDL_joystick.h
  /usr/include/SDL2/SDL_keyboard.h
  /usr/include/SDL2/SDL_keycode.h
@@ -53,6 +52,7 @@ CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o
  /usr/include/SDL2/SDL_thread.h
  /usr/include/SDL2/SDL_timer.h
  /usr/include/SDL2/SDL_touch.h
+ /usr/include/SDL2/SDL_ttf.h
  /usr/include/SDL2/SDL_version.h
  /usr/include/SDL2/SDL_video.h
  /usr/include/SDL2/begin_code.h
@@ -60,6 +60,14 @@ CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o
 CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o
  /home/angelica/Development/CLion/LargeMon/src/cpp/Controller.cpp
  /home/angelica/Development/CLion/LargeMon/src/include/Controller.h
+CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o
+ /home/angelica/Development/CLion/LargeMon/src/cpp/ControllerBattleInstance.cpp
+ /home/angelica/Development/CLion/LargeMon/src/include/ControllerBattleInstance.h
+ /home/angelica/Development/CLion/LargeMon/src/include/LargeMonGenerator.h
+ /home/angelica/Development/CLion/LargeMon/src/include/Observer.h
+ /home/angelica/Development/CLion/LargeMon/src/include/ViewObserver.h
+ /home/angelica/Development/CLion/LargeMon/src/include/largeMonHeader/LargeMon.h
+ /home/angelica/Development/CLion/LargeMon/src/include/largeMonHeader/WaterLM.h
 CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o
  /home/angelica/Development/CLion/LargeMon/src/cpp/DescriptGen.cpp
  /home/angelica/Development/CLion/LargeMon/src/include/DescriptGen.h
@@ -82,7 +90,6 @@ CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o
  /usr/include/SDL2/SDL_gesture.h
  /usr/include/SDL2/SDL_haptic.h
  /usr/include/SDL2/SDL_hints.h
- /usr/include/SDL2/SDL_image.h
  /usr/include/SDL2/SDL_joystick.h
  /usr/include/SDL2/SDL_keyboard.h
  /usr/include/SDL2/SDL_keycode.h
@@ -106,6 +113,7 @@ CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o
  /usr/include/SDL2/SDL_thread.h
  /usr/include/SDL2/SDL_timer.h
  /usr/include/SDL2/SDL_touch.h
+ /usr/include/SDL2/SDL_ttf.h
  /usr/include/SDL2/SDL_version.h
  /usr/include/SDL2/SDL_video.h
  /usr/include/SDL2/begin_code.h
@@ -120,9 +128,13 @@ CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o
  /home/angelica/Development/CLion/LargeMon/src/include/largeMonHeader/WoodLM.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o
  /home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonMainView.cpp
- /home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonMainView.h
  /home/angelica/Development/CLion/LargeMon/src/include/ButtonTexture.h
+ /home/angelica/Development/CLion/LargeMon/src/include/ControllerBattleInstance.h
  /home/angelica/Development/CLion/LargeMon/src/include/LTexture.h
+ /home/angelica/Development/CLion/LargeMon/src/include/LargeMonMainView.h
+ /home/angelica/Development/CLion/LargeMon/src/include/Observer.h
+ /home/angelica/Development/CLion/LargeMon/src/include/ViewObserver.h
+ /home/angelica/Development/CLion/LargeMon/src/include/largeMonHeader/LargeMon.h
  /usr/include/SDL2/SDL.h
  /usr/include/SDL2/SDL_assert.h
  /usr/include/SDL2/SDL_atomic.h
@@ -139,7 +151,6 @@ CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o
  /usr/include/SDL2/SDL_gesture.h
  /usr/include/SDL2/SDL_haptic.h
  /usr/include/SDL2/SDL_hints.h
- /usr/include/SDL2/SDL_image.h
  /usr/include/SDL2/SDL_joystick.h
  /usr/include/SDL2/SDL_keyboard.h
  /usr/include/SDL2/SDL_keycode.h
@@ -163,6 +174,7 @@ CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o
  /usr/include/SDL2/SDL_thread.h
  /usr/include/SDL2/SDL_timer.h
  /usr/include/SDL2/SDL_touch.h
+ /usr/include/SDL2/SDL_ttf.h
  /usr/include/SDL2/SDL_version.h
  /usr/include/SDL2/SDL_video.h
  /usr/include/SDL2/begin_code.h

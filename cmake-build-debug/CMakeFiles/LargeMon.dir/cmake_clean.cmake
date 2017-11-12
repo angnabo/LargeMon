@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o"
   "CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o"
   "CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o"
   "LargeMon.pdb"
   "LargeMon"
 )

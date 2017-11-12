@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/angelica/Development/CLion/LargeMon/src/cpp/BattleInstance.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/ButtonTexture.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/Controller.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o"
+  "/home/angelica/Development/CLion/LargeMon/src/cpp/ControllerBattleInstance.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/DescriptGen.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/LTexture.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonGenerator.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o"

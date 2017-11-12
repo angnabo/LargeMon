@@ -28,7 +28,6 @@ CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_gamec
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_gesture.h
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_haptic.h
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_hints.h
-CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_image.h
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_joystick.h
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_keyboard.h
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_keycode.h
@@ -52,6 +51,7 @@ CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_syste
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_thread.h
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_timer.h
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_touch.h
+CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_ttf.h
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_version.h
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/SDL_video.h
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/begin_code.h
@@ -59,6 +59,14 @@ CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: /usr/include/SDL2/close_cod
 
 CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o: ../src/cpp/Controller.cpp
 CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o: ../src/include/Controller.h
+
+CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/cpp/ControllerBattleInstance.cpp
+CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/ControllerBattleInstance.h
+CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/LargeMonGenerator.h
+CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/Observer.h
+CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/ViewObserver.h
+CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/largeMonHeader/LargeMon.h
+CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/largeMonHeader/WaterLM.h
 
 CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o: ../src/cpp/DescriptGen.cpp
 CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o: ../src/include/DescriptGen.h
@@ -81,7 +89,6 @@ CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_gamecontro
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_gesture.h
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_haptic.h
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_hints.h
-CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_image.h
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_joystick.h
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_keyboard.h
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_keycode.h
@@ -105,6 +112,7 @@ CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_system.h
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_thread.h
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_timer.h
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_touch.h
+CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_ttf.h
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_version.h
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/SDL_video.h
 CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: /usr/include/SDL2/begin_code.h
@@ -119,9 +127,13 @@ CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o: ../src/include/largeMon
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o: ../src/include/largeMonHeader/WoodLM.h
 
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: ../src/cpp/LargeMonMainView.cpp
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: ../src/cpp/LargeMonMainView.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: ../src/include/ButtonTexture.h
+CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: ../src/include/ControllerBattleInstance.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: ../src/include/LTexture.h
+CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: ../src/include/LargeMonMainView.h
+CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: ../src/include/Observer.h
+CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: ../src/include/ViewObserver.h
+CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: ../src/include/largeMonHeader/LargeMon.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_assert.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_atomic.h
@@ -138,7 +150,6 @@ CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_ga
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_gesture.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_haptic.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_hints.h
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_image.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_joystick.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_keyboard.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_keycode.h
@@ -162,6 +173,7 @@ CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_sy
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_thread.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_timer.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_touch.h
+CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_ttf.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_version.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL_video.h
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: /usr/include/SDL2/begin_code.h

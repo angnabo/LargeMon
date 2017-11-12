@@ -15,8 +15,7 @@ class LargeMon {
 public:
     LargeMon(const int *, const int *, const int *);
 
-    LargeMon();
-
+    string getName() {return "largemon name"; };
     void takeDamage(int);
     void defend();
     virtual int specialAttack() const = 0;
@@ -28,8 +27,6 @@ public:
 
     void attach(class Observer *);
     void notify();
-
-    ~LargeMon();
 
 protected:
     int hp;
