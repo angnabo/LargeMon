@@ -71,6 +71,8 @@ stdio.h
 -
 string
 -
+iostream
+-
 ../include/LTexture.h
 /home/angelica/Development/CLion/LargeMon/src/include/LTexture.h
 ../include/ButtonTexture.h
