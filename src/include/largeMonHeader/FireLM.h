@@ -11,7 +11,7 @@
 
 class FireLM: public LargeMon {
 public:
-    FireLM(const int *, const int *, const int *);
+    FireLM(const int *, const int *, const int *, const string *);
 
     int specialAttack() const;
     string getType() const;

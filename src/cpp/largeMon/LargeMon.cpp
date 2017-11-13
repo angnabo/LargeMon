@@ -7,24 +7,26 @@
 
 //using namespace std;
 
-LargeMon::LargeMon(const int* hp, const int* damage, const int* size){
+LargeMon::LargeMon(const int* hp, const int* damage, const int* size, const string * name){
+    this->name = *name;
     this->hp = *hp;
+    this->currentHp = *hp;
     this->damage = *damage;
     this->size = *size;
     //this->type = type;
 }
 
-//string LargeMon::getName() const {
-//    return "largemon name";
-//}
+string LargeMon::getName() const {
+    return name;
+}
 
 void LargeMon::takeDamage(int damage) {
-    hp -= damage;
+    currentHp -= damage;
     notify();
 }
 
 void LargeMon::defend(){
-    hp += 20;
+    currentHp += 20;
     notify();
 }
 
@@ -41,6 +43,8 @@ void LargeMon::notify() {
 void LargeMon::attach(Observer * obs) {
     views.push_back(obs);
 }
+
+LargeMon::~LargeMon() = default;
 
 //string LargeMon::getType() {
 //    return "";

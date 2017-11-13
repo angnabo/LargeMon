@@ -11,7 +11,7 @@
 
 class WoodLM: public LargeMon {
 public:
-    WoodLM(const int *, const int *, const int *);
+    WoodLM(const int *, const int *, const int *, const string *);
 
     int specialAttack() const;
     string getType() const;

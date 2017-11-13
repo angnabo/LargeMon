@@ -14,11 +14,11 @@ ViewObserver::~ViewObserver() {
 }
 
 void ViewObserver::update() const {
-    cout << largeMon->getType() << "LargeMon health: " << largeMon->getHp() << endl;
+    cout << largeMon->getType() << "LargeMon health: " << largeMon->getCurrentHp() << endl;
 }
 
 int ViewObserver::getCurrentHp() const{
-    return largeMon->getHp();
+    return largeMon->getCurrentHp();
 }
 
 string ViewObserver::getName() const{

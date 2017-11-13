@@ -59,6 +59,15 @@ bool LTexture::loadFromFile( SDL_Renderer* gRenderer, std::string path )
     return mTexture != NULL;
 }
 
+/*
+
+Render a Horizontal Percentage Bar
+Drains left to right normally, if width is negative it will drain right to left.
+Percent is clamped 0.0f - 1.0f
+
+*/
+
+
 bool LTexture::loadFromRenderedText(SDL_Renderer * gRenderer, TTF_Font * gFont, std::string textureText, SDL_Color textColor )
 {
     //Get rid of preexisting texture
@@ -139,11 +148,59 @@ void LTexture::render(SDL_Renderer* gRenderer, int x, int y )
     SDL_RenderCopy( gRenderer, mTexture, NULL, &renderQuad );
 }
 
-void LTexture::renderEnlarge(SDL_Renderer* gRenderer, int x, int y , int w, int h)
+void LTexture::renderEnlarge(SDL_Renderer* gRenderer, int x, int y , float Percent)
 {
+    int w = mWidth;
+    int h = mHeight;
+
+    int pw = (int)((float)w * Percent);
+    int px = x + (w - pw);
+    SDL_Rect fgrect = { 0, 0, pw, h };
     //Set rendering space and render to screen
-    SDL_Rect renderQuad = { x, y, w, h };
+    SDL_Rect renderQuad = { px, y, pw, h };
     SDL_RenderCopy( gRenderer, mTexture, NULL, &renderQuad );
+}
+
+void LTexture::setSize(int x, int y) {
+    mWidth = x;
+    mHeight = y;
+}
+
+void LTexture::renderClip(SDL_Renderer* gRenderer, int x, int y , float Percent)
+{
+    int w = mWidth;
+    int h = mHeight;
+//
+//    //Set rendering space and render to screen
+//    SDL_Rect renderQuad = { x, y, mWidth, mHeight };
+//
+    int pw = (int)((float)w * Percent);
+//    int px = x + (w - pw);
+//    SDL_Rect clip = { x, y, pw, h };
+//    SDL_Rect * clipPtr = &clip;
+//
+//    if( &clip != NULL )
+//    {
+//        renderQuad.w = clipPtr->w;
+//        renderQuad.h = clipPtr->h;
+//    }
+//
+//    SDL_RenderCopy( gRenderer, mTexture, clipPtr, &renderQuad );
+    //Set rendering space and render to screen
+
+    SDL_Rect clip = { 0, 0, pw, h };
+    SDL_Rect * clipPtr = &clip;
+    SDL_Rect renderQuad = { x, y, mWidth, mHeight };
+
+    //Set clip rendering dimensions
+    if( &clip != NULL )
+    {
+        renderQuad.w = clipPtr->w;
+        renderQuad.h = clipPtr->h;
+    }
+
+    //Render to screen
+    SDL_RenderCopy( gRenderer, mTexture, clipPtr, &renderQuad );
 }
 
 void LTexture::renderSprite( SDL_Renderer* gRenderer, int x, int y, SDL_Rect* clip )

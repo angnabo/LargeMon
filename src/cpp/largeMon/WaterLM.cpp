@@ -4,8 +4,8 @@
 
 #include "../../include/largeMonHeader/WaterLM.h"
 
-WaterLM::WaterLM(const int *hp, const int *damage, const int *size)
-: LargeMon(hp, damage, size) {
+WaterLM::WaterLM(const int *hp, const int *damage, const int *size, const string * name)
+: LargeMon(hp, damage, size, name) {
 
 }
 
@@ -16,3 +16,4 @@ int WaterLM::specialAttack() const {
 string WaterLM::getType() const {
     return "water";
 }
+

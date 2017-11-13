@@ -5,62 +5,12 @@
 #include <iostream>
 #include <random>
 #include "../include/LargeMonGenerator.h"
-#include "../include/largeMonHeader/WaterLM.h"
-#include "../include/largeMonHeader/FireLM.h"
-#include "../include/largeMonHeader/WoodLM.h"
 
 LargeMonGenerator::LargeMonGenerator() = default;
 
-//LargeMon * LargeMonGenerator::generateLargeMon(LargeMon *largeMon) {
-//
-//    //health
-//    // define the range
-//
-//    int health = randomInRange(MIN_HEALTH, MAX_HEALTH);
-//
-//    //damage
-//    int damage = 0;
-//    if (health < 300){
-//        damage = (int) randomInRange(50, 80);
-//    } else {
-//        damage = (int) randomInRange(30, 55);
-//    }
-//
-//    int size = (int) randomInRange(1, 10);;
-//
-//    string type = generateType();
-//
-//    int randType = randomInRange(0, 2);
-//    switch (randType){
-//        case 0 : {
-//            WaterLM lm(&health, &damage, &size);
-//            largeMon = &lm;
-//            break;
-//        }
-//        case 1 : {
-//            FireLM lm(&health, &damage, &size);
-//            largeMon = &lm;
-//            break;
-//        }
-//        case 2 : {
-//            WoodLM lm(&health, &damage, &size);
-//            largeMon = &lm;
-//            break;
-//        }
-//        default: {
-//            WoodLM lm(&health, &damage, &size);
-//            largeMon = &lm;
-//            break;
-//        }
-//    }
-//
-//}
+
 
 LargeMon * LargeMonGenerator::generateLargeMon() {
-
-    //LargeMon * largeMon;
-    //health
-     // define the range
 
     int health = randomInRange(MIN_HEALTH, MAX_HEALTH);
 
@@ -74,63 +24,28 @@ LargeMon * LargeMonGenerator::generateLargeMon() {
 
     int size = (int) randomInRange(1, 10);;
 
-    string type = generateType();
-
-    //WaterLM wlm(&health, &damage, &size);
-    //largeMon = &wlm;
+    string name = generateName();
 
     int randType = randomInRange(0, 2);
     switch (randType){
         case 0 : {
-            auto * lm = new WaterLM(&health, &damage, &size);
+            auto * lm = new WaterLM(&health, &damage, &size, &name);
             return lm;
         }
         case 1 : {
-            auto * lm = new FireLM(&health, &damage, &size);
+            auto * lm = new FireLM(&health, &damage, &size, &name);
             return lm;
         }
         case 2 : {
-            auto * lm = new WoodLM(&health, &damage, &size);
+            auto * lm = new WoodLM(&health, &damage, &size, &name);
             return lm;
         }
         default: {
-            auto * lm = new WoodLM(&health, &damage, &size);
+            auto * lm = new WoodLM(&health, &damage, &size, &name);
             return lm;
         }
     }
-
-    //LargeMon l(&health, &damage, &size);
-
-    //return &wlm;
-
 }
-
-//WaterLM LargeMonGenerator::generateWaterLM() {
-//
-//    LargeMon largeMon;
-//
-//    //health
-//    // define the range
-//
-//    int health = randomInRange(MIN_HEALTH, MAX_HEALTH);
-//
-//    //damage
-//    int damage = 0;
-//    if (health < 300){
-//        damage = (int) randomInRange(50, 80);
-//    } else {
-//        damage = (int) randomInRange(30, 55);
-//    }
-//
-//    int size = (int) randomInRange(1, 10);;
-//
-//    string type = generateType();
-//
-//    WaterLM l(&health, &damage, &size);
-//
-//    return l;
-//
-//}
 
 int LargeMonGenerator::randomInRange(int min, int max){
     std::random_device rd; // obtain a random number from hardware
@@ -139,6 +54,6 @@ int LargeMonGenerator::randomInRange(int min, int max){
     return (int) distr(eng);
 }
 
-string LargeMonGenerator::generateType() {
-    return largeMonTypes[randomInRange(0, largeMonTypes.size()-1)];
+string LargeMonGenerator::generateName() {
+    return largeMonNames[randomInRange(0, largeMonNames.size()-1)];
 }

@@ -10,10 +10,11 @@
 
 class WaterLM: public LargeMon {
 public:
-    WaterLM(const int *hp, const int *damage, const int *size);
+    WaterLM(const int *hp, const int *damage, const int *size, const string *);
 
     int specialAttack() const;
     string getType() const;
+
 
 
 private:

@@ -4,8 +4,8 @@
 
 #include "../../include/largeMonHeader/FireLM.h"
 
-FireLM::FireLM(const int *hp, const int *damage, const int *size)
-        : LargeMon(hp, damage, size) {
+FireLM::FireLM(const int *hp, const int *damage, const int *size, const string * name)
+        : LargeMon(hp, damage, size, name) {
 
 }
 

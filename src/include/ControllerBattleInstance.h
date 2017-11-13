@@ -14,11 +14,14 @@ public:
     ControllerBattleInstance();
     void fight();
     string action(int *);
-    void computerMove();
+    string computerMove();
     int randomInRange(int, int);
     bool determineCounter(string *, string *);
     bool isGameOver();
+    float getEnemyLargeMonCurrentHpPercent();
+    float getPlayerLargeMonCurrentHpPercent();
     string getEnemyLargeMonName();
+    string getPlayerLargeMonName();
     virtual ~ControllerBattleInstance();
 private:
     LargeMon * player;
