@@ -6,8 +6,10 @@ CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o: ../src/include/BattleInsta
 CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o: ../src/include/LargeMonGenerator.h
 CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o: ../src/include/Observer.h
 CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o: ../src/include/ViewObserver.h
+CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o: ../src/include/largeMonHeader/FireLM.h
 CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o: ../src/include/largeMonHeader/LargeMon.h
 CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o: ../src/include/largeMonHeader/WaterLM.h
+CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o: ../src/include/largeMonHeader/WoodLM.h
 
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: ../src/cpp/ButtonTexture.cpp
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: ../src/include/ButtonTexture.h
@@ -65,8 +67,10 @@ CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/C
 CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/LargeMonGenerator.h
 CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/Observer.h
 CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/ViewObserver.h
+CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/largeMonHeader/FireLM.h
 CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/largeMonHeader/LargeMon.h
 CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/largeMonHeader/WaterLM.h
+CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/include/largeMonHeader/WoodLM.h
 
 CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o: ../src/cpp/DescriptGen.cpp
 CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o: ../src/include/DescriptGen.h
@@ -213,6 +217,8 @@ CMakeFiles/LargeMon.dir/src/cpp/main.cpp.o: ../src/include/DescriptGen.h
 CMakeFiles/LargeMon.dir/src/cpp/main.cpp.o: ../src/include/LargeMonGenerator.h
 CMakeFiles/LargeMon.dir/src/cpp/main.cpp.o: ../src/include/Observer.h
 CMakeFiles/LargeMon.dir/src/cpp/main.cpp.o: ../src/include/ViewObserver.h
+CMakeFiles/LargeMon.dir/src/cpp/main.cpp.o: ../src/include/largeMonHeader/FireLM.h
 CMakeFiles/LargeMon.dir/src/cpp/main.cpp.o: ../src/include/largeMonHeader/LargeMon.h
 CMakeFiles/LargeMon.dir/src/cpp/main.cpp.o: ../src/include/largeMonHeader/WaterLM.h
+CMakeFiles/LargeMon.dir/src/cpp/main.cpp.o: ../src/include/largeMonHeader/WoodLM.h
 

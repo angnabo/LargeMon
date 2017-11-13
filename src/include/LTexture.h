@@ -45,6 +45,9 @@ public:
     int getWidth();
     int getHeight();
 
+    int getOriginalWidth();
+    int getOriginalHeight();
+
     //void setSize(int, int);
 
     void renderClip(SDL_Renderer *gRenderer, int x, int y, float Percent);
@@ -58,6 +61,8 @@ private:
     //Image dimensions
     int mWidth;
     int mHeight;
+    int originalWidth;
+    int originalHeight;
 
 };
 

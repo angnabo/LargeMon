@@ -22,11 +22,17 @@ string LargeMon::getName() const {
 
 void LargeMon::takeDamage(int damage) {
     currentHp -= damage;
+    if(currentHp < 0){
+        currentHp = 0;
+    }
     notify();
 }
 
 void LargeMon::defend(){
     currentHp += 20;
+    if(currentHp > hp){
+        currentHp = hp;
+    }
     notify();
 }
 

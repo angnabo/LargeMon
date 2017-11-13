@@ -14,24 +14,30 @@ public:
     ControllerBattleInstance();
     void fight();
     string action(int *);
-    string computerMove();
+    string enemyMove();
     int randomInRange(int, int);
     bool determineCounter(string *, string *);
     bool isGameOver();
+    bool isEnemyDead();
+    bool isPlayerDead();
+    int getPlayerCurrentHp();
+    int getEnemyCurrentHp();
     float getEnemyLargeMonCurrentHpPercent();
     float getPlayerLargeMonCurrentHpPercent();
     string getEnemyLargeMonName();
     string getPlayerLargeMonName();
+    string getWinner();
     virtual ~ControllerBattleInstance();
 private:
     LargeMon * player;
-    LargeMon * computer;
+    LargeMon * enemy;
     int playerSpecAttkCount;
-    int computerSpecAttkCounter;
+    int enemySpecAttkCounter;
     ViewObserver * playerView;
     ViewObserver * enemyView;
     //LargeMon * playerPtr;
     bool isOver;
+
 };
 
 

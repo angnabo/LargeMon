@@ -14,15 +14,15 @@ ControllerBattleInstance::ControllerBattleInstance() {
 
 
     playerSpecAttkCount = 0;
-    computerSpecAttkCounter = 0;
+    enemySpecAttkCounter = 0;
     player = generator.generateLargeMon();
-    computer = generator.generateLargeMon();
+    enemy = generator.generateLargeMon();
 
 //    ViewObserver playerView(player);
-//    ViewObserver enemyView(computer);
+//    ViewObserver enemyView(enemy);
 
     playerView = new ViewObserver(player);
-    enemyView = new ViewObserver(computer);
+    enemyView = new ViewObserver(enemy);
 
     isOver = false;
 }
@@ -30,16 +30,16 @@ ControllerBattleInstance::ControllerBattleInstance() {
 void ControllerBattleInstance::fight() {
 //
 //    ViewObserver playerView(player);
-//    ViewObserver enemyView(computer);
+//    ViewObserver enemyView(enemy);
 //
 //    cout << "Player: health: " << player->getHp() << ", Damage: " <<
 //         player->getDamage() << ", Size: " << player->getSize() <<
 //         ", Type: " << player->getType() << endl;
-//    cout << "Computer: health: " << computer->getHp() << ", Damage: " <<
-//         computer->getDamage() << ", Size: " << computer->getSize() <<
-//         ", Type: " << computer->getType() << endl;
+//    cout << "enemy: health: " << enemy->getHp() << ", Damage: " <<
+//         enemy->getDamage() << ", Size: " << enemy->getSize() <<
+//         ", Type: " << enemy->getType() << endl;
 //
-//    while((player->getHp() > 0 && computer->getHp() > 0)){
+//    while((player->getHp() > 0 && enemy->getHp() > 0)){
 //        cout << "Enter command." << endl;
 //        int command;
 //        cin >> command;
@@ -49,9 +49,9 @@ void ControllerBattleInstance::fight() {
 //        }
 //        switch(command){
 //            case 1: //attack
-//                computer->takeDamage(player->getDamage());
+//                enemy->takeDamage(player->getDamage());
 //                cout << "Player dealt " << player->getDamage() << " to the enemy." << endl;
-//                //cout << "Enemy health: " << computer->getHp() << endl;
+//                //cout << "Enemy health: " << enemy->getHp() << endl;
 //                break;
 //            case 2: //defend1
 //                player->defend();
@@ -60,9 +60,9 @@ void ControllerBattleInstance::fight() {
 //            case 3: //special attack
 //                if(playerSpecAttkCount == 0) {
 //                    string playerType = player->getType();
-//                    string computerType = computer->getType();
-//                    if (determineCounter(&playerType, &computerType)) {
-//                        computer->takeDamage(player->specialAttack());
+//                    string enemyType = enemy->getType();
+//                    if (determineCounter(&playerType, &enemyType)) {
+//                        enemy->takeDamage(player->specialAttack());
 //                        cout << "Player used special attack for " << player->specialAttack() << endl;
 //                        playerSpecAttkCount++;
 //                    } else {
@@ -73,8 +73,8 @@ void ControllerBattleInstance::fight() {
 //                }
 //                break;
 //        }
-//        computerMove();
-//        if(computer->getHp() <= 0){
+//        enemyMove();
+//        if(enemy->getHp() <= 0){
 //            cout << "Player wins.";
 //        }
 //        if(player->getHp() <= 0){
@@ -91,35 +91,32 @@ int ControllerBattleInstance::randomInRange(int min, int max){
     return (int) distr(eng);
 }
 
-string ControllerBattleInstance::computerMove() {
+string ControllerBattleInstance::enemyMove() {
     string move = "";
-    int random = randomInRange(1, 4);
+    int random = randomInRange(1, 6);
     if (random == 1){
-        computer->defend();
-        move = "The enemy healed for 20 hp. Enemy hp is: " + to_string(computer->getCurrentHp());
-        cout << "The enemy healed for 20 hp. Enemy hp is: " << computer->getHp() << endl;
+        enemy->defend();
+        move = "The enemy healed for 20 hp. Enemy hp is: " + to_string(enemy->getCurrentHp());
     } else if (random == 2) {
         string playerType = player->getType();
-        string computerType = computer->getType();
-        if(determineCounter(&computerType, &playerType)) {
-            if (computerSpecAttkCounter == 0) {
-                player->takeDamage(computer->specialAttack());
-                move = "The enemy used the special attack for: " + to_string(computer->specialAttack());
-                cout << "The enemy used the special attack for: " << computer->specialAttack() << endl;
-                //cout << "The player hp is: " << player->getHp() << endl;
-                computerSpecAttkCounter++;
+        string enemyType = enemy->getType();
+        if(determineCounter(&enemyType, &playerType)) {
+            if (enemySpecAttkCounter == 0) {
+                player->takeDamage(enemy->specialAttack());
+                move = "The enemy used the special attack for: " + to_string(enemy->specialAttack());
+                enemySpecAttkCounter++;
             }
         } else {
-            player->takeDamage(computer->getDamage());
-            move = "The enemy attacked for " + to_string(computer->getDamage());
-            cout << "The enemy attacked for " << computer->getDamage() << endl;
-            //cout << "Player hp is: " << player->getHp() << endl;
+            player->takeDamage(enemy->getDamage());
+            move = "The enemy attacked for " + to_string(enemy->getDamage());
         }
     } else {
-        player->takeDamage(computer->getDamage());
-        move = "The enemy attacked for " + to_string(computer->getDamage()) + ". The player hp is: " + to_string(playerView->getCurrentHp());
-        cout << "The enemy attacked for " << computer->getDamage() << endl;
-        //cout << "Player hp is: " << player->getHp() << endl;
+        player->takeDamage(enemy->getDamage());
+        if(isPlayerDead()){
+            move = getWinner();
+        } else {
+            move = "The enemy attacked for " + to_string(enemy->getDamage()) + ". The player hp is: " + to_string(playerView->getCurrentHp());
+        }
     }
     return move;
 }
@@ -138,7 +135,7 @@ bool ControllerBattleInstance::determineCounter(string * playerType, string * en
 }
 
 string ControllerBattleInstance::getEnemyLargeMonName(){
-    string name = computer->getName();
+    string name = enemy->getName();
     return name;
 }
 
@@ -148,19 +145,20 @@ string ControllerBattleInstance::getPlayerLargeMonName(){
 }
 
 float ControllerBattleInstance::getEnemyLargeMonCurrentHpPercent(){
-    float hpPercent = playerView->getCurrentHp()/player->getHp();
-    cout << "enemy percent " << to_string(hpPercent);
+    float hpPercent = (float)enemyView->getCurrentHp()/(float)enemy->getHp();
     return hpPercent;
 }
 
 float ControllerBattleInstance::getPlayerLargeMonCurrentHpPercent(){
     float hpPercent = (float)playerView->getCurrentHp()/(float)player->getHp();//25/50*100
-    cout << "hp " << player->getHp();
-    cout << "current hp" << playerView->getCurrentHp();
-
-
-    cout << "player percent " << hpPercent;
     return hpPercent;
+}
+
+int ControllerBattleInstance::getPlayerCurrentHp(){
+    return playerView->getCurrentHp();
+}
+int ControllerBattleInstance::getEnemyCurrentHp() {
+    return enemyView->getCurrentHp();
 }
 
 ControllerBattleInstance::~ControllerBattleInstance() {
@@ -169,78 +167,63 @@ ControllerBattleInstance::~ControllerBattleInstance() {
 
 string ControllerBattleInstance::action(int * actionID) {
 
+    string action = "";
+
     if(!isGameOver()) {
-
-        string action = "";
-
-//        cout << "Player Type: " << player->getType() << ", Health: " << playerView->getCurrentHp()
-//             << ", Damage: " << player->getDamage() << ", Size: " << player->getSize() << endl << "\n";
-//        cout << "Enemy Type: " << computer->getType() << ", Health: " << enemyView->getCurrentHp()
-//             << ", Damage: " << computer->getDamage() << ", Size: " << computer->getSize() << endl << "\n";
-//        cout << "Enter command." << endl;
-//        int command;
-//        cin >> command;
-//        if (command != 1 && command != 2 && command != 3){
-//            cout << "Enter command." << endl;
-//            cin >> command;
-//        }
-        if (player->getCurrentHp() <= 0) {
-            cout << "Enemy wins.";
-            action = "Enemy wins!";
-            isOver = true;
-            return action;
-        }
         switch (*actionID) {
             case 0: //attack
-                action = "Player dealt " + to_string(player->getDamage()) + " to the enemy. " + computerMove();
-                cout << "Player dealt " << player->getDamage() << " to the enemy." << endl << "\n";
-                computer->takeDamage(player->getDamage());
-
+                enemy->takeDamage(player->getDamage());
+                if(isEnemyDead()){
+                    return getWinner();
+                } else {
+                    action = "Player dealt " + to_string(player->getDamage()) + " to the enemy. " + enemyMove();
+                }
                 break;
             case 1: //defend1
                 player->defend();
-                action = "Player healed for 20hp. " + computerMove();
-                cout << "Player healed for 20hp" << endl << "\n";
-                computerMove();
+                action = "Player healed for 20hp. " + enemyMove();
                 break;
             case 2: {//special attack
                 if (playerSpecAttkCount == 0) {
                     string playerType = player->getType();
-                    string computerType = computer->getType();
-                    if (determineCounter(&playerType, &computerType)) {
-                        computer->takeDamage(player->specialAttack());
-                        action = "Player used special attack for " + to_string(player->specialAttack()) + " damage. " + computerMove();
-                        cout << "Player used special attack for " << player->specialAttack() << endl << "\n";;
+                    string enemyType = enemy->getType();
+                    if (determineCounter(&playerType, &enemyType)) {
+                        enemy->takeDamage(player->specialAttack());
+                        action = "Player used special attack for " + to_string(player->specialAttack()) + " damage. " + enemyMove();
                         playerSpecAttkCount++;
-                        computerMove();
+                        enemyMove();
                     } else {
                         action = "LargeMon is not a counter";
-                        cout << "LargeMon is not a counter" << endl << "\n";
-                        break;
                     }
                 } else {
                     action = "Special Attack was already used";
-                    cout << "Special Attack was already used" << endl << "\n";
-                    break;
                 }
                 break;
             }
             default:break;
         }
-        if (computer->getCurrentHp() <= 0) {
-            cout << "Player wins.";
-            action = "Player wins!";
-            isOver = true;
-            return action;
-        }
-
-        return action;
     }
+    return (action.empty() ? getWinner() : action);
 }
+
+
 
 bool ControllerBattleInstance::isGameOver() {
-    return isOver;
+    return isPlayerDead() || isEnemyDead();
 }
+
+bool ControllerBattleInstance::isPlayerDead() {
+    return player->getCurrentHp() <= 0;
+}
+
+bool ControllerBattleInstance::isEnemyDead() {
+    return enemy->getCurrentHp() <= 0;
+}
+
+string ControllerBattleInstance::getWinner() {
+    return (isEnemyDead() ? "Player Won!" : "Enemy Won!");
+}
+
 
 
 

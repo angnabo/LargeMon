@@ -23,6 +23,7 @@ const int SCREEN_HEIGHT = 480;
 
 //Globally used font
 TTF_Font *gFont = NULL;
+TTF_Font *gHpFont = NULL;
 
 //Battle Instance Controller
 ControllerBattleInstance battleInstance;
@@ -60,8 +61,14 @@ ButtonTexture gBottomRightButton;
 LTexture gBottomTextPanel;
 LTexture gBottomPanelFull;
 
-LTexture gHealthBarBG;
-LTexture gHealthBarFG;
+LTexture gPlayerHpBarBG;
+LTexture gPlayerHpBarFG;
+LTexture gPlayerHealthText;
+
+LTexture gEnemyHpBarBG;
+LTexture gEnemyHpBarFG;
+LTexture gEnemyHealthText;
+
 
 LTexture gTopLeftButtonText;
 LTexture gTopRightButtonText;
@@ -148,13 +155,13 @@ bool loadMedia(string panel_text)
     bool success = true;
 
     //Load player texture
-    if( !gPlayerTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/shiba-inu2.bmp" ) )
+    if( !gPlayerTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/shibainu.bmp" ) )
     {
         printf( "Failed to load Foo' texture image!\n" );
         success = false;
     }
     //Load enemy texture
-    if( !gEnemyTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/shiba-inu2.bmp" ) )
+    if( !gEnemyTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/shiba-inu-21.bmp" ) )
     {
         printf( "Failed to load Foo' texture image!\n" );
         success = false;
@@ -178,39 +185,29 @@ bool loadMedia(string panel_text)
         success = false;
     }
     //Load large bottom panel
-    if( !gHealthBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/health_bar_bg.bmp" ) )
+    if( !gPlayerHpBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/health_bar_bg.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
     //Load large bottom panel
-    if( !gHealthBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/health_bar_fg.bmp" ) )
+    if( !gPlayerHpBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/health_bar_fg.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
-
-//    //Load Text BackgroundTexture
-//    if( !gTopLeftButtonText.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
-//    {
-//        printf( "Failed to load background texture image!\n" );
-//        success = false;
-//    }
-//    if( !gTopRightButtonText.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
-//    {
-//        printf( "Failed to load background texture image!\n" );
-//        success = false;
-//    }
-//    if( !gBottomLeftButtonText.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
-//    {
-//        printf( "Failed to load background texture image!\n" );
-//        success = false;
-//    }
-//    if( !gPanelText.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/bottom_panel.bmp" ) )
-//    {
-//        printf( "Failed to load background texture image!\n" );
-//        success = false;
-//    }
+    //Load large bottom panel
+    if( !gEnemyHpBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/health_bar_bg.bmp" ) )
+    {
+        printf( "Failed to load background texture image!\n" );
+        success = false;
+    }
+    //Load large bottom panel
+    if( !gEnemyHpBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/health_bar_fg.bmp" ) )
+    {
+        printf( "Failed to load background texture image!\n" );
+        success = false;
+    }
 
     //Load Font
     gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/src/resources/alterebro-pixel-font.ttf", 30 );
@@ -247,12 +244,25 @@ bool loadMedia(string panel_text)
             success = false;
         }
     }
-//
-//    if( !gHealthBar.renderHPBar( gRenderer, gFont, panel_text, textColor ) )
-//    {
-//        printf( "Failed to render text texture!\n" );
-//        success = false;
-//    }
+
+    gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/src/resources/alterebro-pixel-font.ttf", 20 );
+    if( gHpFont == NULL )
+    {
+        printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
+        success = false;
+    } else {
+        SDL_Color textColor = { 0, 0, 0 };
+        if( !gPlayerHealthText.loadFromRenderedText( gRenderer, gHpFont, to_string(battleInstance.getPlayerCurrentHp()), textColor ) )
+        {
+            printf( "Failed to render text texture!\n" );
+            success = false;
+        }
+        if( !gEnemyHealthText.loadFromRenderedText( gRenderer, gHpFont, to_string(battleInstance.getEnemyCurrentHp()), textColor ) )
+        {
+            printf( "Failed to render text texture!\n" );
+            success = false;
+        }
+    }
 
     //Load Button Textures
     if( !gTopLeftButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
@@ -328,21 +338,6 @@ bool loadMedia(string panel_text)
     return success;
 }
 
-void renderHPBar(SDL_Renderer * gRenderer, int x, int y, int w, int h, float Percent, SDL_Color FGColor, SDL_Color BGColor) {
-    Percent = Percent > 1.f ? 1.f : Percent < 0.f ? 0.f : Percent;
-    SDL_Color old;
-    SDL_GetRenderDrawColor(gRenderer, &old.r, &old.g, &old.g, &old.a);
-    SDL_Rect bgrect = { x, y, w, h };
-    SDL_SetRenderDrawColor(gRenderer, BGColor.r, BGColor.g, BGColor.b, BGColor.a);
-    SDL_RenderFillRect(gRenderer, &bgrect);
-    SDL_SetRenderDrawColor(gRenderer, FGColor.r, FGColor.g, FGColor.b, FGColor.a);
-    int pw = (int)((float)w * Percent);
-    int px = x + (w - pw);
-    SDL_Rect fgrect = { px, y, pw, h };
-    SDL_RenderFillRect(gRenderer, &fgrect);
-    SDL_SetRenderDrawColor(gRenderer, old.r, old.g, old.b, old.a);
-}
-
 bool updateText(string text)
 {
     SDL_Color textColor = { 0, 0, 0 };
@@ -363,29 +358,23 @@ bool updateText(string text)
     return success;
 }
 
-bool updateHealth(float percent)
+bool updateHp(LTexture & bar, LTexture & text, float percent, string hp)
 {
-//    //gHealthBarFG.free();
-//    cout << "Health bar width = " << gHealthBarFG.getWidth();
-//    //SDL_Color textColor = { 0, 0, 0 };
-//    bool success = true;
-//    //Load large bottom panel
-//    //Load large bottom panel
-//    if( !gHealthBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/health_bar_fg.bmp" ) )
-//    {
-//        printf( "Failed to load background texture image!\n" );
-//        success = false;
-//    }
-//    //gHealthBarBG.render(gRenderer, 30, 30);
-//    gHealthBarFG.renderClip(gRenderer, 31, 31, percent);
-//    cout << "Health bar width = " << gHealthBarFG.getWidth();
-//    SDL_RenderPresent( gRenderer );
-//    //gPanelText.render(gRenderer,30, 10);
-//    return success;
-    int pw = (int)((float)gHealthBarFG.getWidth() * percent);
-    gHealthBarFG.setSize(pw,17);
+    SDL_Color textColor = { 0, 0, 0 };
+    bool success = true;
+
+    if( !text.loadFromRenderedText( gRenderer, gHpFont, hp, textColor ) )
+    {
+        printf( "Failed to render text texture!\n" );
+        success = false;
+    }
+    text.render(gRenderer,35, 31);
+    int pw = (int)((float)bar.getOriginalWidth() * percent);
+    bar.setSize(pw,17);
     SDL_RenderPresent(gRenderer);
+    return success;
 }
+
 
 /*
 
@@ -407,8 +396,8 @@ void close()
     gBottomTextPanel.free();
     gBottomPanelFull.free();
 
-    gHealthBarFG.free();
-    gHealthBarBG.free();
+    gPlayerHpBarFG.free();
+    gPlayerHpBarBG.free();
 
     gTopRightButtonText.free();
     gTopLeftButtonText.free();
@@ -572,21 +561,17 @@ int main( int argc, char* args[] ) {
 
                             string textUpdate = "";
                             if(!battleInstance.isGameOver()) {
-                                updateHealth(battleInstance.getPlayerLargeMonCurrentHpPercent());
                                 textUpdate = battleInstance.action(&selectedButton);
                                 updateText(textUpdate);
-                                //gHealthBarFG.setSize(80,17);
-                                //SDL_RenderPresent( gRenderer );
-                                //gHealthBarFG.renderEnlarge(gRenderer, 10, 0, 0.5);
-                                //cout << "percent" + to_string(battleInstance.getPlayerLargeMonCurrentHpPercent());
-                                //gHealthBarFG.renderClip(gRenderer, 31, 31, battleInstance.getPlayerLargeMonCurrentHpPercent());
-
-                                //gHealthBarFG.renderEnlarge(gRenderer, 31, 31, battleInstance.getPlayerLargeMonCurrentHpPercent());
+                                updateHp(gPlayerHpBarFG, gPlayerHealthText,
+                                         battleInstance.getPlayerLargeMonCurrentHpPercent(),
+                                         to_string(battleInstance.getPlayerCurrentHp()));
+                                updateHp(gEnemyHpBarFG, gEnemyHealthText,
+                                         battleInstance.getEnemyLargeMonCurrentHpPercent(),
+                                         to_string(battleInstance.getEnemyCurrentHp()));
 
                             } else {
-                                if(!updateText("game over")) {
-                                    cout << "failed to load media";
-                                }
+                                updateText(battleInstance.getWinner());
                             }
                         }
                     }
@@ -608,14 +593,19 @@ int main( int argc, char* args[] ) {
                 gBackgroundTexture.render(gRenderer, 0, 0);
 
                 //Render player to the screen
-                gPlayerTexture.render(gRenderer, 60, 90);
+                gPlayerTexture.render(gRenderer, -20, 170);
 
                 //Render enemy to the screen
 
-                gEnemyTexture.render(gRenderer, 340, 90);
+                gEnemyTexture.render(gRenderer, 430, 40);
 
-                gHealthBarBG.render(gRenderer, 30, 30);
-                gHealthBarFG.renderClip(gRenderer, 31, 31, 1);
+                gPlayerHpBarBG.render(gRenderer, 30, 300);
+                gPlayerHpBarFG.render(gRenderer, 31, 301);
+                gPlayerHealthText.render(gRenderer, 35,301);
+
+                gEnemyHpBarBG.render(gRenderer, 480, 237);
+                gEnemyHpBarFG.render(gRenderer, 481, 238);
+                gEnemyHealthText.render(gRenderer, 485,238);
 
                 //Bottom viewport
                 SDL_Rect bottomViewport;
