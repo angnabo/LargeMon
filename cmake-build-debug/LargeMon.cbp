@@ -101,6 +101,12 @@
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/DescriptGen.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/HealthBarTexture.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/HealthBarTexture.h">
+			<Option target="LargeMon"/>
+		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/LTexture.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
@@ -126,9 +132,6 @@
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/WoodLM.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/cpp/main.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/include/BattleInstance.h">

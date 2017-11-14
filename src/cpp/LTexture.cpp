@@ -61,15 +61,6 @@ bool LTexture::loadFromFile( SDL_Renderer* gRenderer, std::string path )
     return mTexture != NULL;
 }
 
-/*
-
-Render a Horizontal Percentage Bar
-Drains left to right normally, if width is negative it will drain right to left.
-Percent is clamped 0.0f - 1.0f
-
-*/
-
-
 bool LTexture::loadFromRenderedText(SDL_Renderer * gRenderer, TTF_Font * gFont, std::string textureText, SDL_Color textColor )
 {
     //Get rid of preexisting texture

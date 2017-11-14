@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/LargeMon.dir/src/cpp/main.cpp.o"
   "CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o"
   "CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o"
   "CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o"
@@ -14,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o"
   "CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o"
   "CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o"
   "LargeMon.pdb"
   "LargeMon"
 )

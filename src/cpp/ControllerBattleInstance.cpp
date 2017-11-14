@@ -3,7 +3,6 @@
 //
 
 #include "../include/ControllerBattleInstance.h"
-
 #include <iostream>
 #include <random>
 #include "../include/LargeMonGenerator.h"
@@ -12,75 +11,15 @@
 ControllerBattleInstance::ControllerBattleInstance() {
     LargeMonGenerator generator;
 
-
     playerSpecAttkCount = 0;
     enemySpecAttkCounter = 0;
     player = generator.generateLargeMon();
     enemy = generator.generateLargeMon();
 
-//    ViewObserver playerView(player);
-//    ViewObserver enemyView(enemy);
-
     playerView = new ViewObserver(player);
     enemyView = new ViewObserver(enemy);
 
     isOver = false;
-}
-
-void ControllerBattleInstance::fight() {
-//
-//    ViewObserver playerView(player);
-//    ViewObserver enemyView(enemy);
-//
-//    cout << "Player: health: " << player->getHp() << ", Damage: " <<
-//         player->getDamage() << ", Size: " << player->getSize() <<
-//         ", Type: " << player->getType() << endl;
-//    cout << "enemy: health: " << enemy->getHp() << ", Damage: " <<
-//         enemy->getDamage() << ", Size: " << enemy->getSize() <<
-//         ", Type: " << enemy->getType() << endl;
-//
-//    while((player->getHp() > 0 && enemy->getHp() > 0)){
-//        cout << "Enter command." << endl;
-//        int command;
-//        cin >> command;
-//        if (command != 1 && command != 2 && command != 3){
-//            cout << "Enter command." << endl;
-//            cin >> command;
-//        }
-//        switch(command){
-//            case 1: //attack
-//                enemy->takeDamage(player->getDamage());
-//                cout << "Player dealt " << player->getDamage() << " to the enemy." << endl;
-//                //cout << "Enemy health: " << enemy->getHp() << endl;
-//                break;
-//            case 2: //defend1
-//                player->defend();
-//                cout << "Player healed for 20hp" << endl;
-//                break;
-//            case 3: //special attack
-//                if(playerSpecAttkCount == 0) {
-//                    string playerType = player->getType();
-//                    string enemyType = enemy->getType();
-//                    if (determineCounter(&playerType, &enemyType)) {
-//                        enemy->takeDamage(player->specialAttack());
-//                        cout << "Player used special attack for " << player->specialAttack() << endl;
-//                        playerSpecAttkCount++;
-//                    } else {
-//                        cout << "LargeMon is not a counter" << endl;
-//                    }
-//                } else {
-//                    cout << "Special Attack was already used" << endl;
-//                }
-//                break;
-//        }
-//        enemyMove();
-//        if(enemy->getHp() <= 0){
-//            cout << "Player wins.";
-//        }
-//        if(player->getHp() <= 0){
-//            cout << "Enemy wins.";
-//        }
-//    }
 }
 
 //to do: make in seperate class

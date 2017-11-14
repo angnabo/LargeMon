@@ -258,6 +258,33 @@ src/cpp/DescriptGen.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.s
 .PHONY : src/cpp/DescriptGen.cpp.s
 
+src/cpp/HealthBarTexture.o: src/cpp/HealthBarTexture.cpp.o
+
+.PHONY : src/cpp/HealthBarTexture.o
+
+# target to build an object file
+src/cpp/HealthBarTexture.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o
+.PHONY : src/cpp/HealthBarTexture.cpp.o
+
+src/cpp/HealthBarTexture.i: src/cpp/HealthBarTexture.cpp.i
+
+.PHONY : src/cpp/HealthBarTexture.i
+
+# target to preprocess a source file
+src/cpp/HealthBarTexture.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.i
+.PHONY : src/cpp/HealthBarTexture.cpp.i
+
+src/cpp/HealthBarTexture.s: src/cpp/HealthBarTexture.cpp.s
+
+.PHONY : src/cpp/HealthBarTexture.s
+
+# target to generate assembly for a file
+src/cpp/HealthBarTexture.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.s
+.PHONY : src/cpp/HealthBarTexture.cpp.s
+
 src/cpp/LTexture.o: src/cpp/LTexture.cpp.o
 
 .PHONY : src/cpp/LTexture.o
@@ -501,33 +528,6 @@ src/cpp/largeMon/WoodLM.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.s
 .PHONY : src/cpp/largeMon/WoodLM.cpp.s
 
-src/cpp/main.o: src/cpp/main.cpp.o
-
-.PHONY : src/cpp/main.o
-
-# target to build an object file
-src/cpp/main.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/main.cpp.o
-.PHONY : src/cpp/main.cpp.o
-
-src/cpp/main.i: src/cpp/main.cpp.i
-
-.PHONY : src/cpp/main.i
-
-# target to preprocess a source file
-src/cpp/main.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/main.cpp.i
-.PHONY : src/cpp/main.cpp.i
-
-src/cpp/main.s: src/cpp/main.cpp.s
-
-.PHONY : src/cpp/main.s
-
-# target to generate assembly for a file
-src/cpp/main.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/main.cpp.s
-.PHONY : src/cpp/main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -552,6 +552,9 @@ help:
 	@echo "... src/cpp/DescriptGen.o"
 	@echo "... src/cpp/DescriptGen.i"
 	@echo "... src/cpp/DescriptGen.s"
+	@echo "... src/cpp/HealthBarTexture.o"
+	@echo "... src/cpp/HealthBarTexture.i"
+	@echo "... src/cpp/HealthBarTexture.s"
 	@echo "... src/cpp/LTexture.o"
 	@echo "... src/cpp/LTexture.i"
 	@echo "... src/cpp/LTexture.s"
@@ -579,9 +582,6 @@ help:
 	@echo "... src/cpp/largeMon/WoodLM.o"
 	@echo "... src/cpp/largeMon/WoodLM.i"
 	@echo "... src/cpp/largeMon/WoodLM.s"
-	@echo "... src/cpp/main.o"
-	@echo "... src/cpp/main.i"
-	@echo "... src/cpp/main.s"
 .PHONY : help
 
 
