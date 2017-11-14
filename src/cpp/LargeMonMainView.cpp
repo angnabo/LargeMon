@@ -7,10 +7,6 @@
 #include <SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL_ttf.h>
-#include "SDL2/SDL_mixer.h"
-//#include <SDL_ttf.h>
-#include<SDL2/SDL_ttf.h>
-#include <stdio.h>
 #include <string>
 #include <iostream>
 #include "../include/LTexture.h"
@@ -79,14 +75,8 @@ LTexture gPanelText;
 ButtonTexture buttons[4];
 SDL_Rect gSpriteClips[ 4 ];
 LTexture gSpriteSheetTexture;
-//SDL_Texture *gViewport;
 SDL_Texture* loadTexture( std::string path );
 SDL_Texture* gTexture = NULL;
-
-
-//int selectedButton;
-
-
 
 bool init()
 {
@@ -209,7 +199,7 @@ bool loadMedia(string panel_text)
         success = false;
     }
 
-    //Load Font
+    //Load ttf pixel font large size
     gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/src/resources/alterebro-pixel-font.ttf", 30 );
     if( gFont == NULL )
     {
@@ -244,7 +234,7 @@ bool loadMedia(string panel_text)
             success = false;
         }
     }
-
+    //Open ttf pixel font small size
     gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/src/resources/alterebro-pixel-font.ttf", 20 );
     if( gHpFont == NULL )
     {
@@ -293,48 +283,6 @@ bool loadMedia(string panel_text)
     buttons[2] = gBottomLeftButton;
     buttons[3] = gBottomRightButton;
 
-
-    //Load sprite sheet texture
-    if( !gSpriteSheetTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/buttons.bmp" ) )
-    {
-        printf( "Failed to load sprite sheet texture!\n" );
-        success = false;
-    }
-    else
-    {
-        //Set top left sprite
-        gSpriteClips[ 0 ].x =   0;
-        gSpriteClips[ 0 ].y =   0;
-        gSpriteClips[ 0 ].w = 300;
-        gSpriteClips[ 0 ].h = 75;
-
-        //Set top right sprite
-        gSpriteClips[ 1 ].x = 300;
-        gSpriteClips[ 1 ].y =   0;
-        gSpriteClips[ 1 ].w = 300;
-        gSpriteClips[ 1 ].h = 75;
-
-        //Set bottom left sprite
-        gSpriteClips[ 2 ].x =   0;
-        gSpriteClips[ 2 ].y = 75;
-        gSpriteClips[ 2 ].w = 300;
-        gSpriteClips[ 2 ].h = 75;
-
-        //Set bottom right sprite
-        gSpriteClips[ 3 ].x = 300;
-        gSpriteClips[ 3 ].y = 75;
-        gSpriteClips[ 3 ].w = 300;
-        gSpriteClips[ 3 ].h = 75;
-    }
-
-//    //Load texture
-//    gTexture = loadTexture( "/home/angelica/Development/CLion/LazyFoo/tut10/viewport.png" );
-//    if( gTexture == NULL )
-//    {
-//        printf( "Failed to load texture image!\n" );
-//        success = false;
-//    }
-
     return success;
 }
 
@@ -342,7 +290,7 @@ bool updateText(string text)
 {
     SDL_Color textColor = { 0, 0, 0 };
     bool success = true;
-    //Load large bottom panel
+    //Load font again
     if( !gBottomPanelFull.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/bottom_panel_full.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
@@ -396,9 +344,16 @@ void close()
     gBottomTextPanel.free();
     gBottomPanelFull.free();
 
+    //Free health bars
     gPlayerHpBarFG.free();
     gPlayerHpBarBG.free();
+    gPlayerHealthText.free();
 
+    gEnemyHpBarFG.free();
+    gEnemyHpBarBG.free();
+    gEnemyHealthText.free();
+
+    //Free button text
     gTopRightButtonText.free();
     gTopLeftButtonText.free();
     gBottomRightButtonText.free();
@@ -485,7 +440,7 @@ int main( int argc, char* args[] ) {
     SDL_Color col1 = color(0, 168, 107, 50);
     SDL_Color col2 = color(188, 3, 107, 50);
 
-    //SDL_Rect a = renderHPBar(30, 30, 100, 10, battleInstance.getPlayerLargeMonCurrentHpPercent(), col1, col2);
+
 
     panelTextString = "A wild " + battleInstance.getEnemyLargeMonName() + " appears!";
     //Start up SDL and create window
@@ -571,7 +526,10 @@ int main( int argc, char* args[] ) {
                                          to_string(battleInstance.getEnemyCurrentHp()));
 
                             } else {
+                                //gBottomPanelFull.render(gRenderer, 10,0);
                                 updateText(battleInstance.getWinner());
+                                //gBottomTextPanel.free();
+                                //SDL_RenderPresent(gRenderer);
                             }
                         }
                     }
@@ -635,29 +593,6 @@ int main( int argc, char* args[] ) {
                 gBottomRightButtonText.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth(),
                                               Y_BUTTON_OFFSET+gTopRightButton.getHeight()+14);
 
-                //gBottomPanelFull.render(gRenderer, 10,0);
-                //gBottomPanelFull.setColor();
-//                gTopLeftButton.setColor(r, g, b);
-//                gTopRightButton.setColor(r, g, b);
-//                gBottomLeftButton.setColor(r, g, b);
-//                gBottomRightButton.setColor(r, g, b);
-
-//				gSpriteSheetTexture.renderSprite( gRenderer, 0, 0, &gSpriteClips[ 0 ] );
-//				//gSpriteSheetTexture.setColor(r, b, g);
-//				//Render top right sprite
-//				gSpriteSheetTexture.renderSprite( gRenderer,SCREEN_WIDTH - gSpriteClips[ 1 ].w, 0, &gSpriteClips[ 1 ] );
-//
-//				//Render bottom left sprite
-//				gSpriteSheetTexture.renderSprite( gRenderer, 0, SCREEN_HEIGHT / 3 - gSpriteClips[ 2 ].h, &gSpriteClips[ 2 ] );
-//
-//				//Render bottom right sprite
-//				gSpriteSheetTexture.renderSprite( gRenderer, SCREEN_WIDTH - gSpriteClips[ 3 ].w, SCREEN_HEIGHT/3 - gSpriteClips[ 3 ].h, &gSpriteClips[ 3 ] );
-
-
-                //SDL_Texture texture = (SDL_Texture) gViewport;
-
-                //Render texture to screen
-                //SDL_RenderCopy( gRenderer, gViewport, NULL, NULL );
 
                 //Update screen
                 SDL_RenderPresent(gRenderer);
