@@ -15,22 +15,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd7d6cbd-8581-48bc-b95c-296f4e3a8bcd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cpp/GProgressBar.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cpp/GProgressBar.h" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cpp/main.cpp" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/largemon to do list" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/cmake_clean.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/LargeMon.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/LargeMon.cbp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cpp/ControllerBattleInstance.cpp" afterPath="$PROJECT_DIR$/src/cpp/ControllerBattleInstance.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cpp/LargeMonMainView.cpp" afterPath="$PROJECT_DIR$/src/cpp/LargeMonMainView.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/include/LargeMonMainView.h" afterPath="$PROJECT_DIR$/src/include/LargeMonMainView.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/src/cpp/largeMon/WaterLM.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,11 +82,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GProgressBar.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GProgressBar.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cpp/GProgressBar.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="largemon to do list" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/largemon to do list">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,16 +107,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
               <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControllerBattleInstance.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cpp/ControllerBattleInstance.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="48" lean-forward="false" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -307,18 +293,18 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/resources" />
+      <recent name="$PROJECT_DIR$/src/cpp/largeMon" />
+      <recent name="$PROJECT_DIR$/src/include" />
+      <recent name="$PROJECT_DIR$/src/cpp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/include" />
       <recent name="$PROJECT_DIR$/src/cpp" />
       <recent name="$PROJECT_DIR$/src/include/largeMonHeader" />
       <recent name="$PROJECT_DIR$/src/cpp/largeMon" />
       <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/cpp/largeMon" />
-      <recent name="$PROJECT_DIR$/src/resources" />
-      <recent name="$PROJECT_DIR$/src/include" />
-      <recent name="$PROJECT_DIR$/src/cpp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -373,7 +359,7 @@
       <workItem from="1510574244219" duration="25871000" />
       <workItem from="1510613545072" duration="107000" />
       <workItem from="1510663213387" duration="86000" />
-      <workItem from="1510663377034" duration="4283000" />
+      <workItem from="1510663377034" duration="4443000" />
     </task>
     <task id="LOCAL-00001" summary="Added special attack move">
       <created>1510323107913</created>
@@ -459,11 +445,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510664680062</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="clean up">
+      <created>1510689421299</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1510689421299</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107612000" />
+    <option name="totallyTimeSpent" value="107772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="116" y="88" width="1368" height="780" extended-state="6" />
@@ -519,13 +512,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/include/c++/5/bits/allocator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/5/ext/new_allocator.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -801,7 +787,7 @@
     <entry file="file://$PROJECT_DIR$/src/cpp/largeMon/WaterLM.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -853,7 +839,15 @@
     <entry file="file://$PROJECT_DIR$/src/cpp/GProgressBar.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/largemon to do list">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
