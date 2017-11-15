@@ -10,10 +10,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o"
   "CMakeFiles/LargeMon.dir/src/cpp/ViewObserver.cpp.o"
   "CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o"
-  "CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o"
   "CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o"
   "CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o"
-  "CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o"
   "LargeMon.pdb"
   "LargeMon"
 )

@@ -2,9 +2,15 @@
 // Created by angelica on 14/11/17.
 //
 
-#include "GProgressBar.h"
+#include "../include/GProgressBar.h"
 
-bool TextureHpBar::updateProgress(SDL_Renderer * gRenderer, LTexture & bar, TTF_Font * gHpFont, LTexture & text, float percent, string hp) {
+
+GProgressBar::GProgressBar()
+        : GTexture() {
+
+}
+
+bool GProgressBar::updateProgress(SDL_Renderer * gRenderer, GTexture & bar, TTF_Font * gHpFont, GTexture & text, float percent, string hp) {
 
         SDL_Color textColor = { 0, 0, 0 };
         bool success = true;
@@ -22,6 +28,3 @@ bool TextureHpBar::updateProgress(SDL_Renderer * gRenderer, LTexture & bar, TTF_
 
 }
 
-TextureHpBar::TextureHpBar() {
-
-}

@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake
+CMAKE_COMMAND = /opt/clion-2017.2.1/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
+RM = /opt/clion-2017.2.1/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/angelica/Development/CLion/LargeMon/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/clion-2017.2.1/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/opt/clion-2017.2.1/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -258,59 +258,59 @@ src/cpp/DescriptGen.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.s
 .PHONY : src/cpp/DescriptGen.cpp.s
 
-src/cpp/HealthBarTexture.o: src/cpp/HealthBarTexture.cpp.o
+src/cpp/GProgressBar.o: src/cpp/GProgressBar.cpp.o
 
-.PHONY : src/cpp/HealthBarTexture.o
-
-# target to build an object file
-src/cpp/HealthBarTexture.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o
-.PHONY : src/cpp/HealthBarTexture.cpp.o
-
-src/cpp/HealthBarTexture.i: src/cpp/HealthBarTexture.cpp.i
-
-.PHONY : src/cpp/HealthBarTexture.i
-
-# target to preprocess a source file
-src/cpp/HealthBarTexture.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.i
-.PHONY : src/cpp/HealthBarTexture.cpp.i
-
-src/cpp/HealthBarTexture.s: src/cpp/HealthBarTexture.cpp.s
-
-.PHONY : src/cpp/HealthBarTexture.s
-
-# target to generate assembly for a file
-src/cpp/HealthBarTexture.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.s
-.PHONY : src/cpp/HealthBarTexture.cpp.s
-
-src/cpp/LTexture.o: src/cpp/LTexture.cpp.o
-
-.PHONY : src/cpp/LTexture.o
+.PHONY : src/cpp/GProgressBar.o
 
 # target to build an object file
-src/cpp/LTexture.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o
-.PHONY : src/cpp/LTexture.cpp.o
+src/cpp/GProgressBar.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o
+.PHONY : src/cpp/GProgressBar.cpp.o
 
-src/cpp/LTexture.i: src/cpp/LTexture.cpp.i
+src/cpp/GProgressBar.i: src/cpp/GProgressBar.cpp.i
 
-.PHONY : src/cpp/LTexture.i
+.PHONY : src/cpp/GProgressBar.i
 
 # target to preprocess a source file
-src/cpp/LTexture.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.i
-.PHONY : src/cpp/LTexture.cpp.i
+src/cpp/GProgressBar.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.i
+.PHONY : src/cpp/GProgressBar.cpp.i
 
-src/cpp/LTexture.s: src/cpp/LTexture.cpp.s
+src/cpp/GProgressBar.s: src/cpp/GProgressBar.cpp.s
 
-.PHONY : src/cpp/LTexture.s
+.PHONY : src/cpp/GProgressBar.s
 
 # target to generate assembly for a file
-src/cpp/LTexture.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.s
-.PHONY : src/cpp/LTexture.cpp.s
+src/cpp/GProgressBar.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.s
+.PHONY : src/cpp/GProgressBar.cpp.s
+
+src/cpp/GTexture.o: src/cpp/GTexture.cpp.o
+
+.PHONY : src/cpp/GTexture.o
+
+# target to build an object file
+src/cpp/GTexture.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o
+.PHONY : src/cpp/GTexture.cpp.o
+
+src/cpp/GTexture.i: src/cpp/GTexture.cpp.i
+
+.PHONY : src/cpp/GTexture.i
+
+# target to preprocess a source file
+src/cpp/GTexture.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.i
+.PHONY : src/cpp/GTexture.cpp.i
+
+src/cpp/GTexture.s: src/cpp/GTexture.cpp.s
+
+.PHONY : src/cpp/GTexture.s
+
+# target to generate assembly for a file
+src/cpp/GTexture.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.s
+.PHONY : src/cpp/GTexture.cpp.s
 
 src/cpp/LargeMonGenerator.o: src/cpp/LargeMonGenerator.cpp.o
 
@@ -552,12 +552,12 @@ help:
 	@echo "... src/cpp/DescriptGen.o"
 	@echo "... src/cpp/DescriptGen.i"
 	@echo "... src/cpp/DescriptGen.s"
-	@echo "... src/cpp/HealthBarTexture.o"
-	@echo "... src/cpp/HealthBarTexture.i"
-	@echo "... src/cpp/HealthBarTexture.s"
-	@echo "... src/cpp/LTexture.o"
-	@echo "... src/cpp/LTexture.i"
-	@echo "... src/cpp/LTexture.s"
+	@echo "... src/cpp/GProgressBar.o"
+	@echo "... src/cpp/GProgressBar.i"
+	@echo "... src/cpp/GProgressBar.s"
+	@echo "... src/cpp/GTexture.o"
+	@echo "... src/cpp/GTexture.i"
+	@echo "... src/cpp/GTexture.s"
 	@echo "... src/cpp/LargeMonGenerator.o"
 	@echo "... src/cpp/LargeMonGenerator.i"
 	@echo "... src/cpp/LargeMonGenerator.s"

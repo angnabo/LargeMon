@@ -9,7 +9,8 @@
 #include <SDL_ttf.h>
 #include <string>
 #include <iostream>
-#include "../include/LTexture.h"
+#include "../include/GTexture.h"
+#include "../include/GProgressBar.h"
 #include "../include/ButtonTexture.h"
 #include "../include/ControllerBattleInstance.h"
 
@@ -45,36 +46,37 @@ string panelTextString;
 SDL_Color col1;
 SDL_Color col2;
 
+
 //Scene textures
-LTexture gPlayerTexture;
-LTexture gEnemyTexture;
-LTexture gBackgroundTexture;
+GTexture gPlayerTexture;
+GTexture gEnemyTexture;
+GTexture gBackgroundTexture;
 ButtonTexture gTopLeftButton;
 ButtonTexture gTopRightButton;
 ButtonTexture gBottomLeftButton;
 ButtonTexture gBottomRightButton;
 
-LTexture gBottomTextPanel;
-LTexture gBottomPanelFull;
+GTexture gBottomTextPanel;
+GTexture gBottomPanelFull;
 
-LTexture gPlayerHpBarBG;
-LTexture gPlayerHpBarFG;
-LTexture gPlayerHealthText;
+GTexture gPlayerHpBarBG;
+GProgressBar gPlayerHpBarFG;
+GTexture gPlayerHealthText;
 
-LTexture gEnemyHpBarBG;
-LTexture gEnemyHpBarFG;
-LTexture gEnemyHealthText;
+GTexture gEnemyHpBarBG;
+GProgressBar gEnemyHpBarFG;
+GTexture gEnemyHealthText;
 
 
-LTexture gTopLeftButtonText;
-LTexture gTopRightButtonText;
-LTexture gBottomLeftButtonText;
-LTexture gBottomRightButtonText;
-LTexture gPanelText;
+GTexture gTopLeftButtonText;
+GTexture gTopRightButtonText;
+GTexture gBottomLeftButtonText;
+GTexture gBottomRightButtonText;
+GTexture gPanelText;
 
 ButtonTexture buttons[4];
 SDL_Rect gSpriteClips[ 4 ];
-LTexture gSpriteSheetTexture;
+GTexture gSpriteSheetTexture;
 SDL_Texture* loadTexture( std::string path );
 SDL_Texture* gTexture = NULL;
 
@@ -500,13 +502,14 @@ int main( int argc, char* args[] ) {
                             if(!battleInstance.isGameOver()) {
                                 textUpdate = battleInstance.action(&selectedButton);
                                 updateText(textUpdate);
-                                updateHp(gPlayerHpBarFG, gPlayerHealthText,
+                                gPlayerHpBarFG.updateProgress(gRenderer, gPlayerHpBarFG, gHpFont, gPlayerHealthText,
                                          battleInstance.getPlayerLargeMonCurrentHpPercent(),
                                          to_string(battleInstance.getPlayerCurrentHp()));
-                                updateHp(gEnemyHpBarFG, gEnemyHealthText,
+
+
+                                gEnemyHpBarFG.updateProgress(gRenderer, gEnemyHpBarFG, gHpFont, gEnemyHealthText,
                                          battleInstance.getEnemyLargeMonCurrentHpPercent(),
                                          to_string(battleInstance.getEnemyCurrentHp()));
-
                             } else {
                                 //gBottomPanelFull.render(gRenderer, 10,0);
                                 updateText(battleInstance.getWinner());

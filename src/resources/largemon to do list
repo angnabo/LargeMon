@@ -14,6 +14,8 @@ LargeMon TO DO:
 
 *include sprite sheets for largemon
 
+*implement a wait time for enemy attack
+
 *text texture in own class with update methos
 
 *hp bar in own class with update method

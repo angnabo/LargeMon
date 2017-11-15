@@ -6,7 +6,7 @@
 #define LARGEMON_LARGEMONMAINVIEW_H
 
 
-#include "LTexture.h"
+#include "GTexture.h"
 #include "ButtonTexture.h"
 
 using namespace std;
@@ -26,35 +26,35 @@ private:
     SDL_Color col2;
 
 //Scene textures
-    LTexture gPlayerTexture;
-    LTexture gEnemyTexture;
-    LTexture gBackgroundTexture;
+    GTexture gPlayerTexture;
+    GTexture gEnemyTexture;
+    GTexture gBackgroundTexture;
     ButtonTexture gTopLeftButton;
     ButtonTexture gTopRightButton;
     ButtonTexture gBottomLeftButton;
     ButtonTexture gBottomRightButton;
 
-    LTexture gBottomTextPanel;
-    LTexture gBottomPanelFull;
+    GTexture gBottomTextPanel;
+    GTexture gBottomPanelFull;
 
-    LTexture gPlayerHpBarBG;
-    LTexture gPlayerHpBarFG;
-    LTexture gPlayerHealthText;
+    GTexture gPlayerHpBarBG;
+    GTexture gPlayerHpBarFG;
+    GTexture gPlayerHealthText;
 
-    LTexture gEnemyHpBarBG;
-    LTexture gEnemyHpBarFG;
-    LTexture gEnemyHealthText;
+    GTexture gEnemyHpBarBG;
+    GTexture gEnemyHpBarFG;
+    GTexture gEnemyHealthText;
 
 
-    LTexture gTopLeftButtonText;
-    LTexture gTopRightButtonText;
-    LTexture gBottomLeftButtonText;
-    LTexture gBottomRightButtonText;
-    LTexture gPanelText;
+    GTexture gTopLeftButtonText;
+    GTexture gTopRightButtonText;
+    GTexture gBottomLeftButtonText;
+    GTexture gBottomRightButtonText;
+    GTexture gPanelText;
 
     ButtonTexture buttons[4];
     SDL_Rect gSpriteClips[ 4 ];
-    LTexture gSpriteSheetTexture;
+    GTexture gSpriteSheetTexture;
     SDL_Texture* loadTexture( std::string path );
     SDL_Texture* gTexture = NULL;
 };

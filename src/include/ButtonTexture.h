@@ -6,9 +6,9 @@
 #define LARGEMON_BUTTONTEXTURE_H
 
 
-#include "LTexture.h"
+#include "GTexture.h"
 
-class ButtonTexture: public LTexture{
+class ButtonTexture: public GTexture{
 
 public:
     void setSelected(bool);

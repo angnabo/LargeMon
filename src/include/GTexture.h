@@ -13,14 +13,14 @@
 #define LARGEMON_LTEXTURE_H
 
 
-class LTexture
+class GTexture
 {
 public:
     //Initializes variables
-    LTexture();
+    GTexture();
 
     //Deallocates memory
-    ~LTexture();
+    ~GTexture();
 
     void setSize(int, int);
 

@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake
+CMAKE_COMMAND = /opt/clion-2017.2.1/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
+RM = /opt/clion-2017.2.1/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -321,28 +321,28 @@ CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o.provides: CMakeFiles/Larg
 CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o: ../src/cpp/LTexture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/LTexture.cpp
+CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o: ../src/cpp/GTexture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/GTexture.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/LTexture.cpp > CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.i
+CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/GTexture.cpp > CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/LTexture.cpp -o CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.s
+CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/GTexture.cpp -o CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o
+CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o
 
 
 CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: CMakeFiles/LargeMon.dir/flags.make
@@ -393,28 +393,28 @@ CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o.provides: CMakeFi
 CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o: ../src/cpp/HealthBarTexture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/HealthBarTexture.cpp
+CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o: ../src/cpp/GProgressBar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/GProgressBar.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/HealthBarTexture.cpp > CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.i
+CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/GProgressBar.cpp > CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/HealthBarTexture.cpp -o CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.s
+CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/GProgressBar.cpp -o CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o
+CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o
 
 
 # Object files for target LargeMon
@@ -430,10 +430,10 @@ LargeMon_OBJECTS = \
 "CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/cpp/ViewObserver.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o"
+"CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o"
 
 # External object files for target LargeMon
 LargeMon_EXTERNAL_OBJECTS =
@@ -449,10 +449,10 @@ LargeMon: CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/cpp/ViewObserver.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/build.make
 LargeMon: CMakeFiles/LargeMon.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable LargeMon"
@@ -474,10 +474,10 @@ CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodL
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/ViewObserver.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/LTexture.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/HealthBarTexture.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.requires
 
 .PHONY : CMakeFiles/LargeMon.dir/requires
 
