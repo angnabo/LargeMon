@@ -67,7 +67,6 @@ GTexture gEnemyHpBarBG;
 GProgressBar gEnemyHpBarFG;
 GTexture gEnemyHealthText;
 
-
 GTexture gTopLeftButtonText;
 GTexture gTopRightButtonText;
 GTexture gBottomLeftButtonText;
@@ -75,7 +74,7 @@ GTexture gBottomRightButtonText;
 GTexture gPanelText;
 
 ButtonTexture buttons[4];
-SDL_Rect gSpriteClips[ 4 ];
+SDL_Rect gSpriteClips[ 2 ];
 GTexture gSpriteSheetTexture;
 SDL_Texture* loadTexture( std::string path );
 SDL_Texture* gTexture = NULL;
@@ -199,6 +198,25 @@ bool loadMedia(string panel_text)
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
+    }
+    //Load player texture
+    if( !gSpriteSheetTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/shiba_inu_sprite_sheet.bmp" ) )
+    {
+        printf( "Failed to load Foo' texture image!\n" );
+        success = false;
+    } else
+    {
+        //Set bottom left sprite
+        gSpriteClips[ 0 ].x =   0;
+        gSpriteClips[ 0 ].y =   0;
+        gSpriteClips[ 0 ].w = 362;
+        gSpriteClips[ 0 ].h = 300;
+
+        //Set top right sprite
+        gSpriteClips[ 1 ].x = 362;
+        gSpriteClips[ 1 ].y =   0;
+        gSpriteClips[ 1 ].w = 203;
+        gSpriteClips[ 1 ].h = 200;
     }
 
     //Load ttf pixel font large size
@@ -536,11 +554,12 @@ int main( int argc, char* args[] ) {
                 gBackgroundTexture.render(gRenderer, 0, 0);
 
                 //Render player to the screen
-                gPlayerTexture.render(gRenderer, -20, 170);
+                //gPlayerTexture.render(gRenderer, -20, 170);
+                gSpriteSheetTexture.renderSprite(gRenderer, -20, 170, &gSpriteClips[0]);
 
                 //Render enemy to the screen
-
-                gEnemyTexture.render(gRenderer, 430, 40);
+                //gEnemyTexture.render(gRenderer, 430, 40);
+                gSpriteSheetTexture.renderSprite(gRenderer, 430, 40, &gSpriteClips[1]);
 
                 gPlayerHpBarBG.render(gRenderer, 30, 300);
                 gPlayerHpBarFG.render(gRenderer, 31, 301);
