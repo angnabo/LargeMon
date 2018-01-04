@@ -1,6 +1,6 @@
 #include <string>
 #include <vector>
-#include "../Observer.h"
+#include "../utility/Observer.h"
 
 using namespace std;
 

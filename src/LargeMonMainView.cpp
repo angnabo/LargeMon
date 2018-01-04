@@ -2,17 +2,17 @@
 // Created by angelica on 11/11/17.
 //
 
-#include "../include/LargeMonMainView.h"
+//#include "include/LargeMonMainView.h"
 //Using SDL, SDL_image, standard IO, and strings
 #include <SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL_ttf.h>
 #include <string>
 #include <iostream>
-#include "../include/GTexture.h"
-#include "../include/GProgressBar.h"
-#include "../include/ButtonTexture.h"
-#include "../include/ControllerBattleInstance.h"
+#include "graphics/GTexture.h"
+#include "graphics/GProgressBar.h"
+#include "graphics/GButtonTexture.h"
+#include "controller/ControllerBattleInstance.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
@@ -51,10 +51,10 @@ SDL_Color col2;
 GTexture gPlayerTexture;
 GTexture gEnemyTexture;
 GTexture gBackgroundTexture;
-ButtonTexture gTopLeftButton;
-ButtonTexture gTopRightButton;
-ButtonTexture gBottomLeftButton;
-ButtonTexture gBottomRightButton;
+GButtonTexture gTopLeftButton;
+GButtonTexture gTopRightButton;
+GButtonTexture gBottomLeftButton;
+GButtonTexture gBottomRightButton;
 
 GTexture gBottomTextPanel;
 GTexture gBottomPanelFull;
@@ -73,7 +73,7 @@ GTexture gBottomLeftButtonText;
 GTexture gBottomRightButtonText;
 GTexture gPanelText;
 
-ButtonTexture buttons[4];
+GButtonTexture buttons[4];
 SDL_Rect gSpriteClips[ 2 ];
 GTexture gSpriteSheetTexture;
 SDL_Texture* loadTexture( std::string path );
@@ -146,61 +146,61 @@ bool loadMedia(string panel_text)
     bool success = true;
 
     //Load player texture
-    if( !gPlayerTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/shibainu.bmp" ) )
+    if( !gPlayerTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/shibainu.bmp" ) )
     {
         printf( "Failed to load Foo' texture image!\n" );
         success = false;
     }
     //Load enemy texture
-    if( !gEnemyTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/shiba-inu-21.bmp" ) )
+    if( !gEnemyTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/shiba-inu-21.bmp" ) )
     {
         printf( "Failed to load Foo' texture image!\n" );
         success = false;
     }
     //Load background texture
-    if( !gBackgroundTexture.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/mountains.png" ) )
+    if( !gBackgroundTexture.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/mountains.png" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
     //Load bottom panel
-    if( !gBottomTextPanel.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/bottom_panel.bmp" ) )
+    if( !gBottomTextPanel.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/bottom_panel.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
     //Load large bottom panel
-    if( !gBottomPanelFull.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/bottom_panel_full.bmp" ) )
+    if( !gBottomPanelFull.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/bottom_panel_full.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
     //Load large bottom panel
-    if( !gPlayerHpBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/health_bar_bg.bmp" ) )
+    if( !gPlayerHpBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_bg.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
     //Load large bottom panel
-    if( !gPlayerHpBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/health_bar_fg.bmp" ) )
+    if( !gPlayerHpBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_fg.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
     //Load large bottom panel
-    if( !gEnemyHpBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/health_bar_bg.bmp" ) )
+    if( !gEnemyHpBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_bg.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
     //Load large bottom panel
-    if( !gEnemyHpBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/health_bar_fg.bmp" ) )
+    if( !gEnemyHpBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_fg.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
     //Load player texture
-    if( !gSpriteSheetTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/shiba_inu_sprite_sheet.bmp" ) )
+    if( !gSpriteSheetTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/shiba_inu_sprite_sheet.bmp" ) )
     {
         printf( "Failed to load Foo' texture image!\n" );
         success = false;
@@ -220,7 +220,7 @@ bool loadMedia(string panel_text)
     }
 
     //Load ttf pixel font large size
-    gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/src/resources/alterebro-pixel-font.ttf", 30 );
+    gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/alterebro-pixel-font.ttf", 30 );
     if( gFont == NULL )
     {
         printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
@@ -255,7 +255,7 @@ bool loadMedia(string panel_text)
         }
     }
     //Open ttf pixel font small size
-    gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/src/resources/alterebro-pixel-font.ttf", 20 );
+    gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/alterebro-pixel-font.ttf", 20 );
     if( gHpFont == NULL )
     {
         printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
@@ -275,22 +275,22 @@ bool loadMedia(string panel_text)
     }
 
     //Load Button Textures
-    if( !gTopLeftButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
+    if( !gTopLeftButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
-    if( !gTopRightButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
+    if( !gTopRightButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
-    if( !gBottomLeftButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
+    if( !gBottomLeftButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
-    if( !gBottomRightButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/button.bmp" ) )
+    if( !gBottomRightButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;
@@ -311,7 +311,7 @@ bool updateText(string text)
     SDL_Color textColor = { 0, 0, 0 };
     bool success = true;
     //Load font again
-    if( !gBottomPanelFull.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/src/resources/bottom_panel_full.bmp" ) )
+    if( !gBottomPanelFull.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/bottom_panel_full.bmp" ) )
     {
         printf( "Failed to load background texture image!\n" );
         success = false;

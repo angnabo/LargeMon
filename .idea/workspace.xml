@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/cpp/largeMon/LargeMon.cpp" line="64" />
+    <bookmark url="file://$PROJECT_DIR$/src/largemon/LargeMon.cpp" line="64" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -15,9 +15,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd7d6cbd-8581-48bc-b95c-296f4e3a8bcd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/shiba_inu_sprite_sheet.bmp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/largemon to do list" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/ButtonTexture.cpp" afterPath="$PROJECT_DIR$/src/graphics/GButtonTexture.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/Controller.cpp" afterPath="$PROJECT_DIR$/src/controller/Controller.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/ControllerBattleInstance.cpp" afterPath="$PROJECT_DIR$/src/controller/ControllerBattleInstance.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/DescriptGen.cpp" afterPath="$PROJECT_DIR$/src/utility/DescriptGen.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/FileWriterObserver.cpp" afterPath="$PROJECT_DIR$/src/utility/FileWriterObserver.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/GProgressBar.cpp" afterPath="$PROJECT_DIR$/src/graphics/GProgressBar.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/GTexture.cpp" afterPath="$PROJECT_DIR$/src/graphics/GTexture.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/LargeMonGenerator.cpp" afterPath="$PROJECT_DIR$/src/utility/LargeMonGenerator.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/LargeMonMainView.cpp" afterPath="$PROJECT_DIR$/src/LargeMonMainView.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/Observer.cpp" afterPath="$PROJECT_DIR$/src/utility/Observer.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/largeMon/FireLM.cpp" afterPath="$PROJECT_DIR$/src/largemon/FireLM.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/largeMon/LargeMon.cpp" afterPath="$PROJECT_DIR$/src/largemon/LargeMon.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/largeMon/WaterLM.cpp" afterPath="$PROJECT_DIR$/src/largemon/WaterLM.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cpp/largeMon/WoodLM.cpp" afterPath="$PROJECT_DIR$/src/largemon/WoodLM.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/ButtonTexture.h" afterPath="$PROJECT_DIR$/src/graphics/GButtonTexture.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/Controller.h" afterPath="$PROJECT_DIR$/src/controller/Controller.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/ControllerBattleInstance.h" afterPath="$PROJECT_DIR$/src/controller/ControllerBattleInstance.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/DescriptGen.h" afterPath="$PROJECT_DIR$/src/utility/DescriptGen.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/FileWriterObserver.h" afterPath="$PROJECT_DIR$/src/utility/FileWriterObserver.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/GProgressBar.h" afterPath="$PROJECT_DIR$/src/graphics/GProgressBar.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/GTexture.h" afterPath="$PROJECT_DIR$/src/graphics/GTexture.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/LargeMonGenerator.h" afterPath="$PROJECT_DIR$/src/utility/LargeMonGenerator.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/LargeMonMainView.h" afterPath="$PROJECT_DIR$/src/LargeMonMainView.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/Observer.h" afterPath="$PROJECT_DIR$/src/utility/Observer.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/largeMonHeader/FireLM.h" afterPath="$PROJECT_DIR$/src/largemon/FireLM.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/largeMonHeader/LargeMon.h" afterPath="$PROJECT_DIR$/src/largemon/LargeMon.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/largeMonHeader/WaterLM.h" afterPath="$PROJECT_DIR$/src/largemon/WaterLM.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/include/largeMonHeader/WoodLM.h" afterPath="$PROJECT_DIR$/src/largemon/WoodLM.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/alterebro-pixel-font.ttf" afterPath="$PROJECT_DIR$/resources/alterebro-pixel-font.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/bottom_panel.bmp" afterPath="$PROJECT_DIR$/resources/bottom_panel.bmp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/bottom_panel_full.bmp" afterPath="$PROJECT_DIR$/resources/bottom_panel_full.bmp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/button.bmp" afterPath="$PROJECT_DIR$/resources/button.bmp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/buttons.bmp" afterPath="$PROJECT_DIR$/resources/buttons.bmp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/health_bar_bg.bmp" afterPath="$PROJECT_DIR$/resources/health_bar_bg.bmp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/health_bar_fg.bmp" afterPath="$PROJECT_DIR$/resources/health_bar_fg.bmp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/largemon to do list" afterPath="$PROJECT_DIR$/resources/largemon to do list" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/mountains.png" afterPath="$PROJECT_DIR$/resources/mountains.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/onion.bmp" afterPath="$PROJECT_DIR$/resources/onion.bmp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/pallet.ase" afterPath="$PROJECT_DIR$/resources/pallet.ase" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/shiba-inu-21.bmp" afterPath="$PROJECT_DIR$/resources/shiba-inu-21.bmp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/shiba-inu-21.jpg" afterPath="$PROJECT_DIR$/resources/shiba-inu-21.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/shiba-inu2.bmp" afterPath="$PROJECT_DIR$/resources/shiba-inu2.bmp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/shiba_inu_sprite_sheet.bmp" afterPath="$PROJECT_DIR$/resources/shiba_inu_sprite_sheet.bmp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/resources/shibainu.bmp" afterPath="$PROJECT_DIR$/resources/shibainu.bmp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/LargeMon" afterPath="$PROJECT_DIR$/cmake-build-debug/LargeMon" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/cmake_clean.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/link.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/LargeMon.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/LargeMon.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,33 +82,109 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <file leaf-file-name="LargeMonMainView.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LargeMonMainView.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+              <folding>
+                <element signature="e#132#148#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="largemon to do list" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/largemon to do list">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LargeMonGenerator.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utility/LargeMonGenerator.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileWriterObserver.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utility/FileWriterObserver.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerBattleInstance.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/ControllerBattleInstance.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="65" column="1" lean-forward="false" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+              <folding>
+                <element signature="e#43#80#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/log.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileWriterObserver.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utility/FileWriterObserver.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DescriptGen.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cpp/DescriptGen.cpp">
+      <file leaf-file-name="LargeMon.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/largemon/LargeMon.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="2" />
+            <state relative-caret-position="-422">
+              <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerBattleInstance.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cpp/ControllerBattleInstance.cpp">
+      <file leaf-file-name="LargeMonGenerator.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utility/LargeMonGenerator.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+            <state relative-caret-position="417">
+              <caret line="27" column="76" lean-forward="true" selection-start-line="27" selection-start-column="76" selection-end-line="27" selection-end-column="76" />
               <folding>
-                <element signature="e#43#91#0" expanded="true" />
+                <element signature="e#44#77#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LargeMonMainView.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LargeMonMainView.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+              <folding>
+                <element signature="e#117#147#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,22 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/WoodLM.h" />
-        <option value="$PROJECT_DIR$/src/WoodLM.cpp" />
-        <option value="$PROJECT_DIR$/src/FireLM.h" />
-        <option value="$PROJECT_DIR$/src/FireLM.cpp" />
-        <option value="$PROJECT_DIR$/src/main.cpp" />
-        <option value="$PROJECT_DIR$/src/LargeMon.h" />
-        <option value="$PROJECT_DIR$/src/LargeMon.cpp" />
-        <option value="$PROJECT_DIR$/src/Observer.h" />
-        <option value="$PROJECT_DIR$/src/Observer.cpp" />
-        <option value="$PROJECT_DIR$/src/ViewObserver.h" />
-        <option value="$PROJECT_DIR$/src/BattleInstance.h" />
-        <option value="$PROJECT_DIR$/src/ViewObserver.cpp" />
-        <option value="$PROJECT_DIR$/src/BattleInstance.cpp" />
-        <option value="$PROJECT_DIR$/src/cpp/BattleInstance.cpp" />
-        <option value="$PROJECT_DIR$/src/cpp/ButtonTexture.cpp" />
-        <option value="$PROJECT_DIR$/src/cpp/main.cpp" />
         <option value="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
         <option value="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
         <option value="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
@@ -119,7 +232,6 @@
         <option value="$PROJECT_DIR$/src/cpp/largeMon/WoodLM.cpp" />
         <option value="$PROJECT_DIR$/src/include/largeMonHeader/WaterLM.h" />
         <option value="$PROJECT_DIR$/src/cpp/largeMon/WaterLM.cpp" />
-        <option value="$PROJECT_DIR$/src/include/LargeMonGenerator.h" />
         <option value="$PROJECT_DIR$/src/cpp/LargeMonGenerator.cpp" />
         <option value="$PROJECT_DIR$/src/cpp/ViewObserver.cpp" />
         <option value="$PROJECT_DIR$/src/include/LTexture.h" />
@@ -133,17 +245,34 @@
         <option value="$PROJECT_DIR$/src/cpp/GTexture.cpp" />
         <option value="$PROJECT_DIR$/src/cpp/GProgressBar.cpp" />
         <option value="$PROJECT_DIR$/src/include/GProgressBar.h" />
-        <option value="$PROJECT_DIR$/src/cpp/LargeMonMainView.cpp" />
-        <option value="$PROJECT_DIR$/src/include/ControllerBattleInstance.h" />
-        <option value="$PROJECT_DIR$/src/include/Observer.h" />
         <option value="$PROJECT_DIR$/src/include/FileWriterObserver.h" />
         <option value="$PROJECT_DIR$/src/include/largeMonHeader/LargeMon.h" />
-        <option value="$PROJECT_DIR$/log.txt" />
         <option value="$PROJECT_DIR$/src/cpp/largeMon/LargeMon.cpp" />
         <option value="$PROJECT_DIR$/src/cpp/FileWriterObserver.cpp" />
-        <option value="$PROJECT_DIR$/largemon to do list" />
         <option value="$PROJECT_DIR$/src/cpp/largeMon/FireLM.cpp" />
+        <option value="$PROJECT_DIR$/src/largemon/LargeMon.cpp" />
+        <option value="$PROJECT_DIR$/src/largemon/FireLM.cpp" />
+        <option value="$PROJECT_DIR$/src/largemon/WaterLM.cpp" />
+        <option value="$PROJECT_DIR$/src/largemon/WoodLM.cpp" />
+        <option value="$PROJECT_DIR$/src/include/Observer.h" />
+        <option value="$PROJECT_DIR$/src/include/LargeMonGenerator.h" />
+        <option value="$PROJECT_DIR$/src/utility/DescriptGen.cpp" />
+        <option value="$PROJECT_DIR$/src/utility/FileWriterObserver.cpp" />
+        <option value="$PROJECT_DIR$/src/utility/LargeMonGenerator.cpp" />
+        <option value="$PROJECT_DIR$/src/utility/LargeMonGenerator.h" />
+        <option value="$PROJECT_DIR$/src/utility/Observer.cpp" />
+        <option value="$PROJECT_DIR$/src/utility/Observer.h" />
+        <option value="$PROJECT_DIR$/src/include/ControllerBattleInstance.h" />
         <option value="$PROJECT_DIR$/src/cpp/ControllerBattleInstance.cpp" />
+        <option value="$PROJECT_DIR$/src/largemon/LargeMon.h" />
+        <option value="$PROJECT_DIR$/largemon to do list" />
+        <option value="$PROJECT_DIR$/src/graphics/GButtonTexture.h" />
+        <option value="$PROJECT_DIR$/LargeMonMainView.cpp" />
+        <option value="$PROJECT_DIR$/src/cpp/LargeMonMainView.cpp" />
+        <option value="$PROJECT_DIR$/src/LargeMonMainView.cpp" />
+        <option value="$PROJECT_DIR$/src/LargeMonMainView.h" />
+        <option value="$PROJECT_DIR$/src/controller/ControllerBattleInstance.cpp" />
+        <option value="$PROJECT_DIR$/log.txt" />
       </list>
     </option>
   </component>
@@ -193,33 +322,25 @@
               <item name="LargeMon" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="LargeMon" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cpp" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LargeMon" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="LargeMon" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cpp" type="462c0819:PsiDirectoryNode" />
-              <item name="largeMon" type="462c0819:PsiDirectoryNode" />
+              <item name="graphics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LargeMon" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="LargeMon" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="largemon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LargeMon" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="LargeMon" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="include" type="462c0819:PsiDirectoryNode" />
-              <item name="largeMonHeader" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LargeMon" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="LargeMon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="utility" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -235,11 +356,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/resources" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/cmake-build-debug" />
-      <recent name="$PROJECT_DIR$/src/include" />
-      <recent name="$PROJECT_DIR$/src/cpp" />
+      <recent name="$PROJECT_DIR$/src/controller" />
+      <recent name="$PROJECT_DIR$/src/graphics" />
+      <recent name="$PROJECT_DIR$/src/utility" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/resources" />
@@ -419,11 +540,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510875055263</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="file writer">
+      <created>1515072812733</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1515072812733</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123046000" />
+    <option name="totallyTimeSpent" value="125478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1922" height="1085" extended-state="6" />
@@ -484,7 +612,8 @@
     <MESSAGE value="player and enemy health bars" />
     <MESSAGE value="clean up" />
     <MESSAGE value="health bar in own class" />
-    <option name="LAST_COMMIT_MESSAGE" value="health bar in own class" />
+    <MESSAGE value="file writer" />
+    <option name="LAST_COMMIT_MESSAGE" value="file writer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -496,33 +625,24 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cpp.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/cpp.h" />
-    <entry file="file://$PROJECT_DIR$/src/include/Controller.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources.cpp" />
     <entry file="file://$PROJECT_DIR$/src/resources.h" />
-    <entry file="file://$PROJECT_DIR$/src/resources/onion.bmp">
+    <entry file="file://$PROJECT_DIR$/resources/onion.bmp">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shiba-inu2.bmp">
+    <entry file="file://$PROJECT_DIR$/resources/shiba-inu2.bmp">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/buttons.bmp">
+    <entry file="file://$PROJECT_DIR$/resources/buttons.bmp">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/button.bmp">
+    <entry file="file://$PROJECT_DIR$/resources/button.bmp">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -576,226 +696,283 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/bottom_panel_full.bmp">
+    <entry file="file://$PROJECT_DIR$/resources/bottom_panel_full.bmp">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/bottom_panel.bmp">
+    <entry file="file://$PROJECT_DIR$/resources/bottom_panel.bmp">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/largeMonHeader/WoodLM.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="64" lean-forward="false" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/largeMon/WoodLM.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/largeMonHeader/FireLM.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="64" lean-forward="false" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/largeMonHeader/WaterLM.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/LargeMonGenerator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cpp/main.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/include/LargeMonMainView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/GTexture.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/ButtonTexture.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/include/BattleInstance.h" />
-    <entry file="file://$PROJECT_DIR$/src/include/ButtonTexture.h">
+    <entry file="file://$PROJECT_DIR$/src/cpp/BattleInstance.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/resources/DQW193kUQAEqPtl.jpg_large" />
+    <entry file="file://$PROJECT_DIR$/resources/shiba_inu_sprite_sheet.bmp">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/largemon/FireLM.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        <state relative-caret-position="72">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/largeMon/WaterLM.cpp">
+    <entry file="file://$PROJECT_DIR$/src/largemon/FireLM.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="36" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="7" selection-end-column="36" />
+        <state relative-caret-position="234">
+          <caret line="13" column="64" lean-forward="false" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/GTexture.cpp">
+    <entry file="file://$PROJECT_DIR$/src/largemon/WaterLM.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/largemon/WaterLM.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/largemon/WoodLM.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/largemon/WoodLM.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="64" lean-forward="false" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/DescriptGen.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/DescriptGen.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#42#59#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/Observer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/Observer.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
+        <state relative-caret-position="90">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/GProgressBar.h">
+    <entry file="file://$PROJECT_DIR$/src/controller/Controller.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/GProgressBar.cpp">
+    <entry file="file://$PROJECT_DIR$/src/graphics/GProgressBar.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/LargeMonMainView.cpp">
+    <entry file="file://$PROJECT_DIR$/src/graphics/GTexture.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+        <state relative-caret-position="108">
+          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/LargeMonGenerator.cpp">
+    <entry file="file://$PROJECT_DIR$/src/controller/Controller.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="47" column="1" lean-forward="false" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+        <state relative-caret-position="342">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/BattleInstance.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/resources/DQW193kUQAEqPtl.jpg_large" />
-    <entry file="file://$PROJECT_DIR$/log.txt">
+    <entry file="file://$PROJECT_DIR$/src/controller/ControllerBattleInstance.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphics/GProgressBar.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/FileWriterObserver.cpp">
+    <entry file="file://$PROJECT_DIR$/src/graphics/GTexture.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="579">
+          <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/Observer.h">
+    <entry file="file://$PROJECT_DIR$/src/largemon/LargeMon.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#120#1090#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/Observer.cpp">
+    <entry file="file://$PROJECT_DIR$/src/graphics/GButtonTexture.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphics/GButtonTexture.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LargeMonMainView.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+          <folding>
+            <element signature="e#132#148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LargeMonMainView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding>
+            <element signature="e#117#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/LargeMonGenerator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="27" column="76" lean-forward="true" selection-start-line="27" selection-start-column="76" selection-end-line="27" selection-end-column="76" />
+          <folding>
+            <element signature="e#44#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/LargeMonGenerator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/FileWriterObserver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ControllerBattleInstance.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="65" column="1" lean-forward="false" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+          <folding>
+            <element signature="e#43#80#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/largemon to do list">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/FileWriterObserver.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/largeMon/LargeMon.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding>
-            <element signature="e#43#62#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/largeMon/FireLM.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/largeMonHeader/LargeMon.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="11" column="68" lean-forward="false" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/include/ControllerBattleInstance.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/DescriptGen.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="2" />
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shiba_inu_sprite_sheet.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/utility/FileWriterObserver.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cpp/ControllerBattleInstance.cpp">
+    <entry file="file://$PROJECT_DIR$/src/largemon/LargeMon.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-          <folding>
-            <element signature="e#43#91#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-422">
+          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

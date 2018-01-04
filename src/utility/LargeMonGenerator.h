@@ -3,10 +3,10 @@
 //
 
 
-#include "largeMonHeader/LargeMon.h"
-#include "../include/largeMonHeader/WaterLM.h"
-#include "../include/largeMonHeader/FireLM.h"
-#include "../include/largeMonHeader/WoodLM.h"
+#include "../largemon/LargeMon.h"
+#include "../largemon/WaterLM.h"
+#include "../largemon/FireLM.h"
+#include "../largemon/WoodLM.h"
 #include <string>
 #include <vector>
 

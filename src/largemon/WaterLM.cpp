@@ -2,7 +2,7 @@
 // Created by angelica on 09/11/17.
 //
 
-#include "../../include/largeMonHeader/WaterLM.h"
+#include "WaterLM.h"
 
 WaterLM::WaterLM(const int *hp, const int *damage, const int *size, const string * name)
 : LargeMon(hp, damage, size, name) {

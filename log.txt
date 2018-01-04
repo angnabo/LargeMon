@@ -1,0 +1,13 @@
+LargeMon: Water Doge Action: Attack Health: 236
+LargeMon: Fire Doge Action: Attack Health: 168
+LargeMon: Fire Doge Action: Attack Health: 168
+LargeMon: Water Doge Action: Attack Health: 184
+LargeMon: Water Doge Action: Attack Health: 184
+LargeMon: Fire Doge Action: Attack Health: 94
+LargeMon: Fire Doge Action: Attack Health: 94
+LargeMon: Water Doge Action: Attack Health: 132
+LargeMon: Water Doge Action: Attack Health: 132
+LargeMon: Fire Doge Action: Attack Health: 20
+LargeMon: Fire Doge Action: Attack Health: 20
+LargeMon: Water Doge Action: Attack Health: 80
+LargeMon: Water Doge Action: Attack Health: 80

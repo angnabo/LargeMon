@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <random>
-#include "../include/LargeMonGenerator.h"
+#include "LargeMonGenerator.h"
 
 LargeMonGenerator::LargeMonGenerator() = default;
 

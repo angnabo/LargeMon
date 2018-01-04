@@ -57,376 +57,376 @@ include CMakeFiles/LargeMon.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/LargeMon.dir/flags.make
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o: ../src/cpp/largeMon/LargeMon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/LargeMon.cpp
+CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o: ../src/largemon/LargeMon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/largemon/LargeMon.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/LargeMon.cpp > CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.i
+CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/largemon/LargeMon.cpp > CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/LargeMon.cpp -o CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.s
+CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/largemon/LargeMon.cpp -o CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o.provides: CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o
+CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o: ../src/cpp/LargeMonGenerator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonGenerator.cpp
+CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o: ../src/utility/LargeMonGenerator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/utility/LargeMonGenerator.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonGenerator.cpp > CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.i
+CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/utility/LargeMonGenerator.cpp > CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonGenerator.cpp -o CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.s
+CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/utility/LargeMonGenerator.cpp -o CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o.provides: CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o
+CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o: ../src/cpp/DescriptGen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/DescriptGen.cpp
+CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o: ../src/utility/DescriptGen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/utility/DescriptGen.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/DescriptGen.cpp > CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.i
+CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/utility/DescriptGen.cpp > CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/DescriptGen.cpp -o CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.s
+CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/utility/DescriptGen.cpp -o CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o.provides: CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o
+CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o: ../src/cpp/Controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/Controller.cpp
+CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o: ../src/controller/Controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/controller/Controller.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/Controller.cpp > CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.i
+CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/controller/Controller.cpp > CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/Controller.cpp -o CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.s
+CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/controller/Controller.cpp -o CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o.provides: CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o
+CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o: ../src/cpp/largeMon/WaterLM.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/WaterLM.cpp
+CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o: ../src/largemon/WaterLM.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/largemon/WaterLM.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/WaterLM.cpp > CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.i
+CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/largemon/WaterLM.cpp > CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/WaterLM.cpp -o CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.s
+CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/largemon/WaterLM.cpp -o CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o.provides: CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o
+CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o: ../src/cpp/largeMon/FireLM.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/FireLM.cpp
+CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o: ../src/largemon/FireLM.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/largemon/FireLM.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/FireLM.cpp > CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.i
+CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/largemon/FireLM.cpp > CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/FireLM.cpp -o CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.s
+CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/largemon/FireLM.cpp -o CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o.provides: CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o
+CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o: ../src/cpp/largeMon/WoodLM.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/WoodLM.cpp
+CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o: ../src/largemon/WoodLM.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/largemon/WoodLM.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/WoodLM.cpp > CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.i
+CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/largemon/WoodLM.cpp > CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/WoodLM.cpp -o CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.s
+CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/largemon/WoodLM.cpp -o CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o.provides: CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o
+CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o: ../src/cpp/Observer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/Observer.cpp
+CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o: ../src/utility/Observer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/utility/Observer.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/Observer.cpp > CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.i
+CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/utility/Observer.cpp > CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/Observer.cpp -o CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.s
+CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/utility/Observer.cpp -o CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o.provides: CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o
+CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o: ../src/cpp/FileWriterObserver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/FileWriterObserver.cpp
+CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o: ../src/utility/FileWriterObserver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/utility/FileWriterObserver.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/FileWriterObserver.cpp > CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.i
+CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/utility/FileWriterObserver.cpp > CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/FileWriterObserver.cpp -o CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.s
+CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/utility/FileWriterObserver.cpp -o CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.provides: CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o
+CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o: ../src/cpp/LargeMonMainView.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonMainView.cpp
+CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o: ../src/LargeMonMainView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/LargeMonMainView.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonMainView.cpp > CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.i
+CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/LargeMonMainView.cpp > CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonMainView.cpp -o CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.s
+CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/LargeMonMainView.cpp -o CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o.provides: CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o
+CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o: ../src/cpp/GTexture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/GTexture.cpp
+CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o: ../src/graphics/GTexture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/graphics/GTexture.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/GTexture.cpp > CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.i
+CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/graphics/GTexture.cpp > CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/GTexture.cpp -o CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.s
+CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/graphics/GTexture.cpp -o CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o.provides: CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o
+CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o: ../src/cpp/ButtonTexture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/ButtonTexture.cpp
+CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o: ../src/graphics/GButtonTexture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/graphics/GButtonTexture.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/ButtonTexture.cpp > CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.i
+CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/graphics/GButtonTexture.cpp > CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/ButtonTexture.cpp -o CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.s
+CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/graphics/GButtonTexture.cpp -o CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o.provides: CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o
+CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o: ../src/cpp/ControllerBattleInstance.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/ControllerBattleInstance.cpp
+CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o: ../src/controller/ControllerBattleInstance.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/controller/ControllerBattleInstance.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/ControllerBattleInstance.cpp > CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.i
+CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/controller/ControllerBattleInstance.cpp > CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/ControllerBattleInstance.cpp -o CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.s
+CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/controller/ControllerBattleInstance.cpp -o CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o.provides: CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o
+CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o: ../src/cpp/GProgressBar.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/cpp/GProgressBar.cpp
+CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o: ../src/graphics/GProgressBar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/graphics/GProgressBar.cpp
 
-CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/cpp/GProgressBar.cpp > CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.i
+CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/graphics/GProgressBar.cpp > CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.i
 
-CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/cpp/GProgressBar.cpp -o CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.s
+CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/graphics/GProgressBar.cpp -o CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.s
 
-CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.provides: CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o.provides: CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o
+CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o
 
 
 # Object files for target LargeMon
 LargeMon_OBJECTS = \
-"CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o"
+"CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o"
 
 # External object files for target LargeMon
 LargeMon_EXTERNAL_OBJECTS =
 
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/build.make
 LargeMon: CMakeFiles/LargeMon.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable LargeMon"
@@ -437,20 +437,20 @@ CMakeFiles/LargeMon.dir/build: LargeMon
 
 .PHONY : CMakeFiles/LargeMon.dir/build
 
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o.requires
 
 .PHONY : CMakeFiles/LargeMon.dir/requires
 

@@ -2,10 +2,10 @@
 // Created by angelica on 11/11/17.
 //
 
-#include "../include/ControllerBattleInstance.h"
+#include "ControllerBattleInstance.h"
 #include <iostream>
 #include <random>
-#include "../include/LargeMonGenerator.h"
+#include "../utility/LargeMonGenerator.h"
 
 
 ControllerBattleInstance::ControllerBattleInstance() {
@@ -65,6 +65,47 @@ string ControllerBattleInstance::enemyMove() {
     return move;
 }
 
+string ControllerBattleInstance::action(int * actionID) {
+
+    string action = "";
+
+    if(!isGameOver()) {
+        switch (*actionID) {
+            case 0: //attack
+                enemy->takeDamage(player->getDamage());
+                if(isEnemyDead()){
+                    return getWinner();
+                } else {
+                    action = "Player dealt " + to_string(player->getDamage()) + " to the enemy. " + enemyMove();
+                }
+                break;
+            case 1: //defend1
+                player->defend();
+                action = "Player healed for 20hp. " + enemyMove();
+                break;
+            case 2: {//special attack
+                if (playerSpecAttkCount == 0) {
+                    string playerType = player->getType();
+                    string enemyType = enemy->getType();
+                    if (determineCounter(&playerType, &enemyType)) {
+                        enemy->takeDamage(player->specialAttack());
+                        action = "Player used special attack for " + to_string(player->specialAttack()) + " damage. " + enemyMove();
+                        playerSpecAttkCount++;
+                        enemyMove();
+                    } else {
+                        action = "LargeMon is not a counter";
+                    }
+                } else {
+                    action = "Special Attack was already used";
+                }
+                break;
+            }
+            default:break;
+        }
+    }
+    return (action.empty() ? getWinner() : action);
+}
+
 bool ControllerBattleInstance::determineCounter(string * playerType, string * enemyType) {
     bool isCounter = false;
     if(*playerType == "water" && *enemyType == "fire") {
@@ -108,49 +149,6 @@ int ControllerBattleInstance::getEnemyCurrentHp() {
 ControllerBattleInstance::~ControllerBattleInstance() {
 
 }
-
-string ControllerBattleInstance::action(int * actionID) {
-
-    string action = "";
-
-    if(!isGameOver()) {
-        switch (*actionID) {
-            case 0: //attack
-                enemy->takeDamage(player->getDamage());
-                if(isEnemyDead()){
-                    return getWinner();
-                } else {
-                    action = "Player dealt " + to_string(player->getDamage()) + " to the enemy. " + enemyMove();
-                }
-                break;
-            case 1: //defend1
-                player->defend();
-                action = "Player healed for 20hp. " + enemyMove();
-                break;
-            case 2: {//special attack
-                if (playerSpecAttkCount == 0) {
-                    string playerType = player->getType();
-                    string enemyType = enemy->getType();
-                    if (determineCounter(&playerType, &enemyType)) {
-                        enemy->takeDamage(player->specialAttack());
-                        action = "Player used special attack for " + to_string(player->specialAttack()) + " damage. " + enemyMove();
-                        playerSpecAttkCount++;
-                        enemyMove();
-                    } else {
-                        action = "LargeMon is not a counter";
-                    }
-                } else {
-                    action = "Special Attack was already used";
-                }
-                break;
-            }
-            default:break;
-        }
-    }
-    return (action.empty() ? getWinner() : action);
-}
-
-
 
 bool ControllerBattleInstance::isGameOver() {
     return isPlayerDead() || isEnemyDead();

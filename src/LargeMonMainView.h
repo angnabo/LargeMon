@@ -6,8 +6,8 @@
 #define LARGEMON_LARGEMONMAINVIEW_H
 
 
-#include "GTexture.h"
-#include "ButtonTexture.h"
+#include "graphics/GTexture.h"
+#include "graphics/GButtonTexture.h"
 
 using namespace std;
 
@@ -29,10 +29,10 @@ private:
     GTexture gPlayerTexture;
     GTexture gEnemyTexture;
     GTexture gBackgroundTexture;
-    ButtonTexture gTopLeftButton;
-    ButtonTexture gTopRightButton;
-    ButtonTexture gBottomLeftButton;
-    ButtonTexture gBottomRightButton;
+    GButtonTexture gTopLeftButton;
+    GButtonTexture gTopRightButton;
+    GButtonTexture gBottomLeftButton;
+    GButtonTexture gBottomRightButton;
 
     GTexture gBottomTextPanel;
     GTexture gBottomPanelFull;
@@ -52,7 +52,7 @@ private:
     GTexture gBottomRightButtonText;
     GTexture gPanelText;
 
-    ButtonTexture buttons[4];
+    GButtonTexture buttons[4];
     SDL_Rect gSpriteClips[ 4 ];
     GTexture gSpriteSheetTexture;
     SDL_Texture* loadTexture( std::string path );

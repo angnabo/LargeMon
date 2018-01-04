@@ -123,383 +123,383 @@ LargeMon/fast:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/build
 .PHONY : LargeMon/fast
 
-src/cpp/ButtonTexture.o: src/cpp/ButtonTexture.cpp.o
+src/LargeMonMainView.o: src/LargeMonMainView.cpp.o
 
-.PHONY : src/cpp/ButtonTexture.o
-
-# target to build an object file
-src/cpp/ButtonTexture.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o
-.PHONY : src/cpp/ButtonTexture.cpp.o
-
-src/cpp/ButtonTexture.i: src/cpp/ButtonTexture.cpp.i
-
-.PHONY : src/cpp/ButtonTexture.i
-
-# target to preprocess a source file
-src/cpp/ButtonTexture.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.i
-.PHONY : src/cpp/ButtonTexture.cpp.i
-
-src/cpp/ButtonTexture.s: src/cpp/ButtonTexture.cpp.s
-
-.PHONY : src/cpp/ButtonTexture.s
-
-# target to generate assembly for a file
-src/cpp/ButtonTexture.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.s
-.PHONY : src/cpp/ButtonTexture.cpp.s
-
-src/cpp/Controller.o: src/cpp/Controller.cpp.o
-
-.PHONY : src/cpp/Controller.o
+.PHONY : src/LargeMonMainView.o
 
 # target to build an object file
-src/cpp/Controller.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o
-.PHONY : src/cpp/Controller.cpp.o
+src/LargeMonMainView.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o
+.PHONY : src/LargeMonMainView.cpp.o
 
-src/cpp/Controller.i: src/cpp/Controller.cpp.i
+src/LargeMonMainView.i: src/LargeMonMainView.cpp.i
 
-.PHONY : src/cpp/Controller.i
+.PHONY : src/LargeMonMainView.i
 
 # target to preprocess a source file
-src/cpp/Controller.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.i
-.PHONY : src/cpp/Controller.cpp.i
+src/LargeMonMainView.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.i
+.PHONY : src/LargeMonMainView.cpp.i
 
-src/cpp/Controller.s: src/cpp/Controller.cpp.s
+src/LargeMonMainView.s: src/LargeMonMainView.cpp.s
 
-.PHONY : src/cpp/Controller.s
+.PHONY : src/LargeMonMainView.s
 
 # target to generate assembly for a file
-src/cpp/Controller.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.s
-.PHONY : src/cpp/Controller.cpp.s
+src/LargeMonMainView.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.s
+.PHONY : src/LargeMonMainView.cpp.s
 
-src/cpp/ControllerBattleInstance.o: src/cpp/ControllerBattleInstance.cpp.o
+src/controller/Controller.o: src/controller/Controller.cpp.o
 
-.PHONY : src/cpp/ControllerBattleInstance.o
+.PHONY : src/controller/Controller.o
 
 # target to build an object file
-src/cpp/ControllerBattleInstance.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o
-.PHONY : src/cpp/ControllerBattleInstance.cpp.o
+src/controller/Controller.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o
+.PHONY : src/controller/Controller.cpp.o
 
-src/cpp/ControllerBattleInstance.i: src/cpp/ControllerBattleInstance.cpp.i
+src/controller/Controller.i: src/controller/Controller.cpp.i
 
-.PHONY : src/cpp/ControllerBattleInstance.i
+.PHONY : src/controller/Controller.i
 
 # target to preprocess a source file
-src/cpp/ControllerBattleInstance.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.i
-.PHONY : src/cpp/ControllerBattleInstance.cpp.i
+src/controller/Controller.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.i
+.PHONY : src/controller/Controller.cpp.i
 
-src/cpp/ControllerBattleInstance.s: src/cpp/ControllerBattleInstance.cpp.s
+src/controller/Controller.s: src/controller/Controller.cpp.s
 
-.PHONY : src/cpp/ControllerBattleInstance.s
+.PHONY : src/controller/Controller.s
 
 # target to generate assembly for a file
-src/cpp/ControllerBattleInstance.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.s
-.PHONY : src/cpp/ControllerBattleInstance.cpp.s
+src/controller/Controller.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.s
+.PHONY : src/controller/Controller.cpp.s
 
-src/cpp/DescriptGen.o: src/cpp/DescriptGen.cpp.o
+src/controller/ControllerBattleInstance.o: src/controller/ControllerBattleInstance.cpp.o
 
-.PHONY : src/cpp/DescriptGen.o
+.PHONY : src/controller/ControllerBattleInstance.o
 
 # target to build an object file
-src/cpp/DescriptGen.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o
-.PHONY : src/cpp/DescriptGen.cpp.o
+src/controller/ControllerBattleInstance.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o
+.PHONY : src/controller/ControllerBattleInstance.cpp.o
 
-src/cpp/DescriptGen.i: src/cpp/DescriptGen.cpp.i
+src/controller/ControllerBattleInstance.i: src/controller/ControllerBattleInstance.cpp.i
 
-.PHONY : src/cpp/DescriptGen.i
+.PHONY : src/controller/ControllerBattleInstance.i
 
 # target to preprocess a source file
-src/cpp/DescriptGen.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.i
-.PHONY : src/cpp/DescriptGen.cpp.i
+src/controller/ControllerBattleInstance.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.i
+.PHONY : src/controller/ControllerBattleInstance.cpp.i
 
-src/cpp/DescriptGen.s: src/cpp/DescriptGen.cpp.s
+src/controller/ControllerBattleInstance.s: src/controller/ControllerBattleInstance.cpp.s
 
-.PHONY : src/cpp/DescriptGen.s
+.PHONY : src/controller/ControllerBattleInstance.s
 
 # target to generate assembly for a file
-src/cpp/DescriptGen.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.s
-.PHONY : src/cpp/DescriptGen.cpp.s
+src/controller/ControllerBattleInstance.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.s
+.PHONY : src/controller/ControllerBattleInstance.cpp.s
 
-src/cpp/FileWriterObserver.o: src/cpp/FileWriterObserver.cpp.o
+src/graphics/GButtonTexture.o: src/graphics/GButtonTexture.cpp.o
 
-.PHONY : src/cpp/FileWriterObserver.o
+.PHONY : src/graphics/GButtonTexture.o
 
 # target to build an object file
-src/cpp/FileWriterObserver.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o
-.PHONY : src/cpp/FileWriterObserver.cpp.o
+src/graphics/GButtonTexture.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o
+.PHONY : src/graphics/GButtonTexture.cpp.o
 
-src/cpp/FileWriterObserver.i: src/cpp/FileWriterObserver.cpp.i
+src/graphics/GButtonTexture.i: src/graphics/GButtonTexture.cpp.i
 
-.PHONY : src/cpp/FileWriterObserver.i
+.PHONY : src/graphics/GButtonTexture.i
 
 # target to preprocess a source file
-src/cpp/FileWriterObserver.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.i
-.PHONY : src/cpp/FileWriterObserver.cpp.i
+src/graphics/GButtonTexture.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.i
+.PHONY : src/graphics/GButtonTexture.cpp.i
 
-src/cpp/FileWriterObserver.s: src/cpp/FileWriterObserver.cpp.s
+src/graphics/GButtonTexture.s: src/graphics/GButtonTexture.cpp.s
 
-.PHONY : src/cpp/FileWriterObserver.s
+.PHONY : src/graphics/GButtonTexture.s
 
 # target to generate assembly for a file
-src/cpp/FileWriterObserver.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.s
-.PHONY : src/cpp/FileWriterObserver.cpp.s
+src/graphics/GButtonTexture.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.s
+.PHONY : src/graphics/GButtonTexture.cpp.s
 
-src/cpp/GProgressBar.o: src/cpp/GProgressBar.cpp.o
+src/graphics/GProgressBar.o: src/graphics/GProgressBar.cpp.o
 
-.PHONY : src/cpp/GProgressBar.o
+.PHONY : src/graphics/GProgressBar.o
 
 # target to build an object file
-src/cpp/GProgressBar.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o
-.PHONY : src/cpp/GProgressBar.cpp.o
+src/graphics/GProgressBar.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o
+.PHONY : src/graphics/GProgressBar.cpp.o
 
-src/cpp/GProgressBar.i: src/cpp/GProgressBar.cpp.i
+src/graphics/GProgressBar.i: src/graphics/GProgressBar.cpp.i
 
-.PHONY : src/cpp/GProgressBar.i
+.PHONY : src/graphics/GProgressBar.i
 
 # target to preprocess a source file
-src/cpp/GProgressBar.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.i
-.PHONY : src/cpp/GProgressBar.cpp.i
+src/graphics/GProgressBar.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.i
+.PHONY : src/graphics/GProgressBar.cpp.i
 
-src/cpp/GProgressBar.s: src/cpp/GProgressBar.cpp.s
+src/graphics/GProgressBar.s: src/graphics/GProgressBar.cpp.s
 
-.PHONY : src/cpp/GProgressBar.s
+.PHONY : src/graphics/GProgressBar.s
 
 # target to generate assembly for a file
-src/cpp/GProgressBar.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.s
-.PHONY : src/cpp/GProgressBar.cpp.s
+src/graphics/GProgressBar.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.s
+.PHONY : src/graphics/GProgressBar.cpp.s
 
-src/cpp/GTexture.o: src/cpp/GTexture.cpp.o
+src/graphics/GTexture.o: src/graphics/GTexture.cpp.o
 
-.PHONY : src/cpp/GTexture.o
+.PHONY : src/graphics/GTexture.o
 
 # target to build an object file
-src/cpp/GTexture.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o
-.PHONY : src/cpp/GTexture.cpp.o
+src/graphics/GTexture.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o
+.PHONY : src/graphics/GTexture.cpp.o
 
-src/cpp/GTexture.i: src/cpp/GTexture.cpp.i
+src/graphics/GTexture.i: src/graphics/GTexture.cpp.i
 
-.PHONY : src/cpp/GTexture.i
+.PHONY : src/graphics/GTexture.i
 
 # target to preprocess a source file
-src/cpp/GTexture.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.i
-.PHONY : src/cpp/GTexture.cpp.i
+src/graphics/GTexture.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.i
+.PHONY : src/graphics/GTexture.cpp.i
 
-src/cpp/GTexture.s: src/cpp/GTexture.cpp.s
+src/graphics/GTexture.s: src/graphics/GTexture.cpp.s
 
-.PHONY : src/cpp/GTexture.s
+.PHONY : src/graphics/GTexture.s
 
 # target to generate assembly for a file
-src/cpp/GTexture.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.s
-.PHONY : src/cpp/GTexture.cpp.s
+src/graphics/GTexture.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.s
+.PHONY : src/graphics/GTexture.cpp.s
 
-src/cpp/LargeMonGenerator.o: src/cpp/LargeMonGenerator.cpp.o
+src/largemon/FireLM.o: src/largemon/FireLM.cpp.o
 
-.PHONY : src/cpp/LargeMonGenerator.o
+.PHONY : src/largemon/FireLM.o
 
 # target to build an object file
-src/cpp/LargeMonGenerator.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o
-.PHONY : src/cpp/LargeMonGenerator.cpp.o
+src/largemon/FireLM.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.o
+.PHONY : src/largemon/FireLM.cpp.o
 
-src/cpp/LargeMonGenerator.i: src/cpp/LargeMonGenerator.cpp.i
+src/largemon/FireLM.i: src/largemon/FireLM.cpp.i
 
-.PHONY : src/cpp/LargeMonGenerator.i
+.PHONY : src/largemon/FireLM.i
 
 # target to preprocess a source file
-src/cpp/LargeMonGenerator.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.i
-.PHONY : src/cpp/LargeMonGenerator.cpp.i
+src/largemon/FireLM.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.i
+.PHONY : src/largemon/FireLM.cpp.i
 
-src/cpp/LargeMonGenerator.s: src/cpp/LargeMonGenerator.cpp.s
+src/largemon/FireLM.s: src/largemon/FireLM.cpp.s
 
-.PHONY : src/cpp/LargeMonGenerator.s
+.PHONY : src/largemon/FireLM.s
 
 # target to generate assembly for a file
-src/cpp/LargeMonGenerator.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.s
-.PHONY : src/cpp/LargeMonGenerator.cpp.s
+src/largemon/FireLM.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/FireLM.cpp.s
+.PHONY : src/largemon/FireLM.cpp.s
 
-src/cpp/LargeMonMainView.o: src/cpp/LargeMonMainView.cpp.o
+src/largemon/LargeMon.o: src/largemon/LargeMon.cpp.o
 
-.PHONY : src/cpp/LargeMonMainView.o
+.PHONY : src/largemon/LargeMon.o
 
 # target to build an object file
-src/cpp/LargeMonMainView.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o
-.PHONY : src/cpp/LargeMonMainView.cpp.o
+src/largemon/LargeMon.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o
+.PHONY : src/largemon/LargeMon.cpp.o
 
-src/cpp/LargeMonMainView.i: src/cpp/LargeMonMainView.cpp.i
+src/largemon/LargeMon.i: src/largemon/LargeMon.cpp.i
 
-.PHONY : src/cpp/LargeMonMainView.i
+.PHONY : src/largemon/LargeMon.i
 
 # target to preprocess a source file
-src/cpp/LargeMonMainView.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.i
-.PHONY : src/cpp/LargeMonMainView.cpp.i
+src/largemon/LargeMon.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.i
+.PHONY : src/largemon/LargeMon.cpp.i
 
-src/cpp/LargeMonMainView.s: src/cpp/LargeMonMainView.cpp.s
+src/largemon/LargeMon.s: src/largemon/LargeMon.cpp.s
 
-.PHONY : src/cpp/LargeMonMainView.s
+.PHONY : src/largemon/LargeMon.s
 
 # target to generate assembly for a file
-src/cpp/LargeMonMainView.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.s
-.PHONY : src/cpp/LargeMonMainView.cpp.s
+src/largemon/LargeMon.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.s
+.PHONY : src/largemon/LargeMon.cpp.s
 
-src/cpp/Observer.o: src/cpp/Observer.cpp.o
+src/largemon/WaterLM.o: src/largemon/WaterLM.cpp.o
 
-.PHONY : src/cpp/Observer.o
+.PHONY : src/largemon/WaterLM.o
 
 # target to build an object file
-src/cpp/Observer.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o
-.PHONY : src/cpp/Observer.cpp.o
+src/largemon/WaterLM.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.o
+.PHONY : src/largemon/WaterLM.cpp.o
 
-src/cpp/Observer.i: src/cpp/Observer.cpp.i
+src/largemon/WaterLM.i: src/largemon/WaterLM.cpp.i
 
-.PHONY : src/cpp/Observer.i
+.PHONY : src/largemon/WaterLM.i
 
 # target to preprocess a source file
-src/cpp/Observer.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.i
-.PHONY : src/cpp/Observer.cpp.i
+src/largemon/WaterLM.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.i
+.PHONY : src/largemon/WaterLM.cpp.i
 
-src/cpp/Observer.s: src/cpp/Observer.cpp.s
+src/largemon/WaterLM.s: src/largemon/WaterLM.cpp.s
 
-.PHONY : src/cpp/Observer.s
+.PHONY : src/largemon/WaterLM.s
 
 # target to generate assembly for a file
-src/cpp/Observer.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.s
-.PHONY : src/cpp/Observer.cpp.s
+src/largemon/WaterLM.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/WaterLM.cpp.s
+.PHONY : src/largemon/WaterLM.cpp.s
 
-src/cpp/largeMon/FireLM.o: src/cpp/largeMon/FireLM.cpp.o
+src/largemon/WoodLM.o: src/largemon/WoodLM.cpp.o
 
-.PHONY : src/cpp/largeMon/FireLM.o
+.PHONY : src/largemon/WoodLM.o
 
 # target to build an object file
-src/cpp/largeMon/FireLM.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o
-.PHONY : src/cpp/largeMon/FireLM.cpp.o
+src/largemon/WoodLM.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.o
+.PHONY : src/largemon/WoodLM.cpp.o
 
-src/cpp/largeMon/FireLM.i: src/cpp/largeMon/FireLM.cpp.i
+src/largemon/WoodLM.i: src/largemon/WoodLM.cpp.i
 
-.PHONY : src/cpp/largeMon/FireLM.i
+.PHONY : src/largemon/WoodLM.i
 
 # target to preprocess a source file
-src/cpp/largeMon/FireLM.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.i
-.PHONY : src/cpp/largeMon/FireLM.cpp.i
+src/largemon/WoodLM.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.i
+.PHONY : src/largemon/WoodLM.cpp.i
 
-src/cpp/largeMon/FireLM.s: src/cpp/largeMon/FireLM.cpp.s
+src/largemon/WoodLM.s: src/largemon/WoodLM.cpp.s
 
-.PHONY : src/cpp/largeMon/FireLM.s
+.PHONY : src/largemon/WoodLM.s
 
 # target to generate assembly for a file
-src/cpp/largeMon/FireLM.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.s
-.PHONY : src/cpp/largeMon/FireLM.cpp.s
+src/largemon/WoodLM.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.s
+.PHONY : src/largemon/WoodLM.cpp.s
 
-src/cpp/largeMon/LargeMon.o: src/cpp/largeMon/LargeMon.cpp.o
+src/utility/DescriptGen.o: src/utility/DescriptGen.cpp.o
 
-.PHONY : src/cpp/largeMon/LargeMon.o
+.PHONY : src/utility/DescriptGen.o
 
 # target to build an object file
-src/cpp/largeMon/LargeMon.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o
-.PHONY : src/cpp/largeMon/LargeMon.cpp.o
+src/utility/DescriptGen.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o
+.PHONY : src/utility/DescriptGen.cpp.o
 
-src/cpp/largeMon/LargeMon.i: src/cpp/largeMon/LargeMon.cpp.i
+src/utility/DescriptGen.i: src/utility/DescriptGen.cpp.i
 
-.PHONY : src/cpp/largeMon/LargeMon.i
+.PHONY : src/utility/DescriptGen.i
 
 # target to preprocess a source file
-src/cpp/largeMon/LargeMon.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.i
-.PHONY : src/cpp/largeMon/LargeMon.cpp.i
+src/utility/DescriptGen.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.i
+.PHONY : src/utility/DescriptGen.cpp.i
 
-src/cpp/largeMon/LargeMon.s: src/cpp/largeMon/LargeMon.cpp.s
+src/utility/DescriptGen.s: src/utility/DescriptGen.cpp.s
 
-.PHONY : src/cpp/largeMon/LargeMon.s
+.PHONY : src/utility/DescriptGen.s
 
 # target to generate assembly for a file
-src/cpp/largeMon/LargeMon.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.s
-.PHONY : src/cpp/largeMon/LargeMon.cpp.s
+src/utility/DescriptGen.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.s
+.PHONY : src/utility/DescriptGen.cpp.s
 
-src/cpp/largeMon/WaterLM.o: src/cpp/largeMon/WaterLM.cpp.o
+src/utility/FileWriterObserver.o: src/utility/FileWriterObserver.cpp.o
 
-.PHONY : src/cpp/largeMon/WaterLM.o
+.PHONY : src/utility/FileWriterObserver.o
 
 # target to build an object file
-src/cpp/largeMon/WaterLM.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o
-.PHONY : src/cpp/largeMon/WaterLM.cpp.o
+src/utility/FileWriterObserver.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o
+.PHONY : src/utility/FileWriterObserver.cpp.o
 
-src/cpp/largeMon/WaterLM.i: src/cpp/largeMon/WaterLM.cpp.i
+src/utility/FileWriterObserver.i: src/utility/FileWriterObserver.cpp.i
 
-.PHONY : src/cpp/largeMon/WaterLM.i
+.PHONY : src/utility/FileWriterObserver.i
 
 # target to preprocess a source file
-src/cpp/largeMon/WaterLM.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.i
-.PHONY : src/cpp/largeMon/WaterLM.cpp.i
+src/utility/FileWriterObserver.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.i
+.PHONY : src/utility/FileWriterObserver.cpp.i
 
-src/cpp/largeMon/WaterLM.s: src/cpp/largeMon/WaterLM.cpp.s
+src/utility/FileWriterObserver.s: src/utility/FileWriterObserver.cpp.s
 
-.PHONY : src/cpp/largeMon/WaterLM.s
+.PHONY : src/utility/FileWriterObserver.s
 
 # target to generate assembly for a file
-src/cpp/largeMon/WaterLM.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.s
-.PHONY : src/cpp/largeMon/WaterLM.cpp.s
+src/utility/FileWriterObserver.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.s
+.PHONY : src/utility/FileWriterObserver.cpp.s
 
-src/cpp/largeMon/WoodLM.o: src/cpp/largeMon/WoodLM.cpp.o
+src/utility/LargeMonGenerator.o: src/utility/LargeMonGenerator.cpp.o
 
-.PHONY : src/cpp/largeMon/WoodLM.o
+.PHONY : src/utility/LargeMonGenerator.o
 
 # target to build an object file
-src/cpp/largeMon/WoodLM.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.o
-.PHONY : src/cpp/largeMon/WoodLM.cpp.o
+src/utility/LargeMonGenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o
+.PHONY : src/utility/LargeMonGenerator.cpp.o
 
-src/cpp/largeMon/WoodLM.i: src/cpp/largeMon/WoodLM.cpp.i
+src/utility/LargeMonGenerator.i: src/utility/LargeMonGenerator.cpp.i
 
-.PHONY : src/cpp/largeMon/WoodLM.i
+.PHONY : src/utility/LargeMonGenerator.i
 
 # target to preprocess a source file
-src/cpp/largeMon/WoodLM.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.i
-.PHONY : src/cpp/largeMon/WoodLM.cpp.i
+src/utility/LargeMonGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.i
+.PHONY : src/utility/LargeMonGenerator.cpp.i
 
-src/cpp/largeMon/WoodLM.s: src/cpp/largeMon/WoodLM.cpp.s
+src/utility/LargeMonGenerator.s: src/utility/LargeMonGenerator.cpp.s
 
-.PHONY : src/cpp/largeMon/WoodLM.s
+.PHONY : src/utility/LargeMonGenerator.s
 
 # target to generate assembly for a file
-src/cpp/largeMon/WoodLM.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/largeMon/WoodLM.cpp.s
-.PHONY : src/cpp/largeMon/WoodLM.cpp.s
+src/utility/LargeMonGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.s
+.PHONY : src/utility/LargeMonGenerator.cpp.s
+
+src/utility/Observer.o: src/utility/Observer.cpp.o
+
+.PHONY : src/utility/Observer.o
+
+# target to build an object file
+src/utility/Observer.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o
+.PHONY : src/utility/Observer.cpp.o
+
+src/utility/Observer.i: src/utility/Observer.cpp.i
+
+.PHONY : src/utility/Observer.i
+
+# target to preprocess a source file
+src/utility/Observer.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.i
+.PHONY : src/utility/Observer.cpp.i
+
+src/utility/Observer.s: src/utility/Observer.cpp.s
+
+.PHONY : src/utility/Observer.s
+
+# target to generate assembly for a file
+src/utility/Observer.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.s
+.PHONY : src/utility/Observer.cpp.s
 
 # Help Target
 help:
@@ -510,48 +510,48 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... LargeMon"
-	@echo "... src/cpp/ButtonTexture.o"
-	@echo "... src/cpp/ButtonTexture.i"
-	@echo "... src/cpp/ButtonTexture.s"
-	@echo "... src/cpp/Controller.o"
-	@echo "... src/cpp/Controller.i"
-	@echo "... src/cpp/Controller.s"
-	@echo "... src/cpp/ControllerBattleInstance.o"
-	@echo "... src/cpp/ControllerBattleInstance.i"
-	@echo "... src/cpp/ControllerBattleInstance.s"
-	@echo "... src/cpp/DescriptGen.o"
-	@echo "... src/cpp/DescriptGen.i"
-	@echo "... src/cpp/DescriptGen.s"
-	@echo "... src/cpp/FileWriterObserver.o"
-	@echo "... src/cpp/FileWriterObserver.i"
-	@echo "... src/cpp/FileWriterObserver.s"
-	@echo "... src/cpp/GProgressBar.o"
-	@echo "... src/cpp/GProgressBar.i"
-	@echo "... src/cpp/GProgressBar.s"
-	@echo "... src/cpp/GTexture.o"
-	@echo "... src/cpp/GTexture.i"
-	@echo "... src/cpp/GTexture.s"
-	@echo "... src/cpp/LargeMonGenerator.o"
-	@echo "... src/cpp/LargeMonGenerator.i"
-	@echo "... src/cpp/LargeMonGenerator.s"
-	@echo "... src/cpp/LargeMonMainView.o"
-	@echo "... src/cpp/LargeMonMainView.i"
-	@echo "... src/cpp/LargeMonMainView.s"
-	@echo "... src/cpp/Observer.o"
-	@echo "... src/cpp/Observer.i"
-	@echo "... src/cpp/Observer.s"
-	@echo "... src/cpp/largeMon/FireLM.o"
-	@echo "... src/cpp/largeMon/FireLM.i"
-	@echo "... src/cpp/largeMon/FireLM.s"
-	@echo "... src/cpp/largeMon/LargeMon.o"
-	@echo "... src/cpp/largeMon/LargeMon.i"
-	@echo "... src/cpp/largeMon/LargeMon.s"
-	@echo "... src/cpp/largeMon/WaterLM.o"
-	@echo "... src/cpp/largeMon/WaterLM.i"
-	@echo "... src/cpp/largeMon/WaterLM.s"
-	@echo "... src/cpp/largeMon/WoodLM.o"
-	@echo "... src/cpp/largeMon/WoodLM.i"
-	@echo "... src/cpp/largeMon/WoodLM.s"
+	@echo "... src/LargeMonMainView.o"
+	@echo "... src/LargeMonMainView.i"
+	@echo "... src/LargeMonMainView.s"
+	@echo "... src/controller/Controller.o"
+	@echo "... src/controller/Controller.i"
+	@echo "... src/controller/Controller.s"
+	@echo "... src/controller/ControllerBattleInstance.o"
+	@echo "... src/controller/ControllerBattleInstance.i"
+	@echo "... src/controller/ControllerBattleInstance.s"
+	@echo "... src/graphics/GButtonTexture.o"
+	@echo "... src/graphics/GButtonTexture.i"
+	@echo "... src/graphics/GButtonTexture.s"
+	@echo "... src/graphics/GProgressBar.o"
+	@echo "... src/graphics/GProgressBar.i"
+	@echo "... src/graphics/GProgressBar.s"
+	@echo "... src/graphics/GTexture.o"
+	@echo "... src/graphics/GTexture.i"
+	@echo "... src/graphics/GTexture.s"
+	@echo "... src/largemon/FireLM.o"
+	@echo "... src/largemon/FireLM.i"
+	@echo "... src/largemon/FireLM.s"
+	@echo "... src/largemon/LargeMon.o"
+	@echo "... src/largemon/LargeMon.i"
+	@echo "... src/largemon/LargeMon.s"
+	@echo "... src/largemon/WaterLM.o"
+	@echo "... src/largemon/WaterLM.i"
+	@echo "... src/largemon/WaterLM.s"
+	@echo "... src/largemon/WoodLM.o"
+	@echo "... src/largemon/WoodLM.i"
+	@echo "... src/largemon/WoodLM.s"
+	@echo "... src/utility/DescriptGen.o"
+	@echo "... src/utility/DescriptGen.i"
+	@echo "... src/utility/DescriptGen.s"
+	@echo "... src/utility/FileWriterObserver.o"
+	@echo "... src/utility/FileWriterObserver.i"
+	@echo "... src/utility/FileWriterObserver.s"
+	@echo "... src/utility/LargeMonGenerator.o"
+	@echo "... src/utility/LargeMonGenerator.i"
+	@echo "... src/utility/LargeMonGenerator.s"
+	@echo "... src/utility/Observer.o"
+	@echo "... src/utility/Observer.i"
+	@echo "... src/utility/Observer.s"
 .PHONY : help
 
 

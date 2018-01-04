@@ -2,7 +2,7 @@
 // Created by angelica on 09/11/17.
 //
 
-#include "../../include/largeMonHeader/WoodLM.h"
+#include "WoodLM.h"
 
 WoodLM::WoodLM(const int *hp, const int *damage, const int *size, const string * name)
         : LargeMon(hp, damage, size, name) {

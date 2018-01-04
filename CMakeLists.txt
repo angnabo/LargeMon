@@ -3,14 +3,14 @@ project(LargeMon)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
-set(SOURCE_FILES src/cpp/largeMon/LargeMon.cpp src/include/largeMonHeader/LargeMon.h
-        src/cpp/LargeMonGenerator.cpp src/include/LargeMonGenerator.h
-        src/cpp/DescriptGen.cpp src/include/DescriptGen.h src/cpp/Controller.cpp
-        src/include/Controller.h src/cpp/largeMon/WaterLM.cpp src/include/largeMonHeader/WaterLM.h
-        src/cpp/largeMon/FireLM.cpp src/include/largeMonHeader/FireLM.h src/cpp/largeMon/WoodLM.cpp
-        src/include/largeMonHeader/WoodLM.h src/cpp/Observer.cpp src/include/Observer.h src/cpp/FileWriterObserver.cpp
-        src/include/FileWriterObserver.h src/cpp/LargeMonMainView.cpp src/include/LargeMonMainView.h src/cpp/GTexture.cpp
-        src/include/GTexture.h src/cpp/ButtonTexture.cpp src/include/ButtonTexture.h src/cpp/ControllerBattleInstance.cpp src/include/ControllerBattleInstance.h src/cpp/GProgressBar.cpp src/include/GProgressBar.h)
+set(SOURCE_FILES src/largemon/LargeMon.cpp src/largemon/LargeMon.h
+        src/utility/LargeMonGenerator.cpp src/utility/LargeMonGenerator.h
+        src/utility/DescriptGen.cpp src/utility/DescriptGen.h src/controller/Controller.cpp
+        src/controller/Controller.h src/largemon/WaterLM.cpp src/largemon/WaterLM.h
+        src/largemon/FireLM.cpp src/largemon/FireLM.h src/largemon/WoodLM.cpp
+        src/largemon/WoodLM.h src/utility/Observer.cpp src/utility/Observer.h src/utility/FileWriterObserver.cpp
+        src/utility/FileWriterObserver.h src/LargeMonMainView.cpp src/LargeMonMainView.h src/graphics/GTexture.cpp
+        src/graphics/GTexture.h src/graphics/GButtonTexture.cpp src/graphics/GButtonTexture.h src/controller/ControllerBattleInstance.cpp src/controller/ControllerBattleInstance.h src/graphics/GProgressBar.cpp src/graphics/GProgressBar.h)
 add_executable(LargeMon ${SOURCE_FILES})
 
 target_link_libraries(LargeMon SDL2 SDL2_ttf SDL2_image)

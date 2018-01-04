@@ -1,0 +1,30 @@
+LargeMon TO DO:
+
+[done]implement file writer
+
+[]generate names for largemon(maybe have a different generator for each type, the only diff is a vector of names for the type)
+
+[]implement saving LargeMon
+
+[]stats bar showing name/type/hp/attack power
+
+[]clean up code :
+	* view variables in header file
+	*
+
+[]include sprite sheets for largemon
+
+[]implement a wait time for enemy attack
+
+[]text texture in own class with update methos
+
+[]hp bar in own class with update method
+
+[]make a view interface with pure virtual methods like close, init, main
+
+[]make handle key presses one method
+
+
+
+
+

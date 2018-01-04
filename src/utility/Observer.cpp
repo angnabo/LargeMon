@@ -2,7 +2,7 @@
 // Created by angelica on 10/11/17.
 //
 
-#include "../include/Observer.h"
+#include "Observer.h"
 
 Observer::Observer(LargeMon *lm) {
     largeMon = lm;

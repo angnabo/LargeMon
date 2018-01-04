@@ -3,7 +3,7 @@
 //
 
 
-#include "../include/FileWriterObserver.h"
+#include "FileWriterObserver.h"
 
 FileWriterObserver::FileWriterObserver(LargeMon *lm) : Observer(lm) {
     ofstream outLogFile("/home/angelica/Development/CLion/LargeMon/log.txt", ios::out);

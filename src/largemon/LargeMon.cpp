@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "../../include/largeMonHeader/LargeMon.h"
+#include "LargeMon.h"
 
 //using namespace std;
 

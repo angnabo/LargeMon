@@ -2,7 +2,7 @@
 // Created by angelica on 22/10/17.
 //
 
-#include "../include/GTexture.h"
+#include "GTexture.h"
 
 GTexture::GTexture()
 {

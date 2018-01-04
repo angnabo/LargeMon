@@ -2,7 +2,7 @@
 // Created by angelica on 14/11/17.
 //
 
-#include "../include/GProgressBar.h"
+#include "GProgressBar.h"
 
 
 GProgressBar::GProgressBar()

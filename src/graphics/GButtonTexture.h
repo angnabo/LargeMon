@@ -8,7 +8,7 @@
 
 #include "GTexture.h"
 
-class ButtonTexture: public GTexture{
+class GButtonTexture: public GTexture{
 
 public:
     void setSelected(bool);

@@ -2,8 +2,8 @@
 // Created by angelica on 11/11/17.
 //
 
-#include "largeMonHeader/LargeMon.h"
-#include "FileWriterObserver.h"
+#include "../largemon/LargeMon.h"
+#include "../utility/FileWriterObserver.h"
 
 #ifndef LARGEMON_CONTROLLERBATTLEINSTANCE_H
 #define LARGEMON_CONTROLLERBATTLEINSTANCE_H
