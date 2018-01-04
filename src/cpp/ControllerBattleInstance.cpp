@@ -16,8 +16,8 @@ ControllerBattleInstance::ControllerBattleInstance() {
     player = generator.generateLargeMon();
     enemy = generator.generateLargeMon();
 
-    playerView = new ViewObserver(player);
-    enemyView = new ViewObserver(enemy);
+    playerWriter = new FileWriterObserver(player);
+    enemyWriter = new FileWriterObserver(enemy);
 
     isOver = false;
 }
@@ -33,28 +33,33 @@ int ControllerBattleInstance::randomInRange(int min, int max){
 string ControllerBattleInstance::enemyMove() {
     string move = "";
     int random = randomInRange(1, 6);
-    if (random == 1){
-        enemy->defend();
-        move = "The enemy healed for 20 hp. Enemy hp is: " + to_string(enemy->getCurrentHp());
-    } else if (random == 2) {
-        string playerType = player->getType();
-        string enemyType = enemy->getType();
-        if(determineCounter(&enemyType, &playerType)) {
-            if (enemySpecAttkCounter == 0) {
-                player->takeDamage(enemy->specialAttack());
-                move = "The enemy used the special attack for: " + to_string(enemy->specialAttack());
-                enemySpecAttkCounter++;
-            }
-        } else {
-            player->takeDamage(enemy->getDamage());
-            move = "The enemy attacked for " + to_string(enemy->getDamage());
+    switch(random){
+        case 1: {
+            enemy->defend();
+            move = "The enemy healed for 20 hp.";
         }
-    } else {
-        player->takeDamage(enemy->getDamage());
-        if(isPlayerDead()){
-            move = getWinner();
-        } else {
-            move = "The enemy attacked for " + to_string(enemy->getDamage()) + ". The player hp is: " + to_string(playerView->getCurrentHp());
+        case 2: {
+            string playerType = player->getType();
+            string enemyType = enemy->getType();
+            if (determineCounter(&enemyType, &playerType)) {
+                if (enemySpecAttkCounter == 0) {
+                    player->takeDamage(enemy->specialAttack());
+                    move = "The enemy used the special attack for: " + to_string(enemy->specialAttack());
+                    enemySpecAttkCounter++;
+                }
+            } else {
+                player->takeDamage(enemy->getDamage());
+                move = "The enemy attacked for " + to_string(enemy->getDamage());
+            }
+        }
+        default: {
+            player->takeDamage(enemy->getDamage());
+            if (isPlayerDead()) {
+                move = getWinner();
+            } else {
+                move = "The enemy attacked for " + to_string(enemy->getDamage()) + ". The player hp is: " +
+                       to_string(player->getCurrentHp());
+            }
         }
     }
     return move;
@@ -84,20 +89,20 @@ string ControllerBattleInstance::getPlayerLargeMonName(){
 }
 
 float ControllerBattleInstance::getEnemyLargeMonCurrentHpPercent(){
-    float hpPercent = (float)enemyView->getCurrentHp()/(float)enemy->getHp();
+    float hpPercent = (float)enemy->getCurrentHp()/(float)enemy->getHp();
     return hpPercent;
 }
 
 float ControllerBattleInstance::getPlayerLargeMonCurrentHpPercent(){
-    float hpPercent = (float)playerView->getCurrentHp()/(float)player->getHp();//25/50*100
+    float hpPercent = (float)player->getCurrentHp()/(float)player->getHp();//25/50*100
     return hpPercent;
 }
 
 int ControllerBattleInstance::getPlayerCurrentHp(){
-    return playerView->getCurrentHp();
+    return player->getCurrentHp();
 }
 int ControllerBattleInstance::getEnemyCurrentHp() {
-    return enemyView->getCurrentHp();
+    return enemy->getCurrentHp();
 }
 
 ControllerBattleInstance::~ControllerBattleInstance() {

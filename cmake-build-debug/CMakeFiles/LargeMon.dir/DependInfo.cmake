@@ -4,17 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/angelica/Development/CLion/LargeMon/src/cpp/BattleInstance.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/ButtonTexture.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/ButtonTexture.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/Controller.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/Controller.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/ControllerBattleInstance.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/ControllerBattleInstance.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/DescriptGen.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.o"
+  "/home/angelica/Development/CLion/LargeMon/src/cpp/FileWriterObserver.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/GProgressBar.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/GProgressBar.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/GTexture.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/GTexture.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonGenerator.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/LargeMonGenerator.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/LargeMonMainView.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/LargeMonMainView.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/Observer.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.o"
-  "/home/angelica/Development/CLion/LargeMon/src/cpp/ViewObserver.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/ViewObserver.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/FireLM.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/largeMon/FireLM.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/LargeMon.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/largeMon/LargeMon.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/cpp/largeMon/WaterLM.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/cpp/largeMon/WaterLM.cpp.o"

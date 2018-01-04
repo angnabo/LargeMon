@@ -23,10 +23,11 @@ public:
     void defend();
     virtual int specialAttack() const = 0;
     virtual string getType() const = 0;
-    int getDamage(){ return damage; }
+    int getDamage();
     int getHp(){ return hp; }
     int getCurrentHp(){ return currentHp; }
     int getSize() { return size; }
+    std::string getLastAction();
     //string getType() { return type; }
 
     void attach(class Observer *);
@@ -42,6 +43,7 @@ protected:
     //string type; //make Type into class
     int couterLM;
     string description;
+    string lastAction;
     vector<class Observer *> views;
 };
 

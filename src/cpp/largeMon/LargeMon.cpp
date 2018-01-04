@@ -25,7 +25,12 @@ void LargeMon::takeDamage(int damage) {
     if(currentHp < 0){
         currentHp = 0;
     }
+}
+
+int LargeMon::getDamage() {
+    lastAction = "Attack";
     notify();
+    return damage;
 }
 
 void LargeMon::defend(){
@@ -33,11 +38,16 @@ void LargeMon::defend(){
     if(currentHp > hp){
         currentHp = hp;
     }
+    lastAction = "Defend";
     notify();
 }
 
 int LargeMon::specialAttack() const {
     return 0;
+}
+
+std::string LargeMon::getLastAction() {
+    return lastAction;
 }
 
 void LargeMon::notify() {

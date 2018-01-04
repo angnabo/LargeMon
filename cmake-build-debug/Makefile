@@ -123,33 +123,6 @@ LargeMon/fast:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/build
 .PHONY : LargeMon/fast
 
-src/cpp/BattleInstance.o: src/cpp/BattleInstance.cpp.o
-
-.PHONY : src/cpp/BattleInstance.o
-
-# target to build an object file
-src/cpp/BattleInstance.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.o
-.PHONY : src/cpp/BattleInstance.cpp.o
-
-src/cpp/BattleInstance.i: src/cpp/BattleInstance.cpp.i
-
-.PHONY : src/cpp/BattleInstance.i
-
-# target to preprocess a source file
-src/cpp/BattleInstance.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.i
-.PHONY : src/cpp/BattleInstance.cpp.i
-
-src/cpp/BattleInstance.s: src/cpp/BattleInstance.cpp.s
-
-.PHONY : src/cpp/BattleInstance.s
-
-# target to generate assembly for a file
-src/cpp/BattleInstance.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/BattleInstance.cpp.s
-.PHONY : src/cpp/BattleInstance.cpp.s
-
 src/cpp/ButtonTexture.o: src/cpp/ButtonTexture.cpp.o
 
 .PHONY : src/cpp/ButtonTexture.o
@@ -257,6 +230,33 @@ src/cpp/DescriptGen.s: src/cpp/DescriptGen.cpp.s
 src/cpp/DescriptGen.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/DescriptGen.cpp.s
 .PHONY : src/cpp/DescriptGen.cpp.s
+
+src/cpp/FileWriterObserver.o: src/cpp/FileWriterObserver.cpp.o
+
+.PHONY : src/cpp/FileWriterObserver.o
+
+# target to build an object file
+src/cpp/FileWriterObserver.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.o
+.PHONY : src/cpp/FileWriterObserver.cpp.o
+
+src/cpp/FileWriterObserver.i: src/cpp/FileWriterObserver.cpp.i
+
+.PHONY : src/cpp/FileWriterObserver.i
+
+# target to preprocess a source file
+src/cpp/FileWriterObserver.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.i
+.PHONY : src/cpp/FileWriterObserver.cpp.i
+
+src/cpp/FileWriterObserver.s: src/cpp/FileWriterObserver.cpp.s
+
+.PHONY : src/cpp/FileWriterObserver.s
+
+# target to generate assembly for a file
+src/cpp/FileWriterObserver.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/FileWriterObserver.cpp.s
+.PHONY : src/cpp/FileWriterObserver.cpp.s
 
 src/cpp/GProgressBar.o: src/cpp/GProgressBar.cpp.o
 
@@ -393,33 +393,6 @@ src/cpp/Observer.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/Observer.cpp.s
 .PHONY : src/cpp/Observer.cpp.s
 
-src/cpp/ViewObserver.o: src/cpp/ViewObserver.cpp.o
-
-.PHONY : src/cpp/ViewObserver.o
-
-# target to build an object file
-src/cpp/ViewObserver.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ViewObserver.cpp.o
-.PHONY : src/cpp/ViewObserver.cpp.o
-
-src/cpp/ViewObserver.i: src/cpp/ViewObserver.cpp.i
-
-.PHONY : src/cpp/ViewObserver.i
-
-# target to preprocess a source file
-src/cpp/ViewObserver.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ViewObserver.cpp.i
-.PHONY : src/cpp/ViewObserver.cpp.i
-
-src/cpp/ViewObserver.s: src/cpp/ViewObserver.cpp.s
-
-.PHONY : src/cpp/ViewObserver.s
-
-# target to generate assembly for a file
-src/cpp/ViewObserver.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/cpp/ViewObserver.cpp.s
-.PHONY : src/cpp/ViewObserver.cpp.s
-
 src/cpp/largeMon/FireLM.o: src/cpp/largeMon/FireLM.cpp.o
 
 .PHONY : src/cpp/largeMon/FireLM.o
@@ -537,9 +510,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... LargeMon"
-	@echo "... src/cpp/BattleInstance.o"
-	@echo "... src/cpp/BattleInstance.i"
-	@echo "... src/cpp/BattleInstance.s"
 	@echo "... src/cpp/ButtonTexture.o"
 	@echo "... src/cpp/ButtonTexture.i"
 	@echo "... src/cpp/ButtonTexture.s"
@@ -552,6 +522,9 @@ help:
 	@echo "... src/cpp/DescriptGen.o"
 	@echo "... src/cpp/DescriptGen.i"
 	@echo "... src/cpp/DescriptGen.s"
+	@echo "... src/cpp/FileWriterObserver.o"
+	@echo "... src/cpp/FileWriterObserver.i"
+	@echo "... src/cpp/FileWriterObserver.s"
 	@echo "... src/cpp/GProgressBar.o"
 	@echo "... src/cpp/GProgressBar.i"
 	@echo "... src/cpp/GProgressBar.s"
@@ -567,9 +540,6 @@ help:
 	@echo "... src/cpp/Observer.o"
 	@echo "... src/cpp/Observer.i"
 	@echo "... src/cpp/Observer.s"
-	@echo "... src/cpp/ViewObserver.o"
-	@echo "... src/cpp/ViewObserver.i"
-	@echo "... src/cpp/ViewObserver.s"
 	@echo "... src/cpp/largeMon/FireLM.o"
 	@echo "... src/cpp/largeMon/FireLM.i"
 	@echo "... src/cpp/largeMon/FireLM.s"

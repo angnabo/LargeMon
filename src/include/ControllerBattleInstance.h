@@ -3,7 +3,7 @@
 //
 
 #include "largeMonHeader/LargeMon.h"
-#include "ViewObserver.h"
+#include "FileWriterObserver.h"
 
 #ifndef LARGEMON_CONTROLLERBATTLEINSTANCE_H
 #define LARGEMON_CONTROLLERBATTLEINSTANCE_H
@@ -33,8 +33,8 @@ private:
     LargeMon * enemy;
     int playerSpecAttkCount;
     int enemySpecAttkCounter;
-    ViewObserver * playerView;
-    ViewObserver * enemyView;
+    FileWriterObserver * playerWriter;
+    FileWriterObserver * enemyWriter;
     //LargeMon * playerPtr;
     bool isOver;
 

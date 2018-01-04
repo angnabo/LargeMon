@@ -17,3 +17,5 @@ string FireLM::getType() const {
     string s = "fire";
     return s;
 }
+
+
