@@ -6,6 +6,7 @@
 #include <iostream>
 #include <random>
 #include "../utility/LargeMonGenerator.h"
+#include "FileWriter.h"
 
 
 ControllerBattleInstance::ControllerBattleInstance() {
@@ -16,8 +17,7 @@ ControllerBattleInstance::ControllerBattleInstance() {
     player = generator.generateLargeMon();
     enemy = generator.generateLargeMon();
 
-    playerWriter = new FileWriterObserver(player);
-    enemyWriter = new FileWriterObserver(enemy);
+    //enemyWriter = new FileWriterObserver(enemy);
 
     isOver = false;
 }
@@ -32,77 +32,87 @@ int ControllerBattleInstance::randomInRange(int min, int max){
 
 string ControllerBattleInstance::enemyMove() {
     string move = "";
-    int random = randomInRange(1, 6);
-    switch(random){
-        case 1: {
-            enemy->defend();
-            move = "The enemy healed for 20 hp.";
-        }
-        case 2: {
-            string playerType = player->getType();
-            string enemyType = enemy->getType();
-            if (determineCounter(&enemyType, &playerType)) {
-                if (enemySpecAttkCounter == 0) {
-                    player->takeDamage(enemy->specialAttack());
-                    move = "The enemy used the special attack for: " + to_string(enemy->specialAttack());
-                    enemySpecAttkCounter++;
+        int random = randomInRange(1, 6);
+        switch (random) {
+            case 1: //Defend
+                enemy->defend();
+                move = "The enemy healed for 20 hp.";
+                enemyLastAction = "Defend";
+                break;
+            case 2: //Special Attack
+            {
+                string playerType = player->getType();
+                string enemyType = enemy->getType();
+                if (determineCounter(&enemyType, &playerType)) {
+                    if (enemySpecAttkCounter == 0) {
+                        player->takeDamage(enemy->specialAttack());
+                        move = "The enemy used the special attack for: " + to_string(enemy->specialAttack());
+                        enemyLastAction = "Special Attack";
+                        enemySpecAttkCounter++;
+                    }
+                } else {
+                    player->takeDamage(enemy->getDamage());
+                    enemyLastAction = "Attack";
+                    move = "The enemy attacked for " + to_string(enemy->getDamage());
                 }
-            } else {
+            }
+                break;
+            default: //Attack
                 player->takeDamage(enemy->getDamage());
-                move = "The enemy attacked for " + to_string(enemy->getDamage());
-            }
+                if (isPlayerDead()) {
+                    move = "";
+                } else {
+                    move = "The enemy attacked for " + to_string(enemy->getDamage());
+                    enemyLastAction = "Attack";
+                }
+            break;
         }
-        default: {
-            player->takeDamage(enemy->getDamage());
-            if (isPlayerDead()) {
-                move = getWinner();
-            } else {
-                move = "The enemy attacked for " + to_string(enemy->getDamage()) + ". The player hp is: " +
-                       to_string(player->getCurrentHp());
-            }
-        }
-    }
     return move;
 }
 
 string ControllerBattleInstance::action(int * actionID) {
-
     string action = "";
-
-    if(!isGameOver()) {
         switch (*actionID) {
             case 0: //attack
                 enemy->takeDamage(player->getDamage());
-                if(isEnemyDead()){
-                    return getWinner();
-                } else {
-                    action = "Player dealt " + to_string(player->getDamage()) + " to the enemy. " + enemyMove();
-                }
+                action = "Player dealt " + to_string(player->getDamage()) + " to the enemy. ";
+                playerLastAction = "Attack";
                 break;
-            case 1: //defend1
+            case 1: //defend
                 player->defend();
-                action = "Player healed for 20hp. " + enemyMove();
+                action = "Player healed for 20hp. ";
+                playerLastAction = "Defend";
                 break;
-            case 2: {//special attack
+            case 2: //special attack
+            {
                 if (playerSpecAttkCount == 0) {
                     string playerType = player->getType();
                     string enemyType = enemy->getType();
                     if (determineCounter(&playerType, &enemyType)) {
                         enemy->takeDamage(player->specialAttack());
-                        action = "Player used special attack for " + to_string(player->specialAttack()) + " damage. " + enemyMove();
+                        action = "Player used special attack for " + to_string(player->specialAttack()) + " damage. ";
+                        playerLastAction = "Special Attack";
                         playerSpecAttkCount++;
-                        enemyMove();
                     } else {
                         action = "LargeMon is not a counter";
                     }
                 } else {
                     action = "Special Attack was already used";
                 }
-                break;
-            }
-            default:break;
+            } break;
+
+            default: break;
         }
+
+    action += enemyMove();
+    if(isEnemyDead()){
+        enemyLastAction = "Fainted";
+    }else if(isPlayerDead()){
+        playerLastAction = "Fainted";
     }
+    turns++;
+    notify(enemy, "Enemy", enemyLastAction);
+    notify(player, "Player", playerLastAction);
     return (action.empty() ? getWinner() : action);
 }
 
@@ -164,6 +174,20 @@ bool ControllerBattleInstance::isEnemyDead() {
 
 string ControllerBattleInstance::getWinner() {
     return (isEnemyDead() ? "Player Won!" : "Enemy Won!");
+}
+
+void ControllerBattleInstance::attach(class ContrObserver * obs) {
+    views.push_back(obs);
+}
+
+void ControllerBattleInstance::notify(LargeMon * lm, string player, string action) {
+    for (int i = 0; i < views.size(); i++) {
+        views[i]->update(lm, player, action);
+    }
+}
+
+int ControllerBattleInstance::getTurns() {
+    return turns;
 }
 
 

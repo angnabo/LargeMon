@@ -1,11 +1,9 @@
-#include <string>
-#include <vector>
 #include "../utility/Observer.h"
-
 using namespace std;
-
 #ifndef LARGEMON_LARGEMON_H
 #define LARGEMON_LARGEMON_H
+#include <string>
+#include <vector>
 
 class LargeMon {
 public:

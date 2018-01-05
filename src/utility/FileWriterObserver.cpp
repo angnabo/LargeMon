@@ -33,7 +33,4 @@ void FileWriterObserver::update() const {
                                                       " Health: " << largeMon->getCurrentHp() << endl;
 }
 
-void FileWriterObserver::writeToFile() const {
-
-}
 

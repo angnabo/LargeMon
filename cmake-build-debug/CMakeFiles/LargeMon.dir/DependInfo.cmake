@@ -5,8 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/angelica/Development/CLion/LargeMon/src/LargeMonMainView.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.o"
+  "/home/angelica/Development/CLion/LargeMon/src/controller/ContrObserver.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/controller/ContrObserver.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/controller/Controller.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/controller/ControllerBattleInstance.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o"
+  "/home/angelica/Development/CLion/LargeMon/src/controller/FileWriter.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/controller/FileWriter.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/graphics/GButtonTexture.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/graphics/GProgressBar.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/graphics/GTexture.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o"
@@ -18,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/angelica/Development/CLion/LargeMon/src/utility/FileWriterObserver.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/utility/LargeMonGenerator.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/utility/Observer.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o"
+  "/home/angelica/Development/CLion/LargeMon/test/Test.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/test/Test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -9,7 +9,9 @@ set(SOURCE_FILES src/largemon/LargeMon.cpp src/largemon/LargeMon.h
         src/controller/Controller.h src/largemon/WaterLM.cpp src/largemon/WaterLM.h
         src/largemon/FireLM.cpp src/largemon/FireLM.h src/largemon/WoodLM.cpp
         src/largemon/WoodLM.h src/utility/Observer.cpp src/utility/Observer.h src/utility/FileWriterObserver.cpp
-        src/utility/FileWriterObserver.h src/LargeMonMainView.cpp src/LargeMonMainView.h src/graphics/GTexture.cpp
+        src/utility/FileWriterObserver.h
+        src/controller/ContrObserver.h src/controller/ContrObserver.cpp test/Test.cpp test/Test.h
+        src/controller/FileWriter.h src/controller/FileWriter.cpp src/LargeMonMainView.cpp src/LargeMonMainView.h src/graphics/GTexture.cpp
         src/graphics/GTexture.h src/graphics/GButtonTexture.cpp src/graphics/GButtonTexture.h src/controller/ControllerBattleInstance.cpp src/controller/ControllerBattleInstance.h src/graphics/GProgressBar.cpp src/graphics/GProgressBar.h)
 add_executable(LargeMon ${SOURCE_FILES})
 

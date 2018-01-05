@@ -2,6 +2,10 @@ LargeMon TO DO:
 
 [done]implement file writer
 
+[] implement a controller observer class to write to file
+
+[] fix the file writing bug which doesnt write the last turn if the player wins
+
 []generate names for largemon(maybe have a different generator for each type, the only diff is a vector of names for the type)
 
 []implement saving LargeMon

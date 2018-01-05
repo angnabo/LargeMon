@@ -92,6 +92,12 @@
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMonMainView.h">
 			<Option target="LargeMon"/>
 		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/ContrObserver.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/ContrObserver.h">
+			<Option target="LargeMon"/>
+		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/Controller.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
@@ -102,6 +108,12 @@
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/ControllerBattleInstance.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/FileWriter.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/FileWriter.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/graphics/GButtonTexture.cpp">
@@ -168,6 +180,12 @@
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/Observer.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/test/Test.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/test/Test.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/CMakeLists.txt">

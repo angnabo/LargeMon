@@ -150,6 +150,33 @@ src/LargeMonMainView.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/LargeMonMainView.cpp.s
 .PHONY : src/LargeMonMainView.cpp.s
 
+src/controller/ContrObserver.o: src/controller/ContrObserver.cpp.o
+
+.PHONY : src/controller/ContrObserver.o
+
+# target to build an object file
+src/controller/ContrObserver.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/ContrObserver.cpp.o
+.PHONY : src/controller/ContrObserver.cpp.o
+
+src/controller/ContrObserver.i: src/controller/ContrObserver.cpp.i
+
+.PHONY : src/controller/ContrObserver.i
+
+# target to preprocess a source file
+src/controller/ContrObserver.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/ContrObserver.cpp.i
+.PHONY : src/controller/ContrObserver.cpp.i
+
+src/controller/ContrObserver.s: src/controller/ContrObserver.cpp.s
+
+.PHONY : src/controller/ContrObserver.s
+
+# target to generate assembly for a file
+src/controller/ContrObserver.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/ContrObserver.cpp.s
+.PHONY : src/controller/ContrObserver.cpp.s
+
 src/controller/Controller.o: src/controller/Controller.cpp.o
 
 .PHONY : src/controller/Controller.o
@@ -203,6 +230,33 @@ src/controller/ControllerBattleInstance.s: src/controller/ControllerBattleInstan
 src/controller/ControllerBattleInstance.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.s
 .PHONY : src/controller/ControllerBattleInstance.cpp.s
+
+src/controller/FileWriter.o: src/controller/FileWriter.cpp.o
+
+.PHONY : src/controller/FileWriter.o
+
+# target to build an object file
+src/controller/FileWriter.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/FileWriter.cpp.o
+.PHONY : src/controller/FileWriter.cpp.o
+
+src/controller/FileWriter.i: src/controller/FileWriter.cpp.i
+
+.PHONY : src/controller/FileWriter.i
+
+# target to preprocess a source file
+src/controller/FileWriter.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/FileWriter.cpp.i
+.PHONY : src/controller/FileWriter.cpp.i
+
+src/controller/FileWriter.s: src/controller/FileWriter.cpp.s
+
+.PHONY : src/controller/FileWriter.s
+
+# target to generate assembly for a file
+src/controller/FileWriter.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/FileWriter.cpp.s
+.PHONY : src/controller/FileWriter.cpp.s
 
 src/graphics/GButtonTexture.o: src/graphics/GButtonTexture.cpp.o
 
@@ -501,6 +555,33 @@ src/utility/Observer.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.s
 .PHONY : src/utility/Observer.cpp.s
 
+test/Test.o: test/Test.cpp.o
+
+.PHONY : test/Test.o
+
+# target to build an object file
+test/Test.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/test/Test.cpp.o
+.PHONY : test/Test.cpp.o
+
+test/Test.i: test/Test.cpp.i
+
+.PHONY : test/Test.i
+
+# target to preprocess a source file
+test/Test.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/test/Test.cpp.i
+.PHONY : test/Test.cpp.i
+
+test/Test.s: test/Test.cpp.s
+
+.PHONY : test/Test.s
+
+# target to generate assembly for a file
+test/Test.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/test/Test.cpp.s
+.PHONY : test/Test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -513,12 +594,18 @@ help:
 	@echo "... src/LargeMonMainView.o"
 	@echo "... src/LargeMonMainView.i"
 	@echo "... src/LargeMonMainView.s"
+	@echo "... src/controller/ContrObserver.o"
+	@echo "... src/controller/ContrObserver.i"
+	@echo "... src/controller/ContrObserver.s"
 	@echo "... src/controller/Controller.o"
 	@echo "... src/controller/Controller.i"
 	@echo "... src/controller/Controller.s"
 	@echo "... src/controller/ControllerBattleInstance.o"
 	@echo "... src/controller/ControllerBattleInstance.i"
 	@echo "... src/controller/ControllerBattleInstance.s"
+	@echo "... src/controller/FileWriter.o"
+	@echo "... src/controller/FileWriter.i"
+	@echo "... src/controller/FileWriter.s"
 	@echo "... src/graphics/GButtonTexture.o"
 	@echo "... src/graphics/GButtonTexture.i"
 	@echo "... src/graphics/GButtonTexture.s"
@@ -552,6 +639,9 @@ help:
 	@echo "... src/utility/Observer.o"
 	@echo "... src/utility/Observer.i"
 	@echo "... src/utility/Observer.s"
+	@echo "... test/Test.o"
+	@echo "... test/Test.i"
+	@echo "... test/Test.s"
 .PHONY : help
 
 

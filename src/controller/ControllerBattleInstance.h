@@ -1,13 +1,12 @@
 //
 // Created by angelica on 11/11/17.
-//
-
-#include "../largemon/LargeMon.h"
-#include "../utility/FileWriterObserver.h"
-
+using namespace std;
 #ifndef LARGEMON_CONTROLLERBATTLEINSTANCE_H
 #define LARGEMON_CONTROLLERBATTLEINSTANCE_H
 
+#include <string>
+#include <vector>
+#include "../largemon/LargeMon.h"
 
 class ControllerBattleInstance {
 public:
@@ -22,24 +21,31 @@ public:
     bool isPlayerDead();
     int getPlayerCurrentHp();
     int getEnemyCurrentHp();
+    int getTurns();
     float getEnemyLargeMonCurrentHpPercent();
     float getPlayerLargeMonCurrentHpPercent();
     string getEnemyLargeMonName();
     string getPlayerLargeMonName();
     string getWinner();
     virtual ~ControllerBattleInstance();
+
+    void attach(class ContrObserver *);
+    void notify(LargeMon *, string, string);
 private:
     LargeMon * player;
     LargeMon * enemy;
     int playerSpecAttkCount;
     int enemySpecAttkCounter;
-    FileWriterObserver * playerWriter;
-    FileWriterObserver * enemyWriter;
+    int turns;
+    string playerLastAction;
+    string enemyLastAction;
+    //FileWriter * playerWriter;
+    //FileWriterObserver * enemyWriter;
     //LargeMon * playerPtr;
     bool isOver;
-
+    vector<class ContrObserver *> views;
 };
 
 
-#endif //LARGEMON_BATTLEINSTANCE_H
+#endif
 
