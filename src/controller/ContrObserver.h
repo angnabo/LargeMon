@@ -19,7 +19,7 @@ public:
 
     virtual ~ContrObserver();
 
-    virtual void update(LargeMon *, string, string) const = 0;
+    virtual void update(LargeMon *, vector<string>) const = 0;
     ControllerBattleInstance *battle;
 };
 

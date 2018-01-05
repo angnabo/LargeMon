@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/angelica/Development/CLion/LargeMon/src/controller/Controller.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/controller/ControllerBattleInstance.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/controller/ControllerBattleInstance.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/controller/FileWriter.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/controller/FileWriter.cpp.o"
+  "/home/angelica/Development/CLion/LargeMon/src/controller/HealthBarObserver.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/controller/HealthBarObserver.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/graphics/GButtonTexture.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/graphics/GButtonTexture.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/graphics/GProgressBar.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/graphics/GProgressBar.cpp.o"
   "/home/angelica/Development/CLion/LargeMon/src/graphics/GTexture.cpp" "/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o"

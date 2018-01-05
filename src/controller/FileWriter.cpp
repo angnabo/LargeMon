@@ -18,7 +18,7 @@ const std::string currentDateTime() {
     return buf;
 }
 
-FileWriter::FileWriter(ControllerBattleInstance *lm) : ContrObserver(lm) {
+FileWriter::FileWriter(ControllerBattleInstance *btl) : ContrObserver(btl) {
     filePath = "/home/angelica/Development/CLion/LargeMon/game_logs/" + currentDateTime() + "log.txt";
     ofstream outLogFile(filePath, ios::app);
     if(!outLogFile)
@@ -29,16 +29,18 @@ FileWriter::FileWriter(ControllerBattleInstance *lm) : ContrObserver(lm) {
 }
 
 
-void FileWriter::update(LargeMon * lm, string player, string action) const {
-    ofstream outLogFile(filePath, ios::app);
-    if(!outLogFile)
-    {
-        cerr << "File could not be opened" << endl;
-        exit(1);
-    }
-    outLogFile << "Turn: " << battle->getTurns() << ". " << player << " LargeMon: " << lm->getName() << " Action: " << action <<
+void FileWriter::update(LargeMon * lm, vector<string> args) const {
+    if(!args.empty()) {
+        ofstream outLogFile(filePath, ios::app);
+        if (!outLogFile) {
+            cerr << "File could not be opened" << endl;
+            exit(1);
+        }
+        outLogFile << "Turn: " << battle->getTurns() << ". " << args[0] << " LargeMon: " << lm->getName() << " Action: "
+                   << args[1] <<
 
-               " Health: " << lm->getCurrentHp() << endl;
+                   " Health: " << lm->getCurrentHp() << endl;
+    }
 }
 
 void FileWriter::writeToFile() const {

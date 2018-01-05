@@ -258,6 +258,33 @@ src/controller/FileWriter.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/FileWriter.cpp.s
 .PHONY : src/controller/FileWriter.cpp.s
 
+src/controller/HealthBarObserver.o: src/controller/HealthBarObserver.cpp.o
+
+.PHONY : src/controller/HealthBarObserver.o
+
+# target to build an object file
+src/controller/HealthBarObserver.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/HealthBarObserver.cpp.o
+.PHONY : src/controller/HealthBarObserver.cpp.o
+
+src/controller/HealthBarObserver.i: src/controller/HealthBarObserver.cpp.i
+
+.PHONY : src/controller/HealthBarObserver.i
+
+# target to preprocess a source file
+src/controller/HealthBarObserver.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/HealthBarObserver.cpp.i
+.PHONY : src/controller/HealthBarObserver.cpp.i
+
+src/controller/HealthBarObserver.s: src/controller/HealthBarObserver.cpp.s
+
+.PHONY : src/controller/HealthBarObserver.s
+
+# target to generate assembly for a file
+src/controller/HealthBarObserver.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/controller/HealthBarObserver.cpp.s
+.PHONY : src/controller/HealthBarObserver.cpp.s
+
 src/graphics/GButtonTexture.o: src/graphics/GButtonTexture.cpp.o
 
 .PHONY : src/graphics/GButtonTexture.o
@@ -606,6 +633,9 @@ help:
 	@echo "... src/controller/FileWriter.o"
 	@echo "... src/controller/FileWriter.i"
 	@echo "... src/controller/FileWriter.s"
+	@echo "... src/controller/HealthBarObserver.o"
+	@echo "... src/controller/HealthBarObserver.i"
+	@echo "... src/controller/HealthBarObserver.s"
 	@echo "... src/graphics/GButtonTexture.o"
 	@echo "... src/graphics/GButtonTexture.i"
 	@echo "... src/graphics/GButtonTexture.s"

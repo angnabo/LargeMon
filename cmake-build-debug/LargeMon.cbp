@@ -116,6 +116,12 @@
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/FileWriter.h">
 			<Option target="LargeMon"/>
 		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/HealthBarObserver.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/HealthBarObserver.h">
+			<Option target="LargeMon"/>
+		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/graphics/GButtonTexture.cpp">
 			<Option target="LargeMon"/>
 		</Unit>

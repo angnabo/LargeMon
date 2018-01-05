@@ -1,30 +1,36 @@
 LargeMon TO DO:
 
-[done]implement file writer
+[done] implement file writer
 
-[] implement a controller observer class to write to file
+[done] implement a controller observer class to write to file
 
-[] fix the file writing bug which doesnt write the last turn if the player wins
+[done] fix the file writing bug which doesnt write the last turn if the player wins
 
-[]generate names for largemon(maybe have a different generator for each type, the only diff is a vector of names for the type)
+[] have a wait time of a second between player turn and enemy counter attack
 
-[]implement saving LargeMon
+[] fix the bug that sometimes allows both largemon to end up with 0 health
 
-[]stats bar showing name/type/hp/attack power
+[] the health bars should go down after each move, rather than each turn
 
-[]clean up code :
-	* view variables in header file
-	*
+[] generate names for largemon(maybe have a different generator for each type, the only diff is a vector of names for the type)
 
-[]include sprite sheets for largemon
+[] implement saving LargeMon
 
-[]implement a wait time for enemy attack
+[] stats bar showing name/type/hp/attack power
 
-[]text texture in own class with update methos
+[] clean up code :
+ 	* view variables in header file
+ 	*
 
-[]hp bar in own class with update method
+[] include sprite sheets for largemon
 
-[]make a view interface with pure virtual methods like close, init, main
+[] implement a wait time for enemy attack
+
+[] text texture in own class with update methos
+
+[] hp bar in own class with update method
+
+[] make a view interface with pure virtual methods like close, init, main
 
 []make handle key presses one method
 

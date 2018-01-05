@@ -30,15 +30,15 @@ public:
     virtual ~ControllerBattleInstance();
 
     void attach(class ContrObserver *);
-    void notify(LargeMon *, string, string);
+    void notify(LargeMon *, vector<string>);
 private:
     LargeMon * player;
     LargeMon * enemy;
     int playerSpecAttkCount;
     int enemySpecAttkCounter;
     int turns;
-    string playerLastAction;
-    string enemyLastAction;
+    vector<string> playerArgs;
+    vector<string> enemyArgs;
     //FileWriter * playerWriter;
     //FileWriterObserver * enemyWriter;
     //LargeMon * playerPtr;

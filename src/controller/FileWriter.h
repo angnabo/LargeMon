@@ -17,7 +17,7 @@ public:
 
 
     void writeToFile() const;
-    void update(LargeMon *, string, string) const ;
+    void update(LargeMon *, vector<string>) const ;
 private:
     //int health = 0;
     string name;

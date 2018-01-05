@@ -7,7 +7,7 @@
 #include <random>
 #include "../utility/LargeMonGenerator.h"
 #include "FileWriter.h"
-
+#include <unistd.h>
 
 ControllerBattleInstance::ControllerBattleInstance() {
     LargeMonGenerator generator;
@@ -16,10 +16,19 @@ ControllerBattleInstance::ControllerBattleInstance() {
     enemySpecAttkCounter = 0;
     player = generator.generateLargeMon();
     enemy = generator.generateLargeMon();
+    playerArgs.push_back("Player");
+    enemyArgs.push_back("Enemy");
+    playerArgs.push_back("");
+    enemyArgs.push_back("");
 
-    //enemyWriter = new FileWriterObserver(enemy);
 
     isOver = false;
+}
+
+
+inline void delay( unsigned long ms )
+{
+    usleep( ms * 1000 );
 }
 
 //to do: make in seperate class
@@ -37,7 +46,7 @@ string ControllerBattleInstance::enemyMove() {
             case 1: //Defend
                 enemy->defend();
                 move = "The enemy healed for 20 hp.";
-                enemyLastAction = "Defend";
+                enemyArgs[1] = "Defend";
                 break;
             case 2: //Special Attack
             {
@@ -47,12 +56,12 @@ string ControllerBattleInstance::enemyMove() {
                     if (enemySpecAttkCounter == 0) {
                         player->takeDamage(enemy->specialAttack());
                         move = "The enemy used the special attack for: " + to_string(enemy->specialAttack());
-                        enemyLastAction = "Special Attack";
+                        enemyArgs[1] = "Special Attack";
                         enemySpecAttkCounter++;
                     }
                 } else {
                     player->takeDamage(enemy->getDamage());
-                    enemyLastAction = "Attack";
+                    enemyArgs[1] = "Attack";
                     move = "The enemy attacked for " + to_string(enemy->getDamage());
                 }
             }
@@ -63,7 +72,7 @@ string ControllerBattleInstance::enemyMove() {
                     move = "";
                 } else {
                     move = "The enemy attacked for " + to_string(enemy->getDamage());
-                    enemyLastAction = "Attack";
+                    enemyArgs[1] = "Attack";
                 }
             break;
         }
@@ -76,12 +85,12 @@ string ControllerBattleInstance::action(int * actionID) {
             case 0: //attack
                 enemy->takeDamage(player->getDamage());
                 action = "Player dealt " + to_string(player->getDamage()) + " to the enemy. ";
-                playerLastAction = "Attack";
+                playerArgs[1] = "Attack";
                 break;
             case 1: //defend
                 player->defend();
                 action = "Player healed for 20hp. ";
-                playerLastAction = "Defend";
+                playerArgs[1] = "Defend";
                 break;
             case 2: //special attack
             {
@@ -91,7 +100,7 @@ string ControllerBattleInstance::action(int * actionID) {
                     if (determineCounter(&playerType, &enemyType)) {
                         enemy->takeDamage(player->specialAttack());
                         action = "Player used special attack for " + to_string(player->specialAttack()) + " damage. ";
-                        playerLastAction = "Special Attack";
+                        playerArgs[1] = "Special Attack";
                         playerSpecAttkCount++;
                     } else {
                         action = "LargeMon is not a counter";
@@ -104,15 +113,16 @@ string ControllerBattleInstance::action(int * actionID) {
             default: break;
         }
 
+
     action += enemyMove();
     if(isEnemyDead()){
-        enemyLastAction = "Fainted";
+        playerArgs[1] = "Fainted";
     }else if(isPlayerDead()){
-        playerLastAction = "Fainted";
+        playerArgs[1] = "Fainted";
     }
     turns++;
-    notify(enemy, "Enemy", enemyLastAction);
-    notify(player, "Player", playerLastAction);
+    notify(enemy, enemyArgs);
+    notify(player, playerArgs);
     return (action.empty() ? getWinner() : action);
 }
 
@@ -128,6 +138,8 @@ bool ControllerBattleInstance::determineCounter(string * playerType, string * en
     }
     return isCounter;
 }
+
+
 
 string ControllerBattleInstance::getEnemyLargeMonName(){
     string name = enemy->getName();
@@ -180,9 +192,9 @@ void ControllerBattleInstance::attach(class ContrObserver * obs) {
     views.push_back(obs);
 }
 
-void ControllerBattleInstance::notify(LargeMon * lm, string player, string action) {
+void ControllerBattleInstance::notify(LargeMon * lm, vector<string> args) {
     for (int i = 0; i < views.size(); i++) {
-        views[i]->update(lm, player, action);
+        views[i]->update(lm, args);
     }
 }
 
