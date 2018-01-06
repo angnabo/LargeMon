@@ -5,14 +5,16 @@
 #ifndef LARGEMON_CONTROLLER_H
 #define LARGEMON_CONTROLLER_H
 
-
+using namespace std;
 class Controller {
 public:
     Controller();
+    void run();
 
 private:
     //model
     //view
+    vector <string> arguments;
 };
 
 

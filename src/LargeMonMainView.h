@@ -23,7 +23,7 @@ public:
     bool run(vector<string> args);
     void updatePlayerHealthBar(float, string);
     void updateEnemyHealthBar(float, string);
-    void reRender();
+    void render();
 private:
 //Screen dimension constants
     const int SCREEN_WIDTH = 640;

@@ -1,8 +1,6 @@
 //
 // Created by angelica on 11/11/17.
 //
-
-//#include "include/LargeMonMainView.h"
 //Using SDL, SDL_image, standard IO, and strings
 #include <ctime>
 #include <SDL.h>
@@ -10,13 +8,12 @@
 #include <SDL_ttf.h>
 #include <string>
 #include <iostream>
+#include <utility>
 #include "graphics/GTexture.h"
 #include "graphics/GProgressBar.h"
 #include "graphics/GButtonTexture.h"
 #include "controller/ControllerBattleInstance.h"
 #include "controller/FileWriter.h"
-#include "../test/ControllerTest.cpp"
-#include "../test/Test.h"
 #include "LargeMonMainView.h"
 
 
@@ -29,7 +26,7 @@ bool LargeMonMainView::init()
     //Initialize SDL
     if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
     {
-        printf( "SDL could not initialize! SDL Error: %s\n", SDL_GetError() );
+        cout << "SDL could not initialize! SDL Error: %s\n", SDL_GetError();
         success = false;
     }
     else
@@ -37,23 +34,23 @@ bool LargeMonMainView::init()
         //Set texture filtering to linear
         if( !SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" ) )
         {
-            printf( "Warning: Linear texture filtering not enabled!" );
+            cout << "Warning: Linear texture filtering not enabled!";
         }
 
         //Create window
         gWindow = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-        if( gWindow == NULL )
+        if( gWindow == nullptr )
         {
-            printf( "Window could not be created! SDL Error: %s\n", SDL_GetError() );
+            cout << "Window could not be created! SDL Error: %s\n", SDL_GetError();
             success = false;
         }
         else
         {
             //Create renderer for window
             gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
-            if( gRenderer == NULL )
+            if( gRenderer == nullptr )
             {
-                printf( "Renderer could not be created! SDL Error: %s\n", SDL_GetError() );
+                cout << "Renderer could not be created! SDL Error: %s\n", SDL_GetError();
                 success = false;
             }
             else
@@ -65,14 +62,14 @@ bool LargeMonMainView::init()
                 int imgFlags = IMG_INIT_PNG;
                 if( !( IMG_Init( imgFlags ) & imgFlags ) )
                 {
-                    printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
+                    cout << "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError();
                     success = false;
                 }
 
                 //Initialize SDL_ttf
                 if( TTF_Init() == -1 )
                 {
-                    printf( "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError() );
+                    cout << "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError();
                     success = false;
                 }
             }
@@ -90,25 +87,25 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     //Load player texture
     if( !gPlayerTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/shibainu.bmp" ) )
     {
-        printf( "Failed to load Foo' texture image!\n" );
+        cout << "Failed to load Foo' texture image!\n";
         success = false;
     }
     //Load enemy texture
     if( !gEnemyTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/shiba-inu-21.bmp" ) )
     {
-        printf( "Failed to load Foo' texture image!\n" );
+        cout << "Failed to load Foo' texture image!\n";
         success = false;
     }
     //Load background texture
     if( !gBackgroundTexture.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/mountains.png" ) )
     {
-        printf( "Failed to load background texture image!\n" );
+        cout << "Failed to load Foo' texture image!\n";
         success = false;
     }
     //Load bottom panel
     if( !gBottomTextPanel.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/bottom_panel.bmp" ) )
     {
-        printf( "Failed to load background texture image!\n" );
+        cout << "Failed to load Foo' texture image!\n";
         success = false;
     }
 //    //Load large bottom panel
@@ -120,31 +117,31 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     //Load large bottom panel
     if( !gPlayerHpBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_bg.bmp" ) )
     {
-        printf( "Failed to load background texture image!\n" );
+        cout << "Failed to load Foo' texture image!\n";
         success = false;
     }
     //Load large bottom panel
     if( !gPlayerHpBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_fg.bmp" ) )
     {
-        printf( "Failed to load background texture image!\n" );
+        cout << "Failed to load Foo' texture image!\n";
         success = false;
     }
     //Load large bottom panel
     if( !gEnemyHpBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_bg.bmp" ) )
     {
-        printf( "Failed to load background texture image!\n" );
+        cout << "Failed to load Foo' texture image!\n";
         success = false;
     }
     //Load large bottom panel
     if( !gEnemyHpBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_fg.bmp" ) )
     {
-        printf( "Failed to load background texture image!\n" );
+        cout << "Failed to load Foo' texture image!\n";
         success = false;
     }
     //Load player texture
     if( !gSpriteSheetTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/troll_sprite_sheet.png" ) )
     {
-        printf( "Failed to load Foo' texture image!\n" );
+        cout << "Failed to load Foo' texture image!\n";
         success = false;
     } else
     {
@@ -163,55 +160,55 @@ bool LargeMonMainView::loadMedia(vector<string> args)
 
     //Load ttf pixel font large size
     gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/alterebro-pixel-font.ttf", 30 );
-    if( gFont == NULL )
+    if( gFont == nullptr )
     {
-        printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
+        cout << "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError();
         success = false;
     } else {
         //Render text
         SDL_Color textColor = { 0, 0, 0 };
         if( !gTopLeftButtonText.loadFromRenderedText( gRenderer, gFont, "Attack", textColor ) )
         {
-            printf( "Failed to render text texture!\n" );
+            cout <<  "Failed to render text texture!\n";
             success = false;
         }
         if( !gTopRightButtonText.loadFromRenderedText( gRenderer, gFont, "Defend", textColor ) )
         {
-            printf( "Failed to render text texture!\n" );
+            cout <<  "Failed to render text texture!\n";
             success = false;
         }
         if( !gBottomLeftButtonText.loadFromRenderedText( gRenderer, gFont, "Special Attack 1", textColor ) )
         {
-            printf( "Failed to render text texture!\n" );
+            cout <<  "Failed to render text texture!\n";
             success = false;
         }
         if( !gBottomRightButtonText.loadFromRenderedText( gRenderer, gFont, "Special Attack 2", textColor ) )
         {
-            printf( "Failed to render text texture!\n" );
+            cout <<  "Failed to render text texture!\n";
             success = false;
         }
         if( !gPanelText.loadFromRenderedText( gRenderer, gFont, args[0], textColor ) )
         {
-            printf( "Failed to render text texture!\n" );
+            cout <<  "Failed to render text texture!\n";
             success = false;
         }
     }
     //Open ttf pixel font small size
     gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/alterebro-pixel-font.ttf", 20 );
-    if( gHpFont == NULL )
+    if( gHpFont == nullptr )
     {
-        printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
+        cout << "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError();
         success = false;
     } else {
         SDL_Color textColor = { 0, 0, 0 };
         if( !gPlayerHealthText.loadFromRenderedText( gRenderer, gHpFont, args[1], textColor ) )
         {
-            printf( "Failed to render text texture!\n" );
+            cout <<  "Failed to render text texture!\n";
             success = false;
         }
         if( !gEnemyHealthText.loadFromRenderedText( gRenderer, gHpFont, args[2], textColor ) )
         {
-            printf( "Failed to render text texture!\n" );
+            cout <<  "Failed to render text texture!\n";
             success = false;
         }
     }
@@ -219,22 +216,22 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     //Load Button Textures
     if( !gTopLeftButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
     {
-        printf( "Failed to load background texture image!\n" );
+        cout <<  "Failed to load background texture image!\n";
         success = false;
     }
     if( !gTopRightButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
     {
-        printf( "Failed to load background texture image!\n" );
+        cout <<  "Failed to load background texture image!\n";
         success = false;
     }
     if( !gBottomLeftButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
     {
-        printf( "Failed to load background texture image!\n" );
+        cout <<  "Failed to load background texture image!\n";
         success = false;
     }
     if( !gBottomRightButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
     {
-        printf( "Failed to load background texture image!\n" );
+        cout <<  "Failed to load background texture image!\n";
         success = false;
     }
 
@@ -252,12 +249,12 @@ bool LargeMonMainView::updateText(string text)
 {
     SDL_Color textColor = { 0, 0, 0 };
     bool success = true;
-    if( !gPanelText.loadFromRenderedText( gRenderer, gFont, text, textColor ) )
+    if( !gPanelText.loadFromRenderedText( gRenderer, gFont, std::move(text), textColor ) )
     {
-        printf( "Failed to render text texture!\n" );
+        cout <<  "Failed to render text texture!\n";
         success = false;
     }
-    reRender();
+    render();
     return success;
 }
 
@@ -302,17 +299,17 @@ void LargeMonMainView::close()
 
     //Free global font
     TTF_CloseFont( gFont );
-    gFont = NULL;
+    gFont = nullptr;
 
     //Free loaded image
     SDL_DestroyTexture( gTexture );
-    gTexture = NULL;
+    gTexture = nullptr;
 
     //Destroy window
     SDL_DestroyRenderer( gRenderer );
     SDL_DestroyWindow( gWindow );
-    gWindow = NULL;
-    gRenderer = NULL;
+    gWindow = nullptr;
+    gRenderer = nullptr;
 
     //Quit SDL subsystems
     TTF_Quit();
@@ -322,24 +319,19 @@ void LargeMonMainView::close()
 
 bool LargeMonMainView::run(vector<string> args) {
 
-    SDL_Color col1 = color(0, 168, 107, 50);
-    SDL_Color col2 = color(188, 3, 107, 50);
+//    SDL_Color col1 = color(0, 168, 107, 50);
+//    SDL_Color col2 = color(188, 3, 107, 50);
 
     //Start up SDL and create window
     if (!init()) {
-        printf("Failed to initialize!\n");
+        cout << "Failed to initialize!\n";
+    } else if (!loadMedia(std::move(args))) {
+        cout << "Failed to load media!\n";
     } else {
-        //Load media
-        if (!loadMedia(args)) {
-            printf("Failed to load media!\n");
-        } else {
-            //Main loop flag
-            bool quit = false;
-                reRender();
-            }
-        }
+            render();
+    }
 
-    return 0;
+    return true;
 }
 
 void LargeMonMainView::updateButtons(int resetButton, int pressedButton) {
@@ -355,26 +347,26 @@ void LargeMonMainView::updateButtons(int resetButton, int pressedButton) {
 
     buttons[resetButton].setColor(255, 255, 255);
     buttons[pressedButton].setColor(70, 70, 70);
-    reRender();
+    render();
 
 }
 
 void LargeMonMainView::updatePlayerHealthBar(float percent, string hp) {
-    gPlayerHpBarFG.updateProgress(gRenderer, gPlayerHpBarFG, gHpFont, gPlayerHealthText, percent, hp);
-    reRender();
+    gPlayerHpBarFG.updateProgress(gRenderer, gPlayerHpBarFG, gHpFont, gPlayerHealthText, percent, std::move(hp));
+    render();
 }
 
 void LargeMonMainView::updateEnemyHealthBar(float percent, string hp) {
-    gEnemyHpBarFG.updateProgress(gRenderer, gEnemyHpBarFG, gHpFont, gEnemyHealthText, percent, hp);
-    reRender();
+    gEnemyHpBarFG.updateProgress(gRenderer, gEnemyHpBarFG, gHpFont, gEnemyHealthText, percent, std::move(hp));
+    render();
 }
 
-void LargeMonMainView::reRender() {
+void LargeMonMainView::render() {
     SDL_RenderClear(gRenderer);
     SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
     //Top viewport
-    SDL_Rect topViewport;
+    SDL_Rect topViewport{};
     topViewport.x = 0;
     topViewport.y = 0;
     topViewport.w = SCREEN_WIDTH;
@@ -401,7 +393,7 @@ void LargeMonMainView::reRender() {
     gEnemyHealthText.render(gRenderer, 485,238);
 
     //Bottom viewport
-    SDL_Rect bottomViewport;
+    SDL_Rect bottomViewport{};
     bottomViewport.x = 0;
     bottomViewport.y = static_cast<int>(SCREEN_HEIGHT / 1.4);
     bottomViewport.w = SCREEN_WIDTH;
