@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/LargeMon.dir/src/largemon/LargeMon.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/main.cpp.o"
   "CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o"
   "CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o"
   "CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o"

@@ -20,7 +20,6 @@ bool GProgressBar::updateProgress(SDL_Renderer * gRenderer, GTexture & bar, TTF_
             printf( "Failed to render text texture!\n" );
             success = false;
         }
-        text.render(gRenderer,35, 31);
         int pw = (int)((float)bar.getOriginalWidth() * percent);
         bar.setSize(pw,17);
         SDL_RenderPresent(gRenderer);

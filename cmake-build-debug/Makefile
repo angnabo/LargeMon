@@ -474,6 +474,33 @@ src/largemon/WoodLM.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/largemon/WoodLM.cpp.s
 .PHONY : src/largemon/WoodLM.cpp.s
 
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 src/utility/DescriptGen.o: src/utility/DescriptGen.cpp.o
 
 .PHONY : src/utility/DescriptGen.o
@@ -657,6 +684,9 @@ help:
 	@echo "... src/largemon/WoodLM.o"
 	@echo "... src/largemon/WoodLM.i"
 	@echo "... src/largemon/WoodLM.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/utility/DescriptGen.o"
 	@echo "... src/utility/DescriptGen.i"
 	@echo "... src/utility/DescriptGen.s"

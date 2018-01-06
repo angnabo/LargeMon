@@ -4,6 +4,7 @@ project(LargeMon)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
 set(SOURCE_FILES src/largemon/LargeMon.cpp src/largemon/LargeMon.h
+        src/main.cpp src/main.h
         src/utility/LargeMonGenerator.cpp src/utility/LargeMonGenerator.h
         src/utility/DescriptGen.cpp src/utility/DescriptGen.h src/controller/Controller.cpp
         src/controller/Controller.h src/largemon/WaterLM.cpp src/largemon/WaterLM.h

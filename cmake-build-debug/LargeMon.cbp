@@ -164,6 +164,12 @@
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/largemon/WoodLM.h">
 			<Option target="LargeMon"/>
 		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/main.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/main.h">
+			<Option target="LargeMon"/>
+		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/DescriptGen.cpp">
 			<Option target="LargeMon"/>
 		</Unit>

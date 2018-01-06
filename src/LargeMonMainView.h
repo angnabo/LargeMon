@@ -8,12 +8,32 @@
 
 #include "graphics/GTexture.h"
 #include "graphics/GButtonTexture.h"
+#include "graphics/GProgressBar.h"
+#include "controller/FileWriter.h"
 
 using namespace std;
 
 class LargeMonMainView {
+public:
+    bool init();
+    bool loadMedia(vector<string>);
+    void close();
+    bool updateText(string);
+    void updateButtons(int, int);
+    bool run(vector<string> args);
+    void updatePlayerHealthBar(float, string);
+    void updateEnemyHealthBar(float, string);
+    void reRender();
 private:
-    //The window we'll be rendering to
+//Screen dimension constants
+    const int SCREEN_WIDTH = 640;
+    const int SCREEN_HEIGHT = 480;
+
+//Globally used font
+    TTF_Font *gFont = NULL;
+    TTF_Font *gHpFont = NULL;
+
+//The window we'll be rendering to
     SDL_Window* gWindow = NULL;
 
 //The window renderer
@@ -38,13 +58,12 @@ private:
     GTexture gBottomPanelFull;
 
     GTexture gPlayerHpBarBG;
-    GTexture gPlayerHpBarFG;
+    GProgressBar gPlayerHpBarFG;
     GTexture gPlayerHealthText;
 
     GTexture gEnemyHpBarBG;
-    GTexture gEnemyHpBarFG;
+    GProgressBar gEnemyHpBarFG;
     GTexture gEnemyHealthText;
-
 
     GTexture gTopLeftButtonText;
     GTexture gTopRightButtonText;
@@ -53,10 +72,12 @@ private:
     GTexture gPanelText;
 
     GButtonTexture buttons[4];
-    SDL_Rect gSpriteClips[ 4 ];
+    SDL_Rect gSpriteClips[ 2 ];
     GTexture gSpriteSheetTexture;
     SDL_Texture* loadTexture( std::string path );
     SDL_Texture* gTexture = NULL;
+
+
 };
 
 

@@ -17,78 +17,12 @@
 #include "controller/FileWriter.h"
 #include "../test/ControllerTest.cpp"
 #include "../test/Test.h"
-
-//Screen dimension constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
-
-//Globally used font
-TTF_Font *gFont = NULL;
-TTF_Font *gHpFont = NULL;
-
-//Battle Instance Controller
-ControllerBattleInstance battleInstance;
-FileWriter * writer;
-
-//Starts up SDL and creates window
-bool init();
+#include "LargeMonMainView.h"
 
 
 
-//Loads media
-bool loadMedia();
-
-//Frees media and shuts down SDL
-void close();
-
-//The window we'll be rendering to
-SDL_Window* gWindow = NULL;
-
-//The window renderer
-SDL_Renderer* gRenderer = NULL;
-
-//Bottom Panel Text
-string panelTextString;
-
-SDL_Color col1;
-SDL_Color col2;
-
-
-//Scene textures
-GTexture gPlayerTexture;
-GTexture gEnemyTexture;
-GTexture gBackgroundTexture;
-GButtonTexture gTopLeftButton;
-GButtonTexture gTopRightButton;
-GButtonTexture gBottomLeftButton;
-GButtonTexture gBottomRightButton;
-
-GTexture gBottomTextPanel;
-GTexture gBottomPanelFull;
-
-GTexture gPlayerHpBarBG;
-GProgressBar gPlayerHpBarFG;
-GTexture gPlayerHealthText;
-
-GTexture gEnemyHpBarBG;
-GProgressBar gEnemyHpBarFG;
-GTexture gEnemyHealthText;
-
-GTexture gTopLeftButtonText;
-GTexture gTopRightButtonText;
-GTexture gBottomLeftButtonText;
-GTexture gBottomRightButtonText;
-GTexture gPanelText;
-
-GButtonTexture buttons[4];
-SDL_Rect gSpriteClips[ 2 ];
-GTexture gSpriteSheetTexture;
-SDL_Texture* loadTexture( std::string path );
-SDL_Texture* gTexture = NULL;
-
-bool init()
+bool LargeMonMainView::init()
 {
-    writer = new FileWriter(&battleInstance);
     //Initialization flag
     bool success = true;
 
@@ -148,7 +82,7 @@ bool init()
     return success;
 }
 
-bool loadMedia(string panel_text)
+bool LargeMonMainView::loadMedia(vector<string> args)
 {
     //Loading success flag
     bool success = true;
@@ -177,12 +111,12 @@ bool loadMedia(string panel_text)
         printf( "Failed to load background texture image!\n" );
         success = false;
     }
-    //Load large bottom panel
-    if( !gBottomPanelFull.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/bottom_panel_full.bmp" ) )
-    {
-        printf( "Failed to load background texture image!\n" );
-        success = false;
-    }
+//    //Load large bottom panel
+//    if( !gBottomPanelFull.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/bottom_panel_full.bmp" ) )
+//    {
+//        printf( "Failed to load background texture image!\n" );
+//        success = false;
+//    }
     //Load large bottom panel
     if( !gPlayerHpBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_bg.bmp" ) )
     {
@@ -208,23 +142,23 @@ bool loadMedia(string panel_text)
         success = false;
     }
     //Load player texture
-    if( !gSpriteSheetTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/shiba_inu_sprite_sheet.bmp" ) )
+    if( !gSpriteSheetTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/troll_sprite_sheet.png" ) )
     {
         printf( "Failed to load Foo' texture image!\n" );
         success = false;
     } else
     {
         //Set bottom left sprite
-        gSpriteClips[ 0 ].x =   0;
-        gSpriteClips[ 0 ].y =   0;
-        gSpriteClips[ 0 ].w = 362;
-        gSpriteClips[ 0 ].h = 300;
+        gSpriteClips[ 0 ].x = 0;
+        gSpriteClips[ 0 ].y = 120;
+        gSpriteClips[ 0 ].w = 120;
+        gSpriteClips[ 0 ].h = 120;
 
         //Set top right sprite
-        gSpriteClips[ 1 ].x = 362;
-        gSpriteClips[ 1 ].y =   0;
-        gSpriteClips[ 1 ].w = 203;
-        gSpriteClips[ 1 ].h = 200;
+        gSpriteClips[ 1 ].x = 2040;
+        gSpriteClips[ 1 ].y = 120;
+        gSpriteClips[ 1 ].w = 120;
+        gSpriteClips[ 1 ].h = 120;
     }
 
     //Load ttf pixel font large size
@@ -256,7 +190,7 @@ bool loadMedia(string panel_text)
             printf( "Failed to render text texture!\n" );
             success = false;
         }
-        if( !gPanelText.loadFromRenderedText( gRenderer, gFont, panel_text, textColor ) )
+        if( !gPanelText.loadFromRenderedText( gRenderer, gFont, args[0], textColor ) )
         {
             printf( "Failed to render text texture!\n" );
             success = false;
@@ -270,12 +204,12 @@ bool loadMedia(string panel_text)
         success = false;
     } else {
         SDL_Color textColor = { 0, 0, 0 };
-        if( !gPlayerHealthText.loadFromRenderedText( gRenderer, gHpFont, to_string(battleInstance.getPlayerCurrentHp()), textColor ) )
+        if( !gPlayerHealthText.loadFromRenderedText( gRenderer, gHpFont, args[1], textColor ) )
         {
             printf( "Failed to render text texture!\n" );
             success = false;
         }
-        if( !gEnemyHealthText.loadFromRenderedText( gRenderer, gHpFont, to_string(battleInstance.getEnemyCurrentHp()), textColor ) )
+        if( !gEnemyHealthText.loadFromRenderedText( gRenderer, gHpFont, args[2], textColor ) )
         {
             printf( "Failed to render text texture!\n" );
             success = false;
@@ -314,38 +248,28 @@ bool loadMedia(string panel_text)
     return success;
 }
 
-bool updateText(string text)
+bool LargeMonMainView::updateText(string text)
 {
     SDL_Color textColor = { 0, 0, 0 };
     bool success = true;
-    //Load font again
-    if( !gBottomPanelFull.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/bottom_panel_full.bmp" ) )
-    {
-        printf( "Failed to load background texture image!\n" );
-        success = false;
-    }
     if( !gPanelText.loadFromRenderedText( gRenderer, gFont, text, textColor ) )
     {
         printf( "Failed to render text texture!\n" );
         success = false;
     }
-    gBottomPanelFull.render(gRenderer, 10, 0);
-    gPanelText.render(gRenderer,30, 10);
+    reRender();
     return success;
 }
 
 /*
-
    color - Returns an SDL_Color with the appropriate values
-
 */
-
 SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
     SDL_Color col = {r,g,b,a};
     return col;
 }
 
-void close()
+void LargeMonMainView::close()
 {
     //Free loaded images
     gPlayerTexture.free();
@@ -396,226 +320,115 @@ void close()
     SDL_Quit();
 }
 
-
-int getSelected(){
-    for (int i = 0; i < 4; i ++){
-        if(buttons[i].isSelected()){
-            return i;
-        }
-    }
-}
-
-int handleUP(int* selected){
-    if (*selected == 0 || *selected == 1){
-
-    } else if (*selected == 2){
-        *selected = 0;
-    } else {
-        *selected = 1;
-    }
-    return *selected;
-}
-
-int handleDOWN(int* selected){
-    if (*selected == 0){
-        *selected = 2;
-    } else if( *selected == 1){
-        *selected = 3;
-    }
-    return *selected;
-}
-
-
-int handleRight(int* selected){
-    if (*selected == 0){
-        *selected = 1;
-
-    } else if (*selected == 2){
-        *selected = 3;
-    }
-    return *selected;
-}
-
-int handleLeft(int* selected){
-    if (*selected == 1){
-        *selected = 0;
-    } else if (*selected == 3){
-        *selected = 2;
-    }
-    return *selected;
-}
-
-int main( int argc, char* args[] ) {
+bool LargeMonMainView::run(vector<string> args) {
 
     SDL_Color col1 = color(0, 168, 107, 50);
     SDL_Color col2 = color(188, 3, 107, 50);
 
-    Test test;
-    test.test();
-
-    panelTextString = "A wild " + battleInstance.getEnemyLargeMonName() + " appears!";
     //Start up SDL and create window
     if (!init()) {
         printf("Failed to initialize!\n");
     } else {
         //Load media
-        if (!loadMedia(panelTextString)) {
+        if (!loadMedia(args)) {
             printf("Failed to load media!\n");
         } else {
             //Main loop flag
             bool quit = false;
-
-
-            //Event handler
-            SDL_Event e;
-
-            //Modulation components
-            Uint8 r = 255;
-            Uint8 g = 255;
-            Uint8 b = 255;
-
-            //Modulation components
-            Uint8 rSelected = 70;
-            Uint8 gSelected = 70;
-            Uint8 bSelected = 70;
-
-            int selectedButton = 0;
-
-            //While application is running
-            while (!quit) {
-                //Handle events on queue
-                while (SDL_PollEvent(&e) != 0) {
-                    //User requests quit
-                    if (e.type == SDL_QUIT) {
-                        quit = true;
-                    }
-                        //On keypress change rgb values
-                    else if (e.type == SDL_KEYDOWN) {
-                        switch (e.key.keysym.sym) {
-
-                                //Handle LEFT key press
-                            case SDLK_UP:
-                                buttons[selectedButton].setColor(r, g, b);
-                                handleUP(&selectedButton);
-                                buttons[selectedButton].setColor(rSelected, gSelected, bSelected);
-                                break;
-
-                                //Handle RIGHT key press
-                            case SDLK_RIGHT:
-                                buttons[selectedButton].setColor(r, g, b);
-                                handleRight(&selectedButton);
-                                buttons[selectedButton].setColor(rSelected, gSelected, bSelected);
-                                break;
-
-                                //Handle UP key press
-                            case SDLK_LEFT:
-                                buttons[selectedButton].setColor(r, g, b);
-                                handleLeft(&selectedButton);
-                                buttons[selectedButton].setColor(rSelected, gSelected, bSelected);
-                                break;
-
-                                //Handle DOWN key press
-                            case SDLK_DOWN:
-                                buttons[selectedButton].setColor(r, g, b);
-                                handleDOWN(&selectedButton);
-                                buttons[selectedButton].setColor(rSelected, gSelected, bSelected);
-                                break;
-
-                        }
-                        if(e.key.keysym.sym == SDLK_RETURN){
-
-
-                            string textUpdate = "";
-                            if(!battleInstance.isGameOver()) {
-                                textUpdate = battleInstance.action(&selectedButton);
-                                updateText(textUpdate);
-                                gPlayerHpBarFG.updateProgress(gRenderer, gPlayerHpBarFG, gHpFont, gPlayerHealthText,
-                                         battleInstance.getPlayerLargeMonCurrentHpPercent(),
-                                         to_string(battleInstance.getPlayerCurrentHp()));
-
-
-                                gEnemyHpBarFG.updateProgress(gRenderer, gEnemyHpBarFG, gHpFont, gEnemyHealthText,
-                                         battleInstance.getEnemyLargeMonCurrentHpPercent(),
-                                         to_string(battleInstance.getEnemyCurrentHp()));
-                            } else {
-                                //gBottomPanelFull.render(gRenderer, 10,0);
-                                updateText(battleInstance.getWinner());
-                                //gBottomTextPanel.free();
-                                //SDL_RenderPresent(gRenderer);
-                                //close();
-                            }
-                        }
-                    }
-                }
-
-                //Clear screen
-                SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
-                SDL_RenderClear(gRenderer);
-
-                //Top viewport
-                SDL_Rect topViewport;
-                topViewport.x = 0;
-                topViewport.y = 0;
-                topViewport.w = SCREEN_WIDTH;
-                topViewport.h = SCREEN_HEIGHT;
-                SDL_RenderSetViewport(gRenderer, &topViewport);
-
-                //Render background texture to screen
-                gBackgroundTexture.render(gRenderer, 0, 0);
-
-                //Render player to the screen
-                //gPlayerTexture.render(gRenderer, -20, 170);
-                gSpriteSheetTexture.renderSprite(gRenderer, -20, 170, &gSpriteClips[0]);
-
-                //Render enemy to the screen
-                //gEnemyTexture.render(gRenderer, 430, 40);
-                gSpriteSheetTexture.renderSprite(gRenderer, 430, 40, &gSpriteClips[1]);
-
-                gPlayerHpBarBG.render(gRenderer, 30, 300);
-                gPlayerHpBarFG.render(gRenderer, 31, 301);
-                gPlayerHealthText.render(gRenderer, 35,301);
-
-                gEnemyHpBarBG.render(gRenderer, 480, 237);
-                gEnemyHpBarFG.render(gRenderer, 481, 238);
-                gEnemyHealthText.render(gRenderer, 485,238);
-
-                //Bottom viewport
-                SDL_Rect bottomViewport;
-                bottomViewport.x = 0;
-                bottomViewport.y = static_cast<int>(SCREEN_HEIGHT / 1.4);
-                bottomViewport.w = SCREEN_WIDTH;
-                bottomViewport.h = SCREEN_HEIGHT / 3;
-                SDL_RenderSetViewport(gRenderer, &bottomViewport);
-
-                SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
-
-                int X_BUTTON_OFFSET = 270;
-                int Y_BUTTON_OFFSET = 20;
-
-                gBottomTextPanel.render(gRenderer, 10, 0);
-                gPanelText.render(gRenderer,30, 10);
-
-                gTopLeftButton.render(gRenderer, X_BUTTON_OFFSET, Y_BUTTON_OFFSET);
-                gTopRightButton.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth()-10, Y_BUTTON_OFFSET);
-                gBottomLeftButton.render(gRenderer, X_BUTTON_OFFSET, Y_BUTTON_OFFSET+gTopRightButton.getHeight()+5);
-                gBottomRightButton.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth()-10,
-                                          Y_BUTTON_OFFSET+gTopRightButton.getHeight()+5);
-
-                gTopLeftButtonText.render(gRenderer, X_BUTTON_OFFSET+10, Y_BUTTON_OFFSET+9);
-                gTopRightButtonText.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth(), Y_BUTTON_OFFSET+9);
-                gBottomLeftButtonText.render(gRenderer, X_BUTTON_OFFSET+10, Y_BUTTON_OFFSET+gTopRightButton.getHeight()+14);
-                gBottomRightButtonText.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth(),
-                                              Y_BUTTON_OFFSET+gTopRightButton.getHeight()+14);
-
-
-                //Update screen
-                SDL_RenderPresent(gRenderer);
+                reRender();
             }
         }
-    }
-
-    //Free resources and close SDL
-    close();
 
     return 0;
+}
+
+void LargeMonMainView::updateButtons(int resetButton, int pressedButton) {
+    //Modulation components
+    Uint8 r = 255;
+    Uint8 g = 255;
+    Uint8 b = 255;
+
+    //Modulation components
+    Uint8 rSelected = 70;
+    Uint8 gSelected = 70;
+    Uint8 bSelected = 70;
+
+    buttons[resetButton].setColor(255, 255, 255);
+    buttons[pressedButton].setColor(70, 70, 70);
+    reRender();
+
+}
+
+void LargeMonMainView::updatePlayerHealthBar(float percent, string hp) {
+    gPlayerHpBarFG.updateProgress(gRenderer, gPlayerHpBarFG, gHpFont, gPlayerHealthText, percent, hp);
+    reRender();
+}
+
+void LargeMonMainView::updateEnemyHealthBar(float percent, string hp) {
+    gEnemyHpBarFG.updateProgress(gRenderer, gEnemyHpBarFG, gHpFont, gEnemyHealthText, percent, hp);
+    reRender();
+}
+
+void LargeMonMainView::reRender() {
+    SDL_RenderClear(gRenderer);
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+
+    //Top viewport
+    SDL_Rect topViewport;
+    topViewport.x = 0;
+    topViewport.y = 0;
+    topViewport.w = SCREEN_WIDTH;
+    topViewport.h = SCREEN_HEIGHT;
+    SDL_RenderSetViewport(gRenderer, &topViewport);
+
+    //Render background texture to screen
+    gBackgroundTexture.render(gRenderer, 0, 0);
+
+    //Render player to the screen
+    //gPlayerTexture.render(gRenderer, -20, 170);
+    gSpriteSheetTexture.renderSprite(gRenderer, 20, 190, &gSpriteClips[0]);
+
+    //Render enemy to the screen
+    //gEnemyTexture.render(gRenderer, 430, 40);
+    gSpriteSheetTexture.renderSprite(gRenderer, 465, 125, &gSpriteClips[1]);
+
+    gPlayerHpBarBG.render(gRenderer, 30, 300);
+    gPlayerHpBarFG.render(gRenderer, 31, 301);
+    gPlayerHealthText.render(gRenderer, 35,301);
+
+    gEnemyHpBarBG.render(gRenderer, 480, 237);
+    gEnemyHpBarFG.render(gRenderer, 481, 238);
+    gEnemyHealthText.render(gRenderer, 485,238);
+
+    //Bottom viewport
+    SDL_Rect bottomViewport;
+    bottomViewport.x = 0;
+    bottomViewport.y = static_cast<int>(SCREEN_HEIGHT / 1.4);
+    bottomViewport.w = SCREEN_WIDTH;
+    bottomViewport.h = SCREEN_HEIGHT / 3;
+    SDL_RenderSetViewport(gRenderer, &bottomViewport);
+
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+
+    gBottomTextPanel.render(gRenderer, 10, 0);
+    gPanelText.render(gRenderer,30, 10);
+
+    int X_BUTTON_OFFSET = 270;
+    int Y_BUTTON_OFFSET = 20;
+
+    gTopLeftButton.render(gRenderer, X_BUTTON_OFFSET, Y_BUTTON_OFFSET);
+    gTopRightButton.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth()-10, Y_BUTTON_OFFSET);
+    gBottomLeftButton.render(gRenderer, X_BUTTON_OFFSET, Y_BUTTON_OFFSET+gTopRightButton.getHeight()+5);
+    gBottomRightButton.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth()-10,
+                              Y_BUTTON_OFFSET+gTopRightButton.getHeight()+5);
+
+    gTopLeftButtonText.render(gRenderer, X_BUTTON_OFFSET+10, Y_BUTTON_OFFSET+9);
+    gTopRightButtonText.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth(), Y_BUTTON_OFFSET+9);
+    gBottomLeftButtonText.render(gRenderer, X_BUTTON_OFFSET+10, Y_BUTTON_OFFSET+gTopRightButton.getHeight()+14);
+    gBottomRightButtonText.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth(),
+                                  Y_BUTTON_OFFSET+gTopRightButton.getHeight()+14);
+
+
+    //Update screen
+    SDL_RenderPresent(gRenderer);
 }

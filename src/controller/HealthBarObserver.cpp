@@ -9,7 +9,7 @@ HealthBarObserver::HealthBarObserver(ControllerBattleInstance * btl) : ContrObse
 }
 
 void HealthBarObserver::update(LargeMon * lm, vector<string>/*unused*/) const {
-    
+
 }
 
 int HealthBarObserver::getHealth(LargeMon * lm) const {

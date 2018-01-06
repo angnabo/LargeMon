@@ -12,6 +12,10 @@ LargeMon TO DO:
 
 [] the health bars should go down after each move, rather than each turn
 
+[done] put the view in it's own class, and have a main(for now) pass calls to the view
+
+[] make a controller class handle calls to the view
+
 [] generate names for largemon(maybe have a different generator for each type, the only diff is a vector of names for the type)
 
 [] implement saving LargeMon
