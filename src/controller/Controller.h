@@ -20,7 +20,7 @@ public:
 
 private:
     //model
-    ControllerBattleInstance battleInstance;
+    BattleInstance battleInstance;
     //view
     LargeMonMainView view;
     vector <string> arguments;

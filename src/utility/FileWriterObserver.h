@@ -11,7 +11,7 @@
 
 class FileWriterObserver : public Observer{
 public:
-    FileWriterObserver(LargeMon *);
+    FileWriterObserver(Largemon *);
 
 
     void writeToFile() const;

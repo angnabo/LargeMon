@@ -2,10 +2,10 @@
 // Created by angelica on 09/11/17.
 //
 
-#include "WaterLM.h"
+#include "Watermon.h"
 
 WaterLM::WaterLM(const int *hp, const int *damage, const int *size, const string * name)
-: LargeMon(hp, damage, size, name) {
+: Largemon(hp, damage, size, name) {
 
 }
 

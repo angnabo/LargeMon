@@ -4,7 +4,7 @@
 
 #include "Observer.h"
 
-Observer::Observer(LargeMon *lm) {
+Observer::Observer(Largemon *lm) {
     largeMon = lm;
     largeMon->attach(this);
 }

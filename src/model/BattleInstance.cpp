@@ -3,19 +3,14 @@
 //
 
 #include "BattleInstance.h"
-#include <iostream>
-#include <random>
-#include "../utility/LargeMonGenerator.h"
-#include "../utility/FileWriter.h"
-#include <unistd.h>
 
-ControllerBattleInstance::ControllerBattleInstance() {
-    LargeMonGenerator generator;
+BattleInstance::BattleInstance() {
+    LargemonGenerator generator;
 
     playerSpecAttkCount = 0;
     enemySpecAttkCounter = 0;
-    player = generator.generateLargeMon();
-    enemy = generator.generateLargeMon();
+    player = generator.generateLargemon();
+    enemy = generator.generateLargemon();
     playerArgs.push_back("Player");
     enemyArgs.push_back("Enemy");
     playerArgs.push_back("");
@@ -32,14 +27,14 @@ inline void delay( unsigned long ms )
 }
 
 //to do: make in seperate class
-int ControllerBattleInstance::randomInRange(int min, int max){
+int BattleInstance::randomInRange(int min, int max){
     std::random_device rd; // obtain a random number from hardware
     std::mt19937 eng(rd()); // seed the generator
     std::uniform_int_distribution<> distr(min, max);
     return (int) distr(eng);
 }
 
-string ControllerBattleInstance::enemyMove() {
+string BattleInstance::enemyMove() {
     string move = "";
         int random = randomInRange(1, 6);
         switch (random) {
@@ -79,7 +74,7 @@ string ControllerBattleInstance::enemyMove() {
     return move;
 }
 
-string ControllerBattleInstance::action(int * actionID) {
+string BattleInstance::action(int * actionID) {
     string action = "";
         switch (*actionID) {
             case 0: //attack
@@ -103,12 +98,16 @@ string ControllerBattleInstance::action(int * actionID) {
                         playerArgs[1] = "Special Attack";
                         playerSpecAttkCount++;
                     } else {
-                        action = "LargeMon is not a counter";
+                        action = "Largemon is not a counter";
                     }
                 } else {
                     action = "Special Attack was already used";
                 }
             } break;
+            case 3: //special ability
+            {
+
+            }
 
             default: break;
         }
@@ -126,7 +125,11 @@ string ControllerBattleInstance::action(int * actionID) {
     return (action.empty() ? getWinner() : action);
 }
 
-bool ControllerBattleInstance::determineCounter(string * playerType, string * enemyType) {
+void BattleInstance::specialAbility(Largemon * dealer, Largemon * taker){
+
+}
+
+bool BattleInstance::determineCounter(string * playerType, string * enemyType) {
     bool isCounter = false;
     if(*playerType == "water" && *enemyType == "fire") {
         isCounter = true;
@@ -141,64 +144,64 @@ bool ControllerBattleInstance::determineCounter(string * playerType, string * en
 
 
 
-string ControllerBattleInstance::getEnemyLargeMonName(){
+string BattleInstance::getEnemyLargemonName(){
     string name = enemy->getName();
     return name;
 }
 
-string ControllerBattleInstance::getPlayerLargeMonName(){
+string BattleInstance::getPlayerLargemonName(){
     string name = player->getName();
     return name;
 }
 
-float ControllerBattleInstance::getEnemyLargeMonCurrentHpPercent(){
+float BattleInstance::getEnemyLargemonCurrentHpPercent(){
     float hpPercent = (float)enemy->getCurrentHp()/(float)enemy->getHp();
     return hpPercent;
 }
 
-float ControllerBattleInstance::getPlayerLargeMonCurrentHpPercent(){
+float BattleInstance::getPlayerLargemonCurrentHpPercent(){
     float hpPercent = (float)player->getCurrentHp()/(float)player->getHp();//25/50*100
     return hpPercent;
 }
 
-int ControllerBattleInstance::getPlayerCurrentHp(){
+int BattleInstance::getPlayerCurrentHp(){
     return player->getCurrentHp();
 }
-int ControllerBattleInstance::getEnemyCurrentHp() {
+int BattleInstance::getEnemyCurrentHp() {
     return enemy->getCurrentHp();
 }
 
-ControllerBattleInstance::~ControllerBattleInstance() {
+BattleInstance::~BattleInstance() {
 
 }
 
-bool ControllerBattleInstance::isGameOver() {
+bool BattleInstance::isGameOver() {
     return isPlayerDead() || isEnemyDead();
 }
 
-bool ControllerBattleInstance::isPlayerDead() {
+bool BattleInstance::isPlayerDead() {
     return player->getCurrentHp() <= 0;
 }
 
-bool ControllerBattleInstance::isEnemyDead() {
+bool BattleInstance::isEnemyDead() {
     return enemy->getCurrentHp() <= 0;
 }
 
-string ControllerBattleInstance::getWinner() {
+string BattleInstance::getWinner() {
     return (isEnemyDead() ? "Player Won!" : "Enemy Won!");
 }
 
-void ControllerBattleInstance::attach(class ContrObserver * obs) {
+void BattleInstance::attach(class ContrObserver * obs) {
     views.push_back(obs);
 }
 
-void ControllerBattleInstance::notify(LargeMon * lm, vector<string> args) {
+void BattleInstance::notify(Largemon * lm, vector<string> args) {
     for (int i = 0; i < views.size(); i++) {
         views[i]->update(lm, args);
     }
 }
 
-int ControllerBattleInstance::getTurns() {
+int BattleInstance::getTurns() {
     return turns;
 }
 

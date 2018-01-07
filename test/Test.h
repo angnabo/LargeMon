@@ -10,7 +10,7 @@ class Test {
 public:
     void test();
 private:
-    ControllerBattleInstance battle;
+    BattleInstance battle;
     FileWriter * wr;
 };
 

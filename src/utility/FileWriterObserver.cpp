@@ -5,8 +5,8 @@
 
 #include "FileWriterObserver.h"
 
-FileWriterObserver::FileWriterObserver(LargeMon *lm) : Observer(lm) {
-    ofstream outLogFile("/home/angelica/Development/CLion/LargeMon/log.txt", ios::out);
+FileWriterObserver::FileWriterObserver(Largemon *lm) : Observer(lm) {
+    ofstream outLogFile("/home/angelica/Development/CLion/Largemon/log.txt", ios::out);
     if(!outLogFile)
     {
         cerr << "File could not be opened" << endl;
@@ -22,13 +22,13 @@ FileWriterObserver::~FileWriterObserver() {
 }
 
 void FileWriterObserver::update() const {
-    ofstream outLogFile("/home/angelica/Development/CLion/LargeMon/log.txt", ios::app);
+    ofstream outLogFile("/home/angelica/Development/CLion/Largemon/log.txt", ios::app);
     if(!outLogFile)
     {
         cerr << "File could not be opened" << endl;
         exit(1);
     }
-    outLogFile << "LargeMon: " << largeMon->getName() << " Action: " << largeMon->getLastAction() <<
+    outLogFile << "Largemon: " << largeMon->getName() << " Action: " << largeMon->getLastAction() <<
 
                                                       " Health: " << largeMon->getCurrentHp() << endl;
 }

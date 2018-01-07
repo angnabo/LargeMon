@@ -1,16 +1,21 @@
 //
 // Created by angelica on 11/11/17.
+#include "../utility/FileWriter.h"
 using namespace std;
-#ifndef LARGEMON_CONTROLLERBATTLEINSTANCE_H
-#define LARGEMON_CONTROLLERBATTLEINSTANCE_H
+#ifndef LARGEMON_BATTLEINSTANCE_H
+#define LARGEMON_BATTLEINSTANCE_H
+#include <iostream>
+#include <random>
+#include "../utility/LargemonGenerator.h"
 
+#include <unistd.h>
 #include <string>
 #include <vector>
-#include "largemon/LargeMon.h"
+#include "largemon/Largemon.h"
 
-class ControllerBattleInstance {
+class BattleInstance {
 public:
-    ControllerBattleInstance();
+    BattleInstance();
     void fight();
     string action(int *);
     string enemyMove();
@@ -22,18 +27,19 @@ public:
     int getPlayerCurrentHp();
     int getEnemyCurrentHp();
     int getTurns();
-    float getEnemyLargeMonCurrentHpPercent();
-    float getPlayerLargeMonCurrentHpPercent();
-    string getEnemyLargeMonName();
-    string getPlayerLargeMonName();
+    float getEnemyLargemonCurrentHpPercent();
+    float getPlayerLargemonCurrentHpPercent();
+    string getEnemyLargemonName();
+    string getPlayerLargemonName();
+    void specialAbility(Largemon * dealer, Largemon * taker);
     string getWinner();
-    virtual ~ControllerBattleInstance();
+    virtual ~BattleInstance();
 
     void attach(class ContrObserver *);
-    void notify(LargeMon *, vector<string>);
+    void notify(Largemon *, vector<string>);
 private:
-    LargeMon * player;
-    LargeMon * enemy;
+    Largemon * player;
+    Largemon * enemy;
     int playerSpecAttkCount;
     int enemySpecAttkCounter;
     int turns;
@@ -41,9 +47,10 @@ private:
     vector<string> enemyArgs;
     //FileWriter * playerWriter;
     //FileWriterObserver * enemyWriter;
-    //LargeMon * playerPtr;
+    //Largemon * playerPtr;
     bool isOver;
     vector<class ContrObserver *> views;
+
 };
 
 

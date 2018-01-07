@@ -10,15 +10,15 @@
 
 class HealthBarObserver : public ContrObserver {
 public:
-    HealthBarObserver(ControllerBattleInstance *);
+    HealthBarObserver(BattleInstance *);
 
-    void update(LargeMon *, vector<string>) const ;
+    void update(Largemon *, vector<string>) const ;
 private:
     int currentHealth;
 
     int getHealth() const;
 
-    int getHealth(LargeMon *lm) const;
+    int getHealth(Largemon *lm) const;
 };
 
 

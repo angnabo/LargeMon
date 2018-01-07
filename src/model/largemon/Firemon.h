@@ -6,12 +6,12 @@
 #define LARGEMON_FIRELM_H
 
 
-#include "LargeMon.h"
+#include "Largemon.h"
 
 
-class FireLM: public LargeMon {
+class Firemon: public Largemon {
 public:
-    FireLM(const int *, const int *, const int *, const string *);
+    Firemon(const int *, const int *, const int *, const string *);
 
     int specialAttack() const;
     int specialAbility() const;

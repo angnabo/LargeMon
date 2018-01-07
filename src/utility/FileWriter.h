@@ -2,22 +2,22 @@
 // Created by angelica on 04/01/18.
 //
 
-#include "ContrObserver.h"
-#include "../model/largemon/LargeMon.h"
+
 
 using namespace std;
 #ifndef LARGEMON_FILEWRITER_H
 #define LARGEMON_FILEWRITER_H
 
-
+#include "ContrObserver.h"
+#include "../model/largemon/Largemon.h"
 
 class FileWriter : public ContrObserver{
 public:
-    explicit FileWriter(ControllerBattleInstance *);
+    explicit FileWriter(BattleInstance *);
 
 
     void writeToFile() const;
-    void update(LargeMon *, vector<string>) const ;
+    void update(Largemon *, vector<string>) const ;
 private:
     //int health = 0;
     string name;

@@ -3,10 +3,10 @@
 //
 
 
-#include "../model/largemon/LargeMon.h"
-#include "../model/largemon/WaterLM.h"
-#include "../model/largemon/FireLM.h"
-#include "../model/largemon/WoodLM.h"
+#include "../model/largemon/Largemon.h"
+#include "../model/largemon/Watermon.h"
+#include "../model/largemon/Firemon.h"
+#include "../model/largemon/Woodmon.h"
 #include <string>
 #include <vector>
 
@@ -16,10 +16,10 @@ using namespace std;
 #define LARGEMON_LARGEMONGENERATOR_H
 
 
-class LargeMonGenerator {
+class LargemonGenerator {
 public:
-    LargeMonGenerator();
-    LargeMon * generateLargeMon();
+    LargemonGenerator();
+    Largemon * generateLargemon();
     int randomInRange(int, int);
     string generateName(int);
 private:

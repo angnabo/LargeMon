@@ -122,11 +122,11 @@ void Controller::run() {
                     if(!battleInstance.isGameOver()) {
                         textUpdate = battleInstance.action(&selectedButton);
                         view.updateText(textUpdate);
-                        view.updatePlayerHealthBar(battleInstance.getPlayerLargeMonCurrentHpPercent(),
+                        view.updatePlayerHealthBar(battleInstance.getPlayerLargemonCurrentHpPercent(),
                                                    to_string(battleInstance.getPlayerCurrentHp()));
 
 
-                        view.updateEnemyHealthBar(battleInstance.getEnemyLargeMonCurrentHpPercent(),
+                        view.updateEnemyHealthBar(battleInstance.getEnemyLargemonCurrentHpPercent(),
                                                   to_string(battleInstance.getEnemyCurrentHp()));
                     } else {
                         //gBottomPanelFull.render(gRenderer, 10,0);
@@ -145,11 +145,11 @@ void Controller::run() {
 
 void Controller::setViewArguments() {
     //view.
-    arguments.push_back(battleInstance.getEnemyLargeMonName());
+    arguments.push_back(battleInstance.getEnemyLargemonName());
     arguments.push_back(to_string(battleInstance.getPlayerCurrentHp()));
     arguments.push_back(to_string(battleInstance.getEnemyCurrentHp()));
-    arguments.push_back(getLargemonSpritePath(battleInstance.getPlayerLargeMonName()));
-    arguments.push_back(getLargemonSpritePath(battleInstance.getEnemyLargeMonName()));
+    arguments.push_back(getLargemonSpritePath(battleInstance.getPlayerLargemonName()));
+    arguments.push_back(getLargemonSpritePath(battleInstance.getEnemyLargemonName()));
 }
 
 string Controller::getLargemonSpritePath(string type) {

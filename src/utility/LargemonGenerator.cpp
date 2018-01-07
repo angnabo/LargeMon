@@ -4,13 +4,12 @@
 
 #include <iostream>
 #include <random>
-#include "LargeMonGenerator.h"
+#include "LargemonGenerator.h"
 
-LargeMonGenerator::LargeMonGenerator() = default;
+LargemonGenerator::LargemonGenerator() = default;
 
 
-
-LargeMon * LargeMonGenerator::generateLargeMon() {
+Largemon * LargemonGenerator::generateLargemon() {
 
     int health = randomInRange(MIN_HEALTH, MAX_HEALTH);
 
@@ -29,7 +28,7 @@ LargeMon * LargeMonGenerator::generateLargeMon() {
     switch (randType){
         case 0 : {
             string name = generateName(randType);
-            auto * lm = new FireLM(&health, &damage, &size, &name);
+            auto * lm = new Firemon(&health, &damage, &size, &name);
             return lm;
         }
         case 1 : {
@@ -46,14 +45,14 @@ LargeMon * LargeMonGenerator::generateLargeMon() {
     }
 }
 
-int LargeMonGenerator::randomInRange(int min, int max){
+int LargemonGenerator::randomInRange(int min, int max){
     std::random_device rd; // obtain a random number from hardware
     std::mt19937 eng(rd()); // seed the generator
     std::uniform_int_distribution<> distr(min, max);
     return (int) distr(eng);
 }
 
-string LargeMonGenerator::generateName(int type) {
+string LargemonGenerator::generateName(int type) {
     string name;
     switch(type){
         case 0:

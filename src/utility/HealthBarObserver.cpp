@@ -4,14 +4,14 @@
 
 #include "HealthBarObserver.h"
 
-HealthBarObserver::HealthBarObserver(ControllerBattleInstance * btl) : ContrObserver(btl){
+HealthBarObserver::HealthBarObserver(BattleInstance * btl) : ContrObserver(btl){
 
 }
 
-void HealthBarObserver::update(LargeMon * lm, vector<string>/*unused*/) const {
+void HealthBarObserver::update(Largemon * lm, vector<string>/*unused*/) const {
 
 }
 
-int HealthBarObserver::getHealth(LargeMon * lm) const {
+int HealthBarObserver::getHealth(Largemon * lm) const {
     return lm->getCurrentHp();
 }

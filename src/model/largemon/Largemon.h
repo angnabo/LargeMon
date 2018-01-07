@@ -1,20 +1,20 @@
-#include "../../utility/Observer.h"
+//#include "../../utility/Observer.h"
 using namespace std;
 #ifndef LARGEMON_LARGEMON_H
 #define LARGEMON_LARGEMON_H
 #include <string>
 #include <vector>
 
-class LargeMon {
+class Largemon {
 public:
-    LargeMon(const int *, const int *, const int *, const string *);
+    Largemon(const int *, const int *, const int *, const string *);
 
-    LargeMon(LargeMon const &) = default;
-    LargeMon(LargeMon&&) = default;
-    LargeMon& operator=(const LargeMon&) = default;
-    LargeMon& operator=(LargeMon&&) = default;
+    Largemon(Largemon const &) = default;
+    Largemon(Largemon&&) = default;
+    Largemon& operator=(const Largemon&) = default;
+    Largemon& operator=(Largemon&&) = default;
 
-    ~LargeMon();
+    ~Largemon();
 
     string getName() const;
     void takeDamage(int);

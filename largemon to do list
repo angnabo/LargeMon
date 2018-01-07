@@ -1,4 +1,4 @@
-LargeMon TO DO:
+Largemon TO DO:
 
 [done] implement file writer
 
@@ -26,7 +26,7 @@ LargeMon TO DO:
 
 [] generate names for largemon(maybe have a different generator for each type, the only diff is a vector of names for the type)
 
-[] implement saving LargeMon
+[] implement saving Largemon
 
 [] stats bar showing name/type/hp/attack power
 

@@ -6,10 +6,10 @@
 #define LARGEMON_WOODLM_H
 
 
-#include "LargeMon.h"
+#include "Largemon.h"
 
 
-class WoodLM: public LargeMon {
+class WoodLM: public Largemon {
 public:
     WoodLM(const int *, const int *, const int *, const string *);
 

@@ -45,10 +45,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2017.2.1/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2017.2.1/bin/cmake/bin/cmake -E remove -f
+RM = /home/angelica/opt/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/angelica/Development/CLion/LargeMon
 CMAKE_BINARY_DIR = /home/angelica/Development/CLion/LargeMon/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/LargeMon.dir
+# Target rules for target CMakeFiles/Largemon.dir
 
 # All Build rule for target.
-CMakeFiles/LargeMon.dir/all:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/depend
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target LargeMon"
-.PHONY : CMakeFiles/LargeMon.dir/all
+CMakeFiles/Largemon.dir/all:
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/depend
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target Largemon"
+.PHONY : CMakeFiles/Largemon.dir/all
 
 # Include target in all.
-all: CMakeFiles/LargeMon.dir/all
+all: CMakeFiles/Largemon.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/LargeMon.dir/rule: cmake_check_build_system
+CMakeFiles/Largemon.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles 20
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/LargeMon.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Largemon.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/LargeMon.dir/rule
+.PHONY : CMakeFiles/Largemon.dir/rule
 
 # Convenience name for target.
-LargeMon: CMakeFiles/LargeMon.dir/rule
+Largemon: CMakeFiles/Largemon.dir/rule
 
-.PHONY : LargeMon
-
-# clean rule for target.
-CMakeFiles/LargeMon.dir/clean:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/clean
-.PHONY : CMakeFiles/LargeMon.dir/clean
+.PHONY : Largemon
 
 # clean rule for target.
-clean: CMakeFiles/LargeMon.dir/clean
+CMakeFiles/Largemon.dir/clean:
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/clean
+.PHONY : CMakeFiles/Largemon.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Largemon.dir/clean
 
 .PHONY : clean
 

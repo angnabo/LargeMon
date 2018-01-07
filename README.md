@@ -1,2 +1,2 @@
-# LargeMon
-A LargeMon generator and fight simulator
+# Largemon
+A Largemon generator and fight simulator
