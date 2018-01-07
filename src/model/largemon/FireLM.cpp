@@ -14,8 +14,12 @@ int FireLM::specialAttack() const {
 }
 
 string FireLM::getType() const {
-    string s = "fire";
-    return s;
+    return "fire";
+}
+
+//Damage over time ability that can be applied to any type
+int FireLM::specialAbility() const {
+    return 0;
 }
 
 

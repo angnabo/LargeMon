@@ -6,6 +6,8 @@ LargeMon TO DO:
 
 [done] fix the file writing bug which doesnt write the last turn if the player wins
 
+[] implement special attacks
+
 [] reorganize resources directory
 
 [] directories for model/view/controller

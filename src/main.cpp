@@ -4,7 +4,7 @@
 
 #include <SDL_events.h>
 #include "main.h"
-#include "LargeMonMainView.h"
+#include "view/LargeMonMainView.h"
 #include "controller/Controller.h"
 
 int main( int argc, char* args[] ) {

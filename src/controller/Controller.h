@@ -5,8 +5,8 @@
 #ifndef LARGEMON_CONTROLLER_H
 #define LARGEMON_CONTROLLER_H
 
-#include "ControllerBattleInstance.h"
-#include "../LargeMonMainView.h"
+#include "../model/BattleInstance.h"
+#include "../view/LargeMonMainView.h"
 
 
 using namespace std;

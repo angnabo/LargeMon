@@ -3,7 +3,7 @@
 //
 
 #include "ContrObserver.h"
-#include "../largemon/LargeMon.h"
+#include "../model/largemon/LargeMon.h"
 
 using namespace std;
 #ifndef LARGEMON_FILEWRITER_H

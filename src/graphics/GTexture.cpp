@@ -61,11 +61,10 @@ bool GTexture::loadFromFile( SDL_Renderer* gRenderer, std::string path )
     return mTexture != NULL;
 }
 
-bool GTexture::loadFromRenderedText(SDL_Renderer * gRenderer, TTF_Font * gFont, std::string textureText, SDL_Color textColor )
+bool GTexture::loadFont(SDL_Renderer * gRenderer, TTF_Font * gFont, std::string textureText, SDL_Color textColor )
 {
     //Get rid of preexisting texture
     free();
-
 
     //Determine the size of text before wrapping
     SDL_Surface* textSurfaceTest = TTF_RenderText_Solid( gFont, textureText.c_str(), textColor);

@@ -1,4 +1,4 @@
-#include "../utility/Observer.h"
+#include "../../utility/Observer.h"
 using namespace std;
 #ifndef LARGEMON_LARGEMON_H
 #define LARGEMON_LARGEMON_H
@@ -20,12 +20,16 @@ public:
     void takeDamage(int);
     void defend();
     virtual int specialAttack() const = 0;
+    virtual int specialAbility() const = 0;
     virtual string getType() const = 0;
     int getDamage();
     int getHp(){ return hp; }
     int getCurrentHp(){ return currentHp; }
     int getSize() { return size; }
     std::string getLastAction();
+    void stun();
+    void unstun();
+    bool isStunned();
     //string getType() { return type; }
 
     void attach(class Observer *);
@@ -42,8 +46,8 @@ protected:
     int couterLM;
     string description;
     string lastAction;
+    bool stunned;
     vector<class Observer *> views;
 };
-
 
 #endif

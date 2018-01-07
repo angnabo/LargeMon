@@ -6,10 +6,10 @@
 #define LARGEMON_LARGEMONMAINVIEW_H
 
 
-#include "graphics/GTexture.h"
-#include "graphics/GButtonTexture.h"
-#include "graphics/GProgressBar.h"
-#include "controller/FileWriter.h"
+#include "../graphics/GTexture.h"
+#include "../graphics/GButtonTexture.h"
+#include "../graphics/GProgressBar.h"
+#include "../utility/FileWriter.h"
 
 using namespace std;
 
@@ -23,6 +23,8 @@ public:
     bool run(vector<string> args);
     void updatePlayerHealthBar(float, string);
     void updateEnemyHealthBar(float, string);
+    bool loadUI(GTexture &, string);
+    bool loadUIText(GTexture &, TTF_Font *, string);
     bool render();
 private:
 //Screen dimension constants
@@ -77,9 +79,8 @@ private:
     GTexture gEnemySpriteSheetTexture;
     SDL_Texture* loadTexture( std::string path );
     SDL_Texture* gTexture = NULL;
+    SDL_Color textColor;
 
-
-    bool loadUI(GTexture & texture, string path);
 };
 
 

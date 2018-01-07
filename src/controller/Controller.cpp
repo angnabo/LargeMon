@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 #include "Controller.h"
-#include "../LargeMonMainView.h"
+#include "../view/LargeMonMainView.h"
 
 Controller::Controller() {
 

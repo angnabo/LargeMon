@@ -6,7 +6,7 @@ using namespace std;
 
 #include <string>
 #include <vector>
-#include "../largemon/LargeMon.h"
+#include "largemon/LargeMon.h"
 
 class ControllerBattleInstance {
 public:

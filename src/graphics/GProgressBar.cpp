@@ -15,7 +15,7 @@ bool GProgressBar::updateProgress(SDL_Renderer * gRenderer, GTexture & bar, TTF_
         SDL_Color textColor = { 0, 0, 0 };
         bool success = true;
 
-        if( !text.loadFromRenderedText( gRenderer, gHpFont, hp, textColor ) )
+        if( !text.loadFont( gRenderer, gHpFont, hp, textColor ) )
         {
             printf( "Failed to render text texture!\n" );
             success = false;

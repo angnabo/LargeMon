@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "ControllerBattleInstance.h"
+#include "../model/BattleInstance.h"
 
 using namespace std;
 #ifndef LARGEMON_CONTROBSERVER_H

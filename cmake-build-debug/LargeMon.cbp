@@ -86,40 +86,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMonMainView.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/LargeMonMainView.h">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/ContrObserver.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/ContrObserver.h">
-			<Option target="LargeMon"/>
-		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/Controller.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/Controller.h">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/ControllerBattleInstance.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/ControllerBattleInstance.h">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/FileWriter.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/FileWriter.h">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/HealthBarObserver.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/controller/HealthBarObserver.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/graphics/GButtonTexture.cpp">
@@ -140,34 +110,46 @@
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/graphics/GTexture.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/largemon/FireLM.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/largemon/FireLM.h">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/largemon/LargeMon.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/largemon/LargeMon.h">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/largemon/WaterLM.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/largemon/WaterLM.h">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/largemon/WoodLM.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/largemon/WoodLM.h">
-			<Option target="LargeMon"/>
-		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/main.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/main.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/BattleInstance.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/BattleInstance.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/largemon/FireLM.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/largemon/FireLM.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/largemon/LargeMon.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/largemon/LargeMon.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/largemon/WaterLM.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/largemon/WaterLM.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/largemon/WoodLM.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/largemon/WoodLM.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/ContrObserver.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/ContrObserver.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/DescriptGen.cpp">
@@ -176,10 +158,22 @@
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/DescriptGen.h">
 			<Option target="LargeMon"/>
 		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/FileWriter.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/FileWriter.h">
+			<Option target="LargeMon"/>
+		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/FileWriterObserver.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/FileWriterObserver.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/HealthBarObserver.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/HealthBarObserver.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/LargeMonGenerator.cpp">
@@ -192,6 +186,12 @@
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/Observer.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/view/LargeMonMainView.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/view/LargeMonMainView.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/test/Test.cpp">

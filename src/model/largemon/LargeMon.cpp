@@ -13,6 +13,7 @@ LargeMon::LargeMon(const int* hp, const int* damage, const int* size, const stri
     this->currentHp = *hp;
     this->damage = *damage;
     this->size = *size;
+    stunned = false;
     //this->type = type;
 }
 
@@ -54,6 +55,18 @@ void LargeMon::notify() {
     for (int i = 0; i < views.size(); i++){
         views[i]->update();
     }
+}
+
+void LargeMon::stun(){
+    stunned = true;
+}
+
+void LargeMon::unstun(){
+    stunned = false;
+}
+
+bool LargeMon::isStunned(){
+    return stunned;
 }
 
 void LargeMon::attach(Observer * obs) {

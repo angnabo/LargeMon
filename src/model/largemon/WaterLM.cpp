@@ -16,4 +16,8 @@ int WaterLM::specialAttack() const {
 string WaterLM::getType() const {
     return "water";
 }
+//bubble shield which shields a portion of the damage
+int WaterLM::specialAbility() const {
+    return 0;
+}
 

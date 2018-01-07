@@ -9,11 +9,11 @@
 #include <string>
 #include <iostream>
 #include <utility>
-#include "graphics/GTexture.h"
-#include "graphics/GProgressBar.h"
-#include "graphics/GButtonTexture.h"
-#include "controller/ControllerBattleInstance.h"
-#include "controller/FileWriter.h"
+#include "../graphics/GTexture.h"
+#include "../graphics/GProgressBar.h"
+#include "../graphics/GButtonTexture.h"
+#include "../model/BattleInstance.h"
+#include "../utility/FileWriter.h"
 #include "LargeMonMainView.h"
 
 
@@ -89,11 +89,21 @@ bool LargeMonMainView::loadUI(GTexture & texture, string path){
     return success;
 }
 
+bool LargeMonMainView::loadUIText(GTexture & texture, TTF_Font * font, std::string text){
+    bool success = true;
+    if( !texture.loadFont(gRenderer, font, text, textColor) )
+    {
+        cout << "Failed to load Foo' texture image!\n";
+        success = false;
+    }
+    return success;
+}
+
 bool LargeMonMainView::loadMedia(vector<string> args)
 {
     //Loading success flag
     bool success = true;
-
+    textColor = { 0, 0, 0 };
 
     loadUI(gBackgroundTexture, "/home/angelica/Development/CLion/LargeMon/resources/mountains.png");
     loadUI(gBottomTextPanel,"/home/angelica/Development/CLion/LargeMon/resources/bottom_panel.bmp" );
@@ -123,32 +133,39 @@ bool LargeMonMainView::loadMedia(vector<string> args)
         success = false;
     } else {
         //Render text
-        SDL_Color textColor = { 0, 0, 0 };
-        if( !gTopLeftButtonText.loadFromRenderedText( gRenderer, gFont, "Attack", textColor ) )
-        {
-            cout <<  "Failed to render text texture!\n";
-            success = false;
-        }
-        if( !gTopRightButtonText.loadFromRenderedText( gRenderer, gFont, "Defend", textColor ) )
-        {
-            cout <<  "Failed to render text texture!\n";
-            success = false;
-        }
-        if( !gBottomLeftButtonText.loadFromRenderedText( gRenderer, gFont, "Special Attack 1", textColor ) )
-        {
-            cout <<  "Failed to render text texture!\n";
-            success = false;
-        }
-        if( !gBottomRightButtonText.loadFromRenderedText( gRenderer, gFont, "Special Attack 2", textColor ) )
-        {
-            cout <<  "Failed to render text texture!\n";
-            success = false;
-        }
-        if( !gPanelText.loadFromRenderedText( gRenderer, gFont, args[0], textColor ) )
-        {
-            cout <<  "Failed to render text texture!\n";
-            success = false;
-        }
+
+
+        loadUIText(gTopLeftButtonText, gFont, "Attack");
+        loadUIText(gTopRightButtonText, gFont, "Defend");
+        loadUIText(gBottomLeftButtonText, gFont, "Special Attack");
+        loadUIText(gBottomRightButtonText, gFont, "Special Attack");
+        loadUIText(gPanelText, gFont, args[0]);
+
+//        if( !gTopLeftButtonText.loadText( gRenderer, gFont, "Attack", textColor ) )
+//        {
+//            cout <<  "Failed to render text texture!\n";
+//            success = false;
+//        }
+//        if( !gTopRightButtonText.loadText( gRenderer, gFont, "Defend", textColor ) )
+//        {
+//            cout <<  "Failed to render text texture!\n";
+//            success = false;
+//        }
+//        if( !gBottomLeftButtonText.loadText( gRenderer, gFont, "Special Attack 1", textColor ) )
+//        {
+//            cout <<  "Failed to render text texture!\n";
+//            success = false;
+//        }
+//        if( !gBottomRightButtonText.loadText( gRenderer, gFont, "Special Attack 2", textColor ) )
+//        {
+//            cout <<  "Failed to render text texture!\n";
+//            success = false;
+//        }
+//        if( !gPanelText.loadText( gRenderer, gFont, args[0], textColor ) )
+//        {
+//            cout <<  "Failed to render text texture!\n";
+//            success = false;
+//        }
     }
     //Open ttf pixel font small size
     gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/alterebro-pixel-font.ttf", 20 );
@@ -157,17 +174,19 @@ bool LargeMonMainView::loadMedia(vector<string> args)
         cout << "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError();
         success = false;
     } else {
-        SDL_Color textColor = { 0, 0, 0 };
-        if( !gPlayerHealthText.loadFromRenderedText( gRenderer, gHpFont, args[1], textColor ) )
-        {
-            cout <<  "Failed to render text texture!\n";
-            success = false;
-        }
-        if( !gEnemyHealthText.loadFromRenderedText( gRenderer, gHpFont, args[2], textColor ) )
-        {
-            cout <<  "Failed to render text texture!\n";
-            success = false;
-        }
+        //SDL_Color textColor = { 0, 0, 0 };
+        loadUIText(gPlayerHealthText, gHpFont, args[1]);
+        loadUIText(gEnemyHealthText, gHpFont, args[2]);
+//        if( !gPlayerHealthText.loadText( gRenderer, gHpFont, args[1], textColor ) )
+//        {
+//            cout <<  "Failed to render text texture!\n";
+//            success = false;
+//        }
+//        if( !gEnemyHealthText.loadText( gRenderer, gHpFont, args[2], textColor ) )
+//        {
+//            cout <<  "Failed to render text texture!\n";
+//            success = false;
+//        }
     }
 
     //Load Button Textures
@@ -204,9 +223,9 @@ bool LargeMonMainView::loadMedia(vector<string> args)
 
 bool LargeMonMainView::updateText(string text)
 {
-    SDL_Color textColor = { 0, 0, 0 };
+    //SDL_Color textColor = { 0, 0, 0 };
     bool success = true;
-    if( !gPanelText.loadFromRenderedText( gRenderer, gFont, std::move(text), textColor ) )
+    if( !loadUIText(gPanelText, gFont, text))
     {
         cout <<  "Failed to render text texture!\n";
         success = false;

@@ -2,11 +2,11 @@
 // Created by angelica on 11/11/17.
 //
 
-#include "ControllerBattleInstance.h"
+#include "BattleInstance.h"
 #include <iostream>
 #include <random>
 #include "../utility/LargeMonGenerator.h"
-#include "FileWriter.h"
+#include "../utility/FileWriter.h"
 #include <unistd.h>
 
 ControllerBattleInstance::ControllerBattleInstance() {

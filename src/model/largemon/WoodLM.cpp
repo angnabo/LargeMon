@@ -16,3 +16,7 @@ int WoodLM::specialAttack() const {
 string WoodLM::getType() const {
     return "wood";
 }
+//stun ability which stuns the opponent for 1 turn
+int WoodLM::specialAbility() const {
+    return 0;
+}
