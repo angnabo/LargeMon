@@ -79,6 +79,7 @@ private:
     SDL_Texture* gTexture = NULL;
 
 
+    bool loadUI(GTexture & texture, string path);
 };
 
 

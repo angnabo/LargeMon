@@ -144,6 +144,7 @@ void Controller::run() {
 }
 
 void Controller::setViewArguments() {
+    //view.
     arguments.push_back(battleInstance.getEnemyLargeMonName());
     arguments.push_back(to_string(battleInstance.getPlayerCurrentHp()));
     arguments.push_back(to_string(battleInstance.getEnemyCurrentHp()));
@@ -154,11 +155,11 @@ void Controller::setViewArguments() {
 string Controller::getLargemonSpritePath(string type) {
     string path;
     if(type == "Fire Troll"){
-        path = "/home/angelica/Development/CLion/LargeMon/resources/fire_troll_sprite_sheet.png";
+        path = "/home/angelica/Development/CLion/LargeMon/resources/sprites/fire_troll_sprite_sheet.png";
     } else if(type == "Water Troll"){
-        path = "/home/angelica/Development/CLion/LargeMon/resources/water_troll_sprite_sheet.png";
+        path = "/home/angelica/Development/CLion/LargeMon/resources/sprites/water_troll_sprite_sheet.png";
     }else{
-        path = "/home/angelica/Development/CLion/LargeMon/resources/wood_troll_sprite_sheet.png";
+        path = "/home/angelica/Development/CLion/LargeMon/resources/sprites/wood_troll_sprite_sheet.png";
     }
     return path;
 }

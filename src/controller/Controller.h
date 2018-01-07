@@ -8,6 +8,7 @@
 #include "ControllerBattleInstance.h"
 #include "../LargeMonMainView.h"
 
+
 using namespace std;
 class Controller {
 public:

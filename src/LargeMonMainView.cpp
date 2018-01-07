@@ -79,77 +79,41 @@ bool LargeMonMainView::init()
     return success;
 }
 
+bool LargeMonMainView::loadUI(GTexture & texture, string path){
+    bool success = true;
+    if( !texture.loadFromFile(gRenderer, std::move(path)) )
+    {
+        cout << "Failed to load Foo' texture image!\n";
+        success = false;
+    }
+    return success;
+}
+
 bool LargeMonMainView::loadMedia(vector<string> args)
 {
     //Loading success flag
     bool success = true;
 
 
-    //Load background texture
-    if( !gBackgroundTexture.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/mountains.png" ) )
-    {
-        cout << "Failed to load Foo' texture image!\n";
-        success = false;
-    }
-    //Load bottom panel
-    if( !gBottomTextPanel.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/bottom_panel.bmp" ) )
-    {
-        cout << "Failed to load Foo' texture image!\n";
-        success = false;
-    }
-//    //Load large bottom panel
-//    if( !gBottomPanelFull.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/bottom_panel_full.bmp" ) )
-//    {
-//        printf( "Failed to load background texture image!\n" );
-//        success = false;
-//    }
-    //Load large bottom panel
-    if( !gPlayerHpBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_bg.bmp" ) )
-    {
-        cout << "Failed to load Foo' texture image!\n";
-        success = false;
-    }
-    //Load large bottom panel
-    if( !gPlayerHpBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_fg.bmp" ) )
-    {
-        cout << "Failed to load Foo' texture image!\n";
-        success = false;
-    }
-    //Load large bottom panel
-    if( !gEnemyHpBarBG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_bg.bmp" ) )
-    {
-        cout << "Failed to load Foo' texture image!\n";
-        success = false;
-    }
-    //Load large bottom panel
-    if( !gEnemyHpBarFG.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/health_bar_fg.bmp" ) )
-    {
-        cout << "Failed to load Foo' texture image!\n";
-        success = false;
-    }
-    //Load player sprite sheet texture
-    if( !gPlayerSpriteSheetTexture.loadFromFile( gRenderer, args[3] ) )
-    {
-        cout << "Failed to load Foo' texture image!\n";
-        success = false;
-    }
-    //Load enemy sprite sheet texture
-    if( !gEnemySpriteSheetTexture.loadFromFile( gRenderer, args[4] ) )
-    {
-        cout << "Failed to load Foo' texture image!\n";
-        success = false;
-    }
-        //Set bottom left sprite
-        gSpriteClips[ 0 ].x = 0;
-        gSpriteClips[ 0 ].y = 120;
-        gSpriteClips[ 0 ].w = 120;
-        gSpriteClips[ 0 ].h = 120;
+    loadUI(gBackgroundTexture, "/home/angelica/Development/CLion/LargeMon/resources/mountains.png");
+    loadUI(gBottomTextPanel,"/home/angelica/Development/CLion/LargeMon/resources/bottom_panel.bmp" );
+    loadUI(gPlayerHpBarBG,"/home/angelica/Development/CLion/LargeMon/resources/health_bar_bg.bmp" );
+    loadUI(gPlayerHpBarFG,"/home/angelica/Development/CLion/LargeMon/resources/health_bar_fg.bmp" );
+    loadUI(gEnemyHpBarBG,"/home/angelica/Development/CLion/LargeMon/resources/health_bar_bg.bmp" );
+    loadUI(gEnemyHpBarFG,"/home/angelica/Development/CLion/LargeMon/resources/health_bar_fg.bmp" );
+    loadUI(gPlayerSpriteSheetTexture,args[3] );
+    loadUI(gEnemySpriteSheetTexture,args[4] );
 
-        //Set top right sprite
-        gSpriteClips[ 1 ].x = 2040;
-        gSpriteClips[ 1 ].y = 120;
-        gSpriteClips[ 1 ].w = 120;
-        gSpriteClips[ 1 ].h = 120;
+    //Set bottom left sprite
+    gSpriteClips[ 0 ].x = 0;
+    gSpriteClips[ 0 ].y = 120;
+    gSpriteClips[ 0 ].w = 120;
+    gSpriteClips[ 0 ].h = 120;
+    //Set top right sprite
+    gSpriteClips[ 1 ].x = 2040;
+    gSpriteClips[ 1 ].y = 120;
+    gSpriteClips[ 1 ].w = 120;
+    gSpriteClips[ 1 ].h = 120;
 
     //Load ttf pixel font large size
     gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/alterebro-pixel-font.ttf", 30 );

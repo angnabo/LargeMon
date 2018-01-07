@@ -6,6 +6,10 @@ LargeMon TO DO:
 
 [done] fix the file writing bug which doesnt write the last turn if the player wins
 
+[] reorganize resources directory
+
+[] directories for model/view/controller
+
 [] have a wait time of a second between player turn and enemy counter attack
 
 [] fix the bug that sometimes allows both largemon to end up with 0 health
@@ -15,6 +19,8 @@ LargeMon TO DO:
 [done] put the view in it's own class, and have a main(for now) pass calls to the view
 
 [done] make a controller class handle calls to the view
+
+[] put a text file into the resource folder with a link to where
 
 [] generate names for largemon(maybe have a different generator for each type, the only diff is a vector of names for the type)
 
