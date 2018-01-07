@@ -84,18 +84,7 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     //Loading success flag
     bool success = true;
 
-    //Load player texture
-    if( !gPlayerTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/shibainu.bmp" ) )
-    {
-        cout << "Failed to load Foo' texture image!\n";
-        success = false;
-    }
-    //Load enemy texture
-    if( !gEnemyTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/shiba-inu-21.bmp" ) )
-    {
-        cout << "Failed to load Foo' texture image!\n";
-        success = false;
-    }
+
     //Load background texture
     if( !gBackgroundTexture.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/mountains.png" ) )
     {
@@ -138,13 +127,18 @@ bool LargeMonMainView::loadMedia(vector<string> args)
         cout << "Failed to load Foo' texture image!\n";
         success = false;
     }
-    //Load player texture
-    if( !gSpriteSheetTexture.loadFromFile( gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/troll_sprite_sheet.png" ) )
+    //Load player sprite sheet texture
+    if( !gPlayerSpriteSheetTexture.loadFromFile( gRenderer, args[3] ) )
     {
         cout << "Failed to load Foo' texture image!\n";
         success = false;
-    } else
+    }
+    //Load enemy sprite sheet texture
+    if( !gEnemySpriteSheetTexture.loadFromFile( gRenderer, args[4] ) )
     {
+        cout << "Failed to load Foo' texture image!\n";
+        success = false;
+    }
         //Set bottom left sprite
         gSpriteClips[ 0 ].x = 0;
         gSpriteClips[ 0 ].y = 120;
@@ -156,7 +150,6 @@ bool LargeMonMainView::loadMedia(vector<string> args)
         gSpriteClips[ 1 ].y = 120;
         gSpriteClips[ 1 ].w = 120;
         gSpriteClips[ 1 ].h = 120;
-    }
 
     //Load ttf pixel font large size
     gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/alterebro-pixel-font.ttf", 30 );
@@ -334,19 +327,20 @@ bool LargeMonMainView::run(vector<string> args) {
     return true;
 }
 
-void LargeMonMainView::updateButtons(int resetButton, int pressedButton) {
+void LargeMonMainView::updateButtons(int pressedButton) {
     //Modulation components
-    Uint8 r = 255;
-    Uint8 g = 255;
-    Uint8 b = 255;
+    Uint8 unslct = 255;
 
     //Modulation components
-    Uint8 rSelected = 70;
-    Uint8 gSelected = 70;
-    Uint8 bSelected = 70;
+    Uint8 slct = 70;
 
-    buttons[resetButton].setColor(255, 255, 255);
-    buttons[pressedButton].setColor(70, 70, 70);
+
+    for(int i = 0; i<4; i++){
+        if(i!=pressedButton){
+            buttons[i].setColor(unslct,unslct,unslct);
+        }
+    }
+    buttons[pressedButton].setColor(slct, slct, slct);
     render();
 
 }
@@ -361,7 +355,7 @@ void LargeMonMainView::updateEnemyHealthBar(float percent, string hp) {
     render();
 }
 
-void LargeMonMainView::render() {
+bool LargeMonMainView::render() {
     SDL_RenderClear(gRenderer);
     SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
@@ -378,11 +372,11 @@ void LargeMonMainView::render() {
 
     //Render player to the screen
     //gPlayerTexture.render(gRenderer, -20, 170);
-    gSpriteSheetTexture.renderSprite(gRenderer, 20, 190, &gSpriteClips[0]);
+    gPlayerSpriteSheetTexture.renderSprite(gRenderer, 20, 190, &gSpriteClips[0]);
 
     //Render enemy to the screen
     //gEnemyTexture.render(gRenderer, 430, 40);
-    gSpriteSheetTexture.renderSprite(gRenderer, 465, 125, &gSpriteClips[1]);
+    gEnemySpriteSheetTexture.renderSprite(gRenderer, 465, 125, &gSpriteClips[1]);
 
     gPlayerHpBarBG.render(gRenderer, 30, 300);
     gPlayerHpBarFG.render(gRenderer, 31, 301);

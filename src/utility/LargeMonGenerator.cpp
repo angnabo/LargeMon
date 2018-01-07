@@ -24,26 +24,25 @@ LargeMon * LargeMonGenerator::generateLargeMon() {
 
     int size = (int) randomInRange(1, 10);;
 
-    string name = generateName();
 
     int randType = randomInRange(0, 2);
     switch (randType){
         case 0 : {
-            auto * lm = new WaterLM(&health, &damage, &size, &name);
-            return lm;
-        }
-        case 1 : {
+            string name = generateName(randType);
             auto * lm = new FireLM(&health, &damage, &size, &name);
             return lm;
         }
+        case 1 : {
+            string name = generateName(randType);
+            auto * lm = new WaterLM(&health, &damage, &size, &name);
+            return lm;
+        }
         case 2 : {
+            string name = generateName(randType);
             auto * lm = new WoodLM(&health, &damage, &size, &name);
             return lm;
         }
-        default: {
-            auto * lm = new WoodLM(&health, &damage, &size, &name);
-            return lm;
-        }
+        default:break;
     }
 }
 
@@ -54,6 +53,19 @@ int LargeMonGenerator::randomInRange(int min, int max){
     return (int) distr(eng);
 }
 
-string LargeMonGenerator::generateName() {
-    return largeMonNames[randomInRange(0, largeMonNames.size()-1)];
+string LargeMonGenerator::generateName(int type) {
+    string name;
+    switch(type){
+        case 0:
+            name = fireNames[randomInRange(0, fireNames.size()-1)];
+            break;
+        case 1:
+            name = waterNames[randomInRange(0, waterNames.size()-1)];
+            break;
+        case 2:
+            name = woodNames[randomInRange(0, woodNames.size()-1)];
+            break;
+        default:break;
+    }
+    return name;
 }

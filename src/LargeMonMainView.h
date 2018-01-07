@@ -19,11 +19,11 @@ public:
     bool loadMedia(vector<string>);
     void close();
     bool updateText(string);
-    void updateButtons(int, int);
+    void updateButtons(int);
     bool run(vector<string> args);
     void updatePlayerHealthBar(float, string);
     void updateEnemyHealthBar(float, string);
-    void render();
+    bool render();
 private:
 //Screen dimension constants
     const int SCREEN_WIDTH = 640;
@@ -73,7 +73,8 @@ private:
 
     GButtonTexture buttons[4];
     SDL_Rect gSpriteClips[ 2 ];
-    GTexture gSpriteSheetTexture;
+    GTexture gPlayerSpriteSheetTexture;
+    GTexture gEnemySpriteSheetTexture;
     SDL_Texture* loadTexture( std::string path );
     SDL_Texture* gTexture = NULL;
 

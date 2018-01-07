@@ -11,68 +11,76 @@ Controller::Controller() {
 
 }
 
-int handleUP(int* selected){
-    if (*selected == 0 || *selected == 1){
 
-    } else if (*selected == 2){
-        *selected = 0;
-    } else {
-        *selected = 1;
-    }
-    return *selected;
-}
-
-int handleDOWN(int* selected){
-    if (*selected == 0){
-        *selected = 2;
-    } else if( *selected == 1){
-        *selected = 3;
-    }
-    return *selected;
-}
-
-
-int handleRight(int* selected){
-    if (*selected == 0){
-        *selected = 1;
-
-    } else if (*selected == 2){
-        *selected = 3;
-    }
-    return *selected;
-}
-
-int handleLeft(int* selected){
-    if (*selected == 1){
-        *selected = 0;
-    } else if (*selected == 3){
-        *selected = 2;
+int Controller::handleKeyPress(int* selected, int event){
+    switch (event){
+        case SDLK_UP:{
+            switch (*selected){
+                case 2:
+                    *selected = 0;
+                    break;
+                case 3:
+                    *selected = 1;
+                    break;
+                default:break;
+            }
+            return *selected;
+        }
+        case SDLK_RIGHT:{
+            switch (*selected){
+                case 0:
+                    *selected = 1;
+                    break;
+                case 2:
+                    *selected = 3;
+                    break;
+                default:break;
+            }
+            return *selected;
+        }
+        case SDLK_DOWN:{
+            switch (*selected){
+                case 0:
+                    *selected = 2;
+                    break;
+                case 1:
+                    *selected = 3;
+                    break;
+                default:break;
+            }
+            return *selected;
+        }
+        case SDLK_LEFT:{
+            switch (*selected){
+                case 1:
+                    *selected = 0;
+                    break;
+                case 3:
+                    *selected = 2;
+                    break;
+                default:break;
+            }
+            return *selected;
+        }
+        default:break;
     }
     return *selected;
 }
 
 void Controller::run() {
 
-    ControllerBattleInstance battleInstance;
 
-    arguments.push_back(battleInstance.getEnemyLargeMonName());
-    arguments.push_back(to_string(battleInstance.getPlayerCurrentHp()));
-    arguments.push_back(to_string(battleInstance.getEnemyCurrentHp()));
+    setViewArguments();
 
-    LargeMonMainView view;
     view.run(arguments);
 
-    int resetButton;
     int pressedButton;
+    int selectedButton = 0;
 
     bool quit = false;
 
-
     //Event handler
     SDL_Event e{};
-
-    int selectedButton = 0;
-
     //While application is running
     while (!quit) {
         //Handle events on queue
@@ -87,34 +95,23 @@ void Controller::run() {
 
                     //Handle LEFT key press
                     case SDLK_UP:
-                        cout <<"up pressed ";
-                        resetButton = selectedButton;
-                        cout <<"to reset: " << resetButton;
-                        pressedButton = handleUP(&selectedButton);
-                        cout <<"pressed: " << pressedButton;
-                        view.updateButtons(resetButton, pressedButton);
+                        pressedButton = handleKeyPress(&selectedButton, SDLK_UP);
+                        view.updateButtons(pressedButton);
                         break;
-
                         //Handle RIGHT key press
                     case SDLK_RIGHT:
-                        resetButton = selectedButton;
-                        cout <<"to reset: " << resetButton;
-                        pressedButton = handleRight(&selectedButton);
-                        cout <<"pressed: " << pressedButton;
-                        view.updateButtons(resetButton, pressedButton);
+                        pressedButton = handleKeyPress(&selectedButton, SDLK_RIGHT);
+                        view.updateButtons(pressedButton);
+                        break;
+                        //Handle DOWN key press
+                    case SDLK_DOWN:
+                        pressedButton = handleKeyPress(&selectedButton, SDLK_DOWN);
+                        view.updateButtons(pressedButton);
                         break;
                         //Handle UP key press
                     case SDLK_LEFT:
-                        resetButton = selectedButton;
-                        pressedButton = handleLeft(&selectedButton);
-                        view.updateButtons(resetButton, pressedButton);
-                        break;
-
-                        //Handle DOWN key press
-                    case SDLK_DOWN:
-                        resetButton = selectedButton;
-                        pressedButton = handleDOWN(&selectedButton);
-                        view.updateButtons(resetButton, pressedButton);
+                        pressedButton = handleKeyPress(&selectedButton, SDLK_LEFT);
+                        view.updateButtons(pressedButton);
                         break;
 
                     default:break;
@@ -144,4 +141,24 @@ void Controller::run() {
     }
     view.close();
 
+}
+
+void Controller::setViewArguments() {
+    arguments.push_back(battleInstance.getEnemyLargeMonName());
+    arguments.push_back(to_string(battleInstance.getPlayerCurrentHp()));
+    arguments.push_back(to_string(battleInstance.getEnemyCurrentHp()));
+    arguments.push_back(getLargemonSpritePath(battleInstance.getPlayerLargeMonName()));
+    arguments.push_back(getLargemonSpritePath(battleInstance.getEnemyLargeMonName()));
+}
+
+string Controller::getLargemonSpritePath(string type) {
+    string path;
+    if(type == "Fire Troll"){
+        path = "/home/angelica/Development/CLion/LargeMon/resources/fire_troll_sprite_sheet.png";
+    } else if(type == "Water Troll"){
+        path = "/home/angelica/Development/CLion/LargeMon/resources/water_troll_sprite_sheet.png";
+    }else{
+        path = "/home/angelica/Development/CLion/LargeMon/resources/wood_troll_sprite_sheet.png";
+    }
+    return path;
 }

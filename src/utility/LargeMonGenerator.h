@@ -21,11 +21,13 @@ public:
     LargeMonGenerator();
     LargeMon * generateLargeMon();
     int randomInRange(int, int);
-    string generateName();
+    string generateName(int);
 private:
     const int MIN_HEALTH = 200;
     const int MAX_HEALTH = 400;
-    vector<string> largeMonNames = {"Fire Doge", "Water Doge", "Wood Doge"};
+    vector<string> fireNames = {"Fire Troll"};
+    vector<string> waterNames = {"Water Troll"};
+    vector<string> woodNames = {"Wood Troll"};
 };
 
 
