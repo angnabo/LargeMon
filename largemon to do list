@@ -1,30 +1,9 @@
 LargeMon TO DO:
-
-[done] implement file writer
-
-[done] implement a controller observer class to write to file
-
-[done] fix the file writing bug which doesnt write the last turn if the player wins
-
 [] implement special attacks
-
-[] reorganize resources directory
-
-[] directories for model/view/controller
 
 [] have a wait time of a second between player turn and enemy counter attack
 
-[] fix the bug that sometimes allows both largemon to end up with 0 health
-
 [] the health bars should go down after each move, rather than each turn
-
-[done] put the view in it's own class, and have a main(for now) pass calls to the view
-
-[done] make a controller class handle calls to the view
-
-[] put a text file into the resource folder with a link to where
-
-[] generate names for largemon(maybe have a different generator for each type, the only diff is a vector of names for the type)
 
 [] implement saving LargeMon
 
@@ -34,18 +13,24 @@ LargeMon TO DO:
  	* view variables in header file
  	*
 
-[] include sprite sheets for largemon
-
-[] implement a wait time for enemy attack
-
-[] text texture in own class with update methos
-
-[] hp bar in own class with update method
+[] text texture in own class with update method
 
 [] make a view interface with pure virtual methods like close, init, main
 
-[]make handle key presses one method
-
+Done:
+[done] implement file writer
+[done] implement a controller observer class to write to file
+[done] fix the file writing bug which doesnt write the last turn if the player wins
+[done] put the view in it's own class, and have a main(for now) pass calls to the view
+[done] make a controller class handle calls to the view
+[done] fix the bug that sometimes allows both largemon to end up with 0 health
+[done] put a text file into the resource folder with a licence
+[done] directories for model/view/controller
+[done] generate names for largemon(maybe have a different generator for each type, the only diff is a vector of names for the type)
+[done] include sprite sheets for largemon
+[done] reorganize resources directory
+[done] make handle key presses one method
+[done] hp bar in own class with update method
 
 
 

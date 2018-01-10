@@ -11,7 +11,6 @@ using namespace std;
 class ControllerBattleInstance {
 public:
     ControllerBattleInstance();
-    void fight();
     string action(int *);
     string enemyMove();
     int randomInRange(int, int);

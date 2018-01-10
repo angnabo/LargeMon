@@ -105,14 +105,24 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     bool success = true;
     textColor = { 0, 0, 0 };
 
-    loadUI(gBackgroundTexture, "/home/angelica/Development/CLion/LargeMon/resources/mountains.png");
-    loadUI(gBottomTextPanel,"/home/angelica/Development/CLion/LargeMon/resources/bottom_panel.bmp" );
-    loadUI(gPlayerHpBarBG,"/home/angelica/Development/CLion/LargeMon/resources/health_bar_bg.bmp" );
-    loadUI(gPlayerHpBarFG,"/home/angelica/Development/CLion/LargeMon/resources/health_bar_fg.bmp" );
-    loadUI(gEnemyHpBarBG,"/home/angelica/Development/CLion/LargeMon/resources/health_bar_bg.bmp" );
-    loadUI(gEnemyHpBarFG,"/home/angelica/Development/CLion/LargeMon/resources/health_bar_fg.bmp" );
+    loadUI(gBackgroundTexture, "/home/angelica/Development/CLion/LargeMon/resources/ui/mountains.png");
+    loadUI(gBottomTextPanel,"/home/angelica/Development/CLion/LargeMon/resources/ui/bottom_panel.bmp" );
+    loadUI(gPlayerHpBarBG,"/home/angelica/Development/CLion/LargeMon/resources/ui/health_bar_bg.bmp" );
+    loadUI(gPlayerHpBarFG,"/home/angelica/Development/CLion/LargeMon/resources/ui/health_bar_fg.bmp" );
+    loadUI(gEnemyHpBarBG,"/home/angelica/Development/CLion/LargeMon/resources/ui/health_bar_bg.bmp" );
+    loadUI(gEnemyHpBarFG,"/home/angelica/Development/CLion/LargeMon/resources/ui/health_bar_fg.bmp" );
     loadUI(gPlayerSpriteSheetTexture,args[3] );
     loadUI(gEnemySpriteSheetTexture,args[4] );
+    //Load Button Textures
+    loadUI(gTopLeftButton, "/home/angelica/Development/CLion/LargeMon/resources/ui/button.bmp");
+    loadUI(gTopRightButton, "/home/angelica/Development/CLion/LargeMon/resources/ui/button.bmp");
+    loadUI(gBottomLeftButton, "/home/angelica/Development/CLion/LargeMon/resources/ui/button.bmp");
+    loadUI(gBottomRightButton, "/home/angelica/Development/CLion/LargeMon/resources/ui/button.bmp");
+
+    buttons[0] = gTopLeftButton;
+    buttons[1] = gTopRightButton;
+    buttons[2] = gBottomLeftButton;
+    buttons[3] = gBottomRightButton;
 
     //Set bottom left sprite
     gSpriteClips[ 0 ].x = 0;
@@ -126,97 +136,29 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     gSpriteClips[ 1 ].h = 120;
 
     //Load ttf pixel font large size
-    gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/alterebro-pixel-font.ttf", 30 );
+    gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/fonts/alterebro-pixel-font.ttf", 30 );
     if( gFont == nullptr )
     {
         cout << "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError();
         success = false;
     } else {
         //Render text
-
-
         loadUIText(gTopLeftButtonText, gFont, "Attack");
         loadUIText(gTopRightButtonText, gFont, "Defend");
         loadUIText(gBottomLeftButtonText, gFont, "Special Attack");
         loadUIText(gBottomRightButtonText, gFont, "Special Attack");
         loadUIText(gPanelText, gFont, args[0]);
-
-//        if( !gTopLeftButtonText.loadText( gRenderer, gFont, "Attack", textColor ) )
-//        {
-//            cout <<  "Failed to render text texture!\n";
-//            success = false;
-//        }
-//        if( !gTopRightButtonText.loadText( gRenderer, gFont, "Defend", textColor ) )
-//        {
-//            cout <<  "Failed to render text texture!\n";
-//            success = false;
-//        }
-//        if( !gBottomLeftButtonText.loadText( gRenderer, gFont, "Special Attack 1", textColor ) )
-//        {
-//            cout <<  "Failed to render text texture!\n";
-//            success = false;
-//        }
-//        if( !gBottomRightButtonText.loadText( gRenderer, gFont, "Special Attack 2", textColor ) )
-//        {
-//            cout <<  "Failed to render text texture!\n";
-//            success = false;
-//        }
-//        if( !gPanelText.loadText( gRenderer, gFont, args[0], textColor ) )
-//        {
-//            cout <<  "Failed to render text texture!\n";
-//            success = false;
-//        }
     }
     //Open ttf pixel font small size
-    gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/alterebro-pixel-font.ttf", 20 );
+    gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/fonts/alterebro-pixel-font.ttf", 20 );
     if( gHpFont == nullptr )
     {
         cout << "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError();
         success = false;
     } else {
-        //SDL_Color textColor = { 0, 0, 0 };
         loadUIText(gPlayerHealthText, gHpFont, args[1]);
         loadUIText(gEnemyHealthText, gHpFont, args[2]);
-//        if( !gPlayerHealthText.loadText( gRenderer, gHpFont, args[1], textColor ) )
-//        {
-//            cout <<  "Failed to render text texture!\n";
-//            success = false;
-//        }
-//        if( !gEnemyHealthText.loadText( gRenderer, gHpFont, args[2], textColor ) )
-//        {
-//            cout <<  "Failed to render text texture!\n";
-//            success = false;
-//        }
     }
-
-    //Load Button Textures
-    if( !gTopLeftButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
-    {
-        cout <<  "Failed to load background texture image!\n";
-        success = false;
-    }
-    if( !gTopRightButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
-    {
-        cout <<  "Failed to load background texture image!\n";
-        success = false;
-    }
-    if( !gBottomLeftButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
-    {
-        cout <<  "Failed to load background texture image!\n";
-        success = false;
-    }
-    if( !gBottomRightButton.loadFromFile(gRenderer, "/home/angelica/Development/CLion/LargeMon/resources/button.bmp" ) )
-    {
-        cout <<  "Failed to load background texture image!\n";
-        success = false;
-    }
-
-    gTopLeftButton.setColor(70, 70, 70);
-
-    buttons[0] = gTopLeftButton;
-    buttons[1] = gTopRightButton;
-    buttons[2] = gBottomLeftButton;
-    buttons[3] = gBottomRightButton;
 
     return success;
 }
@@ -311,12 +253,11 @@ bool LargeMonMainView::run(vector<string> args) {
 }
 
 void LargeMonMainView::updateButtons(int pressedButton) {
-    //Modulation components
+    //Not selected button colour
     Uint8 unslct = 255;
 
-    //Modulation components
+    //Selected button colour
     Uint8 slct = 70;
-
 
     for(int i = 0; i<4; i++){
         if(i!=pressedButton){
@@ -350,6 +291,7 @@ bool LargeMonMainView::render() {
     topViewport.h = SCREEN_HEIGHT;
     SDL_RenderSetViewport(gRenderer, &topViewport);
 
+    gTopLeftButton.setColor(70, 70, 70);
     //Render background texture to screen
     gBackgroundTexture.render(gRenderer, 0, 0);
 

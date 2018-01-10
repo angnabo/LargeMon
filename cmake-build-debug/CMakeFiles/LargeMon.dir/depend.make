@@ -259,14 +259,22 @@ CMakeFiles/LargeMon.dir/src/main.cpp.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/model/BattleInstance.cpp
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/model/BattleInstance.h
+CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/model/LargeMonGenerator.h
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/model/largemon/FireLM.h
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/model/largemon/WaterLM.h
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/model/largemon/WoodLM.h
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/utility/ContrObserver.h
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/utility/FileWriter.h
-CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/utility/LargeMonGenerator.h
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/utility/Observer.h
+
+CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/LargeMonGenerator.cpp
+CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/LargeMonGenerator.h
+CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/largemon/FireLM.h
+CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/largemon/LargeMon.h
+CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/largemon/WaterLM.h
+CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/largemon/WoodLM.h
+CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/utility/Observer.h
 
 CMakeFiles/LargeMon.dir/src/model/largemon/FireLM.cpp.o: ../src/model/largemon/FireLM.cpp
 CMakeFiles/LargeMon.dir/src/model/largemon/FireLM.cpp.o: ../src/model/largemon/FireLM.h
@@ -314,14 +322,6 @@ CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o: ../src/utility/Cont
 CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o: ../src/utility/HealthBarObserver.cpp
 CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o: ../src/utility/HealthBarObserver.h
 CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o: ../src/utility/Observer.h
-
-CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o: ../src/model/largemon/FireLM.h
-CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o: ../src/model/largemon/LargeMon.h
-CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o: ../src/model/largemon/WaterLM.h
-CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o: ../src/model/largemon/WoodLM.h
-CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o: ../src/utility/LargeMonGenerator.cpp
-CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o: ../src/utility/LargeMonGenerator.h
-CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o: ../src/utility/Observer.h
 
 CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o: ../src/utility/Observer.cpp

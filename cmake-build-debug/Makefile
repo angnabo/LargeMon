@@ -285,6 +285,33 @@ src/model/BattleInstance.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.s
 .PHONY : src/model/BattleInstance.cpp.s
 
+src/model/LargeMonGenerator.o: src/model/LargeMonGenerator.cpp.o
+
+.PHONY : src/model/LargeMonGenerator.o
+
+# target to build an object file
+src/model/LargeMonGenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o
+.PHONY : src/model/LargeMonGenerator.cpp.o
+
+src/model/LargeMonGenerator.i: src/model/LargeMonGenerator.cpp.i
+
+.PHONY : src/model/LargeMonGenerator.i
+
+# target to preprocess a source file
+src/model/LargeMonGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.i
+.PHONY : src/model/LargeMonGenerator.cpp.i
+
+src/model/LargeMonGenerator.s: src/model/LargeMonGenerator.cpp.s
+
+.PHONY : src/model/LargeMonGenerator.s
+
+# target to generate assembly for a file
+src/model/LargeMonGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.s
+.PHONY : src/model/LargeMonGenerator.cpp.s
+
 src/model/largemon/FireLM.o: src/model/largemon/FireLM.cpp.o
 
 .PHONY : src/model/largemon/FireLM.o
@@ -528,33 +555,6 @@ src/utility/HealthBarObserver.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.s
 .PHONY : src/utility/HealthBarObserver.cpp.s
 
-src/utility/LargeMonGenerator.o: src/utility/LargeMonGenerator.cpp.o
-
-.PHONY : src/utility/LargeMonGenerator.o
-
-# target to build an object file
-src/utility/LargeMonGenerator.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.o
-.PHONY : src/utility/LargeMonGenerator.cpp.o
-
-src/utility/LargeMonGenerator.i: src/utility/LargeMonGenerator.cpp.i
-
-.PHONY : src/utility/LargeMonGenerator.i
-
-# target to preprocess a source file
-src/utility/LargeMonGenerator.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.i
-.PHONY : src/utility/LargeMonGenerator.cpp.i
-
-src/utility/LargeMonGenerator.s: src/utility/LargeMonGenerator.cpp.s
-
-.PHONY : src/utility/LargeMonGenerator.s
-
-# target to generate assembly for a file
-src/utility/LargeMonGenerator.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/LargeMonGenerator.cpp.s
-.PHONY : src/utility/LargeMonGenerator.cpp.s
-
 src/utility/Observer.o: src/utility/Observer.cpp.o
 
 .PHONY : src/utility/Observer.o
@@ -663,6 +663,9 @@ help:
 	@echo "... src/model/BattleInstance.o"
 	@echo "... src/model/BattleInstance.i"
 	@echo "... src/model/BattleInstance.s"
+	@echo "... src/model/LargeMonGenerator.o"
+	@echo "... src/model/LargeMonGenerator.i"
+	@echo "... src/model/LargeMonGenerator.s"
 	@echo "... src/model/largemon/FireLM.o"
 	@echo "... src/model/largemon/FireLM.i"
 	@echo "... src/model/largemon/FireLM.s"
@@ -690,9 +693,6 @@ help:
 	@echo "... src/utility/HealthBarObserver.o"
 	@echo "... src/utility/HealthBarObserver.i"
 	@echo "... src/utility/HealthBarObserver.s"
-	@echo "... src/utility/LargeMonGenerator.o"
-	@echo "... src/utility/LargeMonGenerator.i"
-	@echo "... src/utility/LargeMonGenerator.s"
 	@echo "... src/utility/Observer.o"
 	@echo "... src/utility/Observer.i"
 	@echo "... src/utility/Observer.s"

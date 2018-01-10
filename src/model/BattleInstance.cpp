@@ -5,7 +5,7 @@
 #include "BattleInstance.h"
 #include <iostream>
 #include <random>
-#include "../utility/LargeMonGenerator.h"
+#include "LargeMonGenerator.h"
 #include "../utility/FileWriter.h"
 #include <unistd.h>
 
@@ -20,7 +20,6 @@ ControllerBattleInstance::ControllerBattleInstance() {
     enemyArgs.push_back("Enemy");
     playerArgs.push_back("");
     enemyArgs.push_back("");
-
 
     isOver = false;
 }
@@ -41,6 +40,7 @@ int ControllerBattleInstance::randomInRange(int min, int max){
 
 string ControllerBattleInstance::enemyMove() {
     string move = "";
+    if(!isGameOver()) {
         int random = randomInRange(1, 6);
         switch (random) {
             case 1: //Defend
@@ -74,13 +74,15 @@ string ControllerBattleInstance::enemyMove() {
                     move = "The enemy attacked for " + to_string(enemy->getDamage());
                     enemyArgs[1] = "Attack";
                 }
-            break;
+                break;
         }
+    }
     return move;
 }
 
 string ControllerBattleInstance::action(int * actionID) {
     string action = "";
+    if(!isGameOver()) {
         switch (*actionID) {
             case 0: //attack
                 enemy->takeDamage(player->getDamage());
@@ -108,11 +110,13 @@ string ControllerBattleInstance::action(int * actionID) {
                 } else {
                     action = "Special Attack was already used";
                 }
-            } break;
+            }
+                break;
 
-            default: break;
+            default:
+                break;
         }
-
+    }
 
     action += enemyMove();
     if(isEnemyDead()){

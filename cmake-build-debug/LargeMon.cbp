@@ -122,6 +122,12 @@
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/BattleInstance.h">
 			<Option target="LargeMon"/>
 		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/LargeMonGenerator.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/LargeMonGenerator.h">
+			<Option target="LargeMon"/>
+		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/model/largemon/FireLM.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
@@ -174,12 +180,6 @@
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/HealthBarObserver.h">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/LargeMonGenerator.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/LargeMonGenerator.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/Observer.cpp">

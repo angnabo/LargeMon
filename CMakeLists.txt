@@ -5,7 +5,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
 set(SOURCE_FILES src/model/largemon/LargeMon.cpp src/model/largemon/LargeMon.h
         src/main.cpp src/main.h
-        src/utility/LargeMonGenerator.cpp src/utility/LargeMonGenerator.h
+        src/model/LargeMonGenerator.cpp src/model/LargeMonGenerator.h
         src/utility/DescriptGen.cpp src/utility/DescriptGen.h src/controller/Controller.cpp
         src/controller/Controller.h src/model/largemon/WaterLM.cpp src/model/largemon/WaterLM.h
         src/model/largemon/FireLM.cpp src/model/largemon/FireLM.h src/model/largemon/WoodLM.cpp
