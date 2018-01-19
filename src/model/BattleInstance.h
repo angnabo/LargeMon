@@ -31,6 +31,8 @@ public:
     void specialAttack(LargeMon *);
     void specialAbility(LargeMon *);
 
+    LargeMon * getEnemyOf(LargeMon *);
+
     void attach(class ContrObserver *);
     void notify(LargeMon *, vector<string>);
 private:

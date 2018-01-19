@@ -15,16 +15,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd7d6cbd-8581-48bc-b95c-296f4e3a8bcd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/LargeMon" afterPath="$PROJECT_DIR$/cmake-build-debug/LargeMon" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/Controller.cpp" afterPath="$PROJECT_DIR$/src/controller/Controller.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LargeMon.dir/depend.make" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/BattleInstance.cpp" afterPath="$PROJECT_DIR$/src/model/BattleInstance.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/BattleInstance.h" afterPath="$PROJECT_DIR$/src/model/BattleInstance.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/largemon/FireLM.h" afterPath="$PROJECT_DIR$/src/model/largemon/FireLM.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/largemon/LargeMon.cpp" afterPath="$PROJECT_DIR$/src/model/largemon/LargeMon.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/largemon/LargeMon.h" afterPath="$PROJECT_DIR$/src/model/largemon/LargeMon.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/largemon/WoodLM.cpp" afterPath="$PROJECT_DIR$/src/model/largemon/WoodLM.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utility/FileWriter.cpp" afterPath="$PROJECT_DIR$/src/utility/FileWriter.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/LargeMonMainView.cpp" afterPath="$PROJECT_DIR$/src/view/LargeMonMainView.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,37 +41,61 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="WaterLM.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/largemon/WaterLM.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="FireLM.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/largemon/FireLM.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
+              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/Controller.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="83" column="19" lean-forward="false" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BattleInstance.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BattleInstance.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/BattleInstance.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="156" column="8" lean-forward="true" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
+            <state relative-caret-position="360">
+              <caret line="154" column="12" lean-forward="true" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WoodLM.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BattleInstance.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/BattleInstance.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+              <folding>
+                <element signature="e#149#166#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LargeMon.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/largemon/LargeMon.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+              <folding>
+                <element signature="e#43#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WoodLM.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/largemon/WoodLM.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
@@ -90,32 +109,8 @@
         <entry file="file://$PROJECT_DIR$/src/model/largemon/WoodLM.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
+              <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BattleInstance.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/BattleInstance.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-              <folding>
-                <element signature="e#149#166#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LargeMon.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/largemon/LargeMon.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-702">
-              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-              <folding>
-                <element signature="e#43#62#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -123,8 +118,8 @@
       <file leaf-file-name="LargeMon.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/largemon/LargeMon.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="396">
+              <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
               <folding>
                 <element signature="e#78#95#0" expanded="true" />
               </folding>
@@ -132,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WaterLM.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/largemon/WaterLM.cpp">
+      <file leaf-file-name="FireLM.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/largemon/FireLM.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="53" lean-forward="false" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+            <state relative-caret-position="360">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -217,19 +212,19 @@
         <option value="$PROJECT_DIR$/src/utility/FileWriter.h" />
         <option value="$PROJECT_DIR$/src/utility/LargeMonGenerator.h" />
         <option value="$PROJECT_DIR$/src/model/SpecialAttack.h" />
-        <option value="$PROJECT_DIR$/src/model/largemon/FireLM.cpp" />
-        <option value="$PROJECT_DIR$/src/model/largemon/WaterLM.cpp" />
         <option value="$PROJECT_DIR$/largemon to do list" />
         <option value="$PROJECT_DIR$/src/view/LargeMonMainView.cpp" />
         <option value="$PROJECT_DIR$/src/controller/Controller.cpp" />
         <option value="$PROJECT_DIR$/src/utility/FileWriter.cpp" />
         <option value="$PROJECT_DIR$/src/model/largemon/LargeMon.cpp" />
         <option value="$PROJECT_DIR$/src/model/largemon/LargeMon.h" />
-        <option value="$PROJECT_DIR$/src/model/largemon/WoodLM.h" />
         <option value="$PROJECT_DIR$/src/model/largemon/WoodLM.cpp" />
+        <option value="$PROJECT_DIR$/src/model/largemon/WoodLM.h" />
         <option value="$PROJECT_DIR$/src/model/largemon/WaterLM.h" />
-        <option value="$PROJECT_DIR$/src/model/BattleInstance.h" />
+        <option value="$PROJECT_DIR$/src/model/largemon/WaterLM.cpp" />
         <option value="$PROJECT_DIR$/src/model/largemon/FireLM.h" />
+        <option value="$PROJECT_DIR$/src/model/largemon/FireLM.cpp" />
+        <option value="$PROJECT_DIR$/src/model/BattleInstance.h" />
         <option value="$PROJECT_DIR$/src/model/BattleInstance.cpp" />
       </list>
     </option>
@@ -433,7 +428,7 @@
       <workItem from="1515615542280" duration="3417000" />
       <workItem from="1515691434705" duration="46000" />
       <workItem from="1515701962650" duration="225000" />
-      <workItem from="1516383643266" duration="6389000" />
+      <workItem from="1516383643266" duration="9038000" />
     </task>
     <task id="LOCAL-00001" summary="Added special attack move">
       <created>1510323107913</created>
@@ -610,11 +605,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515625957126</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="starting implementing abilities">
+      <created>1516398553227</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1516398553227</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183091000" />
+    <option name="totallyTimeSpent" value="185740000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1922" height="1092" extended-state="6" />
@@ -622,11 +624,11 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23745997" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36989248" sideWeight="0.51756954" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36989248" sideWeight="0.51756954" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33026585" sideWeight="0.525" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20547946" sideWeight="0.47653806" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17741935" sideWeight="0.52346194" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17741935" sideWeight="0.52346194" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -829,14 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/largemon/FireLM.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/LargeMonGenerator.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="666">
@@ -941,55 +935,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/largemon/WaterLM.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="53" lean-forward="false" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/largemon/LargeMon.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-702">
-          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding>
-            <element signature="e#43#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/Controller.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="83" column="19" lean-forward="false" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/largemon/WoodLM.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/largemon/WoodLM.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="86" lean-forward="false" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/largemon/LargeMon.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#78#95#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1001,18 +951,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/largemon/WaterLM.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/largemon/LargeMon.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding>
+            <element signature="e#43#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/largemon/FireLM.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/largemon/FireLM.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/BattleInstance.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+        <state relative-caret-position="417">
+          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
           <folding>
             <element signature="e#149#166#0" expanded="true" />
           </folding>
@@ -1021,8 +997,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/BattleInstance.cpp">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="154" column="12" lean-forward="true" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/largemon/LargeMon.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding>
+            <element signature="e#78#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/largemon/WoodLM.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/largemon/WoodLM.cpp">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="156" column="8" lean-forward="true" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
+          <caret line="18" column="86" lean-forward="false" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
           <folding />
         </state>
       </provider>

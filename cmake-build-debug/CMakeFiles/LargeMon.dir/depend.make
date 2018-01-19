@@ -10,7 +10,6 @@ CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o: ../src/model/BattleInst
 CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o: ../src/utility/ContrObserver.h
 CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o: ../src/utility/FileWriter.h
-CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o: ../src/utility/Observer.h
 CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o: ../src/view/LargeMonMainView.h
 CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/LargeMon.dir/src/controller/Controller.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -210,7 +209,6 @@ CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/model/BattleInstance.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/utility/ContrObserver.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/utility/FileWriter.h
-CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/utility/Observer.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: ../src/view/LargeMonMainView.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/LargeMon.dir/src/main.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -266,7 +264,6 @@ CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/model/largemon/Wa
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/model/largemon/WoodLM.h
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/utility/ContrObserver.h
 CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/utility/FileWriter.h
-CMakeFiles/LargeMon.dir/src/model/BattleInstance.cpp.o: ../src/utility/Observer.h
 
 CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/LargeMonGenerator.cpp
 CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/LargeMonGenerator.h
@@ -274,12 +271,10 @@ CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/largemon
 CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/largemon/WaterLM.h
 CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/model/largemon/WoodLM.h
-CMakeFiles/LargeMon.dir/src/model/LargeMonGenerator.cpp.o: ../src/utility/Observer.h
 
 CMakeFiles/LargeMon.dir/src/model/largemon/FireLM.cpp.o: ../src/model/largemon/FireLM.cpp
 CMakeFiles/LargeMon.dir/src/model/largemon/FireLM.cpp.o: ../src/model/largemon/FireLM.h
 CMakeFiles/LargeMon.dir/src/model/largemon/FireLM.cpp.o: ../src/model/largemon/LargeMon.h
-CMakeFiles/LargeMon.dir/src/model/largemon/FireLM.cpp.o: ../src/utility/Observer.h
 
 CMakeFiles/LargeMon.dir/src/model/largemon/LargeMon.cpp.o: ../src/model/largemon/LargeMon.cpp
 CMakeFiles/LargeMon.dir/src/model/largemon/LargeMon.cpp.o: ../src/model/largemon/LargeMon.h
@@ -288,18 +283,15 @@ CMakeFiles/LargeMon.dir/src/model/largemon/LargeMon.cpp.o: ../src/utility/Observ
 CMakeFiles/LargeMon.dir/src/model/largemon/WaterLM.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/src/model/largemon/WaterLM.cpp.o: ../src/model/largemon/WaterLM.cpp
 CMakeFiles/LargeMon.dir/src/model/largemon/WaterLM.cpp.o: ../src/model/largemon/WaterLM.h
-CMakeFiles/LargeMon.dir/src/model/largemon/WaterLM.cpp.o: ../src/utility/Observer.h
 
 CMakeFiles/LargeMon.dir/src/model/largemon/WoodLM.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/src/model/largemon/WoodLM.cpp.o: ../src/model/largemon/WoodLM.cpp
 CMakeFiles/LargeMon.dir/src/model/largemon/WoodLM.cpp.o: ../src/model/largemon/WoodLM.h
-CMakeFiles/LargeMon.dir/src/model/largemon/WoodLM.cpp.o: ../src/utility/Observer.h
 
 CMakeFiles/LargeMon.dir/src/utility/ContrObserver.cpp.o: ../src/model/BattleInstance.h
 CMakeFiles/LargeMon.dir/src/utility/ContrObserver.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/src/utility/ContrObserver.cpp.o: ../src/utility/ContrObserver.cpp
 CMakeFiles/LargeMon.dir/src/utility/ContrObserver.cpp.o: ../src/utility/ContrObserver.h
-CMakeFiles/LargeMon.dir/src/utility/ContrObserver.cpp.o: ../src/utility/Observer.h
 
 CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o: ../src/utility/DescriptGen.cpp
 CMakeFiles/LargeMon.dir/src/utility/DescriptGen.cpp.o: ../src/utility/DescriptGen.h
@@ -309,7 +301,6 @@ CMakeFiles/LargeMon.dir/src/utility/FileWriter.cpp.o: ../src/model/largemon/Larg
 CMakeFiles/LargeMon.dir/src/utility/FileWriter.cpp.o: ../src/utility/ContrObserver.h
 CMakeFiles/LargeMon.dir/src/utility/FileWriter.cpp.o: ../src/utility/FileWriter.cpp
 CMakeFiles/LargeMon.dir/src/utility/FileWriter.cpp.o: ../src/utility/FileWriter.h
-CMakeFiles/LargeMon.dir/src/utility/FileWriter.cpp.o: ../src/utility/Observer.h
 
 CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o: ../src/utility/FileWriterObserver.cpp
@@ -321,7 +312,6 @@ CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o: ../src/model/largem
 CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o: ../src/utility/ContrObserver.h
 CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o: ../src/utility/HealthBarObserver.cpp
 CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o: ../src/utility/HealthBarObserver.h
-CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o: ../src/utility/Observer.h
 
 CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o: ../src/utility/Observer.cpp
@@ -334,7 +324,6 @@ CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o: ../src/model/BattleInst
 CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o: ../src/utility/ContrObserver.h
 CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o: ../src/utility/FileWriter.h
-CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o: ../src/utility/Observer.h
 CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o: ../src/view/LargeMonMainView.cpp
 CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o: ../src/view/LargeMonMainView.h
 CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o: /usr/include/SDL2/SDL.h
@@ -386,7 +375,6 @@ CMakeFiles/LargeMon.dir/test/Test.cpp.o: ../src/model/BattleInstance.h
 CMakeFiles/LargeMon.dir/test/Test.cpp.o: ../src/model/largemon/LargeMon.h
 CMakeFiles/LargeMon.dir/test/Test.cpp.o: ../src/utility/ContrObserver.h
 CMakeFiles/LargeMon.dir/test/Test.cpp.o: ../src/utility/FileWriter.h
-CMakeFiles/LargeMon.dir/test/Test.cpp.o: ../src/utility/Observer.h
 CMakeFiles/LargeMon.dir/test/Test.cpp.o: ../test/Test.cpp
 CMakeFiles/LargeMon.dir/test/Test.cpp.o: ../test/Test.h
 

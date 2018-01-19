@@ -69,7 +69,7 @@ string ControllerBattleInstance::enemyMove() {
                 break;
             case 3:
             {
-                player->stun();
+                specialAbility(enemy);
                 move = "Your largemon is stunned!";
                 playerArgs[1] = "Stunned";
             } break;
@@ -122,7 +122,7 @@ string ControllerBattleInstance::action(int * actionID) {
                 break;
             case 3: //special attack 2
             {
-                enemy->stun();
+                specialAbility(player);
                 action = "Largemon stunned enemy!";
                 enemyArgs[1] = "Stunned";
                 stunCounter = 2;
@@ -151,12 +151,17 @@ void ControllerBattleInstance::specialAttack(LargeMon * lm) {
 }
 
 void ControllerBattleInstance::specialAbility(LargeMon * lm) {
-    string x = "string";
-    char yx = 'xyz';
-    switch(yx){
-        
+    string type = lm->getType();
+    if(type == "fire"){
+
+    } else if(type == "water"){
+
+    } else if(type == "wood"){
+        LargeMon * en = getEnemyOf(lm);
+        en->stun();
     }
 }
+
 
 
 
@@ -171,6 +176,14 @@ bool ControllerBattleInstance::determineCounter(string * playerType, string * en
 
     }
     return isCounter;
+}
+
+LargeMon * ControllerBattleInstance::getEnemyOf(LargeMon * lm) {
+    if(lm == player){
+        return enemy;
+    } else {
+        return player;
+    }
 }
 
 
@@ -235,6 +248,7 @@ void ControllerBattleInstance::notify(LargeMon * lm, vector<string> args) {
 int ControllerBattleInstance::getRound() {
     return round;
 }
+
 
 
 
