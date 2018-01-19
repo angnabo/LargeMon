@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "LargeMon.h"
+#include "../../utility/Observer.h"
 
 //using namespace std;
 

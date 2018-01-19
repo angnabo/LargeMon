@@ -20,7 +20,8 @@ ControllerBattleInstance::ControllerBattleInstance() {
     enemyArgs.push_back("Enemy");
     playerArgs.push_back("");
     enemyArgs.push_back("");
-
+    round = 0;
+    stunCounter = 0;
     isOver = false;
 }
 
@@ -40,7 +41,7 @@ int ControllerBattleInstance::randomInRange(int min, int max){
 
 string ControllerBattleInstance::enemyMove() {
     string move = "";
-    if(!isGameOver()) {
+    if(!isGameOver() && !enemy->isStunned()) {
         int random = randomInRange(1, 6);
         switch (random) {
             case 1: //Defend
@@ -66,6 +67,12 @@ string ControllerBattleInstance::enemyMove() {
                 }
             }
                 break;
+            case 3:
+            {
+                player->stun();
+                move = "Your largemon is stunned!";
+                playerArgs[1] = "Stunned";
+            } break;
             default: //Attack
                 player->takeDamage(enemy->getDamage());
                 if (isPlayerDead()) {
@@ -77,12 +84,13 @@ string ControllerBattleInstance::enemyMove() {
                 break;
         }
     }
+    enemy->unstun();
     return move;
 }
 
 string ControllerBattleInstance::action(int * actionID) {
     string action = "";
-    if(!isGameOver()) {
+    if(!isGameOver() && !player->isStunned()) {
         switch (*actionID) {
             case 0: //attack
                 enemy->takeDamage(player->getDamage());
@@ -94,7 +102,7 @@ string ControllerBattleInstance::action(int * actionID) {
                 action = "Player healed for 20hp. ";
                 playerArgs[1] = "Defend";
                 break;
-            case 2: //special attack
+            case 2: //special attack 1
             {
                 if (playerSpecAttkCount == 0) {
                     string playerType = player->getType();
@@ -112,10 +120,18 @@ string ControllerBattleInstance::action(int * actionID) {
                 }
             }
                 break;
-
+            case 3: //special attack 2
+            {
+                enemy->stun();
+                action = "Largemon stunned enemy!";
+                enemyArgs[1] = "Stunned";
+                stunCounter = 2;
+            }
             default:
                 break;
         }
+    }else {
+        player->unstun();
     }
 
     action += enemyMove();
@@ -124,11 +140,25 @@ string ControllerBattleInstance::action(int * actionID) {
     }else if(isPlayerDead()){
         playerArgs[1] = "Fainted";
     }
-    turns++;
-    notify(enemy, enemyArgs);
+    round++;
     notify(player, playerArgs);
+    notify(enemy, enemyArgs);
     return (action.empty() ? getWinner() : action);
 }
+
+void ControllerBattleInstance::specialAttack(LargeMon * lm) {
+
+}
+
+void ControllerBattleInstance::specialAbility(LargeMon * lm) {
+    string x = "string";
+    char yx = 'xyz';
+    switch(yx){
+        
+    }
+}
+
+
 
 bool ControllerBattleInstance::determineCounter(string * playerType, string * enemyType) {
     bool isCounter = false;
@@ -202,9 +232,10 @@ void ControllerBattleInstance::notify(LargeMon * lm, vector<string> args) {
     }
 }
 
-int ControllerBattleInstance::getTurns() {
-    return turns;
+int ControllerBattleInstance::getRound() {
+    return round;
 }
+
 
 
 

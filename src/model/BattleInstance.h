@@ -20,13 +20,16 @@ public:
     bool isPlayerDead();
     int getPlayerCurrentHp();
     int getEnemyCurrentHp();
-    int getTurns();
+    int getRound();
     float getEnemyLargeMonCurrentHpPercent();
     float getPlayerLargeMonCurrentHpPercent();
     string getEnemyLargeMonName();
     string getPlayerLargeMonName();
     string getWinner();
     virtual ~ControllerBattleInstance();
+
+    void specialAttack(LargeMon *);
+    void specialAbility(LargeMon *);
 
     void attach(class ContrObserver *);
     void notify(LargeMon *, vector<string>);
@@ -35,7 +38,8 @@ private:
     LargeMon * enemy;
     int playerSpecAttkCount;
     int enemySpecAttkCounter;
-    int turns;
+    int round;
+    int stunCounter;
     vector<string> playerArgs;
     vector<string> enemyArgs;
     //FileWriter * playerWriter;

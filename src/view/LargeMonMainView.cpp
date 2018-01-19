@@ -118,6 +118,7 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     loadUI(gTopRightButton, "/home/angelica/Development/CLion/LargeMon/resources/ui/button.bmp");
     loadUI(gBottomLeftButton, "/home/angelica/Development/CLion/LargeMon/resources/ui/button.bmp");
     loadUI(gBottomRightButton, "/home/angelica/Development/CLion/LargeMon/resources/ui/button.bmp");
+    gTopLeftButton.setColor(70, 70, 70);
 
     buttons[0] = gTopLeftButton;
     buttons[1] = gTopRightButton;
@@ -291,7 +292,7 @@ bool LargeMonMainView::render() {
     topViewport.h = SCREEN_HEIGHT;
     SDL_RenderSetViewport(gRenderer, &topViewport);
 
-    gTopLeftButton.setColor(70, 70, 70);
+
     //Render background texture to screen
     gBackgroundTexture.render(gRenderer, 0, 0);
 

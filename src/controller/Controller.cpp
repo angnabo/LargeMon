@@ -69,6 +69,8 @@ int Controller::handleKeyPress(int* selected, int event){
 
 void Controller::run() {
 
+    FileWriter writer = FileWriter(&battleInstance);
+    battleInstance.attach(&writer);
 
     setViewArguments();
 
