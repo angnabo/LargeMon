@@ -4,8 +4,8 @@
 
 #include "HealthBarObserver.h"
 
-HealthBarObserver::HealthBarObserver(ControllerBattleInstance * btl) : ContrObserver(btl){
-
+HealthBarObserver::HealthBarObserver(ControllerBattleInstance * btl, LargeMonMainView * viewPtr) : ContrObserver(btl){
+    view = viewPtr;
 }
 
 void HealthBarObserver::update(LargeMon * lm, vector<string>/*unused*/) const {

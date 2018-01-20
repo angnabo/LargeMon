@@ -7,10 +7,11 @@
 
 
 #include "ContrObserver.h"
+#include "../view/LargeMonMainView.h"
 
 class HealthBarObserver : public ContrObserver {
 public:
-    HealthBarObserver(ControllerBattleInstance *);
+    HealthBarObserver(ControllerBattleInstance *, LargeMonMainView *);
 
     void update(LargeMon *, vector<string>) const ;
 private:
@@ -19,6 +20,8 @@ private:
     int getHealth() const;
 
     int getHealth(LargeMon *lm) const;
+
+    LargeMonMainView * view;
 };
 
 

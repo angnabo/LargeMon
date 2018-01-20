@@ -170,16 +170,16 @@
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/FileWriter.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/FileWriterObserver.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/FileWriterObserver.h">
-			<Option target="LargeMon"/>
-		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/HealthBarObserver.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/HealthBarObserver.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/HealthObserver.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/HealthObserver.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/CLion/LargeMon/src/utility/Observer.cpp">

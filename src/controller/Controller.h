@@ -7,7 +7,7 @@
 
 #include "../model/BattleInstance.h"
 #include "../view/LargeMonMainView.h"
-
+#include "../utility/HealthObserver.h"
 
 using namespace std;
 class Controller {

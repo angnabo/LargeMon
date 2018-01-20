@@ -30,7 +30,10 @@ public:
     void stun();
     void unstun();
     bool isStunned();
+    bool isPlayer();
+    void setAsPlayer();
     //string getType() { return type; }
+    float getCurrentHpPercent();
 
     void attach(class Observer *);
     void notify();
@@ -47,7 +50,9 @@ protected:
     string description;
     string lastAction;
     bool stunned;
+    bool player = false;
     vector<class Observer *> views;
+
 };
 
 #endif

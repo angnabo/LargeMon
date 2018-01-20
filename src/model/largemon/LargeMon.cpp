@@ -27,11 +27,11 @@ void LargeMon::takeDamage(int damage) {
     if(currentHp < 0){
         currentHp = 0;
     }
+    notify();
 }
 
 int LargeMon::getDamage() {
     lastAction = "Attack";
-    notify();
     return damage;
 }
 
@@ -42,6 +42,11 @@ void LargeMon::defend(){
     }
     lastAction = "Defend";
     notify();
+}
+
+float LargeMon::getCurrentHpPercent(){
+    float hpPercent = (float)getCurrentHp()/(float)getHp();//25/50*100
+    return hpPercent;
 }
 
 int LargeMon::specialAttack() const {
@@ -72,6 +77,14 @@ bool LargeMon::isStunned(){
 
 void LargeMon::attach(Observer * obs) {
     views.push_back(obs);
+}
+
+void LargeMon::setAsPlayer() {
+    player = true;
+}
+
+bool LargeMon::isPlayer() {
+    return player;
 }
 
 LargeMon::~LargeMon() = default;

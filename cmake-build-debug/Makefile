@@ -501,33 +501,6 @@ src/utility/FileWriter.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/FileWriter.cpp.s
 .PHONY : src/utility/FileWriter.cpp.s
 
-src/utility/FileWriterObserver.o: src/utility/FileWriterObserver.cpp.o
-
-.PHONY : src/utility/FileWriterObserver.o
-
-# target to build an object file
-src/utility/FileWriterObserver.cpp.o:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o
-.PHONY : src/utility/FileWriterObserver.cpp.o
-
-src/utility/FileWriterObserver.i: src/utility/FileWriterObserver.cpp.i
-
-.PHONY : src/utility/FileWriterObserver.i
-
-# target to preprocess a source file
-src/utility/FileWriterObserver.cpp.i:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.i
-.PHONY : src/utility/FileWriterObserver.cpp.i
-
-src/utility/FileWriterObserver.s: src/utility/FileWriterObserver.cpp.s
-
-.PHONY : src/utility/FileWriterObserver.s
-
-# target to generate assembly for a file
-src/utility/FileWriterObserver.cpp.s:
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.s
-.PHONY : src/utility/FileWriterObserver.cpp.s
-
 src/utility/HealthBarObserver.o: src/utility/HealthBarObserver.cpp.o
 
 .PHONY : src/utility/HealthBarObserver.o
@@ -554,6 +527,33 @@ src/utility/HealthBarObserver.s: src/utility/HealthBarObserver.cpp.s
 src/utility/HealthBarObserver.cpp.s:
 	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.s
 .PHONY : src/utility/HealthBarObserver.cpp.s
+
+src/utility/HealthObserver.o: src/utility/HealthObserver.cpp.o
+
+.PHONY : src/utility/HealthObserver.o
+
+# target to build an object file
+src/utility/HealthObserver.cpp.o:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o
+.PHONY : src/utility/HealthObserver.cpp.o
+
+src/utility/HealthObserver.i: src/utility/HealthObserver.cpp.i
+
+.PHONY : src/utility/HealthObserver.i
+
+# target to preprocess a source file
+src/utility/HealthObserver.cpp.i:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.i
+.PHONY : src/utility/HealthObserver.cpp.i
+
+src/utility/HealthObserver.s: src/utility/HealthObserver.cpp.s
+
+.PHONY : src/utility/HealthObserver.s
+
+# target to generate assembly for a file
+src/utility/HealthObserver.cpp.s:
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.s
+.PHONY : src/utility/HealthObserver.cpp.s
 
 src/utility/Observer.o: src/utility/Observer.cpp.o
 
@@ -687,12 +687,12 @@ help:
 	@echo "... src/utility/FileWriter.o"
 	@echo "... src/utility/FileWriter.i"
 	@echo "... src/utility/FileWriter.s"
-	@echo "... src/utility/FileWriterObserver.o"
-	@echo "... src/utility/FileWriterObserver.i"
-	@echo "... src/utility/FileWriterObserver.s"
 	@echo "... src/utility/HealthBarObserver.o"
 	@echo "... src/utility/HealthBarObserver.i"
 	@echo "... src/utility/HealthBarObserver.s"
+	@echo "... src/utility/HealthObserver.o"
+	@echo "... src/utility/HealthObserver.i"
+	@echo "... src/utility/HealthObserver.s"
 	@echo "... src/utility/Observer.o"
 	@echo "... src/utility/Observer.i"
 	@echo "... src/utility/Observer.s"

@@ -9,8 +9,8 @@ set(SOURCE_FILES src/model/largemon/LargeMon.cpp src/model/largemon/LargeMon.h
         src/utility/DescriptGen.cpp src/utility/DescriptGen.h src/controller/Controller.cpp
         src/controller/Controller.h src/model/largemon/WaterLM.cpp src/model/largemon/WaterLM.h
         src/model/largemon/FireLM.cpp src/model/largemon/FireLM.h src/model/largemon/WoodLM.cpp
-        src/model/largemon/WoodLM.h src/utility/Observer.cpp src/utility/Observer.h src/utility/FileWriterObserver.cpp
-        src/utility/FileWriterObserver.h src/utility/HealthBarObserver.h src/utility/HealthBarObserver.cpp
+        src/model/largemon/WoodLM.h src/utility/Observer.cpp src/utility/Observer.h src/utility/HealthObserver.cpp
+        src/utility/HealthObserver.h src/utility/HealthBarObserver.h src/utility/HealthBarObserver.cpp
         src/utility/ContrObserver.h src/utility/ContrObserver.cpp test/Test.cpp test/Test.h
         src/utility/FileWriter.h src/utility/FileWriter.cpp src/view/LargeMonMainView.cpp src/view/LargeMonMainView.h src/graphics/GTexture.cpp
         src/graphics/GTexture.h src/graphics/GButtonTexture.cpp src/graphics/GButtonTexture.h src/model/BattleInstance.cpp src/model/BattleInstance.h src/graphics/GProgressBar.cpp src/graphics/GProgressBar.h)

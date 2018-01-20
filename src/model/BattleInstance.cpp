@@ -7,6 +7,7 @@
 #include <random>
 #include "LargeMonGenerator.h"
 #include "../utility/FileWriter.h"
+#include "../utility/HealthObserver.h"
 #include <unistd.h>
 
 ControllerBattleInstance::ControllerBattleInstance() {
@@ -16,6 +17,9 @@ ControllerBattleInstance::ControllerBattleInstance() {
     enemySpecAttkCounter = 0;
     player = generator.generateLargeMon();
     enemy = generator.generateLargeMon();
+
+    player->setAsPlayer();
+
     playerArgs.push_back("Player");
     enemyArgs.push_back("Enemy");
     playerArgs.push_back("");
@@ -40,6 +44,7 @@ int ControllerBattleInstance::randomInRange(int min, int max){
 }
 
 string ControllerBattleInstance::enemyMove() {
+    delay(600);
     string move = "";
     if(!isGameOver() && !enemy->isStunned()) {
         int random = randomInRange(1, 6);
@@ -247,6 +252,14 @@ void ControllerBattleInstance::notify(LargeMon * lm, vector<string> args) {
 
 int ControllerBattleInstance::getRound() {
     return round;
+}
+
+LargeMon * ControllerBattleInstance::getPlayerPtr() {
+    return player;
+}
+
+LargeMon * ControllerBattleInstance::getEnemyPtr() {
+    return enemy;
 }
 
 

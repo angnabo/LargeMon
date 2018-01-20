@@ -8,7 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LargeMon.dir/src/model/largemon/FireLM.cpp.o"
   "CMakeFiles/LargeMon.dir/src/model/largemon/WoodLM.cpp.o"
   "CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o"
-  "CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o"
   "CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o"
   "CMakeFiles/LargeMon.dir/src/utility/ContrObserver.cpp.o"
   "CMakeFiles/LargeMon.dir/test/Test.cpp.o"

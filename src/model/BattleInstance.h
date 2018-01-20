@@ -31,6 +31,9 @@ public:
     void specialAttack(LargeMon *);
     void specialAbility(LargeMon *);
 
+    LargeMon * getPlayerPtr();
+    LargeMon * getEnemyPtr();
+
     LargeMon * getEnemyOf(LargeMon *);
 
     void attach(class ContrObserver *);

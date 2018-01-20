@@ -273,28 +273,28 @@ CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o.provides: CMakeFiles/LargeMon
 CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o: ../src/utility/FileWriterObserver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/utility/FileWriterObserver.cpp
+CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o: ../src/utility/HealthObserver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/CLion/LargeMon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o -c /home/angelica/Development/CLion/LargeMon/src/utility/HealthObserver.cpp
 
-CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/utility/FileWriterObserver.cpp > CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.i
+CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/CLion/LargeMon/src/utility/HealthObserver.cpp > CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.i
 
-CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/utility/FileWriterObserver.cpp -o CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.s
+CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/CLion/LargeMon/src/utility/HealthObserver.cpp -o CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.s
 
-CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.provides: CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o.provides: CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o
+CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o
 
 
 CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o: CMakeFiles/LargeMon.dir/flags.make
@@ -524,7 +524,7 @@ LargeMon_OBJECTS = \
 "CMakeFiles/LargeMon.dir/src/model/largemon/FireLM.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/model/largemon/WoodLM.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/utility/ContrObserver.cpp.o" \
 "CMakeFiles/LargeMon.dir/test/Test.cpp.o" \
@@ -547,7 +547,7 @@ LargeMon: CMakeFiles/LargeMon.dir/src/model/largemon/WaterLM.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/model/largemon/FireLM.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/model/largemon/WoodLM.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/utility/ContrObserver.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/test/Test.cpp.o
@@ -576,7 +576,7 @@ CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/model/largemon/Wat
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/model/largemon/FireLM.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/model/largemon/WoodLM.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/utility/Observer.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/utility/FileWriterObserver.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/utility/HealthObserver.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/utility/HealthBarObserver.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/utility/ContrObserver.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/test/Test.cpp.o.requires

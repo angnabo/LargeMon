@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 #include "Controller.h"
-#include "../view/LargeMonMainView.h"
 
 Controller::Controller() {
 
@@ -72,6 +71,9 @@ void Controller::run() {
     FileWriter writer = FileWriter(&battleInstance);
     battleInstance.attach(&writer);
 
+    HealthObserver playerhp = HealthObserver(battleInstance.getPlayerPtr(), &view);
+    HealthObserver enemyhp = HealthObserver(battleInstance.getEnemyPtr(), &view);
+
     setViewArguments();
 
     view.run(arguments);
@@ -124,12 +126,12 @@ void Controller::run() {
                     if(!battleInstance.isGameOver()) {
                         textUpdate = battleInstance.action(&selectedButton);
                         view.updateText(textUpdate);
-                        view.updatePlayerHealthBar(battleInstance.getPlayerLargeMonCurrentHpPercent(),
-                                                   to_string(battleInstance.getPlayerCurrentHp()));
+                        //view.updatePlayerHealthBar(battleInstance.getPlayerLargeMonCurrentHpPercent(),
+                                                   //to_string(battleInstance.getPlayerCurrentHp()));
 
 
-                        view.updateEnemyHealthBar(battleInstance.getEnemyLargeMonCurrentHpPercent(),
-                                                  to_string(battleInstance.getEnemyCurrentHp()));
+                        //view.updateEnemyHealthBar(battleInstance.getEnemyLargeMonCurrentHpPercent(),
+                                                  //to_string(battleInstance.getEnemyCurrentHp()));
                     } else {
                         //gBottomPanelFull.render(gRenderer, 10,0);
                         view.updateText(battleInstance.getWinner());
