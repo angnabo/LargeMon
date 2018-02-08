@@ -4,6 +4,7 @@
 
 #include "GTexture.h"
 
+
 GTexture::GTexture()
 {
     //Initialize
@@ -18,30 +19,36 @@ GTexture::~GTexture()
     free();
 }
 
+/**
+ * Load a texture from file
+ * @param gRenderer rendered to which to render
+ * @param path to the texture
+ * @return
+ */
 bool GTexture::loadFromFile( SDL_Renderer* gRenderer, std::string path )
 {
     //Get rid of preexisting texture
     free();
 
-    //The final texture
     SDL_Texture* newTexture = NULL;
 
-    //Load image at specified path
+    //Load image
     SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
     if( loadedSurface == NULL )
     {
-        printf( "Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError() );
+        cout << "Could not load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError();
+
     }
     else
     {
-        //Color key image
+        //Color key image to get rid of background colour
         SDL_SetColorKey( loadedSurface, SDL_TRUE, SDL_MapRGB( loadedSurface->format, 0, 0xFF, 0xFF ) );
 
         //Create texture from surface pixels
         newTexture = SDL_CreateTextureFromSurface( gRenderer, loadedSurface );
         if( newTexture == NULL )
         {
-            printf( "Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
+            cout << "Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError();
         }
         else
         {
@@ -61,6 +68,14 @@ bool GTexture::loadFromFile( SDL_Renderer* gRenderer, std::string path )
     return mTexture != NULL;
 }
 
+/**
+ * Load a TTF font
+ * @param gRenderer
+ * @param gFont pointer to a font
+ * @param textureText string of text to render
+ * @param textColor colour of text
+ * @return
+ */
 bool GTexture::loadFont(SDL_Renderer * gRenderer, TTF_Font * gFont, std::string textureText, SDL_Color textColor )
 {
     //Get rid of preexisting texture
@@ -69,12 +84,13 @@ bool GTexture::loadFont(SDL_Renderer * gRenderer, TTF_Font * gFont, std::string 
     //Determine the size of text before wrapping
     SDL_Surface* textSurfaceTest = TTF_RenderText_Solid( gFont, textureText.c_str(), textColor);
 
-    int text_X = textSurfaceTest->w;
+    int text_x = textSurfaceTest->w;
 
     //Get rid of the test texture
     free();
 
-    if (text_X > 200) {
+    //Determine the size or final wrapped text
+    if (text_x > 200) {
         mWidth = 200;
     } else {
         mWidth = textSurfaceTest->w;
@@ -84,7 +100,7 @@ bool GTexture::loadFont(SDL_Renderer * gRenderer, TTF_Font * gFont, std::string 
     SDL_Surface* textSurface = TTF_RenderText_Blended_Wrapped( gFont, textureText.c_str(), textColor, mWidth );
     if( textSurface == NULL )
     {
-        printf( "Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError() );
+       cout << "Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError();
     }
     else
     {
@@ -92,7 +108,7 @@ bool GTexture::loadFont(SDL_Renderer * gRenderer, TTF_Font * gFont, std::string 
         mTexture = SDL_CreateTextureFromSurface( gRenderer, textSurface );
         if( mTexture == NULL )
         {
-            printf( "Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError() );
+            cout << "Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError();
         }
         else
         {
@@ -113,10 +129,11 @@ bool GTexture::loadFont(SDL_Renderer * gRenderer, TTF_Font * gFont, std::string 
     //Return success
     return mTexture != NULL;
 }
-
+/**
+ * Free existing texture
+ */
 void GTexture::free()
 {
-    //Free texture if it exists
     if( mTexture != NULL )
     {
         SDL_DestroyTexture( mTexture );
@@ -126,13 +143,23 @@ void GTexture::free()
     }
 }
 
+/**
+ * Set colour to a texture
+ * @param red
+ * @param green
+ * @param blue
+ */
 void GTexture::setColor( Uint8 red, Uint8 green, Uint8 blue )
 {
-    //Modulate texture
     SDL_SetTextureColorMod( mTexture, red, green, blue );
 }
 
-
+/**
+ * Render the texture
+ * @param gRenderer rendered to which to render
+ * @param x position
+ * @param y position
+ */
 void GTexture::render(SDL_Renderer* gRenderer, int x, int y )
 {
     //Set rendering space and render to screen
@@ -140,14 +167,24 @@ void GTexture::render(SDL_Renderer* gRenderer, int x, int y )
     SDL_RenderCopy( gRenderer, mTexture, NULL, &renderQuad );
 }
 
-
+/**
+ * Set size of texture
+ * @param x
+ * @param y
+ */
 void GTexture::setSize(int x, int y) {
     mWidth = x;
     mHeight = y;
 }
 
 
-
+/**
+ * Render from a sprite sheet
+ * @param gRenderer
+ * @param x position of sprite sheet
+ * @param y position of sprite sheet
+ * @param clip
+ */
 void GTexture::renderSprite( SDL_Renderer* gRenderer, int x, int y, SDL_Rect* clip )
 {
     //Set rendering space and render to screen

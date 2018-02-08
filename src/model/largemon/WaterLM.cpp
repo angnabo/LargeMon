@@ -21,3 +21,17 @@ int WaterLM::specialAbility() const {
     return 0;
 }
 
+bool WaterLM::isShielded() {
+    return (shieldCount > 0);
+}
+
+void WaterLM::shield(int count) {
+    shieldCount = count;
+}
+
+void WaterLM::decrementShield() {
+    if(shieldCount > 0){
+        shieldCount--;
+    }
+}
+

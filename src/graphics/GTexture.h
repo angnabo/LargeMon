@@ -2,17 +2,16 @@
 // Created by angelica on 22/10/17.
 //
 
-//Using SDL, SDL_image, standard IO, and strings
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include<SDL_ttf.h>
-#include <stdio.h>
+#include <SDL_ttf.h>
 #include <string>
+#include <iostream>
 
 #ifndef LARGEMON_LTEXTURE_H
 #define LARGEMON_LTEXTURE_H
 
-
+using namespace std;
 class GTexture
 {
 public:

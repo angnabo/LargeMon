@@ -29,7 +29,9 @@ public:
     virtual ~ControllerBattleInstance();
 
     void specialAttack(LargeMon *);
-    void specialAbility(LargeMon *);
+    string specialAbility(LargeMon *);
+
+    void finishTurn(LargeMon *lm);
 
     LargeMon * getPlayerPtr();
     LargeMon * getEnemyPtr();
@@ -44,7 +46,6 @@ private:
     int playerSpecAttkCount;
     int enemySpecAttkCounter;
     int round;
-    int stunCounter;
     vector<string> playerArgs;
     vector<string> enemyArgs;
     //FileWriter * playerWriter;
@@ -52,6 +53,7 @@ private:
     //LargeMon * playerPtr;
     bool isOver;
     vector<class ContrObserver *> views;
+
 };
 
 

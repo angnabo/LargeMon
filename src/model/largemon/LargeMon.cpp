@@ -14,7 +14,6 @@ LargeMon::LargeMon(const int* hp, const int* damage, const int* size, const stri
     this->currentHp = *hp;
     this->damage = *damage;
     this->size = *size;
-    stunned = false;
     //this->type = type;
 }
 
@@ -63,16 +62,18 @@ void LargeMon::notify() {
     }
 }
 
-void LargeMon::stun(){
-    stunned = true;
+void LargeMon::stun(int count){
+    stunCount = count;
 }
 
-void LargeMon::unstun(){
-    stunned = false;
+void LargeMon::decrementStun() {
+    if(stunCount > 0){
+        stunCount--;
+    }
 }
 
 bool LargeMon::isStunned(){
-    return stunned;
+    return (stunCount != 0);
 }
 
 void LargeMon::attach(Observer * obs) {
@@ -86,6 +87,28 @@ void LargeMon::setAsPlayer() {
 bool LargeMon::isPlayer() {
     return player;
 }
+
+void LargeMon::takeTickDamage(int count) {
+    tickDmgCount = count;
+}
+
+void LargeMon::applyTickDamage(int damage){
+    if(tickDmgCount > 0) {
+        takeDamage(damage);
+        decrementTickCount();
+    }
+}
+
+bool LargeMon::isTakingTickDamage(){
+    return (tickDmgCount != 0);
+}
+
+void LargeMon::decrementTickCount() {
+    if(tickDmgCount > 0) {
+        tickDmgCount--;
+    }
+}
+
 
 LargeMon::~LargeMon() = default;
 

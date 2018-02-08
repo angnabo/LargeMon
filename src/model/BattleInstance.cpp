@@ -25,7 +25,6 @@ ControllerBattleInstance::ControllerBattleInstance() {
     playerArgs.push_back("");
     enemyArgs.push_back("");
     round = 0;
-    stunCounter = 0;
     isOver = false;
 }
 
@@ -72,10 +71,9 @@ string ControllerBattleInstance::enemyMove() {
                 }
             }
                 break;
-            case 3:
+            case 3: //special ability
             {
-                specialAbility(enemy);
-                move = "Your largemon is stunned!";
+                move = specialAbility(enemy);
                 playerArgs[1] = "Stunned";
             } break;
             default: //Attack
@@ -88,8 +86,9 @@ string ControllerBattleInstance::enemyMove() {
                 }
                 break;
         }
+    } else {
+        finishTurn(enemy);
     }
-    enemy->unstun();
     return move;
 }
 
@@ -125,18 +124,16 @@ string ControllerBattleInstance::action(int * actionID) {
                 }
             }
                 break;
-            case 3: //special attack 2
+            case 3: //special ability
             {
-                specialAbility(player);
-                action = "Largemon stunned enemy!";
+                action = specialAbility(player);
                 enemyArgs[1] = "Stunned";
-                stunCounter = 2;
             }
             default:
                 break;
         }
     }else {
-        player->unstun();
+        finishTurn(player);
     }
 
     action += enemyMove();
@@ -155,16 +152,35 @@ void ControllerBattleInstance::specialAttack(LargeMon * lm) {
 
 }
 
-void ControllerBattleInstance::specialAbility(LargeMon * lm) {
-    string type = lm->getType();
-    if(type == "fire"){
-
-    } else if(type == "water"){
-
-    } else if(type == "wood"){
-        LargeMon * en = getEnemyOf(lm);
-        en->stun();
+void ControllerBattleInstance::finishTurn(LargeMon * lm){
+    lm->decrementStun();
+    LargeMon * en = getEnemyOf(lm);
+    if(en->isTakingTickDamage()){
+        en->applyTickDamage(10);
     }
+    if(lm->getType() == "water"){
+        dynamic_cast<WaterLM*>(lm)->decrementShield();
+        cout << "cast to watermon";
+    }
+}
+
+string ControllerBattleInstance::specialAbility(LargeMon * lm) {
+    string action;
+    string type = lm->getType();
+    LargeMon * en = getEnemyOf(lm);
+    if(type == "fire"){
+        en->takeTickDamage(3);
+        action = lm->isPlayer() ? "Your largemon is damaging enemy over time. " : "You are being damaged over time. ";
+    } else if(type == "water"){
+        WaterLM * wlm = dynamic_cast<WaterLM*> (lm);
+        wlm->shield(3);
+        cout << "cast to watermon: " << lm->getType();
+        action = lm->isPlayer() ? "Your largemon shielded. " : "Enemy largemon shielded. ";
+    } else if(type == "wood"){
+        en->stun(2);
+        action = lm->isPlayer() ? "Enemy largemon was stunned. " : "Your largemon was stunned. ";
+    }
+    return action;
 }
 
 

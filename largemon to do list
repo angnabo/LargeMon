@@ -1,9 +1,9 @@
 LargeMon TO DO:
 [] implement special attacks
+    [done] stun
+    [] shield
+    [] damage over time
 
-[] have a wait time of a second between player turn and enemy counter attack
-
-[] the health bars should go down after each move, rather than each turn
 
 [] implement saving LargeMon
 
@@ -18,6 +18,8 @@ LargeMon TO DO:
 [] make a view interface with pure virtual methods like close, init, main
 
 Done:
+[done] have a wait time of a second between player turn and enemy counter attack
+[done] the health bars should go down after each move, rather than each turn
 [done] implement file writer
 [done] implement a controller observer class to write to file
 [done] fix the file writing bug which doesnt write the last turn if the player wins

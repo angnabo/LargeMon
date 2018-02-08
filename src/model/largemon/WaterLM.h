@@ -17,8 +17,12 @@ public:
     string getType() const;
 
 
+    void decrementShield();
+    void shield(int);
+    bool isShielded();
 
 private:
+    int shieldCount;
 
 };
 

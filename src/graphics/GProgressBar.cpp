@@ -17,7 +17,7 @@ bool GProgressBar::updateProgress(SDL_Renderer * gRenderer, GTexture & bar, TTF_
 
         if( !text.loadFont( gRenderer, gHpFont, hp, textColor ) )
         {
-            printf( "Failed to render text texture!\n" );
+            cout << "Failed to render text texture!\n";
             success = false;
         }
         int pw = (int)((float)bar.getOriginalWidth() * percent);

@@ -27,10 +27,17 @@ public:
     int getCurrentHp(){ return currentHp; }
     int getSize() { return size; }
     std::string getLastAction();
-    void stun();
+    void stun(int);
+    void decrementStun();
     void unstun();
     bool isStunned();
     bool isPlayer();
+
+    void takeTickDamage(int);
+    void decrementTickCount();
+    bool isTakingTickDamage();
+    void applyTickDamage(int damage);
+
     void setAsPlayer();
     //string getType() { return type; }
     float getCurrentHpPercent();
@@ -49,9 +56,11 @@ protected:
     int couterLM;
     string description;
     string lastAction;
-    bool stunned;
     bool player = false;
     vector<class Observer *> views;
+    int tickDmgCount;
+    int stunCount;
+
 
 };
 

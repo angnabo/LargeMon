@@ -1,7 +1,6 @@
 //
 // Created by angelica on 11/11/17.
 //
-//Using SDL, SDL_image, standard IO, and strings
 #include <ctime>
 #include <SDL.h>
 #include <SDL2/SDL_image.h>
@@ -26,56 +25,41 @@ bool LargeMonMainView::init()
     //Initialize SDL
     if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
     {
-        cout << "SDL could not initialize! SDL Error: %s\n", SDL_GetError();
         success = false;
     }
     else
     {
         //Set texture filtering to linear
-        if( !SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" ) )
-        {
-            cout << "Warning: Linear texture filtering not enabled!";
-        }
+        SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" );
 
         //Create window
-        gWindow = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-        if( gWindow == nullptr )
+        gWindow = SDL_CreateWindow("Largemon", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        if(gWindow == nullptr)
         {
-            cout << "Window could not be created! SDL Error: %s\n", SDL_GetError();
             success = false;
         }
         else
         {
             //Create renderer for window
-            gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
-            if( gRenderer == nullptr )
+            gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+            if(gRenderer == nullptr)
             {
-                cout << "Renderer could not be created! SDL Error: %s\n", SDL_GetError();
                 success = false;
             }
             else
             {
-                //Initialize renderer color
-                SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
-
-                //Initialize PNG loading
-                int imgFlags = IMG_INIT_PNG;
-                if( !( IMG_Init( imgFlags ) & imgFlags ) )
+                if(( IMG_Init( IMG_INIT_PNG ) & IMG_INIT_PNG) == 0)
                 {
-                    cout << "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError();
                     success = false;
                 }
-
                 //Initialize SDL_ttf
-                if( TTF_Init() == -1 )
+                if(TTF_Init() == -1)
                 {
-                    cout << "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError();
                     success = false;
                 }
             }
         }
     }
-
     return success;
 }
 
