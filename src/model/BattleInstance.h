@@ -8,6 +8,7 @@ using namespace std;
 #include <vector>
 #include "largemon/LargeMon.h"
 
+
 class BattleInstance {
 public:
     BattleInstance();

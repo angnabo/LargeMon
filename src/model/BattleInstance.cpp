@@ -34,19 +34,11 @@ inline void delay( unsigned long ms )
     usleep( ms * 1000 );
 }
 
-//to do: make in seperate class
-int BattleInstance::randomInRange(int min, int max){
-    std::random_device rd; // obtain a random number from hardware
-    std::mt19937 eng(rd()); // seed the generator
-    std::uniform_int_distribution<> distr(min, max);
-    return (int) distr(eng);
-}
-
 string BattleInstance::enemyMove() {
     delay(600);
     string move = "";
     if(!isGameOver() && !enemy->isStunned()) {
-        int random = randomInRange(1, 6);
+        int random = RandomNumber::randomInRange(1, 6);
         switch (random) {
             case 1: //Defend
                 move = defend(enemy);

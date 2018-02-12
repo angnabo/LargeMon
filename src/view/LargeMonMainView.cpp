@@ -67,7 +67,7 @@ bool LargeMonMainView::loadUI(GTexture & texture, string path){
     bool success = true;
     if( !texture.loadFromFile(gRenderer, std::move(path)) )
     {
-        cout << "Failed to load Foo' texture image!\n";
+        cout << "Failed to load texture image!\n";
         success = false;
     }
     return success;
@@ -77,7 +77,7 @@ bool LargeMonMainView::loadUIText(GTexture & texture, TTF_Font * font, std::stri
     bool success = true;
     if( !texture.loadFont(gRenderer, font, text, textColor) )
     {
-        cout << "Failed to load Foo' texture image!\n";
+        cout << "Failed to load font texture image!\n";
         success = false;
     }
     return success;
@@ -89,7 +89,7 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     bool success = true;
     textColor = { 0, 0, 0 };
 
-    loadUI(gBackgroundTexture, "/home/angelica/Development/CLion/LargeMon/resources/ui/mountains.png");
+    loadUI(gBackgroundTexture, "/home/angelica/Development/Largemon/resources/ui/mountains.png");
     loadUI(gBottomTextPanel,"/home/angelica/Development/CLion/LargeMon/resources/ui/bottom_panel.bmp" );
     loadUI(gPlayerHpBarBG,"/home/angelica/Development/CLion/LargeMon/resources/ui/health_bar_bg.bmp" );
     loadUI(gPlayerHpBarFG,"/home/angelica/Development/CLion/LargeMon/resources/ui/health_bar_fg.bmp" );
@@ -124,7 +124,7 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/fonts/alterebro-pixel-font.ttf", 30 );
     if( gFont == nullptr )
     {
-        cout << "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError();
+        cout << "Failed to load lazy font! SDL_ttf Error: " << TTF_GetError() << endl;
         success = false;
     } else {
         //Render text
@@ -138,7 +138,7 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/fonts/alterebro-pixel-font.ttf", 20 );
     if( gHpFont == nullptr )
     {
-        cout << "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError();
+        cout << "Failed to load lazy font! SDL_ttf Error: " << TTF_GetError() << endl;
         success = false;
     } else {
         loadUIText(gPlayerHealthText, gHpFont, args[1]);
@@ -233,6 +233,7 @@ bool LargeMonMainView::run(vector<string> args) {
     } else {
             render();
     }
+    SDL_RenderPresent(gRenderer);
 
     return true;
 }
@@ -326,5 +327,6 @@ bool LargeMonMainView::render() {
 
 
     //Update screen
+
     SDL_RenderPresent(gRenderer);
 }

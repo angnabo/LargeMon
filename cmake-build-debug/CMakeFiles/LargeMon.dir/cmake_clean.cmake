@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LargeMon.dir/src/model/utility/ContrObserver.cpp.o"
   "CMakeFiles/LargeMon.dir/test/Test.cpp.o"
   "CMakeFiles/LargeMon.dir/src/model/utility/RandomNumber.cpp.o"
+  "CMakeFiles/LargeMon.dir/src/model/Type.cpp.o"
   "CMakeFiles/LargeMon.dir/src/model/utility/FileWriter.cpp.o"
   "CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o"
   "CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o"
