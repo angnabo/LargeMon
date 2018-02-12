@@ -54,6 +54,9 @@ private:
     bool isOver;
     vector<class ContrObserver *> views;
 
+    string defend(LargeMon *lm);
+
+    string attack(LargeMon *lm);
 };
 
 

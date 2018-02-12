@@ -49,9 +49,7 @@ string ControllerBattleInstance::enemyMove() {
         int random = randomInRange(1, 6);
         switch (random) {
             case 1: //Defend
-                enemy->defend();
-                move = "The enemy healed for 20 hp.";
-                enemyArgs[1] = "Defend";
+                move = defend(enemy);
                 break;
             case 2: //Special Attack
             {
@@ -65,9 +63,7 @@ string ControllerBattleInstance::enemyMove() {
                         enemySpecAttkCounter++;
                     }
                 } else {
-                    player->takeDamage(enemy->getDamage());
-                    enemyArgs[1] = "Attack";
-                    move = "The enemy attacked for " + to_string(enemy->getDamage());
+                    move = attack(enemy);
                 }
             }
                 break;
@@ -77,18 +73,11 @@ string ControllerBattleInstance::enemyMove() {
                 playerArgs[1] = "Stunned";
             } break;
             default: //Attack
-                player->takeDamage(enemy->getDamage());
-                if (isPlayerDead()) {
-                    move = "";
-                } else {
-                    move = "The enemy attacked for " + to_string(enemy->getDamage());
-                    enemyArgs[1] = "Attack";
-                }
+                move = attack(enemy);
                 break;
         }
-    } else {
-        finishTurn(enemy);
     }
+    finishTurn(enemy);
     return move;
 }
 
@@ -97,14 +86,11 @@ string ControllerBattleInstance::action(int * actionID) {
     if(!isGameOver() && !player->isStunned()) {
         switch (*actionID) {
             case 0: //attack
-                enemy->takeDamage(player->getDamage());
-                action = "Player dealt " + to_string(player->getDamage()) + " to the enemy. ";
+                action = attack(player);
                 playerArgs[1] = "Attack";
                 break;
             case 1: //defend
-                player->defend();
-                action = "Player healed for 20hp. ";
-                playerArgs[1] = "Defend";
+                action = defend(player);
                 break;
             case 2: //special attack 1
             {
@@ -121,6 +107,7 @@ string ControllerBattleInstance::action(int * actionID) {
                     }
                 } else {
                     action = "Special Attack was already used";
+                    attack(player);
                 }
             }
                 break;
@@ -132,9 +119,9 @@ string ControllerBattleInstance::action(int * actionID) {
             default:
                 break;
         }
-    }else {
-        finishTurn(player);
     }
+
+    finishTurn(player);
 
     action += enemyMove();
     if(isEnemyDead()){
@@ -152,15 +139,15 @@ void ControllerBattleInstance::specialAttack(LargeMon * lm) {
 
 }
 
+
+
 void ControllerBattleInstance::finishTurn(LargeMon * lm){
     lm->decrementStun();
     LargeMon * en = getEnemyOf(lm);
-    if(en->isTakingTickDamage()){
-        en->applyTickDamage(10);
-    }
+    en->applyTickDamage(10);
     if(lm->getType() == "water"){
         dynamic_cast<WaterLM*>(lm)->decrementShield();
-        cout << "cast to watermon";
+        //cout << "cast to watermon";
     }
 }
 
@@ -170,11 +157,12 @@ string ControllerBattleInstance::specialAbility(LargeMon * lm) {
     LargeMon * en = getEnemyOf(lm);
     if(type == "fire"){
         en->takeTickDamage(3);
+        //cout << "Applying ticking damage to: " << en->getType();
         action = lm->isPlayer() ? "Your largemon is damaging enemy over time. " : "You are being damaged over time. ";
     } else if(type == "water"){
         WaterLM * wlm = dynamic_cast<WaterLM*> (lm);
         wlm->shield(3);
-        cout << "cast to watermon: " << lm->getType();
+        //cout << "cast to watermon: " << lm->getType();
         action = lm->isPlayer() ? "Your largemon shielded. " : "Enemy largemon shielded. ";
     } else if(type == "wood"){
         en->stun(2);
@@ -182,9 +170,36 @@ string ControllerBattleInstance::specialAbility(LargeMon * lm) {
     }
     return action;
 }
+/**
+ * Damages the given largemon's enemy
+ * @param lm the largemon attacking
+ */
+string ControllerBattleInstance::attack(LargeMon * lm){
+    LargeMon * en = getEnemyOf(lm);
+    en->takeDamage(lm->getDamage());
+    string action;
+    if(lm->isPlayer()){
+        action = "Player attacked the enemy for " + to_string(lm->getDamage()) + " damage. ";
+        playerArgs[1] = "Attack";
+    } else {
+        action = "Enemy dealt " + to_string(lm->getDamage()) + " to your largemon. ";
+        enemyArgs[1] = "Attack";
+    }
+    return action;
+}
 
-
-
+string ControllerBattleInstance::defend(LargeMon * lm) {
+    lm->defend();
+    string action;
+    if(lm->isPlayer()){
+        action = "Player healed for 20 hp. ";
+        playerArgs[1] = "Defend";
+    } else {
+        action = "Enemy healed for 20 hp. ";
+        enemyArgs[1] = "Defend";
+    }
+    return action;
+}
 
 bool ControllerBattleInstance::determineCounter(string * playerType, string * enemyType) {
     bool isCounter = false;
@@ -277,9 +292,5 @@ LargeMon * ControllerBattleInstance::getPlayerPtr() {
 LargeMon * ControllerBattleInstance::getEnemyPtr() {
     return enemy;
 }
-
-
-
-
 
 
