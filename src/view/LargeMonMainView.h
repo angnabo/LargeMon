@@ -9,7 +9,7 @@
 #include "../graphics/GTexture.h"
 #include "../graphics/GButtonTexture.h"
 #include "../graphics/GProgressBar.h"
-#include "../utility/FileWriter.h"
+#include "../model/utility/FileWriter.h"
 
 using namespace std;
 

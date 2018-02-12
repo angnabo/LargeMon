@@ -15,7 +15,7 @@ public:
 
     int specialAttack() const;
     int specialAbility() const;
-    string getType() const;
+    Type getType() const;
 
 };
 

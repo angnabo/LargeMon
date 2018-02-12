@@ -4,7 +4,7 @@
 
 #include "HealthBarObserver.h"
 
-HealthBarObserver::HealthBarObserver(ControllerBattleInstance * btl, LargeMonMainView * viewPtr) : ContrObserver(btl){
+HealthBarObserver::HealthBarObserver(BattleInstance * btl, LargeMonMainView * viewPtr) : ContrObserver(btl){
     view = viewPtr;
 }
 

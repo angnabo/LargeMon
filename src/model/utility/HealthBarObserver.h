@@ -7,11 +7,11 @@
 
 
 #include "ContrObserver.h"
-#include "../view/LargeMonMainView.h"
+#include "../../view/LargeMonMainView.h"
 
 class HealthBarObserver : public ContrObserver {
 public:
-    HealthBarObserver(ControllerBattleInstance *, LargeMonMainView *);
+    HealthBarObserver(BattleInstance *, LargeMonMainView *);
 
     void update(LargeMon *, vector<string>) const ;
 private:

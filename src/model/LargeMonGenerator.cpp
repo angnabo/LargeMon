@@ -3,42 +3,37 @@
 //
 
 #include <iostream>
-#include <random>
 #include "LargeMonGenerator.h"
 
 LargeMonGenerator::LargeMonGenerator() = default;
 
-
-
 LargeMon * LargeMonGenerator::generateLargeMon() {
 
-    int health = randomInRange(MIN_HEALTH, MAX_HEALTH);
+    // get health points
+    int health = RandomNumber::randomInRange(MIN_HEALTH, MAX_HEALTH);
 
-    //damage
-    int damage = 0;
-    if (health < 300){
-        damage = (int) randomInRange(50, 80);
-    } else {
-        damage = (int) randomInRange(30, 55);
-    }
+    // get damage based on health
+    int damage = getDamage(health);
 
-    int size = (int) randomInRange(1, 10);;
+    // get the size
+    int size = RandomNumber::randomInRange(MIN_SIZE, MAX_SIZE);
 
+    // get a type
+    Type type = Type(RandomNumber::randomInRange(0, 2));
 
-    int randType = randomInRange(0, 2);
-    switch (randType){
-        case 0 : {
-            string name = generateName(randType);
+    switch (type){
+        case Type::fire : {
+            string name = generateName(type);
             auto * lm = new FireLM(&health, &damage, &size, &name);
             return lm;
         }
-        case 1 : {
-            string name = generateName(randType);
+        case Type::water : {
+            string name = generateName(type);
             auto * lm = new WaterLM(&health, &damage, &size, &name);
             return lm;
         }
-        case 2 : {
-            string name = generateName(randType);
+        case Type::wood : {
+            string name = generateName(type);
             auto * lm = new WoodLM(&health, &damage, &size, &name);
             return lm;
         }
@@ -46,26 +41,28 @@ LargeMon * LargeMonGenerator::generateLargeMon() {
     }
 }
 
-int LargeMonGenerator::randomInRange(int min, int max){
-    std::random_device rd; // obtain a random number from hardware
-    std::mt19937 eng(rd()); // seed the generator
-    std::uniform_int_distribution<> distr(min, max);
-    return (int) distr(eng);
+int LargeMonGenerator::getDamage(int health){
+    int damage;
+    if (health < DAMAGE_FACTOR){
+        damage = RandomNumber::randomInRange(MIN_DMG_IF_HEALTH_LOW, MAX_DMG_IF_HEALTH_LOW);
+    } else {
+        damage = RandomNumber::randomInRange(MIN_DMG_IF_HEALTH_HIGH, MAX_DMG_IF_HEALTH_HIGH);
+    }
+    return damage;
 }
 
-string LargeMonGenerator::generateName(int type) {
+string LargeMonGenerator::generateName(Type type) {
     string name;
     switch(type){
-        case 0:
-            name = fireNames[randomInRange(0, fireNames.size()-1)];
+        case Type::fire :
+            name = fireNames[RandomNumber::randomInRange(0, fireNames.size()-1)];
             break;
-        case 1:
-            name = waterNames[randomInRange(0, waterNames.size()-1)];
+        case Type::water :
+            name = waterNames[RandomNumber::randomInRange(0, waterNames.size()-1)];
             break;
-        case 2:
-            name = woodNames[randomInRange(0, woodNames.size()-1)];
+        case Type::wood :
+            name = woodNames[RandomNumber::randomInRange(0, woodNames.size()-1)];
             break;
-        default:break;
     }
     return name;
 }

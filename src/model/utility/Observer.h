@@ -6,7 +6,7 @@
 #define LARGEMON_OBSERVER_H
 
 
-#include "../model/largemon/LargeMon.h"
+#include "../largemon/LargeMon.h"
 
 class Observer {
 public:

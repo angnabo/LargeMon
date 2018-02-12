@@ -5,9 +5,7 @@
 #ifndef LARGEMON_FIRELM_H
 #define LARGEMON_FIRELM_H
 
-
 #include "LargeMon.h"
-
 
 class FireLM: public LargeMon {
 public:
@@ -15,7 +13,7 @@ public:
 
     int specialAttack() const;
     int specialAbility() const;
-    string getType() const;
+    Type getType() const;
 
 };
 

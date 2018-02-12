@@ -4,6 +4,7 @@ using namespace std;
 #define LARGEMON_LARGEMON_H
 #include <string>
 #include <vector>
+#include "../Type.h"
 
 class LargeMon {
 public:
@@ -21,7 +22,7 @@ public:
     void defend();
     virtual int specialAttack() const = 0;
     virtual int specialAbility() const = 0;
-    virtual string getType() const = 0;
+    virtual Type getType() const = 0;
     int getDamage();
     int getHp(){ return hp; }
     int getCurrentHp(){ return currentHp; }
@@ -56,7 +57,7 @@ protected:
     int couterLM;
     string description;
     string lastAction;
-    bool player = false;
+    bool isLmPlayer;
     vector<class Observer *> views;
     int tickDmgCount;
     int stunCount;

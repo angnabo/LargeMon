@@ -12,7 +12,7 @@
 #include "../graphics/GProgressBar.h"
 #include "../graphics/GButtonTexture.h"
 #include "../model/BattleInstance.h"
-#include "../utility/FileWriter.h"
+#include "../model/utility/FileWriter.h"
 #include "LargeMonMainView.h"
 
 

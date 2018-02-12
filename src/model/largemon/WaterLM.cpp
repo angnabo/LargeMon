@@ -13,8 +13,8 @@ int WaterLM::specialAttack() const {
     return damage*1.40;//damage against fire types is 40% more effective
 }
 
-string WaterLM::getType() const {
-    return "water";
+Type WaterLM::getType() const {
+    return Type::water;
 }
 //bubble shield which shields a portion of the damage
 int WaterLM::specialAbility() const {

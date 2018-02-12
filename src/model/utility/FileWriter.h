@@ -3,7 +3,7 @@
 //
 
 #include "ContrObserver.h"
-#include "../model/largemon/LargeMon.h"
+#include "../largemon/LargeMon.h"
 
 using namespace std;
 #ifndef LARGEMON_FILEWRITER_H
@@ -13,7 +13,7 @@ using namespace std;
 
 class FileWriter : public ContrObserver{
 public:
-    explicit FileWriter(ControllerBattleInstance *);
+    explicit FileWriter(BattleInstance *);
 
 
     void writeToFile() const;
@@ -24,6 +24,8 @@ private:
     int health;
     ofstream outLogFile;
     string filePath;
+
+    string DIR_PATH = "/home/angelica/Development/Largemon/game_logs/";
 
 };
 

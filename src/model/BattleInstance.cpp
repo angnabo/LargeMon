@@ -6,11 +6,11 @@
 #include <iostream>
 #include <random>
 #include "LargeMonGenerator.h"
-#include "../utility/FileWriter.h"
-#include "../utility/HealthObserver.h"
+#include "utility/FileWriter.h"
+#include "utility/HealthObserver.h"
 #include <unistd.h>
 
-ControllerBattleInstance::ControllerBattleInstance() {
+BattleInstance::BattleInstance() {
     LargeMonGenerator generator;
 
     playerSpecAttkCount = 0;
@@ -35,14 +35,14 @@ inline void delay( unsigned long ms )
 }
 
 //to do: make in seperate class
-int ControllerBattleInstance::randomInRange(int min, int max){
+int BattleInstance::randomInRange(int min, int max){
     std::random_device rd; // obtain a random number from hardware
     std::mt19937 eng(rd()); // seed the generator
     std::uniform_int_distribution<> distr(min, max);
     return (int) distr(eng);
 }
 
-string ControllerBattleInstance::enemyMove() {
+string BattleInstance::enemyMove() {
     delay(600);
     string move = "";
     if(!isGameOver() && !enemy->isStunned()) {
@@ -53,9 +53,7 @@ string ControllerBattleInstance::enemyMove() {
                 break;
             case 2: //Special Attack
             {
-                string playerType = player->getType();
-                string enemyType = enemy->getType();
-                if (determineCounter(&enemyType, &playerType)) {
+                if (determineCounter(enemy, player)) {
                     if (enemySpecAttkCounter == 0) {
                         player->takeDamage(enemy->specialAttack());
                         move = "The enemy used the special attack for: " + to_string(enemy->specialAttack());
@@ -81,7 +79,7 @@ string ControllerBattleInstance::enemyMove() {
     return move;
 }
 
-string ControllerBattleInstance::action(int * actionID) {
+string BattleInstance::action(int * actionID) {
     string action = "";
     if(!isGameOver() && !player->isStunned()) {
         switch (*actionID) {
@@ -95,9 +93,7 @@ string ControllerBattleInstance::action(int * actionID) {
             case 2: //special attack 1
             {
                 if (playerSpecAttkCount == 0) {
-                    string playerType = player->getType();
-                    string enemyType = enemy->getType();
-                    if (determineCounter(&playerType, &enemyType)) {
+                    if (determineCounter(player, enemy)) {
                         enemy->takeDamage(player->specialAttack());
                         action = "Player used special attack for " + to_string(player->specialAttack()) + " damage. ";
                         playerArgs[1] = "Special Attack";
@@ -135,38 +131,39 @@ string ControllerBattleInstance::action(int * actionID) {
     return (action.empty() ? getWinner() : action);
 }
 
-void ControllerBattleInstance::specialAttack(LargeMon * lm) {
+void BattleInstance::specialAttack(LargeMon * lm) {
 
 }
 
-
-
-void ControllerBattleInstance::finishTurn(LargeMon * lm){
+void BattleInstance::finishTurn(LargeMon * lm){
     lm->decrementStun();
     LargeMon * en = getEnemyOf(lm);
     en->applyTickDamage(10);
-    if(lm->getType() == "water"){
+    if(lm->getType() == Type::water){
         dynamic_cast<WaterLM*>(lm)->decrementShield();
-        //cout << "cast to watermon";
     }
 }
 
-string ControllerBattleInstance::specialAbility(LargeMon * lm) {
+string BattleInstance::specialAbility(LargeMon * lm) {
     string action;
-    string type = lm->getType();
+    Type largemon = lm->getType();
     LargeMon * en = getEnemyOf(lm);
-    if(type == "fire"){
-        en->takeTickDamage(3);
-        //cout << "Applying ticking damage to: " << en->getType();
-        action = lm->isPlayer() ? "Your largemon is damaging enemy over time. " : "You are being damaged over time. ";
-    } else if(type == "water"){
-        WaterLM * wlm = dynamic_cast<WaterLM*> (lm);
-        wlm->shield(3);
-        //cout << "cast to watermon: " << lm->getType();
-        action = lm->isPlayer() ? "Your largemon shielded. " : "Enemy largemon shielded. ";
-    } else if(type == "wood"){
-        en->stun(2);
-        action = lm->isPlayer() ? "Enemy largemon was stunned. " : "Your largemon was stunned. ";
+
+    switch(largemon){
+        case Type::fire :
+            en->takeTickDamage(3);
+            action = lm->isPlayer() ? "Your largemon is damaging enemy over time. " : "You are being damaged over time. ";
+        break;
+        case Type::water : {
+            WaterLM *wlm = dynamic_cast<WaterLM *> (lm);
+            wlm->shield(3);
+            action = lm->isPlayer() ? "Your largemon shielded. " : "Enemy largemon shielded. ";
+        }
+        break;
+        case Type::wood :
+            en->stun(2);
+            action = lm->isPlayer() ? "Enemy largemon was stunned. " : "Your largemon was stunned. ";
+        break;
     }
     return action;
 }
@@ -174,7 +171,7 @@ string ControllerBattleInstance::specialAbility(LargeMon * lm) {
  * Damages the given largemon's enemy
  * @param lm the largemon attacking
  */
-string ControllerBattleInstance::attack(LargeMon * lm){
+string BattleInstance::attack(LargeMon * lm){
     LargeMon * en = getEnemyOf(lm);
     en->takeDamage(lm->getDamage());
     string action;
@@ -188,7 +185,7 @@ string ControllerBattleInstance::attack(LargeMon * lm){
     return action;
 }
 
-string ControllerBattleInstance::defend(LargeMon * lm) {
+string BattleInstance::defend(LargeMon * lm) {
     lm->defend();
     string action;
     if(lm->isPlayer()){
@@ -201,20 +198,27 @@ string ControllerBattleInstance::defend(LargeMon * lm) {
     return action;
 }
 
-bool ControllerBattleInstance::determineCounter(string * playerType, string * enemyType) {
-    bool isCounter = false;
-    if(*playerType == "water" && *enemyType == "fire") {
-        isCounter = true;
-    } else if (*playerType == "fire" && *enemyType == "wood") {
-        isCounter = true;
-    } else if (*playerType == "wood" && *enemyType == "water") {
-        isCounter = true;
+bool BattleInstance::determineCounter(LargeMon * lm, LargeMon * lmEnemy) {
+    Type largemon = lm->getType();
+    Type enemy = lmEnemy->getType();
 
+    bool counter;
+    switch(largemon){
+        case Type::water :
+            if(enemy == Type::fire)
+                counter = true;
+        case Type::fire :
+            if(enemy == Type::wood)
+                counter = true;
+        case Type::wood :
+            if(enemy == Type::water)
+                counter = true;
     }
-    return isCounter;
+
+    return counter;
 }
 
-LargeMon * ControllerBattleInstance::getEnemyOf(LargeMon * lm) {
+LargeMon * BattleInstance::getEnemyOf(LargeMon * lm) {
     if(lm == player){
         return enemy;
     } else {
@@ -224,72 +228,72 @@ LargeMon * ControllerBattleInstance::getEnemyOf(LargeMon * lm) {
 
 
 
-string ControllerBattleInstance::getEnemyLargeMonName(){
+string BattleInstance::getEnemyLargeMonName(){
     string name = enemy->getName();
     return name;
 }
 
-string ControllerBattleInstance::getPlayerLargeMonName(){
+string BattleInstance::getPlayerLargeMonName(){
     string name = player->getName();
     return name;
 }
 
-float ControllerBattleInstance::getEnemyLargeMonCurrentHpPercent(){
+float BattleInstance::getEnemyLargeMonCurrentHpPercent(){
     float hpPercent = (float)enemy->getCurrentHp()/(float)enemy->getHp();
     return hpPercent;
 }
 
-float ControllerBattleInstance::getPlayerLargeMonCurrentHpPercent(){
+float BattleInstance::getPlayerLargeMonCurrentHpPercent(){
     float hpPercent = (float)player->getCurrentHp()/(float)player->getHp();//25/50*100
     return hpPercent;
 }
 
-int ControllerBattleInstance::getPlayerCurrentHp(){
+int BattleInstance::getPlayerCurrentHp(){
     return player->getCurrentHp();
 }
-int ControllerBattleInstance::getEnemyCurrentHp() {
+int BattleInstance::getEnemyCurrentHp() {
     return enemy->getCurrentHp();
 }
 
-ControllerBattleInstance::~ControllerBattleInstance() {
+BattleInstance::~BattleInstance() {
 
 }
 
-bool ControllerBattleInstance::isGameOver() {
+bool BattleInstance::isGameOver() {
     return isPlayerDead() || isEnemyDead();
 }
 
-bool ControllerBattleInstance::isPlayerDead() {
+bool BattleInstance::isPlayerDead() {
     return player->getCurrentHp() <= 0;
 }
 
-bool ControllerBattleInstance::isEnemyDead() {
+bool BattleInstance::isEnemyDead() {
     return enemy->getCurrentHp() <= 0;
 }
 
-string ControllerBattleInstance::getWinner() {
+string BattleInstance::getWinner() {
     return (isEnemyDead() ? "Player Won!" : "Enemy Won!");
 }
 
-void ControllerBattleInstance::attach(class ContrObserver * obs) {
+void BattleInstance::attach(class ContrObserver * obs) {
     views.push_back(obs);
 }
 
-void ControllerBattleInstance::notify(LargeMon * lm, vector<string> args) {
+void BattleInstance::notify(LargeMon * lm, vector<string> args) {
     for (int i = 0; i < views.size(); i++) {
         views[i]->update(lm, args);
     }
 }
 
-int ControllerBattleInstance::getRound() {
+int BattleInstance::getRound() {
     return round;
 }
 
-LargeMon * ControllerBattleInstance::getPlayerPtr() {
+LargeMon * BattleInstance::getPlayerPtr() {
     return player;
 }
 
-LargeMon * ControllerBattleInstance::getEnemyPtr() {
+LargeMon * BattleInstance::getEnemyPtr() {
     return enemy;
 }
 

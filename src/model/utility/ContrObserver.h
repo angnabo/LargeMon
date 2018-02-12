@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "../model/BattleInstance.h"
+#include "../BattleInstance.h"
 
 using namespace std;
 #ifndef LARGEMON_CONTROBSERVER_H
@@ -13,14 +13,14 @@ using namespace std;
 
 class ContrObserver {
 public:
-    explicit ContrObserver(ControllerBattleInstance *);
+    explicit ContrObserver(BattleInstance *);
 
     ContrObserver() = default;
 
     virtual ~ContrObserver();
 
     virtual void update(LargeMon *, vector<string>) const = 0;
-    ControllerBattleInstance *battle;
+    BattleInstance *battle;
 };
 
 

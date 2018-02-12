@@ -7,7 +7,7 @@
 
 #include "../model/BattleInstance.h"
 #include "../view/LargeMonMainView.h"
-#include "../utility/HealthObserver.h"
+#include "../model/utility/HealthObserver.h"
 
 using namespace std;
 class Controller {
@@ -20,7 +20,7 @@ public:
 
 private:
     //model
-    ControllerBattleInstance battleInstance;
+    BattleInstance battleInstance;
     //view
     LargeMonMainView view;
     vector <string> arguments;

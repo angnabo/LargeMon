@@ -8,13 +8,13 @@ using namespace std;
 #include <vector>
 #include "largemon/LargeMon.h"
 
-class ControllerBattleInstance {
+class BattleInstance {
 public:
-    ControllerBattleInstance();
+    BattleInstance();
     string action(int *);
     string enemyMove();
     int randomInRange(int, int);
-    bool determineCounter(string *, string *);
+    bool determineCounter(LargeMon *, LargeMon *);
     bool isGameOver();
     bool isEnemyDead();
     bool isPlayerDead();
@@ -26,7 +26,7 @@ public:
     string getEnemyLargeMonName();
     string getPlayerLargeMonName();
     string getWinner();
-    virtual ~ControllerBattleInstance();
+    virtual ~BattleInstance();
 
     void specialAttack(LargeMon *);
     string specialAbility(LargeMon *);

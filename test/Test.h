@@ -5,12 +5,12 @@
 #ifndef LARGEMON_TEST_H
 #define LARGEMON_TEST_H
 #include "../src/model/BattleInstance.h"
-#include "../src/utility/FileWriter.h"
+#include "../src/model/utility/FileWriter.h"
 class Test {
 public:
     void test();
 private:
-    ControllerBattleInstance battle;
+    BattleInstance battle;
     FileWriter * wr;
 };
 

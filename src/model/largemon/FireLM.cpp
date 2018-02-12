@@ -13,8 +13,8 @@ int FireLM::specialAttack() const {
     return (int)damage*1.40;
 }
 
-string FireLM::getType() const {
-    return "fire";
+Type FireLM::getType() const {
+    return Type::fire;
 }
 
 //Damage over time ability that can be applied to any type

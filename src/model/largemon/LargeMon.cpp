@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "LargeMon.h"
-#include "../../utility/Observer.h"
+#include "../utility/Observer.h"
 
 //using namespace std;
 
@@ -14,6 +14,7 @@ LargeMon::LargeMon(const int* hp, const int* damage, const int* size, const stri
     this->currentHp = *hp;
     this->damage = *damage;
     this->size = *size;
+    this->isLmPlayer = false;
     //this->type = type;
 }
 
@@ -81,11 +82,11 @@ void LargeMon::attach(Observer * obs) {
 }
 
 void LargeMon::setAsPlayer() {
-    player = true;
+    isLmPlayer = true;
 }
 
 bool LargeMon::isPlayer() {
-    return player;
+    return isLmPlayer;
 }
 
 void LargeMon::takeTickDamage(int count) {

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include "Observer.h"
-#include "../view/LargeMonMainView.h"
+#include "../../view/LargeMonMainView.h"
 
 class HealthObserver : public Observer{
 public:

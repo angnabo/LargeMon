@@ -8,13 +8,14 @@
 
 #include "LargeMon.h"
 
+
 class WaterLM: public LargeMon {
 public:
     WaterLM(const int *hp, const int *damage, const int *size, const string *);
 
     int specialAttack() const;
     int specialAbility() const;
-    string getType() const;
+    Type getType() const;
 
 
     void decrementShield();

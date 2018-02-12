@@ -11,15 +11,13 @@ const std::string currentDateTime() {
     struct tm  tstruct;
     char       buf[80];
     tstruct = *localtime(&now);
-    // Visit http://en.cppreference.com/w/cpp/chrono/c/strftime
-    // for more information about date/time format
     strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
 
     return buf;
 }
 
-FileWriter::FileWriter(ControllerBattleInstance *btl) : ContrObserver(btl) {
-    filePath = "/home/angelica/Development/CLion/LargeMon/game_logs/" + currentDateTime() + "log.txt";
+FileWriter::FileWriter(BattleInstance *btl) : ContrObserver(btl) {
+    filePath = DIR_PATH + currentDateTime() + "log.txt";
     ofstream outLogFile(filePath, ios::app);
     if(!outLogFile)
     {
