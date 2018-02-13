@@ -13,8 +13,16 @@ using namespace std;
 class Controller {
 public:
     Controller();
+
+    enum Button{
+        top_left,
+        top_right,
+        bottom_left,
+        bottom_right
+    };
+
     void run();
-    int handleKeyPress(int *, int);
+    int handleKeyPress(Button *, int);
     void setViewArguments();
     string getLargemonSpritePath(string);
 

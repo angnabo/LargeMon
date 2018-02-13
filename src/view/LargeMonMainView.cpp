@@ -222,9 +222,6 @@ void LargeMonMainView::close()
 
 bool LargeMonMainView::run(vector<string> args) {
 
-//    SDL_Color col1 = color(0, 168, 107, 50);
-//    SDL_Color col2 = color(188, 3, 107, 50);
-
     //Start up SDL and create window
     if (!init()) {
         cout << "Failed to initialize!\n";
@@ -325,8 +322,6 @@ bool LargeMonMainView::render() {
     gBottomRightButtonText.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth(),
                                   Y_BUTTON_OFFSET+gTopRightButton.getHeight()+14);
 
-
     //Update screen
-
     SDL_RenderPresent(gRenderer);
 }

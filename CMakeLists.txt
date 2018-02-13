@@ -13,7 +13,7 @@ set(SOURCE_FILES src/model/largemon/LargeMon.cpp src/model/largemon/LargeMon.h
         src/model/utility/HealthObserver.h src/model/utility/HealthBarObserver.h src/model/utility/HealthBarObserver.cpp
         src/model/utility/ContrObserver.h src/model/utility/ContrObserver.cpp test/Test.cpp test/Test.h
         src/model/utility/RandomNumber.h src/model/utility/RandomNumber.cpp
-        src/model/Type.h src/model/Type.cpp
+        src/model/largemon/Type.h src/model/largemon/Type.cpp
         src/model/utility/FileWriter.h src/model/utility/FileWriter.cpp src/view/LargeMonMainView.cpp src/view/LargeMonMainView.h src/graphics/GTexture.cpp
         src/graphics/GTexture.h src/graphics/GButtonTexture.cpp src/graphics/GButtonTexture.h src/model/BattleInstance.cpp src/model/BattleInstance.h src/graphics/GProgressBar.cpp src/graphics/GProgressBar.h)
 add_executable(LargeMon ${SOURCE_FILES})

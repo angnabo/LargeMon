@@ -10,57 +10,58 @@ Controller::Controller() {
 
 }
 
-
-int Controller::handleKeyPress(int* selected, int event){
+/**
+ * Changes the colour of selected button, and unselects the no longer selected button
+ * @param selected
+ * @param event
+ * @return
+ */
+int Controller::handleKeyPress(Button * selected, int event){
     switch (event){
-        case SDLK_UP:{
+        case SDLK_UP:
             switch (*selected){
-                case 2:
-                    *selected = 0;
+                case bottom_left :
+                    *selected = top_left;
                     break;
-                case 3:
-                    *selected = 1;
+                case bottom_right :
+                    *selected = top_right;
                     break;
                 default:break;
             }
             return *selected;
-        }
-        case SDLK_RIGHT:{
+        case SDLK_RIGHT:
             switch (*selected){
-                case 0:
-                    *selected = 1;
+                case top_left:
+                    *selected = top_right;
                     break;
-                case 2:
-                    *selected = 3;
+                case bottom_left:
+                    *selected = bottom_right;
                     break;
                 default:break;
             }
             return *selected;
-        }
-        case SDLK_DOWN:{
+        case SDLK_DOWN:
             switch (*selected){
-                case 0:
-                    *selected = 2;
+                case top_left:
+                    *selected = bottom_left;
                     break;
-                case 1:
-                    *selected = 3;
+                case top_right:
+                    *selected = bottom_right;
                     break;
                 default:break;
             }
             return *selected;
-        }
-        case SDLK_LEFT:{
+        case SDLK_LEFT:
             switch (*selected){
-                case 1:
-                    *selected = 0;
+                case top_right:
+                    *selected = top_left;
                     break;
-                case 3:
-                    *selected = 2;
+                case bottom_right:
+                    *selected = bottom_left;
                     break;
                 default:break;
             }
             return *selected;
-        }
         default:break;
     }
     return *selected;
@@ -80,6 +81,7 @@ void Controller::run() {
 
     int pressedButton;
     int selectedButton = 0;
+    Button selected = Button::top_left;
 
     bool quit = false;
 
@@ -87,57 +89,45 @@ void Controller::run() {
     SDL_Event e{};
     //While application is running
     while (!quit) {
-        //Handle events on queue
+        //Handle events
         while (SDL_PollEvent(&e) != 0) {
             //User requests quit
             if (e.type == SDL_QUIT) {
                 quit = true;
             }
-                //On keypress change rgb values
+                // handle key presses
             else if (e.type == SDL_KEYDOWN) {
                 switch (e.key.keysym.sym) {
 
                     //Handle LEFT key press
                     case SDLK_UP:
-                        pressedButton = handleKeyPress(&selectedButton, SDLK_UP);
+                        pressedButton = handleKeyPress(&selected, SDLK_UP);
                         view.updateButtons(pressedButton);
                         break;
                         //Handle RIGHT key press
                     case SDLK_RIGHT:
-                        pressedButton = handleKeyPress(&selectedButton, SDLK_RIGHT);
+                        pressedButton = handleKeyPress(&selected, SDLK_RIGHT);
                         view.updateButtons(pressedButton);
                         break;
                         //Handle DOWN key press
                     case SDLK_DOWN:
-                        pressedButton = handleKeyPress(&selectedButton, SDLK_DOWN);
+                        pressedButton = handleKeyPress(&selected, SDLK_DOWN);
                         view.updateButtons(pressedButton);
                         break;
                         //Handle UP key press
                     case SDLK_LEFT:
-                        pressedButton = handleKeyPress(&selectedButton, SDLK_LEFT);
+                        pressedButton = handleKeyPress(&selected, SDLK_LEFT);
                         view.updateButtons(pressedButton);
                         break;
-
                     default:break;
                 }
                 if(e.key.keysym.sym == SDLK_RETURN){
-
                     string textUpdate;
                     if(!battleInstance.isGameOver()) {
                         textUpdate = battleInstance.action(&selectedButton);
                         view.updateText(textUpdate);
-                        //view.updatePlayerHealthBar(battleInstance.getPlayerLargeMonCurrentHpPercent(),
-                                                   //to_string(battleInstance.getPlayerCurrentHp()));
-
-
-                        //view.updateEnemyHealthBar(battleInstance.getEnemyLargeMonCurrentHpPercent(),
-                                                  //to_string(battleInstance.getEnemyCurrentHp()));
                     } else {
-                        //gBottomPanelFull.render(gRenderer, 10,0);
                         view.updateText(battleInstance.getWinner());
-                        //gBottomTextPanel.free();
-                        //SDL_RenderPresent(gRenderer);
-                        //close();
                     }
                 }
             }
@@ -147,6 +137,9 @@ void Controller::run() {
 
 }
 
+/**
+ * 
+ */
 void Controller::setViewArguments() {
     //view.
     arguments.push_back(battleInstance.getEnemyLargeMonName());

@@ -128,12 +128,6 @@
 		<Unit filename="/home/angelica/Development/Largemon/src/model/LargeMonGenerator.h">
 			<Option target="LargeMon"/>
 		</Unit>
-		<Unit filename="/home/angelica/Development/Largemon/src/model/Type.cpp">
-			<Option target="LargeMon"/>
-		</Unit>
-		<Unit filename="/home/angelica/Development/Largemon/src/model/Type.h">
-			<Option target="LargeMon"/>
-		</Unit>
 		<Unit filename="/home/angelica/Development/Largemon/src/model/largemon/FireLM.cpp">
 			<Option target="LargeMon"/>
 		</Unit>
@@ -144,6 +138,12 @@
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/Largemon/src/model/largemon/LargeMon.h">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/Largemon/src/model/largemon/Type.cpp">
+			<Option target="LargeMon"/>
+		</Unit>
+		<Unit filename="/home/angelica/Development/Largemon/src/model/largemon/Type.h">
 			<Option target="LargeMon"/>
 		</Unit>
 		<Unit filename="/home/angelica/Development/Largemon/src/model/largemon/WaterLM.cpp">

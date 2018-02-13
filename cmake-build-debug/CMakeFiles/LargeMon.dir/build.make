@@ -393,28 +393,28 @@ CMakeFiles/LargeMon.dir/src/model/utility/RandomNumber.cpp.o.provides: CMakeFile
 CMakeFiles/LargeMon.dir/src/model/utility/RandomNumber.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/model/utility/RandomNumber.cpp.o
 
 
-CMakeFiles/LargeMon.dir/src/model/Type.cpp.o: CMakeFiles/LargeMon.dir/flags.make
-CMakeFiles/LargeMon.dir/src/model/Type.cpp.o: ../src/model/Type.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/Largemon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/LargeMon.dir/src/model/Type.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/model/Type.cpp.o -c /home/angelica/Development/Largemon/src/model/Type.cpp
+CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o: CMakeFiles/LargeMon.dir/flags.make
+CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o: ../src/model/largemon/Type.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/angelica/Development/Largemon/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o -c /home/angelica/Development/Largemon/src/model/largemon/Type.cpp
 
-CMakeFiles/LargeMon.dir/src/model/Type.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/model/Type.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/Largemon/src/model/Type.cpp > CMakeFiles/LargeMon.dir/src/model/Type.cpp.i
+CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/angelica/Development/Largemon/src/model/largemon/Type.cpp > CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.i
 
-CMakeFiles/LargeMon.dir/src/model/Type.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/model/Type.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/Largemon/src/model/Type.cpp -o CMakeFiles/LargeMon.dir/src/model/Type.cpp.s
+CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/angelica/Development/Largemon/src/model/largemon/Type.cpp -o CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.s
 
-CMakeFiles/LargeMon.dir/src/model/Type.cpp.o.requires:
+CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o.requires:
 
-.PHONY : CMakeFiles/LargeMon.dir/src/model/Type.cpp.o.requires
+.PHONY : CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o.requires
 
-CMakeFiles/LargeMon.dir/src/model/Type.cpp.o.provides: CMakeFiles/LargeMon.dir/src/model/Type.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/model/Type.cpp.o.provides.build
-.PHONY : CMakeFiles/LargeMon.dir/src/model/Type.cpp.o.provides
+CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o.provides: CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LargeMon.dir/build.make CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o.provides.build
+.PHONY : CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o.provides
 
-CMakeFiles/LargeMon.dir/src/model/Type.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/model/Type.cpp.o
+CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o.provides.build: CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o
 
 
 CMakeFiles/LargeMon.dir/src/model/utility/FileWriter.cpp.o: CMakeFiles/LargeMon.dir/flags.make
@@ -577,7 +577,7 @@ LargeMon_OBJECTS = \
 "CMakeFiles/LargeMon.dir/src/model/utility/ContrObserver.cpp.o" \
 "CMakeFiles/LargeMon.dir/test/Test.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/model/utility/RandomNumber.cpp.o" \
-"CMakeFiles/LargeMon.dir/src/model/Type.cpp.o" \
+"CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/model/utility/FileWriter.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o" \
 "CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o" \
@@ -602,7 +602,7 @@ LargeMon: CMakeFiles/LargeMon.dir/src/model/utility/HealthBarObserver.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/model/utility/ContrObserver.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/test/Test.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/model/utility/RandomNumber.cpp.o
-LargeMon: CMakeFiles/LargeMon.dir/src/model/Type.cpp.o
+LargeMon: CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/model/utility/FileWriter.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o
 LargeMon: CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o
@@ -633,7 +633,7 @@ CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/model/utility/Heal
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/model/utility/ContrObserver.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/test/Test.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/model/utility/RandomNumber.cpp.o.requires
-CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/model/Type.cpp.o.requires
+CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/model/largemon/Type.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/model/utility/FileWriter.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/view/LargeMonMainView.cpp.o.requires
 CMakeFiles/LargeMon.dir/requires: CMakeFiles/LargeMon.dir/src/graphics/GTexture.cpp.o.requires

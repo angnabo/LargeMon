@@ -4,7 +4,7 @@ using namespace std;
 #define LARGEMON_LARGEMON_H
 #include <string>
 #include <vector>
-#include "../Type.h"
+#include "Type.h"
 
 class LargeMon {
 public:
