@@ -7,7 +7,7 @@
 #include <random>
 #include "LargeMonGenerator.h"
 #include "utility/FileWriter.h"
-#include "utility/HealthObserver.h"
+#include "utility/HealthBarObserver.h"
 #include <unistd.h>
 
 BattleInstance::BattleInstance() {

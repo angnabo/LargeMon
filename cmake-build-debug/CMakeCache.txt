@@ -121,7 +121,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=LargeMon
+CMAKE_PROJECT_NAME:STATIC=Largemon
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -177,6 +177,12 @@ LargeMon_BINARY_DIR:STATIC=/home/angelica/Development/Largemon/cmake-build-debug
 
 //Value Computed by CMake
 LargeMon_SOURCE_DIR:STATIC=/home/angelica/Development/Largemon
+
+//Value Computed by CMake
+Largemon_BINARY_DIR:STATIC=/home/angelica/Development/Largemon/cmake-build-debug
+
+//Value Computed by CMake
+Largemon_SOURCE_DIR:STATIC=/home/angelica/Development/Largemon
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
