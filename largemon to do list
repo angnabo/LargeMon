@@ -1,17 +1,22 @@
 LargeMon TO DO:
+important:
+
 [] implement special attacks
     [done] stun
     [] shield
-    [] damage over time
+    [done] damage over time
+
+[] stats bar showing name/type/hp/attack power
+[] replay and exit buttons at end of round
+[] have the sprite change when largemon faints
+[] make new ui buttons
+
 
 
 [] implement saving LargeMon
 
-[] stats bar showing name/type/hp/attack power
-
 [] clean up code :
- 	* view variables in header file
- 	*
+
 
 [] text texture in own class with update method
 

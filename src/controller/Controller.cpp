@@ -138,7 +138,7 @@ void Controller::run() {
 }
 
 /**
- * 
+ *
  */
 void Controller::setViewArguments() {
     //view.

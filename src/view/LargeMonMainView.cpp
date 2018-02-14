@@ -90,18 +90,20 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     textColor = { 0, 0, 0 };
 
     loadUI(gBackgroundTexture, "/home/angelica/Development/Largemon/resources/ui/mountains.png");
-    loadUI(gBottomTextPanel,"/home/angelica/Development/CLion/LargeMon/resources/ui/bottom_panel.bmp" );
-    loadUI(gPlayerHpBarBG,"/home/angelica/Development/CLion/LargeMon/resources/ui/health_bar_bg.bmp" );
-    loadUI(gPlayerHpBarFG,"/home/angelica/Development/CLion/LargeMon/resources/ui/health_bar_fg.bmp" );
-    loadUI(gEnemyHpBarBG,"/home/angelica/Development/CLion/LargeMon/resources/ui/health_bar_bg.bmp" );
-    loadUI(gEnemyHpBarFG,"/home/angelica/Development/CLion/LargeMon/resources/ui/health_bar_fg.bmp" );
+    loadUI(gBottomTextPanel,"/home/angelica/Development/Largemon/resources/ui/bottom_panel.png" );
+    loadUI(gPlayerInfoPanel,"/home/angelica/Development/Largemon/resources/ui/info_panel.png" );
+    loadUI(gEnemyInfoPanel,"/home/angelica/Development/Largemon/resources/ui/info_panel.png" );
+    loadUI(gPlayerHpBarBG,"/home/angelica/Development/Largemon/resources/ui/health_bar_bg.bmp" );
+    loadUI(gPlayerHpBarFG,"/home/angelica/Development/Largemon/resources/ui/health_bar_fg.bmp" );
+    loadUI(gEnemyHpBarBG,"/home/angelica/Development/Largemon/resources/ui/health_bar_bg.bmp" );
+    loadUI(gEnemyHpBarFG,"/home/angelica/Development/Largemon/resources/ui/health_bar_fg.bmp" );
     loadUI(gPlayerSpriteSheetTexture,args[3] );
     loadUI(gEnemySpriteSheetTexture,args[4] );
     //Load Button Textures
-    loadUI(gTopLeftButton, "/home/angelica/Development/CLion/LargeMon/resources/ui/button.bmp");
-    loadUI(gTopRightButton, "/home/angelica/Development/CLion/LargeMon/resources/ui/button.bmp");
-    loadUI(gBottomLeftButton, "/home/angelica/Development/CLion/LargeMon/resources/ui/button.bmp");
-    loadUI(gBottomRightButton, "/home/angelica/Development/CLion/LargeMon/resources/ui/button.bmp");
+    loadUI(gTopLeftButton, "/home/angelica/Development/Largemon/resources/ui/button.png");
+    loadUI(gTopRightButton, "/home/angelica/Development/Largemon/resources/ui/button.png");
+    loadUI(gBottomLeftButton, "/home/angelica/Development/Largemon/resources/ui/button.png");
+    loadUI(gBottomRightButton, "/home/angelica/Development/Largemon/resources/ui/button.png");
     gTopLeftButton.setColor(70, 70, 70);
 
     buttons[0] = gTopLeftButton;
@@ -278,20 +280,24 @@ bool LargeMonMainView::render() {
     //Render background texture to screen
     gBackgroundTexture.render(gRenderer, 0, 0);
 
+    gPlayerInfoPanel.render(gRenderer, 30, 270);
+    gEnemyInfoPanel.render(gRenderer, 430, 227);
+
     //Render player to the screen
     //gPlayerTexture.render(gRenderer, -20, 170);
-    gPlayerSpriteSheetTexture.renderSprite(gRenderer, 20, 190, &gSpriteClips[0]);
+    gPlayerSpriteSheetTexture.renderSprite(gRenderer, 23, 160, &gSpriteClips[0]);
 
     //Render enemy to the screen
     //gEnemyTexture.render(gRenderer, 430, 40);
-    gEnemySpriteSheetTexture.renderSprite(gRenderer, 465, 125, &gSpriteClips[1]);
+    gEnemySpriteSheetTexture.renderSprite(gRenderer, 465, 115, &gSpriteClips[1]);
+
 
     gPlayerHpBarBG.render(gRenderer, 30, 300);
-    gPlayerHpBarFG.render(gRenderer, 31, 301);
+    gPlayerHpBarFG.render(gRenderer, 32, 302);
     gPlayerHealthText.render(gRenderer, 35,301);
 
     gEnemyHpBarBG.render(gRenderer, 480, 237);
-    gEnemyHpBarFG.render(gRenderer, 481, 238);
+    gEnemyHpBarFG.render(gRenderer, 482, 239);
     gEnemyHealthText.render(gRenderer, 485,238);
 
     //Bottom viewport

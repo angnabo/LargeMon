@@ -59,6 +59,9 @@ private:
     GTexture gBottomTextPanel;
     GTexture gBottomPanelFull;
 
+    GTexture gPlayerInfoPanel;
+    GTexture gEnemyInfoPanel;
+
     GTexture gPlayerHpBarBG;
     GProgressBar gPlayerHpBarFG;
     GTexture gPlayerHealthText;
