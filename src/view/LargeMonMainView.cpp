@@ -123,7 +123,7 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     gSpriteClips[ 1 ].h = 120;
 
     //Load ttf pixel font large size
-    gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/fonts/alterebro-pixel-font.ttf", 30 );
+    gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/fonts/alterebro-pixel-font.ttf", PANEL_FONT_SIZE );
     if( gFont == nullptr )
     {
         cout << "Failed to load lazy font! SDL_ttf Error: " << TTF_GetError() << endl;
@@ -137,14 +137,16 @@ bool LargeMonMainView::loadMedia(vector<string> args)
         loadUIText(gPanelText, gFont, args[0]);
     }
     //Open ttf pixel font small size
-    gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/fonts/alterebro-pixel-font.ttf", 20 );
+    gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/fonts/alterebro-pixel-font.ttf", HP_FONT_SIZE );
     if( gHpFont == nullptr )
     {
         cout << "Failed to load lazy font! SDL_ttf Error: " << TTF_GetError() << endl;
         success = false;
     } else {
-        loadUIText(gPlayerHealthText, gHpFont, args[1]);
-        loadUIText(gEnemyHealthText, gHpFont, args[2]);
+        loadUIText(gPlayerHealthText, gHpFont, "/" + args[1]);
+        loadUIText(gEnemyHealthText, gHpFont, "/" + args[2]);
+        loadUIText(gPlayerCurrentHPText, gHpFont, args[1]);
+        loadUIText(gEnemyCurrentHPText, gHpFont, args[2]);
     }
 
     return success;
@@ -152,7 +154,6 @@ bool LargeMonMainView::loadMedia(vector<string> args)
 
 bool LargeMonMainView::updateText(string text)
 {
-    //SDL_Color textColor = { 0, 0, 0 };
     bool success = true;
     if( !loadUIText(gPanelText, gFont, text))
     {
@@ -238,11 +239,6 @@ bool LargeMonMainView::run(vector<string> args) {
 }
 
 void LargeMonMainView::updateButtons(int pressedButton) {
-    //Not selected button colour
-    Uint8 unslct = 255;
-
-    //Selected button colour
-    Uint8 slct = 70;
 
     for(int i = 0; i<4; i++){
         if(i!=pressedButton){
@@ -255,12 +251,12 @@ void LargeMonMainView::updateButtons(int pressedButton) {
 }
 
 void LargeMonMainView::updatePlayerHealthBar(float percent, string hp) {
-    gPlayerHpBarFG.updateProgress(gRenderer, gPlayerHpBarFG, gHpFont, gPlayerHealthText, percent, std::move(hp));
+    gPlayerHpBarFG.updateProgress(gRenderer, gPlayerHpBarFG, gHpFont, gPlayerCurrentHPText, percent, std::move(hp));
     render();
 }
 
 void LargeMonMainView::updateEnemyHealthBar(float percent, string hp) {
-    gEnemyHpBarFG.updateProgress(gRenderer, gEnemyHpBarFG, gHpFont, gEnemyHealthText, percent, std::move(hp));
+    gEnemyHpBarFG.updateProgress(gRenderer, gEnemyHpBarFG, gHpFont, gEnemyCurrentHPText, percent, std::move(hp));
     render();
 }
 
@@ -280,25 +276,28 @@ bool LargeMonMainView::render() {
     //Render background texture to screen
     gBackgroundTexture.render(gRenderer, 0, 0);
 
-    gPlayerInfoPanel.render(gRenderer, 30, 270);
-    gEnemyInfoPanel.render(gRenderer, 430, 227);
+    gPlayerInfoPanel.render(gRenderer, 30, 170);
+
+    gEnemyInfoPanel.render(gRenderer, 390, 90);
 
     //Render player to the screen
-    //gPlayerTexture.render(gRenderer, -20, 170);
-    gPlayerSpriteSheetTexture.renderSprite(gRenderer, 23, 160, &gSpriteClips[0]);
+    gPlayerSpriteSheetTexture.renderSprite(gRenderer, 60, 200, &gSpriteClips[0]);
 
     //Render enemy to the screen
-    //gEnemyTexture.render(gRenderer, 430, 40);
-    gEnemySpriteSheetTexture.renderSprite(gRenderer, 465, 115, &gSpriteClips[1]);
+    gEnemySpriteSheetTexture.renderSprite(gRenderer, 430, 115, &gSpriteClips[1]);
 
 
-    gPlayerHpBarBG.render(gRenderer, 30, 300);
-    gPlayerHpBarFG.render(gRenderer, 32, 302);
-    gPlayerHealthText.render(gRenderer, 35,301);
+    gPlayerHpBarBG.render(gRenderer, 44, 180);
+    gPlayerHpBarFG.render(gRenderer, 46, 182);
 
-    gEnemyHpBarBG.render(gRenderer, 480, 237);
-    gEnemyHpBarFG.render(gRenderer, 482, 239);
-    gEnemyHealthText.render(gRenderer, 485,238);
+    gPlayerCurrentHPText.render(gRenderer, 48, 200);
+    gPlayerHealthText.render(gRenderer, 72, 200);
+
+    gEnemyHpBarBG.render(gRenderer, 404, 100);
+    gEnemyHpBarFG.render(gRenderer, 406, 102);
+
+    gEnemyCurrentHPText.render(gRenderer, 408, 120);
+    gEnemyHealthText.render(gRenderer, 432, 120);
 
     //Bottom viewport
     SDL_Rect bottomViewport{};
@@ -312,9 +311,6 @@ bool LargeMonMainView::render() {
 
     gBottomTextPanel.render(gRenderer, 10, 0);
     gPanelText.render(gRenderer,30, 10);
-
-    int X_BUTTON_OFFSET = 270;
-    int Y_BUTTON_OFFSET = 20;
 
     gTopLeftButton.render(gRenderer, X_BUTTON_OFFSET, Y_BUTTON_OFFSET);
     gTopRightButton.render(gRenderer, SCREEN_WIDTH - gTopRightButton.getWidth()-10, Y_BUTTON_OFFSET);

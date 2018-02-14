@@ -31,6 +31,16 @@ private:
     const int SCREEN_WIDTH = 640;
     const int SCREEN_HEIGHT = 480;
 
+    const int PANEL_FONT_SIZE = 30;
+    const int HP_FONT_SIZE  = 27;
+    //Unselected button colour
+    Uint8 unslct = 255;
+    //Selected button colour
+    Uint8 slct = 70;
+
+    int X_BUTTON_OFFSET = 270;
+    int Y_BUTTON_OFFSET = 20;
+
 //Globally used font
     TTF_Font *gFont = NULL;
     TTF_Font *gHpFont = NULL;
@@ -64,11 +74,13 @@ private:
 
     GTexture gPlayerHpBarBG;
     GProgressBar gPlayerHpBarFG;
+    GTexture gPlayerCurrentHPText;
     GTexture gPlayerHealthText;
 
     GTexture gEnemyHpBarBG;
     GProgressBar gEnemyHpBarFG;
     GTexture gEnemyHealthText;
+    GTexture gEnemyCurrentHPText;
 
     GTexture gTopLeftButtonText;
     GTexture gTopRightButtonText;
