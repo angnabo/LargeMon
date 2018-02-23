@@ -54,6 +54,10 @@ private:
     vector<string> enemyArgs;
     vector<class ContrObserver *> views;
     BattleHelper *helper;
+
+    string move(Largemon *lm, int move);
+
+    string setAttackArgs(Largemon *lm);
 };
 
 
