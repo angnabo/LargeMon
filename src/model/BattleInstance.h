@@ -6,58 +6,54 @@ using namespace std;
 
 #include <string>
 #include <vector>
-#include "largemon/LargeMon.h"
-
+#include "largemon/Largemon.h"
+#include "BattleHelper.h"
 
 class BattleInstance {
 public:
     BattleInstance();
-    string action(int *);
+    string action(int);
     string enemyMove();
     int randomInRange(int, int);
-    bool determineCounter(LargeMon *, LargeMon *);
+    bool determineCounter(Largemon *, Largemon *);
     bool isGameOver();
     bool isEnemyDead();
     bool isPlayerDead();
     int getPlayerCurrentHp();
     int getEnemyCurrentHp();
     int getRound();
-    float getEnemyLargeMonCurrentHpPercent();
-    float getPlayerLargeMonCurrentHpPercent();
-    string getEnemyLargeMonName();
-    string getPlayerLargeMonName();
+    float getEnemyLargemonCurrentHpPercent();
+    float getPlayerLargemonCurrentHpPercent();
+    string getEnemyLargemonName();
+    string getPlayerLargemonName();
     string getWinner();
     virtual ~BattleInstance();
-
-    void specialAttack(LargeMon *);
-    string specialAbility(LargeMon *);
-
-    void finishTurn(LargeMon *lm);
-
-    LargeMon * getPlayerPtr();
-    LargeMon * getEnemyPtr();
-
-    LargeMon * getEnemyOf(LargeMon *);
-
+    vector<string> * getPlayerArgs();
+    vector<string> * getEnemyArgs();
+    string defend(Largemon *lm);
+    string attack(Largemon *lm);
+    int applyShield(int damage);
+    string specialAttack(Largemon *);
+    string specialAbility(Largemon *);
+    void finishTurn(Largemon *lm);
+    Largemon * getPlayerPtr();
+    Largemon * getEnemyPtr();
+    Largemon * getEnemyOf(Largemon *);
     void attach(class ContrObserver *);
-    void notify(LargeMon *, vector<string>);
+    void notify(Largemon *, vector<string>);
+    string attackWaterLm(Largemon *to, int damage);
+    bool isSpecAttack(Largemon *lm);
+    string setSpecAttackArgs(Largemon *lm);
 private:
-    LargeMon * player;
-    LargeMon * enemy;
+    Largemon * player;
+    Largemon * enemy;
     int playerSpecAttkCount;
-    int enemySpecAttkCounter;
+    int enemySpecAttkCount;
     int round;
     vector<string> playerArgs;
     vector<string> enemyArgs;
-    //FileWriter * playerWriter;
-    //FileWriterObserver * enemyWriter;
-    //LargeMon * playerPtr;
-    bool isOver;
     vector<class ContrObserver *> views;
-
-    string defend(LargeMon *lm);
-
-    string attack(LargeMon *lm);
+    BattleHelper *helper;
 };
 
 

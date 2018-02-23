@@ -6,10 +6,10 @@
 #define LARGEMON_WATERLM_H
 
 
-#include "LargeMon.h"
+#include "Largemon.h"
 
 
-class WaterLM: public LargeMon {
+class WaterLM: public Largemon {
 public:
     WaterLM(const int *hp, const int *damage, const int *size, const string *);
 
@@ -24,6 +24,7 @@ public:
 
 private:
     int shieldCount;
+
 
 };
 

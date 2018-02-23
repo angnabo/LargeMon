@@ -3,19 +3,22 @@ project(Largemon)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
-set(SOURCE_FILES src/model/largemon/LargeMon.cpp src/model/largemon/LargeMon.h
+set(SOURCE_FILES src/model/largemon/Largemon.cpp src/model/largemon/Largemon.h
         src/main.cpp src/main.h
-        src/model/LargeMonGenerator.cpp src/model/LargeMonGenerator.h
+        src/model/LargemonGenerator.cpp src/model/LargemonGenerator.h
         src/model/utility/DescriptGen.cpp src/model/utility/DescriptGen.h src/controller/Controller.cpp
         src/controller/Controller.h src/model/largemon/WaterLM.cpp src/model/largemon/WaterLM.h
         src/model/largemon/FireLM.cpp src/model/largemon/FireLM.h src/model/largemon/WoodLM.cpp
-        src/model/largemon/WoodLM.h src/model/utility/Observer.cpp src/model/utility/Observer.h src/model/utility/HealthBarObserver.cpp
-        src/model/utility/HealthBarObserver.h
+        src/model/largemon/WoodLM.h src/model/utility/Observer.cpp src/model/utility/Observer.h
+        src/model/utility/HealthBarObserver.cpp src/model/utility/HealthBarObserver.h
         src/model/utility/ContrObserver.h src/model/utility/ContrObserver.cpp test/Test.cpp test/Test.h
         src/model/utility/RandomNumber.h src/model/utility/RandomNumber.cpp
         src/model/largemon/Type.h src/model/largemon/Type.cpp
-        src/model/utility/FileWriter.h src/model/utility/FileWriter.cpp src/view/LargeMonMainView.cpp src/view/LargeMonMainView.h src/graphics/GTexture.cpp
-        src/graphics/GTexture.h src/graphics/GButtonTexture.cpp src/graphics/GButtonTexture.h src/model/BattleInstance.cpp src/model/BattleInstance.h src/graphics/GProgressBar.cpp src/graphics/GProgressBar.h)
+        src/model/utility/FileWriter.h src/model/utility/FileWriter.cpp
+        src/view/LargemonMainView.cpp src/view/LargemonMainView.h src/graphics/GTexture.cpp
+        src/graphics/GTexture.h src/graphics/GButtonTexture.cpp src/graphics/GButtonTexture.h
+        src/model/BattleHelper.h src/model/BattleHelper.cpp
+        src/model/BattleInstance.cpp src/model/BattleInstance.h src/graphics/GProgressBar.cpp src/graphics/GProgressBar.h)
 add_executable(Largemon ${SOURCE_FILES})
 
 target_link_libraries(Largemon SDL2 SDL2_ttf SDL2_image)

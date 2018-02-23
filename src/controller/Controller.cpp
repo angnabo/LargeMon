@@ -124,7 +124,7 @@ void Controller::run() {
                 if(e.key.keysym.sym == SDLK_RETURN){
                     string textUpdate;
                     if(!battleInstance.isGameOver()) {
-                        textUpdate = battleInstance.action(&selectedButton);
+                        textUpdate = battleInstance.action(selected);
                         view.updateText(textUpdate);
                     } else {
                         view.updateText(battleInstance.getWinner());
@@ -142,21 +142,21 @@ void Controller::run() {
  */
 void Controller::setViewArguments() {
     //view.
-    arguments.push_back(battleInstance.getEnemyLargeMonName());
+    arguments.push_back(battleInstance.getEnemyLargemonName());
     arguments.push_back(to_string(battleInstance.getPlayerCurrentHp()));
     arguments.push_back(to_string(battleInstance.getEnemyCurrentHp()));
-    arguments.push_back(getLargemonSpritePath(battleInstance.getPlayerLargeMonName()));
-    arguments.push_back(getLargemonSpritePath(battleInstance.getEnemyLargeMonName()));
+    arguments.push_back(getLargemonSpritePath(battleInstance.getPlayerLargemonName()));
+    arguments.push_back(getLargemonSpritePath(battleInstance.getEnemyLargemonName()));
 }
 
 string Controller::getLargemonSpritePath(string type) {
     string path;
     if(type == "Fire Troll"){
-        path = "/home/angelica/Development/CLion/LargeMon/resources/sprites/fire_troll_sprite_sheet.png";
+        path = "/home/angelica/Development/Largemon/resources/sprites/fire_troll_sprite_sheet.png";
     } else if(type == "Water Troll"){
-        path = "/home/angelica/Development/CLion/LargeMon/resources/sprites/water_troll_sprite_sheet.png";
+        path = "/home/angelica/Development/Largemon/resources/sprites/water_troll_sprite_sheet.png";
     }else{
-        path = "/home/angelica/Development/CLion/LargeMon/resources/sprites/wood_troll_sprite_sheet.png";
+        path = "/home/angelica/Development/Largemon/resources/sprites/wood_troll_sprite_sheet.png";
     }
     return path;
 }

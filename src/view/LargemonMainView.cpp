@@ -13,11 +13,11 @@
 #include "../graphics/GButtonTexture.h"
 #include "../model/BattleInstance.h"
 #include "../model/utility/FileWriter.h"
-#include "LargeMonMainView.h"
+#include "LargemonMainView.h"
 
 
 
-bool LargeMonMainView::init()
+bool LargemonMainView::init()
 {
     //Initialization flag
     bool success = true;
@@ -63,7 +63,7 @@ bool LargeMonMainView::init()
     return success;
 }
 
-bool LargeMonMainView::loadUI(GTexture & texture, string path){
+bool LargemonMainView::loadUI(GTexture & texture, string path){
     bool success = true;
     if( !texture.loadFromFile(gRenderer, std::move(path)) )
     {
@@ -73,7 +73,7 @@ bool LargeMonMainView::loadUI(GTexture & texture, string path){
     return success;
 }
 
-bool LargeMonMainView::loadUIText(GTexture & texture, TTF_Font * font, std::string text){
+bool LargemonMainView::loadUIText(GTexture & texture, TTF_Font * font, std::string text){
     bool success = true;
     if( !texture.loadFont(gRenderer, font, text, textColor) )
     {
@@ -83,7 +83,7 @@ bool LargeMonMainView::loadUIText(GTexture & texture, TTF_Font * font, std::stri
     return success;
 }
 
-bool LargeMonMainView::loadMedia(vector<string> args)
+bool LargemonMainView::loadMedia(vector<string> args)
 {
     //Loading success flag
     bool success = true;
@@ -123,7 +123,7 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     gSpriteClips[ 1 ].h = 120;
 
     //Load ttf pixel font large size
-    gFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/fonts/alterebro-pixel-font.ttf", PANEL_FONT_SIZE );
+    gFont = TTF_OpenFont( "/home/angelica/Development/Largemon/resources/fonts/alterebro-pixel-font.ttf", PANEL_FONT_SIZE );
     if( gFont == nullptr )
     {
         cout << "Failed to load lazy font! SDL_ttf Error: " << TTF_GetError() << endl;
@@ -137,7 +137,7 @@ bool LargeMonMainView::loadMedia(vector<string> args)
         loadUIText(gPanelText, gFont, args[0]);
     }
     //Open ttf pixel font small size
-    gHpFont = TTF_OpenFont( "/home/angelica/Development/CLion/LargeMon/resources/fonts/alterebro-pixel-font.ttf", HP_FONT_SIZE );
+    gHpFont = TTF_OpenFont( "/home/angelica/Development/Largemon/resources/fonts/alterebro-pixel-font.ttf", HP_FONT_SIZE );
     if( gHpFont == nullptr )
     {
         cout << "Failed to load lazy font! SDL_ttf Error: " << TTF_GetError() << endl;
@@ -152,7 +152,7 @@ bool LargeMonMainView::loadMedia(vector<string> args)
     return success;
 }
 
-bool LargeMonMainView::updateText(string text)
+bool LargemonMainView::updateText(string text)
 {
     bool success = true;
     if( !loadUIText(gPanelText, gFont, text))
@@ -172,7 +172,7 @@ SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
     return col;
 }
 
-void LargeMonMainView::close()
+void LargemonMainView::close()
 {
     //Free loaded images
     gPlayerTexture.free();
@@ -223,7 +223,7 @@ void LargeMonMainView::close()
     SDL_Quit();
 }
 
-bool LargeMonMainView::run(vector<string> args) {
+bool LargemonMainView::run(vector<string> args) {
 
     //Start up SDL and create window
     if (!init()) {
@@ -238,7 +238,7 @@ bool LargeMonMainView::run(vector<string> args) {
     return true;
 }
 
-void LargeMonMainView::updateButtons(int pressedButton) {
+void LargemonMainView::updateButtons(int pressedButton) {
 
     for(int i = 0; i<4; i++){
         if(i!=pressedButton){
@@ -250,17 +250,17 @@ void LargeMonMainView::updateButtons(int pressedButton) {
 
 }
 
-void LargeMonMainView::updatePlayerHealthBar(float percent, string hp) {
+void LargemonMainView::updatePlayerHealthBar(float percent, string hp) {
     gPlayerHpBarFG.updateProgress(gRenderer, gPlayerHpBarFG, gHpFont, gPlayerCurrentHPText, percent, std::move(hp));
     render();
 }
 
-void LargeMonMainView::updateEnemyHealthBar(float percent, string hp) {
+void LargemonMainView::updateEnemyHealthBar(float percent, string hp) {
     gEnemyHpBarFG.updateProgress(gRenderer, gEnemyHpBarFG, gHpFont, gEnemyCurrentHPText, percent, std::move(hp));
     render();
 }
 
-bool LargeMonMainView::render() {
+bool LargemonMainView::render() {
     SDL_RenderClear(gRenderer);
     SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 

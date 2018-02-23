@@ -3,7 +3,7 @@
 //
 
 #include "ContrObserver.h"
-#include "../largemon/LargeMon.h"
+#include "../largemon/Largemon.h"
 
 using namespace std;
 #ifndef LARGEMON_FILEWRITER_H
@@ -17,7 +17,7 @@ public:
 
 
     void writeToFile() const;
-    void update(LargeMon *, vector<string>) const ;
+    void update(Largemon *, vector<string>) const ;
 private:
     //int health = 0;
     string name;

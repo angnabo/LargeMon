@@ -5,7 +5,7 @@
 
 #include "HealthBarObserver.h"
 
-HealthObserver::HealthObserver(LargeMon *lm, LargeMonMainView * viewPtr) : Observer(lm) {
+HealthObserver::HealthObserver(Largemon *lm, LargemonMainView * viewPtr) : Observer(lm) {
     view = viewPtr;
 }
 

@@ -8,11 +8,11 @@
 #include <iostream>
 #include <fstream>
 #include "Observer.h"
-#include "../../view/LargeMonMainView.h"
+#include "../../view/LargemonMainView.h"
 
 class HealthObserver : public Observer{
 public:
-    HealthObserver(LargeMon *, LargeMonMainView *);
+    HealthObserver(Largemon *, LargemonMainView *);
     //virtual ~HealthObserver() = default;
 
     void update() const override;
@@ -21,7 +21,7 @@ private:
     string name;
     int health;
     ofstream outLogFile;
-    LargeMonMainView * view;
+    LargemonMainView * view;
     float hpPercent;
 };
 

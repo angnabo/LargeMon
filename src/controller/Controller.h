@@ -6,7 +6,7 @@
 #define LARGEMON_CONTROLLER_H
 
 #include "../model/BattleInstance.h"
-#include "../view/LargeMonMainView.h"
+#include "../view/LargemonMainView.h"
 #include "../model/utility/HealthBarObserver.h"
 
 using namespace std;
@@ -15,10 +15,10 @@ public:
     Controller();
 
     enum Button{
-        top_left,
-        top_right,
-        bottom_left,
-        bottom_right
+        top_left = 0,
+        top_right = 1,
+        bottom_left = 2,
+        bottom_right = 3
     };
 
     void run();
@@ -30,7 +30,7 @@ private:
     //model
     BattleInstance battleInstance;
     //view
-    LargeMonMainView view;
+    LargemonMainView view;
     vector <string> arguments;
 
 };

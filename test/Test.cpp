@@ -10,6 +10,6 @@ void Test::test(){
 
     int i = 0;
     while(!battle.isGameOver()){
-        battle.action(&i);
+        battle.action(i);
     }
 }

@@ -5,9 +5,9 @@
 #ifndef LARGEMON_FIRELM_H
 #define LARGEMON_FIRELM_H
 
-#include "LargeMon.h"
+#include "Largemon.h"
 
-class FireLM: public LargeMon {
+class FireLM: public Largemon {
 public:
     FireLM(const int *, const int *, const int *, const string *);
 

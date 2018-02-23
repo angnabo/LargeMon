@@ -3,12 +3,12 @@
 //
 
 #include <iostream>
-#include "LargeMon.h"
+#include "Largemon.h"
 #include "../utility/Observer.h"
 
 //using namespace std;
 
-LargeMon::LargeMon(const int* hp, const int* damage, const int* size, const string * name){
+Largemon::Largemon(const int* hp, const int* damage, const int* size, const string * name){
     this->name = *name;
     this->hp = *hp;
     this->currentHp = *hp;
@@ -18,11 +18,11 @@ LargeMon::LargeMon(const int* hp, const int* damage, const int* size, const stri
     //this->type = type;
 }
 
-string LargeMon::getName() const {
+string Largemon::getName() const {
     return name;
 }
 
-void LargeMon::takeDamage(int damage) {
+void Largemon::takeDamage(int damage) {
     currentHp -= damage;
     if(currentHp < 0){
         currentHp = 0;
@@ -30,12 +30,12 @@ void LargeMon::takeDamage(int damage) {
     notify();
 }
 
-int LargeMon::getDamage() {
+int Largemon::getDamage() {
     lastAction = "Attack";
     return damage;
 }
 
-void LargeMon::defend(){
+void Largemon::defend(){
     currentHp += 20;
     if(currentHp > hp){
         currentHp = hp;
@@ -44,76 +44,76 @@ void LargeMon::defend(){
     notify();
 }
 
-float LargeMon::getCurrentHpPercent(){
+float Largemon::getCurrentHpPercent(){
     float hpPercent = (float)getCurrentHp()/(float)getHp();//25/50*100
     return hpPercent;
 }
 
-int LargeMon::specialAttack() const {
+int Largemon::specialAttack() const {
     return 0;
 }
 
-std::string LargeMon::getLastAction() {
+std::string Largemon::getLastAction() {
     return lastAction;
 }
 
-void LargeMon::notify() {
+void Largemon::notify() {
     for (int i = 0; i < views.size(); i++){
         views[i]->update();
     }
 }
 
-void LargeMon::stun(int count){
+void Largemon::stun(int count){
     stunCount = count;
 }
 
-void LargeMon::decrementStun() {
+void Largemon::decrementStun() {
     if(stunCount > 0){
         stunCount--;
     }
 }
 
-bool LargeMon::isStunned(){
+bool Largemon::isStunned(){
     return (stunCount != 0);
 }
 
-void LargeMon::attach(Observer * obs) {
+void Largemon::attach(Observer * obs) {
     views.push_back(obs);
 }
 
-void LargeMon::setAsPlayer() {
+void Largemon::setAsPlayer() {
     isLmPlayer = true;
 }
 
-bool LargeMon::isPlayer() {
+bool Largemon::isPlayer() {
     return isLmPlayer;
 }
 
-void LargeMon::takeTickDamage(int count) {
+void Largemon::takeTickDamage(int count) {
     tickDmgCount = count;
 }
 
-void LargeMon::applyTickDamage(int damage){
+void Largemon::applyTickDamage(int damage){
     if(tickDmgCount > 0) {
         takeDamage(damage);
         decrementTickCount();
     }
 }
 
-bool LargeMon::isTakingTickDamage(){
+bool Largemon::isTakingTickDamage(){
     return (tickDmgCount != 0);
 }
 
-void LargeMon::decrementTickCount() {
+void Largemon::decrementTickCount() {
     if(tickDmgCount > 0) {
         tickDmgCount--;
     }
 }
 
 
-LargeMon::~LargeMon() = default;
+Largemon::~Largemon() = default;
 
-//string LargeMon::getType() {
+//string Largemon::getType() {
 //    return "";
 //}
 

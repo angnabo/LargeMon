@@ -13,7 +13,7 @@
 
 using namespace std;
 
-class LargeMonMainView {
+class LargemonMainView {
 public:
     bool init();
     bool loadMedia(vector<string>);

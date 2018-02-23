@@ -27,14 +27,14 @@ FileWriter::FileWriter(BattleInstance *btl) : ContrObserver(btl) {
 }
 
 
-void FileWriter::update(LargeMon * lm, vector<string> args) const {
+void FileWriter::update(Largemon * lm, vector<string> args) const {
     if(!args.empty()) {
         ofstream outLogFile(filePath, ios::app);
         if (!outLogFile) {
             cerr << "File could not be opened" << endl;
             exit(1);
         }
-        outLogFile << "Turn: " << battle->getRound() << ". " << args[0] << " LargeMon: " << lm->getName() << " Action: "
+        outLogFile << "Turn: " << battle->getRound() << ". " << args[0] << " Largemon: " << lm->getName() << " Action: "
                    << args[1] <<
 
                    " Health: " << lm->getCurrentHp() << endl;

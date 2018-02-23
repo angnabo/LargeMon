@@ -5,7 +5,7 @@
 #ifndef LARGEMON_LARGEMONGENERATOR_H
 #define LARGEMON_LARGEMONGENERATOR_H
 
-#include "largemon/LargeMon.h"
+#include "largemon/Largemon.h"
 #include "largemon/WaterLM.h"
 #include "largemon/FireLM.h"
 #include "largemon/WoodLM.h"
@@ -15,10 +15,10 @@
 
 using namespace std;
 
-class LargeMonGenerator {
+class LargemonGenerator {
 public:
-    LargeMonGenerator();
-    LargeMon * generateLargeMon();
+    LargemonGenerator();
+    Largemon * generateLargemon();
     string generateName(Type);
     int getDamage(int health);
 private:

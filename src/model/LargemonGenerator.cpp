@@ -3,11 +3,11 @@
 //
 
 #include <iostream>
-#include "LargeMonGenerator.h"
+#include "LargemonGenerator.h"
 
-LargeMonGenerator::LargeMonGenerator() = default;
+LargemonGenerator::LargemonGenerator() = default;
 
-LargeMon * LargeMonGenerator::generateLargeMon() {
+Largemon * LargemonGenerator::generateLargemon() {
 
     // get health points
     int health = RandomNumber::randomInRange(MIN_HEALTH, MAX_HEALTH);
@@ -41,7 +41,7 @@ LargeMon * LargeMonGenerator::generateLargeMon() {
     }
 }
 
-int LargeMonGenerator::getDamage(int health){
+int LargemonGenerator::getDamage(int health){
     int damage;
     if (health < DAMAGE_FACTOR){
         damage = RandomNumber::randomInRange(MIN_DMG_IF_HEALTH_LOW, MAX_DMG_IF_HEALTH_LOW);
@@ -51,7 +51,7 @@ int LargeMonGenerator::getDamage(int health){
     return damage;
 }
 
-string LargeMonGenerator::generateName(Type type) {
+string LargemonGenerator::generateName(Type type) {
     string name;
     switch(type){
         case Type::fire :
