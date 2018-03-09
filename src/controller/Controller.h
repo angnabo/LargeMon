@@ -33,6 +33,11 @@ private:
     LargemonMainView view;
     vector <string> arguments;
 
+    string getTypeSprite(string type);
+
+    string getLargemonPath(string type);
+
+    string getTypePath(string type);
 };
 
 

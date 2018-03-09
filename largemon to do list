@@ -1,26 +1,35 @@
 Largemon TO DO:
+
+SUPER IMPORTANT:
+
+[] largemon description displayed at the beginning
+[]
+
+
 important:
 
-[] implement special attacks
-    [done] stun
-    [] shield
-    [done] damage over time
-
-[] stats bar showing name/type/hp/attack power
 [] replay and exit buttons at end of round
+
+[] stats bar showing name/type/hp/attack power/status(stunned/shielded etc.)
+    [] design an icon for:
+        [] stunned
+        [] on fire
+        [] shielded
+
+    [] design an icon for each largemon type
+
+[] implement other largemon creatures(goblin, dragon)
+
+
 [] have the sprite change when largemon faints
-[] make new ui buttons
 
 
 
 [] implement saving Largemon
 
 [] clean up code :
-
-
-[] text texture in own class with update method
-
-[] make a view interface with pure virtual methods like close, init, main
+    [] text texture in own class with update method
+    [] make a view interface with pure virtual methods like close, init, main
 
 Done:
 [done] have a wait time of a second between player turn and enemy counter attack
@@ -38,6 +47,11 @@ Done:
 [done] reorganize resources directory
 [done] make handle key presses one method
 [done] hp bar in own class with update method
+[done] implement special attacks
+    [done] stun
+    [done] shield
+    [done] damage over time
+[done] make new ui buttons
 
 
 

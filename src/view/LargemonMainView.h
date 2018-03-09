@@ -72,6 +72,9 @@ private:
     GTexture gPlayerInfoPanel;
     GTexture gEnemyInfoPanel;
 
+    GTexture gPlayerTypeIcon;
+    GTexture gEnemyTypeIcon;
+
     GTexture gPlayerHpBarBG;
     GProgressBar gPlayerHpBarFG;
     GTexture gPlayerCurrentHPText;

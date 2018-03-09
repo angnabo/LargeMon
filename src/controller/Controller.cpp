@@ -145,11 +145,14 @@ void Controller::setViewArguments() {
     arguments.push_back(battleInstance.getEnemyLargemonName());
     arguments.push_back(to_string(battleInstance.getPlayerCurrentHp()));
     arguments.push_back(to_string(battleInstance.getEnemyCurrentHp()));
-    arguments.push_back(getLargemonSpritePath(battleInstance.getPlayerLargemonName()));
-    arguments.push_back(getLargemonSpritePath(battleInstance.getEnemyLargemonName()));
+    arguments.push_back(getLargemonPath(battleInstance.getPlayerLargemonName()));
+    arguments.push_back(getLargemonPath(battleInstance.getEnemyLargemonName()));
+    arguments.push_back(getTypePath(battleInstance.getPlayerLargemonName()));
+    arguments.push_back(getTypePath(battleInstance.getEnemyLargemonName()));
+
 }
 
-string Controller::getLargemonSpritePath(string type) {
+string Controller::getLargemonPath(string type) {
     string path;
     if(type == "Fire Troll"){
         path = "/home/angelica/Development/Largemon/resources/sprites/fire_troll_sprite_sheet.png";
@@ -157,6 +160,18 @@ string Controller::getLargemonSpritePath(string type) {
         path = "/home/angelica/Development/Largemon/resources/sprites/water_troll_sprite_sheet.png";
     }else{
         path = "/home/angelica/Development/Largemon/resources/sprites/wood_troll_sprite_sheet.png";
+    }
+    return path;
+}
+
+string Controller::getTypePath(string type) {
+    string path;
+    if(type == "Fire Troll"){
+        path = "/home/angelica/Development/Largemon/resources/ui/fire_type_icon.png";
+    } else if(type == "Water Troll"){
+        path = "/home/angelica/Development/Largemon/resources/ui/water_type_icon.png";
+    }else{
+        path = "/home/angelica/Development/Largemon/resources/ui/wood_type_icon.png";
     }
     return path;
 }

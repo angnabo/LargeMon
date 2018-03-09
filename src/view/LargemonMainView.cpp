@@ -97,8 +97,14 @@ bool LargemonMainView::loadMedia(vector<string> args)
     loadUI(gPlayerHpBarFG,"/home/angelica/Development/Largemon/resources/ui/health_bar_fg.bmp" );
     loadUI(gEnemyHpBarBG,"/home/angelica/Development/Largemon/resources/ui/health_bar_bg.bmp" );
     loadUI(gEnemyHpBarFG,"/home/angelica/Development/Largemon/resources/ui/health_bar_fg.bmp" );
+
     loadUI(gPlayerSpriteSheetTexture,args[3] );
     loadUI(gEnemySpriteSheetTexture,args[4] );
+
+    loadUI(gPlayerTypeIcon,args[5] );
+    loadUI(gEnemyTypeIcon,args[6] );
+
+
     //Load Button Textures
     loadUI(gTopLeftButton, "/home/angelica/Development/Largemon/resources/ui/button.png");
     loadUI(gTopRightButton, "/home/angelica/Development/Largemon/resources/ui/button.png");
@@ -287,6 +293,7 @@ bool LargemonMainView::render() {
     gEnemySpriteSheetTexture.renderSprite(gRenderer, 430, 115, &gSpriteClips[1]);
 
 
+    // render information panel content
     gPlayerHpBarBG.render(gRenderer, 44, 180);
     gPlayerHpBarFG.render(gRenderer, 46, 182);
 
@@ -298,6 +305,9 @@ bool LargemonMainView::render() {
 
     gEnemyCurrentHPText.render(gRenderer, 408, 120);
     gEnemyHealthText.render(gRenderer, 432, 120);
+
+    gPlayerTypeIcon.render(gRenderer, 44, 137);
+    gEnemyTypeIcon.render(gRenderer, 404, 57);
 
     //Bottom viewport
     SDL_Rect bottomViewport{};
