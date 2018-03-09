@@ -8,6 +8,7 @@
 #include "../model/BattleInstance.h"
 #include "../view/LargemonMainView.h"
 #include "../model/utility/HealthBarObserver.h"
+#include <iostream>
 
 using namespace std;
 class Controller {
@@ -24,7 +25,10 @@ public:
     void run();
     int handleKeyPress(Button *, int);
     void setViewArguments();
-    string getLargemonSpritePath(string);
+    string getLargemonPath(string type);
+
+    string getTypePath(string type);
+
 
 private:
     //model
@@ -33,11 +37,7 @@ private:
     LargemonMainView view;
     vector <string> arguments;
 
-    string getTypeSprite(string type);
 
-    string getLargemonPath(string type);
-
-    string getTypePath(string type);
 };
 
 

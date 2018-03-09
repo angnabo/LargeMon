@@ -31,9 +31,9 @@ private:
     const int MIN_SIZE = 1;
     const int MAX_SIZE = 10;
     const int DAMAGE_FACTOR = 300;
-    vector<string> fireNames = {"Fire Troll"};
-    vector<string> waterNames = {"Water Troll"};
-    vector<string> woodNames = {"Wood Troll"};
+    vector<string> fireNames = {"fire troll"};
+    vector<string> waterNames = {"water troll"};
+    vector<string> woodNames = {"wood troll"};
 };
 
 

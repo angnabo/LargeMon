@@ -3,6 +3,7 @@
 //
 #include <string>
 #include <vector>
+#include "../largemon/Largemon.h"
 
 using namespace std;
 
@@ -11,11 +12,16 @@ using namespace std;
 
 class DescriptGen {
 public:
-    DescriptGen( string, int);
-    string getDescription();
+    DescriptGen();
+    string getAbility(Type type);
+    string getAttack(Type type);
+    string getDescription(Largemon *lm);
 private:
-    string description;
     vector<string> form;
+
+    string getAttack(Largemon *lm);
+
+    string getAbility(Largemon *lm);
 };
 
 //A large/small fire/water/wood dragon/furry/lizard/etc largemon, with a powerful watershot/firebalst/smash attack

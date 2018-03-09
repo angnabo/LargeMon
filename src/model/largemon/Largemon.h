@@ -63,6 +63,7 @@ protected:
     int stunCount;
 
 
+    //string getType();
 };
 
 #endif
