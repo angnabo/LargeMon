@@ -113,7 +113,7 @@ void Largemon::decrementTickCount() {
 
 Largemon::~Largemon() = default;
 
-string Largemon::getType() {
-    return "";
-}
+//string Largemon::getType() {
+//    return "";
+//}
 

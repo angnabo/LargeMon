@@ -61,9 +61,11 @@ string BattleInstance::move(Largemon * lm, int move){
             case 3: //special ability
                 action = specialAbility(lm);
                 enemyArgs[1] = "Stunned";
+                break;
             default:
                 action = attack(lm);
                 setAttackArgs(lm);
+                break;
         }
     }
     return action;
@@ -104,6 +106,41 @@ string BattleInstance::specialAttack(Largemon * lm) {
         action = lm->isPlayer() ? "Your largemon is exhausted. It did a normal attack. "
                                 : "";
         attack(lm);
+    }
+    if(lm->isPlayer()){
+        playerSpecAttkCount++;
+    } else {
+        enemySpecAttkCount++;
+    }
+    return action;
+}
+
+/*
+ * Does the special attack for a given largemon against it's enemy.
+ */
+string BattleInstance::specialAbility(Largemon * lm) {
+    string action;
+    Type largemon = lm->getType();
+    Largemon * en = getEnemyOf(lm);
+
+    switch(largemon){
+        case Type::fire : {
+            en->takeTickDamage(3);
+            action = lm->isPlayer() ? "Your largemon is damaging enemy over time. "
+                                    : "You are being damaged over time. ";
+            break;
+        }
+        case Type::water : {
+            auto *wlm = dynamic_cast<WaterLM *> (lm);
+            wlm->shield(3);
+            action = lm->isPlayer() ? "Your largemon shielded. " : "Enemy largemon shielded. ";
+            break;
+        }
+        case Type::wood : {
+            en->stun(2);
+            action = lm->isPlayer() ? "Enemy largemon was stunned. " : "Your largemon was stunned. ";
+            break;
+        }
     }
     return action;
 }
@@ -160,32 +197,7 @@ void BattleInstance::finishTurn(Largemon * lm){
     }
 }
 
-/*
- * Does the special attack for a given largemon against it's enemy.
- */
-string BattleInstance::specialAbility(Largemon * lm) {
-    string action;
-    Type largemon = lm->getType();
-    Largemon * en = getEnemyOf(lm);
 
-    switch(largemon){
-        case Type::fire :
-            en->takeTickDamage(3);
-            action = lm->isPlayer() ? "Your largemon is damaging enemy over time. " : "You are being damaged over time. ";
-        break;
-        case Type::water : {
-            auto *wlm = dynamic_cast<WaterLM *> (lm);
-            wlm->shield(3);
-            action = lm->isPlayer() ? "Your largemon shielded. " : "Enemy largemon shielded. ";
-        }
-        break;
-        case Type::wood :
-            en->stun(2);
-            action = lm->isPlayer() ? "Enemy largemon was stunned. " : "Your largemon was stunned. ";
-        break;
-    }
-    return action;
-}
 /*
  * Damage the given largemon's enemy
  */
@@ -253,12 +265,15 @@ bool BattleInstance::determineCounter(Largemon * lm, Largemon * lmEnemy) {
         case Type::water :
             if(enemy == Type::fire)
                 counter = true;
+            break;
         case Type::fire :
             if(enemy == Type::wood)
                 counter = true;
+            break;
         case Type::wood :
             if(enemy == Type::water)
                 counter = true;
+            break;
     }
     return counter;
 }
