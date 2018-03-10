@@ -10,17 +10,14 @@
 int main( int argc, char* args[] ) {
 
     Controller controller;
-    LargemonMainView view;
-    BattleInstance battle;
-    int cont = controller.run(&view, &battle);
-    while(true){
-        BattleInstance battleInstance;
-        controller.run(&view, &battleInstance);
+    Controller * prev = &controller;
+    int cont = 2;
+    while(cont == 2){
+        prev->close();
+        Controller replay;
+        cont = replay.run();
+        prev = &replay;
     }
-
-
-
-
 
     return 0;
 }

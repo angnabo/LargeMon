@@ -177,6 +177,48 @@ SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
 
 void LargemonMainView::close()
 {
+
+
+
+
+
+
+//    gPlayerTexture.free();
+//    gEnemyTexture.free();
+//    gBackgroundTexture.free();
+//    gTopLeftButton.free();
+//    gTopRightButton.free();
+//    gBottomLeftButton.free();
+//    gBottomRightButton.free();
+//    gReplayBtn.free();
+//    gExitBtn.free();
+//    gReplayText.free();
+//    gExitText.free();
+//    gWinnerText.free();
+//    gBottomTextPanel.free();
+//    gMenuPanel.free();
+//    gPlayerInfoPanel.free();
+//    gEnemyInfoPanel.free();
+//    gPlayerTypeIcon.free();
+//    gEnemyTypeIcon.free();
+//    gPlayerHpBarBG.free();
+//    gPlayerHpBarFG.free();
+//    gPlayerCurrentHPText.free();
+//    gPlayerHealthText.free();
+//    gEnemyHpBarBG.free();
+//    gEnemyHpBarFG.free();
+//    gEnemyHealthText.free();
+//    gEnemyCurrentHPText.free();
+//    gTopLeftButtonText.free();
+//    gTopRightButtonText.free();
+//    gBottomLeftButtonText.free();
+//    gBottomRightButtonText.free();
+//    gPanelText.free();
+//    buttons[4].free();
+//    gPlayerSpriteSheetTexture.free();
+//    gEnemySpriteSheetTexture.free();
+
+
     //Free loaded images
     gPlayerTexture.free();
     gEnemyTexture.free();

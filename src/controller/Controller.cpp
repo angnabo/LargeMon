@@ -96,22 +96,22 @@ int Controller::handleKeyPress(Button * selected, int event){
     return *selected;
 }
 
-int Controller::run(LargemonMainView * v, BattleInstance * b) {
+int Controller::run() {
 
-    view = v;
-    battleInstance = b;
+
+    //BattleInstance battleInstance;
 
     int exitCode = 0;
 
-    FileWriter writer = FileWriter(battleInstance);
-    battleInstance->attach(&writer);
+    FileWriter writer = FileWriter(&battleInstance);
+    battleInstance.attach(&writer);
 
-    HealthObserver playerhp = HealthObserver(battleInstance->getPlayerPtr(), view);
-    HealthObserver enemyhp = HealthObserver(battleInstance->getEnemyPtr(), view);
+    HealthObserver playerhp = HealthObserver(battleInstance.getPlayerPtr(), &view);
+    HealthObserver enemyhp = HealthObserver(battleInstance.getEnemyPtr(), &view);
 
     setViewArguments();
 
-    view->run(arguments);
+    view.run(arguments);
 
     int pressedButton;
     int selectedButton = 0;
@@ -119,66 +119,113 @@ int Controller::run(LargemonMainView * v, BattleInstance * b) {
 
     bool quit = false;
 
-    //Event handler
     SDL_Event e{};
-    //While application is running
-    while (!quit) {
-        //Handle events
-        while (SDL_PollEvent(&e) != 0) {
-            //User requests quit
-            if (e.type == SDL_QUIT) {
-                quit = true;
-            }
-                // handle key presses
-            else if (e.type == SDL_KEYDOWN) {
-                switch (e.key.keysym.sym) {
 
-                    //Handle LEFT key press
-                    case SDLK_UP:
-                        pressedButton = handleKeyPress(&selected, SDLK_UP);
-                        view->updateButtons(pressedButton);
-                        break;
-                        //Handle RIGHT key press
-                    case SDLK_RIGHT:
-                        pressedButton = handleKeyPress(&selected, SDLK_RIGHT);
-                        view->updateButtons(pressedButton);
-                        break;
-                        //Handle DOWN key press
-                    case SDLK_DOWN:
-                        pressedButton = handleKeyPress(&selected, SDLK_DOWN);
-                        view->updateButtons(pressedButton);
-                        break;
-                        //Handle UP key press
-                    case SDLK_LEFT:
-                        pressedButton = handleKeyPress(&selected, SDLK_LEFT);
-                        view->updateButtons(pressedButton);
-                        break;
-                    default:break;
+    while(SDL_WaitEvent(&e) >= 0){
+        if (e.type == SDL_QUIT) {
+            quit = true;
+        }
+            // handle key presses
+        else if (e.type == SDL_KEYDOWN) {
+            switch (e.key.keysym.sym) {
+
+                //Handle LEFT key press
+                case SDLK_UP:
+                    pressedButton = handleKeyPress(&selected, SDLK_UP);
+                    view.updateButtons(pressedButton);
+                    break;
+                    //Handle RIGHT key press
+                case SDLK_RIGHT:
+                    pressedButton = handleKeyPress(&selected, SDLK_RIGHT);
+                    view.updateButtons(pressedButton);
+                    break;
+                    //Handle DOWN key press
+                case SDLK_DOWN:
+                    pressedButton = handleKeyPress(&selected, SDLK_DOWN);
+                    view.updateButtons(pressedButton);
+                    break;
+                    //Handle UP key press
+                case SDLK_LEFT:
+                    pressedButton = handleKeyPress(&selected, SDLK_LEFT);
+                    view.updateButtons(pressedButton);
+                    break;
+                default:break;
+            }
+            if(e.key.keysym.sym == SDLK_RETURN){
+                string textUpdate;
+                if(!battleInstance.isGameOver()) {
+                    textUpdate = battleInstance.action(selected);
+                    view.updateText(textUpdate);
                 }
-                if(e.key.keysym.sym == SDLK_RETURN){
-                    string textUpdate;
-                    if(!battleInstance->isGameOver()) {
-                        textUpdate = battleInstance->action(selected);
-                        view->updateText(textUpdate);
-                    }
-                }
-                if(battleInstance->isGameOver()) {
-                    exitCode = menuPanel();
-                    cout << exitCode;
-                    return exitCode;
-                }
+            }
+            if(battleInstance.isGameOver()) {
+                exitCode = menuPanel();
+                cout << exitCode;
+                return 2;
             }
         }
     }
+
+    //Event handler
+
+//    //While application is running
+//    while (!quit) {
+//        //Handle events
+//        while (SDL_PollEvent(&e) != 0) {
+//            //User requests quit
+//            if (e.type == SDL_QUIT) {
+//                quit = true;
+//            }
+//                // handle key presses
+//            else if (e.type == SDL_KEYDOWN) {
+//                switch (e.key.keysym.sym) {
+//
+//                    //Handle LEFT key press
+//                    case SDLK_UP:
+//                        pressedButton = handleKeyPress(&selected, SDLK_UP);
+//                        view->updateButtons(pressedButton);
+//                        break;
+//                        //Handle RIGHT key press
+//                    case SDLK_RIGHT:
+//                        pressedButton = handleKeyPress(&selected, SDLK_RIGHT);
+//                        view->updateButtons(pressedButton);
+//                        break;
+//                        //Handle DOWN key press
+//                    case SDLK_DOWN:
+//                        pressedButton = handleKeyPress(&selected, SDLK_DOWN);
+//                        view->updateButtons(pressedButton);
+//                        break;
+//                        //Handle UP key press
+//                    case SDLK_LEFT:
+//                        pressedButton = handleKeyPress(&selected, SDLK_LEFT);
+//                        view->updateButtons(pressedButton);
+//                        break;
+//                    default:break;
+//                }
+//                if(e.key.keysym.sym == SDLK_RETURN){
+//                    string textUpdate;
+//                    if(!battleInstance->isGameOver()) {
+//                        textUpdate = battleInstance->action(selected);
+//                        view->updateText(textUpdate);
+//                    }
+//                }
+//                if(battleInstance->isGameOver()) {
+//                    exitCode = menuPanel();
+//                    cout << exitCode;
+//                    return exitCode;
+//                }
+//            }
+//        }
+//    }
     //view->close();
     cout << exitCode;
-    return exitCode;
+    return 2;
 }
 
 int Controller::menuPanel(){
 
     int exitCode = 0;
-    view->menuPanel(battleInstance->getWinner());
+    view.menuPanel(battleInstance.getWinner());
 
     int pressedMenuButton;
     MenuButton selectedMenu = MenuButton::left;
@@ -186,47 +233,86 @@ int Controller::menuPanel(){
     bool quit = false;
 
     //Event handler
-    SDL_Event ev{};
-    //While application is running
-    while (!quit) {
-        //Handle events
-        while (SDL_PollEvent(&ev) != 0) {
-            //User requests quit
-            if (ev.type == SDL_QUIT) {
-                quit = true;
+
+    SDL_Event e{};
+
+    while(SDL_WaitEvent(&e) >= 0){
+        if (e.type == SDL_QUIT) {
+            quit = true;
+        }
+            // handle key presses
+        else if (e.type == SDL_KEYDOWN) {
+            switch (e.key.keysym.sym) {
+
+                //Handle RIGHT key press
+                case SDLK_RIGHT:
+                    pressedMenuButton = handleMenuKeyPress(&selectedMenu, SDLK_RIGHT);
+                    view.updateMenuButtons(pressedMenuButton);
+                    break;
+                    //Handle LEFT key press
+                case SDLK_LEFT:
+                    pressedMenuButton = handleMenuKeyPress(&selectedMenu, SDLK_LEFT);
+                    view.updateMenuButtons(pressedMenuButton);
+                    break;
+                default:break;
             }
-                // handle key presses
-            else if (ev.type == SDL_KEYDOWN) {
-                switch (ev.key.keysym.sym) {
-
-                    //Handle RIGHT key press
-                    case SDLK_RIGHT:
-                        pressedMenuButton = handleMenuKeyPress(&selectedMenu, SDLK_RIGHT);
-                        view->updateMenuButtons(pressedMenuButton);
-                        break;
-                        //Handle LEFT key press
-                    case SDLK_LEFT:
-                        pressedMenuButton = handleMenuKeyPress(&selectedMenu, SDLK_LEFT);
-                        view->updateMenuButtons(pressedMenuButton);
-                        break;
-                    default:break;
+            if(e.key.keysym.sym == SDLK_RETURN){
+                if(selectedMenu == MenuButton::left){
+                    cout << exitCode;
+                    return exitCode;
+                } else {
+                    quit = true;
                 }
-                if(ev.key.keysym.sym == SDLK_RETURN){
-                    if(selectedMenu == MenuButton::left){
-                        exitCode = 2;
-                        return exitCode;
-
-                    } else {
-                        quit = true;
-                    }
-                }
-                if(battleInstance->isGameOver()) {
-                    view->menuPanel(battleInstance->getWinner());
-                }
+            }
+            if(battleInstance.isGameOver()) {
+                view.menuPanel(battleInstance.getWinner());
             }
         }
     }
-    return exitCode;
+
+return exitCode;
+//    //While application is running
+//    while (!quit) {
+//        //Handle events
+//        while (SDL_PollEvent(&ev) != 0) {
+//            //User requests quit
+//            if (ev.type == SDL_QUIT) {
+//                quit = true;
+//            }
+//                // handle key presses
+//            else if (ev.type == SDL_KEYDOWN) {
+//                switch (ev.key.keysym.sym) {
+//
+//                    //Handle RIGHT key press
+//                    case SDLK_RIGHT:
+//                        pressedMenuButton = handleMenuKeyPress(&selectedMenu, SDLK_RIGHT);
+//                        view->updateMenuButtons(pressedMenuButton);
+//                        break;
+//                        //Handle LEFT key press
+//                    case SDLK_LEFT:
+//                        pressedMenuButton = handleMenuKeyPress(&selectedMenu, SDLK_LEFT);
+//                        view->updateMenuButtons(pressedMenuButton);
+//                        break;
+//                    default:break;
+//                }
+//                if(ev.key.keysym.sym == SDLK_RETURN){
+//                    if(selectedMenu == MenuButton::left){
+//                        Controller controller;
+//                        controller.run(view);
+//                        atexit(SDL_Quit);
+//                        return exitCode;
+//
+//                    } else {
+//                        quit = true;
+//                    }
+//                }
+//                if(battleInstance->isGameOver()) {
+//                    view->menuPanel(battleInstance->getWinner());
+//                }
+//            }
+//        }
+//    }
+//    return exitCode;
 }
 
 
@@ -235,15 +321,15 @@ void Controller::setViewArguments() {
     //view.
 
     DescriptGen descriptGen = DescriptGen();
-    arguments.push_back(descriptGen.getDescription(battleInstance->getEnemyPtr()));
-    arguments.push_back(to_string(battleInstance->getPlayerCurrentHp()));
-    arguments.push_back(to_string(battleInstance->getEnemyCurrentHp()));
-    arguments.push_back(getLargemonPath(battleInstance->getPlayerLargemonName()));
-    arguments.push_back(getLargemonPath(battleInstance->getEnemyLargemonName()));
-    arguments.push_back(getTypePath(battleInstance->getPlayerLargemonName()));
-    arguments.push_back(getTypePath(battleInstance->getEnemyLargemonName()));
-    arguments.push_back(descriptGen.getAttack(battleInstance->getPlayerPtr()->getType()));
-    arguments.push_back(descriptGen.getAbility(battleInstance->getPlayerPtr()->getType()));
+    arguments.push_back(descriptGen.getDescription(battleInstance.getEnemyPtr()));
+    arguments.push_back(to_string(battleInstance.getPlayerCurrentHp()));
+    arguments.push_back(to_string(battleInstance.getEnemyCurrentHp()));
+    arguments.push_back(getLargemonPath(battleInstance.getPlayerLargemonName()));
+    arguments.push_back(getLargemonPath(battleInstance.getEnemyLargemonName()));
+    arguments.push_back(getTypePath(battleInstance.getPlayerLargemonName()));
+    arguments.push_back(getTypePath(battleInstance.getEnemyLargemonName()));
+    arguments.push_back(descriptGen.getAttack(battleInstance.getPlayerPtr()->getType()));
+    arguments.push_back(descriptGen.getAbility(battleInstance.getPlayerPtr()->getType()));
 
 }
 
@@ -267,12 +353,16 @@ string Controller::getTypePath(string type) {
         path = "/home/angelica/Development/Largemon/resources/ui/water_type_icon.png";
     }else{
 
+
         path = "/home/angelica/Development/Largemon/resources/ui/wood_type_icon.png";
     }
     return path;
 }
 
 void Controller::close() {
-    view->close();
+    view.close();
+//    delete &battleInstance;
+//    delete &view;
+//    delete &arguments;
 }
 
