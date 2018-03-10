@@ -29,7 +29,7 @@ public:
         right = 1,
     };
 
-    int run(LargemonMainView*);
+    int run(LargemonMainView*, BattleInstance*);
     int handleKeyPress(Button *, int);
     void setViewArguments();
     string getLargemonPath(string type);
@@ -41,7 +41,7 @@ public:
 
 private:
     //model
-    BattleInstance battleInstance;
+    BattleInstance * battleInstance;
     //view
     LargemonMainView * view;
     vector <string> arguments;

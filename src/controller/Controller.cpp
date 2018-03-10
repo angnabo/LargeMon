@@ -96,17 +96,18 @@ int Controller::handleKeyPress(Button * selected, int event){
     return *selected;
 }
 
-int Controller::run(LargemonMainView * v) {
+int Controller::run(LargemonMainView * v, BattleInstance * b) {
 
     view = v;
+    battleInstance = b;
 
     int exitCode = 0;
 
-    FileWriter writer = FileWriter(&battleInstance);
-    battleInstance.attach(&writer);
+    FileWriter writer = FileWriter(battleInstance);
+    battleInstance->attach(&writer);
 
-    HealthObserver playerhp = HealthObserver(battleInstance.getPlayerPtr(), view);
-    HealthObserver enemyhp = HealthObserver(battleInstance.getEnemyPtr(), view);
+    HealthObserver playerhp = HealthObserver(battleInstance->getPlayerPtr(), view);
+    HealthObserver enemyhp = HealthObserver(battleInstance->getEnemyPtr(), view);
 
     setViewArguments();
 
@@ -156,12 +157,12 @@ int Controller::run(LargemonMainView * v) {
                 }
                 if(e.key.keysym.sym == SDLK_RETURN){
                     string textUpdate;
-                    if(!battleInstance.isGameOver()) {
-                        textUpdate = battleInstance.action(selected);
+                    if(!battleInstance->isGameOver()) {
+                        textUpdate = battleInstance->action(selected);
                         view->updateText(textUpdate);
                     }
                 }
-                if(battleInstance.isGameOver()) {
+                if(battleInstance->isGameOver()) {
                     exitCode = menuPanel();
                     cout << exitCode;
                     return exitCode;
@@ -177,7 +178,7 @@ int Controller::run(LargemonMainView * v) {
 int Controller::menuPanel(){
 
     int exitCode = 0;
-    view->menuPanel(battleInstance.getWinner());
+    view->menuPanel(battleInstance->getWinner());
 
     int pressedMenuButton;
     MenuButton selectedMenu = MenuButton::left;
@@ -219,8 +220,8 @@ int Controller::menuPanel(){
                         quit = true;
                     }
                 }
-                if(battleInstance.isGameOver()) {
-                    view->menuPanel(battleInstance.getWinner());
+                if(battleInstance->isGameOver()) {
+                    view->menuPanel(battleInstance->getWinner());
                 }
             }
         }
@@ -234,15 +235,15 @@ void Controller::setViewArguments() {
     //view.
 
     DescriptGen descriptGen = DescriptGen();
-    arguments.push_back(descriptGen.getDescription(battleInstance.getEnemyPtr()));
-    arguments.push_back(to_string(battleInstance.getPlayerCurrentHp()));
-    arguments.push_back(to_string(battleInstance.getEnemyCurrentHp()));
-    arguments.push_back(getLargemonPath(battleInstance.getPlayerLargemonName()));
-    arguments.push_back(getLargemonPath(battleInstance.getEnemyLargemonName()));
-    arguments.push_back(getTypePath(battleInstance.getPlayerLargemonName()));
-    arguments.push_back(getTypePath(battleInstance.getEnemyLargemonName()));
-    arguments.push_back(descriptGen.getAttack(battleInstance.getPlayerPtr()->getType()));
-    arguments.push_back(descriptGen.getAbility(battleInstance.getPlayerPtr()->getType()));
+    arguments.push_back(descriptGen.getDescription(battleInstance->getEnemyPtr()));
+    arguments.push_back(to_string(battleInstance->getPlayerCurrentHp()));
+    arguments.push_back(to_string(battleInstance->getEnemyCurrentHp()));
+    arguments.push_back(getLargemonPath(battleInstance->getPlayerLargemonName()));
+    arguments.push_back(getLargemonPath(battleInstance->getEnemyLargemonName()));
+    arguments.push_back(getTypePath(battleInstance->getPlayerLargemonName()));
+    arguments.push_back(getTypePath(battleInstance->getEnemyLargemonName()));
+    arguments.push_back(descriptGen.getAttack(battleInstance->getPlayerPtr()->getType()));
+    arguments.push_back(descriptGen.getAbility(battleInstance->getPlayerPtr()->getType()));
 
 }
 
