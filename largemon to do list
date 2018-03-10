@@ -2,11 +2,7 @@ Largemon TO DO:
 
 SUPER IMPORTANT:
 
-[] largemon description displayed at the beginning
-[]
-
-
-important:
+[done] largemon description displayed at the beginning
 
 [] replay and exit buttons at end of round
 
@@ -16,20 +12,18 @@ important:
         [] on fire
         [] shielded
 
-    [] design an icon for each largemon type
+    [done] design an icon for each largemon type
+
+important:
 
 [] implement other largemon creatures(goblin, dragon)
 
-
 [] have the sprite change when largemon faints
-
-
 
 [] implement saving Largemon
 
 [] clean up code :
     [] text texture in own class with update method
-    [] make a view interface with pure virtual methods like close, init, main
 
 Done:
 [done] have a wait time of a second between player turn and enemy counter attack
@@ -52,7 +46,7 @@ Done:
     [done] shield
     [done] damage over time
 [done] make new ui buttons
-
-
+[done] centre text on buttons
+[done] buttons have each type's attack names
 
 

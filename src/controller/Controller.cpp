@@ -17,6 +17,34 @@ Controller::Controller() {
  * @param event
  * @return
  */
+int Controller::handleMenuKeyPress(MenuButton * selected, int event){
+    switch (event){
+        case SDLK_RIGHT:
+            switch (*selected){
+                case left:
+                    *selected = right;
+                    break;
+                default:break;
+            }
+            return *selected;
+        case SDLK_LEFT:
+            switch (*selected){
+                case right:
+                    *selected = left;
+                    break;
+                default:break;
+            }
+            return *selected;
+        default:break;
+    }
+}
+
+/**
+ * Changes the colour of selected button, and unselects the no longer selected button
+ * @param selected
+ * @param event
+ * @return
+ */
 int Controller::handleKeyPress(Button * selected, int event){
     switch (event){
         case SDLK_UP:
@@ -68,17 +96,21 @@ int Controller::handleKeyPress(Button * selected, int event){
     return *selected;
 }
 
-void Controller::run() {
+int Controller::run(LargemonMainView * v) {
+
+    view = v;
+
+    int exitCode = 0;
 
     FileWriter writer = FileWriter(&battleInstance);
     battleInstance.attach(&writer);
 
-    HealthObserver playerhp = HealthObserver(battleInstance.getPlayerPtr(), &view);
-    HealthObserver enemyhp = HealthObserver(battleInstance.getEnemyPtr(), &view);
+    HealthObserver playerhp = HealthObserver(battleInstance.getPlayerPtr(), view);
+    HealthObserver enemyhp = HealthObserver(battleInstance.getEnemyPtr(), view);
 
     setViewArguments();
 
-    view.run(arguments);
+    view->run(arguments);
 
     int pressedButton;
     int selectedButton = 0;
@@ -103,22 +135,22 @@ void Controller::run() {
                     //Handle LEFT key press
                     case SDLK_UP:
                         pressedButton = handleKeyPress(&selected, SDLK_UP);
-                        view.updateButtons(pressedButton);
+                        view->updateButtons(pressedButton);
                         break;
                         //Handle RIGHT key press
                     case SDLK_RIGHT:
                         pressedButton = handleKeyPress(&selected, SDLK_RIGHT);
-                        view.updateButtons(pressedButton);
+                        view->updateButtons(pressedButton);
                         break;
                         //Handle DOWN key press
                     case SDLK_DOWN:
                         pressedButton = handleKeyPress(&selected, SDLK_DOWN);
-                        view.updateButtons(pressedButton);
+                        view->updateButtons(pressedButton);
                         break;
                         //Handle UP key press
                     case SDLK_LEFT:
                         pressedButton = handleKeyPress(&selected, SDLK_LEFT);
-                        view.updateButtons(pressedButton);
+                        view->updateButtons(pressedButton);
                         break;
                     default:break;
                 }
@@ -126,16 +158,74 @@ void Controller::run() {
                     string textUpdate;
                     if(!battleInstance.isGameOver()) {
                         textUpdate = battleInstance.action(selected);
-                        view.updateText(textUpdate);
-                    } else {
-                        view.updateText(battleInstance.getWinner());
+                        view->updateText(textUpdate);
                     }
+                }
+                if(battleInstance.isGameOver()) {
+                    exitCode = menuPanel();
+                    cout << exitCode;
+                    return exitCode;
                 }
             }
         }
     }
-    view.close();
+    //view->close();
+    cout << exitCode;
+    return exitCode;
+}
 
+int Controller::menuPanel(){
+
+    int exitCode = 0;
+    view->menuPanel(battleInstance.getWinner());
+
+    int pressedMenuButton;
+    MenuButton selectedMenu = MenuButton::left;
+
+    bool quit = false;
+
+    //Event handler
+    SDL_Event ev{};
+    //While application is running
+    while (!quit) {
+        //Handle events
+        while (SDL_PollEvent(&ev) != 0) {
+            //User requests quit
+            if (ev.type == SDL_QUIT) {
+                quit = true;
+            }
+                // handle key presses
+            else if (ev.type == SDL_KEYDOWN) {
+                switch (ev.key.keysym.sym) {
+
+                    //Handle RIGHT key press
+                    case SDLK_RIGHT:
+                        pressedMenuButton = handleMenuKeyPress(&selectedMenu, SDLK_RIGHT);
+                        view->updateMenuButtons(pressedMenuButton);
+                        break;
+                        //Handle LEFT key press
+                    case SDLK_LEFT:
+                        pressedMenuButton = handleMenuKeyPress(&selectedMenu, SDLK_LEFT);
+                        view->updateMenuButtons(pressedMenuButton);
+                        break;
+                    default:break;
+                }
+                if(ev.key.keysym.sym == SDLK_RETURN){
+                    if(selectedMenu == MenuButton::left){
+                        exitCode = 2;
+                        return exitCode;
+
+                    } else {
+                        quit = true;
+                    }
+                }
+                if(battleInstance.isGameOver()) {
+                    view->menuPanel(battleInstance.getWinner());
+                }
+            }
+        }
+    }
+    return exitCode;
 }
 
 
@@ -151,6 +241,8 @@ void Controller::setViewArguments() {
     arguments.push_back(getLargemonPath(battleInstance.getEnemyLargemonName()));
     arguments.push_back(getTypePath(battleInstance.getPlayerLargemonName()));
     arguments.push_back(getTypePath(battleInstance.getEnemyLargemonName()));
+    arguments.push_back(descriptGen.getAttack(battleInstance.getPlayerPtr()->getType()));
+    arguments.push_back(descriptGen.getAbility(battleInstance.getPlayerPtr()->getType()));
 
 }
 
@@ -173,8 +265,13 @@ string Controller::getTypePath(string type) {
     } else if(type == "water troll"){
         path = "/home/angelica/Development/Largemon/resources/ui/water_type_icon.png";
     }else{
+
         path = "/home/angelica/Development/Largemon/resources/ui/wood_type_icon.png";
     }
     return path;
+}
+
+void Controller::close() {
+    view->close();
 }
 

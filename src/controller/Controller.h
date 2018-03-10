@@ -15,6 +15,8 @@ class Controller {
 public:
     Controller();
 
+    void close();
+
     enum Button{
         top_left = 0,
         top_right = 1,
@@ -22,22 +24,30 @@ public:
         bottom_right = 3
     };
 
-    void run();
+    enum MenuButton{
+        left = 0,
+        right = 1,
+    };
+
+    int run(LargemonMainView*);
     int handleKeyPress(Button *, int);
     void setViewArguments();
     string getLargemonPath(string type);
 
     string getTypePath(string type);
 
+    int menuPanel();
+
 
 private:
     //model
     BattleInstance battleInstance;
     //view
-    LargemonMainView view;
+    LargemonMainView * view;
     vector <string> arguments;
 
 
+    int handleMenuKeyPress(MenuButton *selected, int event);
 };
 
 

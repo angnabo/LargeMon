@@ -20,12 +20,16 @@ public:
     void close();
     bool updateText(string);
     void updateButtons(int);
+    void updateMenuButtons(int);
     bool run(vector<string> args);
     void updatePlayerHealthBar(float, string);
     void updateEnemyHealthBar(float, string);
     bool loadUI(GTexture &, string);
     bool loadUIText(GTexture &, TTF_Font *, string);
     bool render();
+    void menuPanel(string);
+    int buttonTextPosition(int width);
+    bool winnerText(string text);
 private:
 //Screen dimension constants
     const int SCREEN_WIDTH = 640;
@@ -38,7 +42,8 @@ private:
     //Selected button colour
     Uint8 slct = 70;
 
-    int X_BUTTON_OFFSET = 270;
+    int X_LEFT_BTN_OFFSET = 270;//where the left hand-side buttons are on the x-axis
+    int X_RIGHT_BTN_OFFSET = 454;//where the right hand-side buttons are on the x-axis
     int Y_BUTTON_OFFSET = 20;
 
 //Globally used font
@@ -66,8 +71,16 @@ private:
     GButtonTexture gBottomLeftButton;
     GButtonTexture gBottomRightButton;
 
+    GButtonTexture gReplayBtn;
+    GButtonTexture gExitBtn;
+
+    GTexture gReplayText;
+    GTexture gExitText;
+
+    GTexture gWinnerText;
+
     GTexture gBottomTextPanel;
-    GTexture gBottomPanelFull;
+    GTexture gMenuPanel;
 
     GTexture gPlayerInfoPanel;
     GTexture gEnemyInfoPanel;
@@ -98,6 +111,7 @@ private:
     SDL_Texture* loadTexture( std::string path );
     SDL_Texture* gTexture = NULL;
     SDL_Color textColor;
+
 
 };
 
