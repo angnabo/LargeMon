@@ -168,10 +168,10 @@ string BattleInstance::setSpecAttackArgs(Largemon * lm){
 string BattleInstance::setAttackArgs(Largemon * lm){
     string action;
     if(lm->isPlayer()){
-        action = "You attacked for " + to_string(player->specialAttack()) + " damage. ";
+        action = "You attacked for " + to_string(player->getDamage()) + " damage. ";
         playerArgs[1] = "Attack";
     } else {
-        action = "Enemy attacked for " + to_string(enemy->specialAttack()) + " damage. ";
+        action = "Enemy attacked for " + to_string(enemy->getDamage()) + " damage. ";
         enemyArgs[1] = "Attack";
     }
     return action;
@@ -202,6 +202,7 @@ void BattleInstance::finishTurn(Largemon * lm){
  * Damage the given largemon's enemy
  */
 string BattleInstance::attack(Largemon * lm){
+    cout << "HELLOOOO";
     string shieldAction;
     string action;
     Largemon * en = getEnemyOf(lm);
@@ -209,6 +210,7 @@ string BattleInstance::attack(Largemon * lm){
         shieldAction = attackWaterLm(en, lm->getDamage());
     } else{
         en->takeDamage(lm->getDamage());
+        cout<< ""<< en->getName() <<" took " <<lm->getDamage() <<""<<endl;
     }
 
     return setAttackArgs(lm) + shieldAction;
