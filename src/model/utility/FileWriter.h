@@ -25,7 +25,7 @@ private:
     ofstream outLogFile;
     string filePath;
 
-    string DIR_PATH = "/home/angelica/Development/Largemon/game_logs/";
+    string DIR_PATH = "../game_logs/";
 
 };
 

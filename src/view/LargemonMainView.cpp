@@ -89,15 +89,15 @@ bool LargemonMainView::loadMedia(vector<string> args)
     bool success = true;
     textColor = { 0, 0, 0 };
 
-    loadUI(gBackgroundTexture, "/home/angelica/Development/Largemon/resources/ui/mountains.png");
-    loadUI(gBottomTextPanel,"/home/angelica/Development/Largemon/resources/ui/bottom_panel.png" );
-    loadUI(gPlayerInfoPanel,"/home/angelica/Development/Largemon/resources/ui/info_panel.png" );
-    loadUI(gEnemyInfoPanel,"/home/angelica/Development/Largemon/resources/ui/info_panel.png" );
-    loadUI(gPlayerHpBarBG,"/home/angelica/Development/Largemon/resources/ui/health_bar_bg.bmp" );
-    loadUI(gPlayerHpBarFG,"/home/angelica/Development/Largemon/resources/ui/health_bar_fg.bmp" );
-    loadUI(gEnemyHpBarBG,"/home/angelica/Development/Largemon/resources/ui/health_bar_bg.bmp" );
-    loadUI(gEnemyHpBarFG,"/home/angelica/Development/Largemon/resources/ui/health_bar_fg.bmp" );
-    loadUI(gMenuPanel,"/home/angelica/Development/Largemon/resources/ui/menu_panel.png" );
+    loadUI(gBackgroundTexture, "../resources/ui/mountains.png");
+    loadUI(gBottomTextPanel,"../resources/ui/bottom_panel.png" );
+    loadUI(gPlayerInfoPanel,"../resources/ui/info_panel.png" );
+    loadUI(gEnemyInfoPanel,"../resources/ui/info_panel.png" );
+    loadUI(gPlayerHpBarBG,"../resources/ui/health_bar_bg.bmp" );
+    loadUI(gPlayerHpBarFG,"../resources/ui/health_bar_fg.bmp" );
+    loadUI(gEnemyHpBarBG,"../resources/ui/health_bar_bg.bmp" );
+    loadUI(gEnemyHpBarFG,"../resources/ui/health_bar_fg.bmp" );
+    loadUI(gMenuPanel,"../resources/ui/menu_panel.png" );
 
     loadUI(gPlayerSpriteSheetTexture,args[3] );
     loadUI(gEnemySpriteSheetTexture,args[4] );
@@ -107,14 +107,14 @@ bool LargemonMainView::loadMedia(vector<string> args)
 
 
     //Load Button Textures
-    loadUI(gTopLeftButton, "/home/angelica/Development/Largemon/resources/ui/button.png");
-    loadUI(gTopRightButton, "/home/angelica/Development/Largemon/resources/ui/button.png");
-    loadUI(gBottomLeftButton, "/home/angelica/Development/Largemon/resources/ui/button.png");
-    loadUI(gBottomRightButton, "/home/angelica/Development/Largemon/resources/ui/button.png");
+    loadUI(gTopLeftButton, "../resources/ui/button.png");
+    loadUI(gTopRightButton, "../resources/ui/button.png");
+    loadUI(gBottomLeftButton, "../resources/ui/button.png");
+    loadUI(gBottomRightButton, "../resources/ui/button.png");
     gTopLeftButton.setColor(70, 70, 70);
 
-    loadUI(gReplayBtn, "/home/angelica/Development/Largemon/resources/ui/small_button.png");
-    loadUI(gExitBtn, "/home/angelica/Development/Largemon/resources/ui/small_button.png");
+    loadUI(gReplayBtn, "../resources/ui/small_button.png");
+    loadUI(gExitBtn, "../resources/ui/small_button.png");
     gReplayBtn.setColor(70,70,70);
 
     buttons[0] = gTopLeftButton;
@@ -134,7 +134,7 @@ bool LargemonMainView::loadMedia(vector<string> args)
     gSpriteClips[ 1 ].h = 120;
 
     //Load ttf pixel font large size
-    gFont = TTF_OpenFont( "/home/angelica/Development/Largemon/resources/fonts/alterebro-pixel-font.ttf", PANEL_FONT_SIZE );
+    gFont = TTF_OpenFont( "../resources/fonts/alterebro-pixel-font.ttf", PANEL_FONT_SIZE );
     if( gFont == nullptr )
     {
         cout << "Failed to load lazy font! SDL_ttf Error: " << TTF_GetError() << endl;
@@ -150,7 +150,7 @@ bool LargemonMainView::loadMedia(vector<string> args)
         loadUIText(gExitText, gFont, "Exit");
     }
     //Open ttf pixel font small size
-    gHpFont = TTF_OpenFont( "/home/angelica/Development/Largemon/resources/fonts/alterebro-pixel-font.ttf", HP_FONT_SIZE );
+    gHpFont = TTF_OpenFont( "../resources/fonts/alterebro-pixel-font.ttf", HP_FONT_SIZE );
     if( gHpFont == nullptr )
     {
         cout << "Failed to load lazy font! SDL_ttf Error: " << TTF_GetError() << endl;
