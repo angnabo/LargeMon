@@ -258,33 +258,6 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/model/BattleHelper.o: src/model/BattleHelper.cpp.o
-
-.PHONY : src/model/BattleHelper.o
-
-# target to build an object file
-src/model/BattleHelper.cpp.o:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/model/BattleHelper.cpp.o
-.PHONY : src/model/BattleHelper.cpp.o
-
-src/model/BattleHelper.i: src/model/BattleHelper.cpp.i
-
-.PHONY : src/model/BattleHelper.i
-
-# target to preprocess a source file
-src/model/BattleHelper.cpp.i:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/model/BattleHelper.cpp.i
-.PHONY : src/model/BattleHelper.cpp.i
-
-src/model/BattleHelper.s: src/model/BattleHelper.cpp.s
-
-.PHONY : src/model/BattleHelper.s
-
-# target to generate assembly for a file
-src/model/BattleHelper.cpp.s:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/model/BattleHelper.cpp.s
-.PHONY : src/model/BattleHelper.cpp.s
-
 src/model/BattleInstance.o: src/model/BattleInstance.cpp.o
 
 .PHONY : src/model/BattleInstance.o
@@ -714,9 +687,6 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/model/BattleHelper.o"
-	@echo "... src/model/BattleHelper.i"
-	@echo "... src/model/BattleHelper.s"
 	@echo "... src/model/BattleInstance.o"
 	@echo "... src/model/BattleInstance.i"
 	@echo "... src/model/BattleInstance.s"

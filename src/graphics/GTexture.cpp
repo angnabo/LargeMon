@@ -90,8 +90,8 @@ bool GTexture::loadFont(SDL_Renderer * gRenderer, TTF_Font * gFont, std::string 
     free();
 
     //Determine the size or final wrapped text
-    if (text_x > 200) {
-        mWidth = 200;
+    if (text_x > 225) {
+        mWidth = 225;
     } else {
         mWidth = textSurfaceTest->w;
     }
@@ -112,8 +112,8 @@ bool GTexture::loadFont(SDL_Renderer * gRenderer, TTF_Font * gFont, std::string 
         }
         else
         {
-            if (textSurface->w > 200) {
-                mWidth = 200;
+            if (textSurface->w > 225) {
+                mWidth = 225;
             } else {
                 mWidth = textSurface->w;
             }

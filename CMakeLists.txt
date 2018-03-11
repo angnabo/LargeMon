@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.8)
 project(Largemon)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES src/model/largemon/Largemon.cpp src/model/largemon/Largemon.h
         src/main.cpp src/main.h
@@ -17,7 +17,6 @@ set(SOURCE_FILES src/model/largemon/Largemon.cpp src/model/largemon/Largemon.h
         src/model/utility/FileWriter.h src/model/utility/FileWriter.cpp
         src/view/LargemonMainView.cpp src/view/LargemonMainView.h src/graphics/GTexture.cpp
         src/graphics/GTexture.h src/graphics/GButtonTexture.cpp src/graphics/GButtonTexture.h
-        src/model/BattleHelper.h src/model/BattleHelper.cpp
         src/model/BattleInstance.cpp src/model/BattleInstance.h src/graphics/GProgressBar.cpp src/graphics/GProgressBar.h)
 add_executable(Largemon ${SOURCE_FILES})
 

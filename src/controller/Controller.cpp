@@ -100,9 +100,6 @@ int Controller::handleKeyPress(Button * selected, int event){
 
 int Controller::run() {
 
-
-    //BattleInstance battleInstance;
-
     int exitCode = 0;
 
     FileWriter writer = FileWriter(&battleInstance);
@@ -116,7 +113,6 @@ int Controller::run() {
     view.run(arguments);
 
     int pressedButton;
-    int selectedButton = 0;
     Button selected = Button::top_left;
 
     bool quit = false;
@@ -173,7 +169,6 @@ int Controller::run() {
 
 int Controller::menuPanel(){
 
-    int exitCode = 0;
     view.menuPanel(battleInstance.getWinner());
 
     int pressedMenuButton;
@@ -182,7 +177,6 @@ int Controller::menuPanel(){
     bool quit = false;
 
     //Event handler
-
     SDL_Event e{};
     while (!quit) {
         while (SDL_WaitEvent(&e) >= 0) {
@@ -208,11 +202,8 @@ int Controller::menuPanel(){
                 }
                 if (e.key.keysym.sym == SDLK_RETURN) {
                     if (selectedMenu == MenuButton::left) {
-                        exitCode = 2;
                         return 2;
                     } else {
-                        quit = true;
-                        exitCode = 0;
                         view.close();
                         return 0;
                     }
@@ -223,7 +214,6 @@ int Controller::menuPanel(){
             }
         }
     }
-    //return exitCode;
 }
 
 

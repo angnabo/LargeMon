@@ -24,7 +24,7 @@ string DescriptGen::getDescription(Largemon * lm) {
     }
 
 
-    description = "A " + size + " " + name + " largemon with a " + attack + " attack and a " + ability + " ability appears!";
+    description = "A " + size + " " + name + " with a " + attack + " attack and a " + ability + " ability appears!";
     return description;
 }
 
@@ -45,7 +45,7 @@ string DescriptGen::getAttack(Type type) {
 }
 
 string DescriptGen::getAbility(Type type) {
-    string ability = "FIREEEEEEE";
+    string ability;
     switch(type){
         case Type::fire :
             ability = "ignite";

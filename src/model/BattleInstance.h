@@ -7,7 +7,6 @@ using namespace std;
 #include <string>
 #include <vector>
 #include "largemon/Largemon.h"
-#include "BattleHelper.h"
 
 class BattleInstance {
 public:
@@ -53,7 +52,6 @@ private:
     vector<string> playerArgs;
     vector<string> enemyArgs;
     vector<class ContrObserver *> views;
-    BattleHelper *helper;
 
     string move(Largemon *lm, int move);
 
