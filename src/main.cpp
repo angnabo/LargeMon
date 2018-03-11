@@ -9,14 +9,15 @@
 
 int main( int argc, char* args[] ) {
 
-    Controller controller;
-    Controller * prev = &controller;
+    //Controller controller;
+    //Controller * prev = &controller;
     int cont = 2;
     while(cont == 2){
-        prev->close();
+        //prev->close();
         Controller replay;
         cont = replay.run();
-        prev = &replay;
+        replay.close();
+        //prev = &replay;
     }
 
     return 0;

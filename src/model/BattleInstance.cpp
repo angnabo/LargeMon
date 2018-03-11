@@ -202,7 +202,6 @@ void BattleInstance::finishTurn(Largemon * lm){
  * Damage the given largemon's enemy
  */
 string BattleInstance::attack(Largemon * lm){
-    cout << "HELLOOOO";
     string shieldAction;
     string action;
     Largemon * en = getEnemyOf(lm);
@@ -210,7 +209,6 @@ string BattleInstance::attack(Largemon * lm){
         shieldAction = attackWaterLm(en, lm->getDamage());
     } else{
         en->takeDamage(lm->getDamage());
-        cout<< ""<< en->getName() <<" took " <<lm->getDamage() <<""<<endl;
     }
 
     return setAttackArgs(lm) + shieldAction;

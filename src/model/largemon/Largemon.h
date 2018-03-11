@@ -59,8 +59,8 @@ protected:
     string lastAction;
     bool isLmPlayer;
     vector<class Observer *> views;
-    int tickDmgCount;
-    int stunCount;
+    int tickDmgCount = 0;
+    int stunCount = 0;
 
 
     //string getType();
