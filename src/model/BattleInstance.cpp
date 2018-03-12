@@ -209,6 +209,7 @@ string BattleInstance::attack(Largemon * lm){
         shieldAction = attackWaterLm(en, lm->getDamage());
     } else{
         en->takeDamage(lm->getDamage());
+
     }
 
     return setAttackArgs(lm) + shieldAction;

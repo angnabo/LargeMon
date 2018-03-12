@@ -44,7 +44,7 @@ private:
 
     int X_LEFT_BTN_OFFSET = 270;//where the left hand-side buttons are on the x-axis
     int X_RIGHT_BTN_OFFSET = 454;//where the right hand-side buttons are on the x-axis
-    int Y_BUTTON_OFFSET = 20;
+    int Y_BUTTON_OFFSET = 30;
 
 //Globally used font
     TTF_Font *gFont = NULL;

@@ -90,7 +90,7 @@ bool LargemonMainView::loadMedia(vector<string> args)
     textColor = { 0, 0, 0 };
 
     loadUI(gBackgroundTexture, "../resources/ui/mountains.png");
-    loadUI(gBottomTextPanel,"../resources/ui/bottom_panel.png" );
+    loadUI(gBottomTextPanel,"../resources/ui/bottom_panel_big.png" );
     loadUI(gPlayerInfoPanel,"../resources/ui/info_panel.png" );
     loadUI(gEnemyInfoPanel,"../resources/ui/info_panel.png" );
     loadUI(gPlayerHpBarBG,"../resources/ui/health_bar_bg.bmp" );
@@ -417,7 +417,7 @@ bool LargemonMainView::render() {
     //Bottom viewport
     SDL_Rect bottomViewport{};
     bottomViewport.x = 0;
-    bottomViewport.y = static_cast<int>(SCREEN_HEIGHT / 1.4);
+    bottomViewport.y = static_cast<int>(SCREEN_HEIGHT / 1.5);
     bottomViewport.w = SCREEN_WIDTH;
     bottomViewport.h = SCREEN_HEIGHT / 3;
     SDL_RenderSetViewport(gRenderer, &bottomViewport);
