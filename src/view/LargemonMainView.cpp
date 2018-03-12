@@ -8,53 +8,41 @@
 #include <string>
 #include <iostream>
 #include <utility>
-#include "../graphics/GTexture.h"
-#include "../graphics/GProgressBar.h"
-#include "../graphics/GButtonTexture.h"
+#include "graphics/GTexture.h"
+#include "graphics/GProgressBar.h"
+#include "graphics/GButtonTexture.h"
 #include "../model/BattleInstance.h"
 #include "../model/utility/FileWriter.h"
 #include "LargemonMainView.h"
 
 
-
-bool LargemonMainView::init()
-{
+bool LargemonMainView::init() {
     //Initialization flag
     bool success = true;
 
     //Initialize SDL
-    if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
-    {
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         success = false;
-    }
-    else
-    {
+    } else {
         //Set texture filtering to linear
-        SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" );
+        SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 
         //Create window
-        gWindow = SDL_CreateWindow("Largemon", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-        if(gWindow == nullptr)
-        {
+        gWindow = SDL_CreateWindow("Largemon", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
+                                   SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        if (gWindow == nullptr) {
             success = false;
-        }
-        else
-        {
+        } else {
             //Create renderer for window
             gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-            if(gRenderer == nullptr)
-            {
+            if (gRenderer == nullptr) {
                 success = false;
-            }
-            else
-            {
-                if(( IMG_Init( IMG_INIT_PNG ) & IMG_INIT_PNG) == 0)
-                {
+            } else {
+                if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) == 0) {
                     success = false;
                 }
                 //Initialize SDL_ttf
-                if(TTF_Init() == -1)
-                {
+                if (TTF_Init() == -1) {
                     success = false;
                 }
             }
@@ -63,47 +51,44 @@ bool LargemonMainView::init()
     return success;
 }
 
-bool LargemonMainView::loadUI(GTexture & texture, string path){
+bool LargemonMainView::loadUI(GTexture &texture, string path) {
     bool success = true;
-    if( !texture.loadFromFile(gRenderer, std::move(path)) )
-    {
+    if (!texture.loadFromFile(gRenderer, std::move(path))) {
         cout << "Failed to load texture image!\n";
         success = false;
     }
     return success;
 }
 
-bool LargemonMainView::loadUIText(GTexture & texture, TTF_Font * font, std::string text){
+bool LargemonMainView::loadUIText(GTexture &texture, TTF_Font *font, std::string text) {
     bool success = true;
-    if( !texture.loadFont(gRenderer, font, text, textColor) )
-    {
+    if (!texture.loadFont(gRenderer, font, text, textColor)) {
         cout << "Failed to load font texture image!\n";
         success = false;
     }
     return success;
 }
 
-bool LargemonMainView::loadMedia(vector<string> args)
-{
+bool LargemonMainView::loadMedia(vector<string> args) {
     //Loading success flag
     bool success = true;
-    textColor = { 0, 0, 0 };
+    textColor = {0, 0, 0};
 
     loadUI(gBackgroundTexture, "../resources/ui/mountains.png");
-    loadUI(gBottomTextPanel,"../resources/ui/bottom_panel_big.png" );
-    loadUI(gPlayerInfoPanel,"../resources/ui/info_panel.png" );
-    loadUI(gEnemyInfoPanel,"../resources/ui/info_panel.png" );
-    loadUI(gPlayerHpBarBG,"../resources/ui/health_bar_bg.bmp" );
-    loadUI(gPlayerHpBarFG,"../resources/ui/health_bar_fg.bmp" );
-    loadUI(gEnemyHpBarBG,"../resources/ui/health_bar_bg.bmp" );
-    loadUI(gEnemyHpBarFG,"../resources/ui/health_bar_fg.bmp" );
-    loadUI(gMenuPanel,"../resources/ui/menu_panel.png" );
+    loadUI(gBottomTextPanel, "../resources/ui/bottom_panel_big.png");
+    loadUI(gPlayerInfoPanel, "../resources/ui/info_panel.png");
+    loadUI(gEnemyInfoPanel, "../resources/ui/info_panel.png");
+    loadUI(gPlayerHpBarBG, "../resources/ui/health_bar_bg.bmp");
+    loadUI(gPlayerHpBarFG, "../resources/ui/health_bar_fg.bmp");
+    loadUI(gEnemyHpBarBG, "../resources/ui/health_bar_bg.bmp");
+    loadUI(gEnemyHpBarFG, "../resources/ui/health_bar_fg.bmp");
+    loadUI(gMenuPanel, "../resources/ui/menu_panel.png");
 
-    loadUI(gPlayerSpriteSheetTexture,args[3] );
-    loadUI(gEnemySpriteSheetTexture,args[4] );
+    loadUI(gPlayerSpriteSheetTexture, args[3]);
+    loadUI(gEnemySpriteSheetTexture, args[4]);
 
-    loadUI(gPlayerTypeIcon,args[5] );
-    loadUI(gEnemyTypeIcon,args[6] );
+    loadUI(gPlayerTypeIcon, args[5]);
+    loadUI(gEnemyTypeIcon, args[6]);
 
 
     //Load Button Textures
@@ -115,7 +100,7 @@ bool LargemonMainView::loadMedia(vector<string> args)
 
     loadUI(gReplayBtn, "../resources/ui/small_button.png");
     loadUI(gExitBtn, "../resources/ui/small_button.png");
-    gReplayBtn.setColor(70,70,70);
+    gReplayBtn.setColor(70, 70, 70);
 
     buttons[0] = gTopLeftButton;
     buttons[1] = gTopRightButton;
@@ -123,20 +108,19 @@ bool LargemonMainView::loadMedia(vector<string> args)
     buttons[3] = gBottomRightButton;
 
     //Set bottom left sprite
-    gSpriteClips[ 0 ].x = 0;
-    gSpriteClips[ 0 ].y = 120;
-    gSpriteClips[ 0 ].w = 120;
-    gSpriteClips[ 0 ].h = 120;
+    gSpriteClips[0].x = 0;
+    gSpriteClips[0].y = 120;
+    gSpriteClips[0].w = 120;
+    gSpriteClips[0].h = 120;
     //Set top right sprite
-    gSpriteClips[ 1 ].x = 2040;
-    gSpriteClips[ 1 ].y = 120;
-    gSpriteClips[ 1 ].w = 120;
-    gSpriteClips[ 1 ].h = 120;
+    gSpriteClips[1].x = 2040;
+    gSpriteClips[1].y = 120;
+    gSpriteClips[1].w = 120;
+    gSpriteClips[1].h = 120;
 
     //Load ttf pixel font large size
-    gFont = TTF_OpenFont( "../resources/fonts/alterebro-pixel-font.ttf", PANEL_FONT_SIZE );
-    if( gFont == nullptr )
-    {
+    gFont = TTF_OpenFont("../resources/fonts/alterebro-pixel-font.ttf", PANEL_FONT_SIZE);
+    if (gFont == nullptr) {
         cout << "Failed to load lazy font! SDL_ttf Error: " << TTF_GetError() << endl;
         success = false;
     } else {
@@ -146,13 +130,12 @@ bool LargemonMainView::loadMedia(vector<string> args)
         loadUIText(gBottomLeftButtonText, gFont, args[7]);
         loadUIText(gBottomRightButtonText, gFont, args[8]);
         loadUIText(gPanelText, gFont, args[0]);
-        loadUIText(gReplayText, gFont, "Replay");
+        loadUIText(gReplayText, gFont, "Play again");
         loadUIText(gExitText, gFont, "Exit");
     }
     //Open ttf pixel font small size
-    gHpFont = TTF_OpenFont( "../resources/fonts/alterebro-pixel-font.ttf", HP_FONT_SIZE );
-    if( gHpFont == nullptr )
-    {
+    gHpFont = TTF_OpenFont("../resources/fonts/alterebro-pixel-font.ttf", HP_FONT_SIZE);
+    if (gHpFont == nullptr) {
         cout << "Failed to load lazy font! SDL_ttf Error: " << TTF_GetError() << endl;
         success = false;
     } else {
@@ -166,17 +149,15 @@ bool LargemonMainView::loadMedia(vector<string> args)
 }
 
 
-
 /*
    color - Returns an SDL_Color with the appropriate values
 */
 SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
-    SDL_Color col = {r,g,b,a};
+    SDL_Color col = {r, g, b, a};
     return col;
 }
 
-void LargemonMainView::close()
-{
+void LargemonMainView::close() {
 
 
 
@@ -249,16 +230,16 @@ void LargemonMainView::close()
     gPanelText.free();
 
     //Free global font
-    TTF_CloseFont( gFont );
+    TTF_CloseFont(gFont);
     gFont = nullptr;
 
     //Free loaded image
-    SDL_DestroyTexture( gTexture );
+    SDL_DestroyTexture(gTexture);
     gTexture = nullptr;
 
     //Destroy window
-    SDL_DestroyRenderer( gRenderer );
-    SDL_DestroyWindow( gWindow );
+    SDL_DestroyRenderer(gRenderer);
+    SDL_DestroyWindow(gWindow);
     gWindow = nullptr;
     gRenderer = nullptr;
 
@@ -276,14 +257,13 @@ bool LargemonMainView::run(vector<string> args) {
     } else if (!loadMedia(std::move(args))) {
         cout << "Failed to load media!\n";
     } else {
-            render();
+        render();
     }
-    SDL_RenderPresent(gRenderer);
-
     return true;
 }
 
-void LargemonMainView::menuPanel(string text){
+
+void LargemonMainView::menuPanel(string text) {
     //Top viewport
     SDL_Rect topViewport{};
     topViewport.x = 0;
@@ -299,34 +279,29 @@ void LargemonMainView::menuPanel(string text){
     gReplayBtn.render(gRenderer, 200, 200);
     gExitBtn.render(gRenderer, 350, 200);
 
-    gReplayText.render(gRenderer, 210, 210);
-    gExitText.render(gRenderer, 360, 210);
+    int playAgainTxtPos = 200 + buttonTextPosition(gReplayBtn.getWidth(), gReplayText.getWidth());
+    int exitTxtPos = 350 + buttonTextPosition(gExitBtn.getWidth(), gExitText.getWidth());
 
+    gReplayText.render(gRenderer, playAgainTxtPos, 210);
+    gExitText.render(gRenderer, exitTxtPos, 210);
 
     SDL_RenderPresent(gRenderer);
-
-
-
 }
 
-bool LargemonMainView::updateText(string text)
-{
+bool LargemonMainView::updateText(string text) {
     bool success = true;
-    if( !loadUIText(gPanelText, gFont, text))
-    {
-        cout <<  "Failed to render text texture!\n";
+    if (!loadUIText(gPanelText, gFont, text)) {
+        cout << "Failed to render text texture!\n";
         success = false;
     }
     render();
     return success;
 }
 
-bool LargemonMainView::winnerText(string text)
-{
+bool LargemonMainView::winnerText(string text) {
     bool success = true;
-    if( !loadUIText(gWinnerText, gFont, text))
-    {
-        cout <<  "Failed to render text texture!\n";
+    if (!loadUIText(gWinnerText, gFont, text)) {
+        cout << "Failed to render text texture!\n";
         success = false;
     }
     return success;
@@ -334,9 +309,9 @@ bool LargemonMainView::winnerText(string text)
 
 void LargemonMainView::updateButtons(int pressedButton) {
 
-    for(int i = 0; i<4; i++){
-        if(i!=pressedButton){
-            buttons[i].setColor(unslct,unslct,unslct);
+    for (int i = 0; i < 4; i++) {
+        if (i != pressedButton) {
+            buttons[i].setColor(unslct, unslct, unslct);
         }
     }
     buttons[pressedButton].setColor(slct, slct, slct);
@@ -345,19 +320,19 @@ void LargemonMainView::updateButtons(int pressedButton) {
 }
 
 void LargemonMainView::updateMenuButtons(int pressedButton) {
-    if(pressedButton == 0){
+    if (pressedButton == 0) {
         gExitBtn.setColor(unslct, unslct, unslct);
         gReplayBtn.setColor(slct, slct, slct);
-    }else {
+    } else {
         gReplayBtn.setColor(unslct, unslct, unslct);
         gExitBtn.setColor(slct, slct, slct);
     }
 }
 
-int LargemonMainView::buttonTextPosition(int width){
-    int buttonWidth = 174;
-    int textWidth = width;
-    int offset = (buttonWidth - textWidth)/2;
+int LargemonMainView::buttonTextPosition(int btnWidth, int txtWidth) {
+    int buttonWidth = btnWidth;
+    int textWidth = txtWidth;
+    int offset = (buttonWidth - textWidth) / 2;
     return offset;
 }
 
@@ -425,23 +400,27 @@ bool LargemonMainView::render() {
     SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
     gBottomTextPanel.render(gRenderer, 10, 0);
-    gPanelText.render(gRenderer,30, 10);
+    gPanelText.render(gRenderer, 30, 10);
 
     //calculate the x-positions of button text
-    int topLeftBtnTxtPos = X_LEFT_BTN_OFFSET+ buttonTextPosition(gTopLeftButtonText.getWidth());
-    int topRightBtnTxtPos = X_RIGHT_BTN_OFFSET+buttonTextPosition(gTopRightButtonText.getWidth());
-    int bottomLeftBtnTxtPos = X_LEFT_BTN_OFFSET+buttonTextPosition(gBottomLeftButtonText.getWidth());
-    int bottomRightBtnTxtPos = X_RIGHT_BTN_OFFSET+buttonTextPosition(gBottomRightButtonText.getWidth());
+    int topLeftBtnTxtPos =
+            X_LEFT_BTN_OFFSET + buttonTextPosition(gTopRightButton.getWidth(), gTopLeftButtonText.getWidth());
+    int topRightBtnTxtPos =
+            X_RIGHT_BTN_OFFSET + buttonTextPosition(gTopRightButton.getWidth(), gTopRightButtonText.getWidth());
+    int bottomLeftBtnTxtPos =
+            X_LEFT_BTN_OFFSET + buttonTextPosition(gTopRightButton.getWidth(), gBottomLeftButtonText.getWidth());
+    int bottomRightBtnTxtPos =
+            X_RIGHT_BTN_OFFSET + buttonTextPosition(gTopRightButton.getWidth(), gBottomRightButtonText.getWidth());
     //render buttons
     gTopLeftButton.render(gRenderer, X_LEFT_BTN_OFFSET, Y_BUTTON_OFFSET);
     gTopRightButton.render(gRenderer, X_RIGHT_BTN_OFFSET, Y_BUTTON_OFFSET);
-    gBottomLeftButton.render(gRenderer, X_LEFT_BTN_OFFSET, Y_BUTTON_OFFSET+gTopRightButton.getHeight()+5);
-    gBottomRightButton.render(gRenderer, X_RIGHT_BTN_OFFSET, Y_BUTTON_OFFSET+gTopRightButton.getHeight()+5);
+    gBottomLeftButton.render(gRenderer, X_LEFT_BTN_OFFSET, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 5);
+    gBottomRightButton.render(gRenderer, X_RIGHT_BTN_OFFSET, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 5);
     //render button text
-    gTopLeftButtonText.render(gRenderer, topLeftBtnTxtPos, Y_BUTTON_OFFSET+9);
-    gTopRightButtonText.render(gRenderer, topRightBtnTxtPos, Y_BUTTON_OFFSET+9);
-    gBottomLeftButtonText.render(gRenderer, bottomLeftBtnTxtPos, Y_BUTTON_OFFSET+gTopRightButton.getHeight()+14);
-    gBottomRightButtonText.render(gRenderer, bottomRightBtnTxtPos, Y_BUTTON_OFFSET+gTopRightButton.getHeight()+14);
+    gTopLeftButtonText.render(gRenderer, topLeftBtnTxtPos, Y_BUTTON_OFFSET + 9);
+    gTopRightButtonText.render(gRenderer, topRightBtnTxtPos, Y_BUTTON_OFFSET + 9);
+    gBottomLeftButtonText.render(gRenderer, bottomLeftBtnTxtPos, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 14);
+    gBottomRightButtonText.render(gRenderer, bottomRightBtnTxtPos, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 14);
 
     //Update screen
     SDL_RenderPresent(gRenderer);

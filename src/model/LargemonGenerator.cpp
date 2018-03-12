@@ -7,7 +7,7 @@
 
 LargemonGenerator::LargemonGenerator() = default;
 
-Largemon * LargemonGenerator::generateLargemon() {
+Largemon *LargemonGenerator::generateLargemon() {
 
     // get health points
     int health = RandomNumber::randomInRange(MIN_HEALTH, MAX_HEALTH);
@@ -21,29 +21,30 @@ Largemon * LargemonGenerator::generateLargemon() {
     // get a type
     Type type = Type(RandomNumber::randomInRange(0, 2));
 
-    switch (type){
+    switch (type) {
         case Type::fire : {
             string name = generateName(type);
-            auto * lm = new FireLM(&health, &damage, &size, &name);
+            auto *lm = new FireLM(&health, &damage, &size, &name);
             return lm;
         }
         case Type::water : {
             string name = generateName(type);
-            auto * lm = new WaterLM(&health, &damage, &size, &name);
+            auto *lm = new WaterLM(&health, &damage, &size, &name);
             return lm;
         }
         case Type::wood : {
             string name = generateName(type);
-            auto * lm = new WoodLM(&health, &damage, &size, &name);
+            auto *lm = new WoodLM(&health, &damage, &size, &name);
             return lm;
         }
-        default:break;
+        default:
+            break;
     }
 }
 
-int LargemonGenerator::getDamage(int health){
+int LargemonGenerator::getDamage(int health) {
     int damage;
-    if (health < DAMAGE_FACTOR){
+    if (health < DAMAGE_FACTOR) {
         damage = RandomNumber::randomInRange(MIN_DMG_IF_HEALTH_LOW, MAX_DMG_IF_HEALTH_LOW);
     } else {
         damage = RandomNumber::randomInRange(MIN_DMG_IF_HEALTH_HIGH, MAX_DMG_IF_HEALTH_HIGH);
@@ -53,15 +54,15 @@ int LargemonGenerator::getDamage(int health){
 
 string LargemonGenerator::generateName(Type type) {
     string name;
-    switch(type){
+    switch (type) {
         case Type::fire :
-            name = fireNames[RandomNumber::randomInRange(0, fireNames.size()-1)];
+            name = fireNames[RandomNumber::randomInRange(0, fireNames.size() - 1)];
             break;
         case Type::water :
-            name = waterNames[RandomNumber::randomInRange(0, waterNames.size()-1)];
+            name = waterNames[RandomNumber::randomInRange(0, waterNames.size() - 1)];
             break;
         case Type::wood :
-            name = woodNames[RandomNumber::randomInRange(0, woodNames.size()-1)];
+            name = woodNames[RandomNumber::randomInRange(0, woodNames.size() - 1)];
             break;
     }
     return name;

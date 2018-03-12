@@ -18,9 +18,13 @@ using namespace std;
 class LargemonGenerator {
 public:
     LargemonGenerator();
-    Largemon * generateLargemon();
+
+    Largemon *generateLargemon();
+
     string generateName(Type);
+
     int getDamage(int health);
+
 private:
     const int MIN_HEALTH = 200;
     const int MAX_HEALTH = 400;

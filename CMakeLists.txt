@@ -15,9 +15,9 @@ set(SOURCE_FILES src/model/largemon/Largemon.cpp src/model/largemon/Largemon.h
         src/model/utility/RandomNumber.h src/model/utility/RandomNumber.cpp
         src/model/largemon/Type.h src/model/largemon/Type.cpp
         src/model/utility/FileWriter.h src/model/utility/FileWriter.cpp
-        src/view/LargemonMainView.cpp src/view/LargemonMainView.h src/graphics/GTexture.cpp
-        src/graphics/GTexture.h src/graphics/GButtonTexture.cpp src/graphics/GButtonTexture.h
-        src/model/BattleInstance.cpp src/model/BattleInstance.h src/graphics/GProgressBar.cpp src/graphics/GProgressBar.h)
+        src/view/LargemonMainView.cpp src/view/LargemonMainView.h src/view/graphics/GTexture.cpp
+        src/view/graphics/GTexture.h src/view/graphics/GButtonTexture.cpp src/view/graphics/GButtonTexture.h
+        src/model/BattleInstance.cpp src/model/BattleInstance.h src/view/graphics/GProgressBar.cpp src/view/graphics/GProgressBar.h)
 add_executable(Largemon ${SOURCE_FILES})
 
 target_link_libraries(Largemon SDL2 SDL2_ttf SDL2_image)

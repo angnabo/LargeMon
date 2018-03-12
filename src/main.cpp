@@ -7,12 +7,12 @@
 #include "view/LargemonMainView.h"
 #include "controller/Controller.h"
 
-int main( int argc, char* args[] ) {
+int main(int argc, char *args[]) {
 
     //Controller controller;
     //Controller * prev = &controller;
     int cont = 2;
-    while(cont == 2){
+    while (cont == 2) {
         //prev->close();
         Controller replay;
         cont = replay.run();

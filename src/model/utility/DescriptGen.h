@@ -13,9 +13,13 @@ using namespace std;
 class DescriptGen {
 public:
     DescriptGen();
+
     string getAbility(Type type);
+
     string getAttack(Type type);
+
     string getDescription(Largemon *lm);
+
 private:
     vector<string> form;
 

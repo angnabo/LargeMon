@@ -17,6 +17,7 @@ public:
     virtual ~Observer();
 
     virtual void update() const = 0;
+
     Largemon *largeMon;
 
 };

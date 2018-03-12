@@ -11,41 +11,74 @@ using namespace std;
 class BattleInstance {
 public:
     BattleInstance();
+
     string action(int);
+
     string enemyMove();
+
     int randomInRange(int, int);
+
     bool determineCounter(Largemon *, Largemon *);
+
     bool isGameOver();
+
     bool isEnemyDead();
+
     bool isPlayerDead();
+
     int getPlayerCurrentHp();
+
     int getEnemyCurrentHp();
+
     int getRound();
+
     float getEnemyLargemonCurrentHpPercent();
+
     float getPlayerLargemonCurrentHpPercent();
+
     string getEnemyLargemonName();
+
     string getPlayerLargemonName();
+
     string getWinner();
+
     virtual ~BattleInstance();
-    vector<string> * getPlayerArgs();
-    vector<string> * getEnemyArgs();
+
+    vector<string> *getPlayerArgs();
+
+    vector<string> *getEnemyArgs();
+
     string defend(Largemon *lm);
+
     string attack(Largemon *lm);
+
     int applyShield(int damage);
+
     string specialAttack(Largemon *);
+
     string specialAbility(Largemon *);
+
     void finishTurn(Largemon *lm);
-    Largemon * getPlayerPtr();
-    Largemon * getEnemyPtr();
-    Largemon * getEnemyOf(Largemon *);
+
+    Largemon *getPlayerPtr();
+
+    Largemon *getEnemyPtr();
+
+    Largemon *getEnemyOf(Largemon *);
+
     void attach(class ContrObserver *);
+
     void notify(Largemon *, vector<string>);
+
     string attackWaterLm(Largemon *to, int damage);
+
     bool isSpecAttack(Largemon *lm);
+
     string setSpecAttackArgs(Largemon *lm);
+
 private:
-    Largemon * player;
-    Largemon * enemy;
+    Largemon *player;
+    Largemon *enemy;
     int playerSpecAttkCount;
     int enemySpecAttkCount;
     int round;

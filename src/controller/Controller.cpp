@@ -19,25 +19,28 @@ Controller::Controller() {
  * @param event
  * @return
  */
-int Controller::handleMenuKeyPress(MenuButton * selected, int event){
-    switch (event){
+int Controller::handleMenuKeyPress(MenuButton *selected, int event) {
+    switch (event) {
         case SDLK_RIGHT:
-            switch (*selected){
+            switch (*selected) {
                 case left:
                     *selected = right;
                     break;
-                default:break;
+                default:
+                    break;
             }
             return *selected;
         case SDLK_LEFT:
-            switch (*selected){
+            switch (*selected) {
                 case right:
                     *selected = left;
                     break;
-                default:break;
+                default:
+                    break;
             }
             return *selected;
-        default:break;
+        default:
+            break;
     }
 }
 
@@ -47,53 +50,58 @@ int Controller::handleMenuKeyPress(MenuButton * selected, int event){
  * @param event
  * @return
  */
-int Controller::handleKeyPress(Button * selected, int event){
-    switch (event){
+int Controller::handleKeyPress(Button *selected, int event) {
+    switch (event) {
         case SDLK_UP:
-            switch (*selected){
+            switch (*selected) {
                 case bottom_left :
                     *selected = top_left;
                     break;
                 case bottom_right :
                     *selected = top_right;
                     break;
-                default:break;
+                default:
+                    break;
             }
             return *selected;
         case SDLK_RIGHT:
-            switch (*selected){
+            switch (*selected) {
                 case top_left:
                     *selected = top_right;
                     break;
                 case bottom_left:
                     *selected = bottom_right;
                     break;
-                default:break;
+                default:
+                    break;
             }
             return *selected;
         case SDLK_DOWN:
-            switch (*selected){
+            switch (*selected) {
                 case top_left:
                     *selected = bottom_left;
                     break;
                 case top_right:
                     *selected = bottom_right;
                     break;
-                default:break;
+                default:
+                    break;
             }
             return *selected;
         case SDLK_LEFT:
-            switch (*selected){
+            switch (*selected) {
                 case top_right:
                     *selected = top_left;
                     break;
                 case bottom_right:
                     *selected = bottom_left;
                     break;
-                default:break;
+                default:
+                    break;
             }
             return *selected;
-        default:break;
+        default:
+            break;
     }
     return *selected;
 }
@@ -105,8 +113,8 @@ int Controller::run() {
     FileWriter writer = FileWriter(&battleInstance);
     battleInstance.attach(&writer);
 
-    HealthObserver playerhp = HealthObserver(battleInstance.getPlayerPtr(), &view);
-    HealthObserver enemyhp = HealthObserver(battleInstance.getEnemyPtr(), &view);
+    HealthBarObserver playerhp = HealthBarObserver(battleInstance.getPlayerPtr(), &view);
+    HealthBarObserver enemyhp = HealthBarObserver(battleInstance.getEnemyPtr(), &view);
 
     setViewArguments();
 
@@ -118,8 +126,8 @@ int Controller::run() {
     bool quit = false;
 
     SDL_Event e{};
-    while(!quit) {
-        while (SDL_PollEvent(&e) != 0)  {
+    while (!quit) {
+        while (SDL_PollEvent(&e) != 0) {
             if (e.type == SDL_QUIT) {
                 quit = true;
             }
@@ -167,7 +175,7 @@ int Controller::run() {
     view.close();
 }
 
-int Controller::menuPanel(){
+int Controller::menuPanel() {
 
     view.menuPanel(battleInstance.getWinner());
 
@@ -217,7 +225,6 @@ int Controller::menuPanel(){
 }
 
 
-
 void Controller::setViewArguments() {
     //view.
 
@@ -236,11 +243,11 @@ void Controller::setViewArguments() {
 
 string Controller::getLargemonPath(string type) {
     string path;
-    if(type == "fire troll"){
+    if (type == "fire troll") {
         path = "../resources/sprites/fire_troll_sprite_sheet.png";
-    } else if(type == "water troll"){
+    } else if (type == "water troll") {
         path = "../resources/sprites/water_troll_sprite_sheet.png";
-    }else{
+    } else {
         path = "../resources/sprites/wood_troll_sprite_sheet.png";
     }
     return path;
@@ -248,13 +255,11 @@ string Controller::getLargemonPath(string type) {
 
 string Controller::getTypePath(string type) {
     string path;
-    if(type == "fire troll"){
+    if (type == "fire troll") {
         path = "../resources/ui/fire_type_icon.png";
-    } else if(type == "water troll"){
+    } else if (type == "water troll") {
         path = "../resources/ui/water_type_icon.png";
-    }else{
-
-
+    } else {
         path = "../resources/ui/wood_type_icon.png";
     }
     return path;

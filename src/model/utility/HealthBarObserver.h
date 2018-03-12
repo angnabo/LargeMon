@@ -10,20 +10,20 @@
 #include "Observer.h"
 #include "../../view/LargemonMainView.h"
 
-class HealthObserver : public Observer{
+class HealthBarObserver : public Observer {
 public:
-    HealthObserver(Largemon *, LargemonMainView *);
-    //virtual ~HealthObserver() = default;
+    HealthBarObserver(Largemon *, LargemonMainView *);
+    //virtual ~HealthBarObserver() = default;
 
     void update() const override;
+
 private:
     //int health = 0;
     string name;
     int health;
     ofstream outLogFile;
-    LargemonMainView * view;
+    LargemonMainView *view;
     float hpPercent;
 };
 
-
-#endif //LARGEMON_HealthObserver_H
+#endif //LARGEMON_HealthBarObserver_H

@@ -1,10 +1,17 @@
 Largemon TO DO:
 
-SUPER IMPORTANT:
+high priority :
+------------------------
+
+[] one function in view to update health bar
+
+[]
+
+------------------------
 
 [done] largemon description displayed at the beginning
 
-[] replay and exit buttons at end of round
+[done] replay and exit buttons at end of round
 
 [] stats bar showing name/type/hp/attack power/status(stunned/shielded etc.)
     [] design an icon for:
@@ -13,8 +20,6 @@ SUPER IMPORTANT:
         [] shielded
 
     [done] design an icon for each largemon type
-
-important:
 
 [] implement other largemon creatures(goblin, dragon)
 

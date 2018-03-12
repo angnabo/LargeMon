@@ -8,11 +8,12 @@
 
 #include "GTexture.h"
 
-class GButtonTexture: public GTexture{
+class GButtonTexture : public GTexture {
 
 public:
     void setSelected(bool);
-    bool isSelected(){return selected;}
+
+    bool isSelected() { return selected; }
 
 private:
     bool selected;

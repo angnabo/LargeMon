@@ -8,7 +8,7 @@
 DescriptGen::DescriptGen() {
 }
 
-string DescriptGen::getDescription(Largemon * lm) {
+string DescriptGen::getDescription(Largemon *lm) {
 
     string description;
     string size;
@@ -17,7 +17,7 @@ string DescriptGen::getDescription(Largemon * lm) {
     string ability = getAbility(lm->getType());
     string name = lm->getName();
 
-    if (lm->getSize() < 5){
+    if (lm->getSize() < 5) {
         size = "small";
     } else {
         size = "large";
@@ -30,15 +30,15 @@ string DescriptGen::getDescription(Largemon * lm) {
 
 string DescriptGen::getAttack(Type type) {
     string attack;
-    switch(type){
+    switch (type) {
         case Type::fire :
-            attack = "fireball";
+            attack = "Fireball";
             break;
         case Type::water :
-            attack = "blast";
+            attack = "Blast";
             break;
         case Type::wood :
-            attack = "tree throw";
+            attack = "Tree throw";
             break;
     }
     return attack;
@@ -46,15 +46,15 @@ string DescriptGen::getAttack(Type type) {
 
 string DescriptGen::getAbility(Type type) {
     string ability;
-    switch(type){
+    switch (type) {
         case Type::fire :
-            ability = "ignite";
+            ability = "Ignite";
             break;
         case Type::water :
-            ability = "bubble shield";
+            ability = "Bubble shield";
             break;
         case Type::wood :
-            ability = "stun";
+            ability = "Stun";
             break;
     }
     return ability;

@@ -11,27 +11,31 @@
 #include <iostream>
 
 using namespace std;
+
 class Controller {
 public:
     Controller();
 
     void close();
 
-    enum Button{
+    enum Button {
         top_left = 0,
         top_right = 1,
         bottom_left = 2,
         bottom_right = 3
     };
 
-    enum MenuButton{
+    enum MenuButton {
         left = 0,
         right = 1,
     };
 
     int run();
+
     int handleKeyPress(Button *, int);
+
     void setViewArguments();
+
     string getLargemonPath(string type);
 
     string getTypePath(string type);
@@ -44,7 +48,7 @@ private:
     BattleInstance battleInstance;
     //view
     LargemonMainView view;
-    vector <string> arguments;
+    vector<string> arguments;
 
 
     int handleMenuKeyPress(MenuButton *selected, int event);

@@ -9,24 +9,17 @@ using namespace std;
 #ifndef LARGEMON_FILEWRITER_H
 #define LARGEMON_FILEWRITER_H
 
-
-
-class FileWriter : public ContrObserver{
+class FileWriter : public ContrObserver {
 public:
     explicit FileWriter(BattleInstance *);
 
+    void update(Largemon *, vector<string>) const;
 
-    void writeToFile() const;
-    void update(Largemon *, vector<string>) const ;
 private:
-    //int health = 0;
-    string name;
-    int health;
-    ofstream outLogFile;
     string filePath;
-
     string DIR_PATH = "../game_logs/";
 
+    const string currentDateTime();
 };
 
 

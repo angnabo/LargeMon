@@ -4,13 +4,13 @@
 
 #include "FireLM.h"
 
-FireLM::FireLM(const int *hp, const int *damage, const int *size, const string * name)
+FireLM::FireLM(const int *hp, const int *damage, const int *size, const string *name)
         : Largemon(hp, damage, size, name) {
 
 }
 
 int FireLM::specialAttack() const {
-    return (int)damage*1.40;
+    return (int) damage * 1.40;
 }
 
 Type FireLM::getType() const {

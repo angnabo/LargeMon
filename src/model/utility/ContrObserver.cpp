@@ -3,6 +3,7 @@
 //
 
 #include "ContrObserver.h"
+
 ContrObserver::ContrObserver(BattleInstance *b) {
     battle = b;
     battle->attach(this);

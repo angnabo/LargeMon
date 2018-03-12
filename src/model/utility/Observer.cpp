@@ -12,5 +12,3 @@ Observer::Observer(Largemon *lm) {
 Observer::~Observer() {
 
 }
-
-//Observer::Observer() {}

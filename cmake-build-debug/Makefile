@@ -150,87 +150,6 @@ src/controller/Controller.cpp.s:
 	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/controller/Controller.cpp.s
 .PHONY : src/controller/Controller.cpp.s
 
-src/graphics/GButtonTexture.o: src/graphics/GButtonTexture.cpp.o
-
-.PHONY : src/graphics/GButtonTexture.o
-
-# target to build an object file
-src/graphics/GButtonTexture.cpp.o:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/graphics/GButtonTexture.cpp.o
-.PHONY : src/graphics/GButtonTexture.cpp.o
-
-src/graphics/GButtonTexture.i: src/graphics/GButtonTexture.cpp.i
-
-.PHONY : src/graphics/GButtonTexture.i
-
-# target to preprocess a source file
-src/graphics/GButtonTexture.cpp.i:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/graphics/GButtonTexture.cpp.i
-.PHONY : src/graphics/GButtonTexture.cpp.i
-
-src/graphics/GButtonTexture.s: src/graphics/GButtonTexture.cpp.s
-
-.PHONY : src/graphics/GButtonTexture.s
-
-# target to generate assembly for a file
-src/graphics/GButtonTexture.cpp.s:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/graphics/GButtonTexture.cpp.s
-.PHONY : src/graphics/GButtonTexture.cpp.s
-
-src/graphics/GProgressBar.o: src/graphics/GProgressBar.cpp.o
-
-.PHONY : src/graphics/GProgressBar.o
-
-# target to build an object file
-src/graphics/GProgressBar.cpp.o:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/graphics/GProgressBar.cpp.o
-.PHONY : src/graphics/GProgressBar.cpp.o
-
-src/graphics/GProgressBar.i: src/graphics/GProgressBar.cpp.i
-
-.PHONY : src/graphics/GProgressBar.i
-
-# target to preprocess a source file
-src/graphics/GProgressBar.cpp.i:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/graphics/GProgressBar.cpp.i
-.PHONY : src/graphics/GProgressBar.cpp.i
-
-src/graphics/GProgressBar.s: src/graphics/GProgressBar.cpp.s
-
-.PHONY : src/graphics/GProgressBar.s
-
-# target to generate assembly for a file
-src/graphics/GProgressBar.cpp.s:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/graphics/GProgressBar.cpp.s
-.PHONY : src/graphics/GProgressBar.cpp.s
-
-src/graphics/GTexture.o: src/graphics/GTexture.cpp.o
-
-.PHONY : src/graphics/GTexture.o
-
-# target to build an object file
-src/graphics/GTexture.cpp.o:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/graphics/GTexture.cpp.o
-.PHONY : src/graphics/GTexture.cpp.o
-
-src/graphics/GTexture.i: src/graphics/GTexture.cpp.i
-
-.PHONY : src/graphics/GTexture.i
-
-# target to preprocess a source file
-src/graphics/GTexture.cpp.i:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/graphics/GTexture.cpp.i
-.PHONY : src/graphics/GTexture.cpp.i
-
-src/graphics/GTexture.s: src/graphics/GTexture.cpp.s
-
-.PHONY : src/graphics/GTexture.s
-
-# target to generate assembly for a file
-src/graphics/GTexture.cpp.s:
-	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/graphics/GTexture.cpp.s
-.PHONY : src/graphics/GTexture.cpp.s
-
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -636,6 +555,87 @@ src/view/LargemonMainView.cpp.s:
 	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/view/LargemonMainView.cpp.s
 .PHONY : src/view/LargemonMainView.cpp.s
 
+src/view/graphics/GButtonTexture.o: src/view/graphics/GButtonTexture.cpp.o
+
+.PHONY : src/view/graphics/GButtonTexture.o
+
+# target to build an object file
+src/view/graphics/GButtonTexture.cpp.o:
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/view/graphics/GButtonTexture.cpp.o
+.PHONY : src/view/graphics/GButtonTexture.cpp.o
+
+src/view/graphics/GButtonTexture.i: src/view/graphics/GButtonTexture.cpp.i
+
+.PHONY : src/view/graphics/GButtonTexture.i
+
+# target to preprocess a source file
+src/view/graphics/GButtonTexture.cpp.i:
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/view/graphics/GButtonTexture.cpp.i
+.PHONY : src/view/graphics/GButtonTexture.cpp.i
+
+src/view/graphics/GButtonTexture.s: src/view/graphics/GButtonTexture.cpp.s
+
+.PHONY : src/view/graphics/GButtonTexture.s
+
+# target to generate assembly for a file
+src/view/graphics/GButtonTexture.cpp.s:
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/view/graphics/GButtonTexture.cpp.s
+.PHONY : src/view/graphics/GButtonTexture.cpp.s
+
+src/view/graphics/GProgressBar.o: src/view/graphics/GProgressBar.cpp.o
+
+.PHONY : src/view/graphics/GProgressBar.o
+
+# target to build an object file
+src/view/graphics/GProgressBar.cpp.o:
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/view/graphics/GProgressBar.cpp.o
+.PHONY : src/view/graphics/GProgressBar.cpp.o
+
+src/view/graphics/GProgressBar.i: src/view/graphics/GProgressBar.cpp.i
+
+.PHONY : src/view/graphics/GProgressBar.i
+
+# target to preprocess a source file
+src/view/graphics/GProgressBar.cpp.i:
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/view/graphics/GProgressBar.cpp.i
+.PHONY : src/view/graphics/GProgressBar.cpp.i
+
+src/view/graphics/GProgressBar.s: src/view/graphics/GProgressBar.cpp.s
+
+.PHONY : src/view/graphics/GProgressBar.s
+
+# target to generate assembly for a file
+src/view/graphics/GProgressBar.cpp.s:
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/view/graphics/GProgressBar.cpp.s
+.PHONY : src/view/graphics/GProgressBar.cpp.s
+
+src/view/graphics/GTexture.o: src/view/graphics/GTexture.cpp.o
+
+.PHONY : src/view/graphics/GTexture.o
+
+# target to build an object file
+src/view/graphics/GTexture.cpp.o:
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/view/graphics/GTexture.cpp.o
+.PHONY : src/view/graphics/GTexture.cpp.o
+
+src/view/graphics/GTexture.i: src/view/graphics/GTexture.cpp.i
+
+.PHONY : src/view/graphics/GTexture.i
+
+# target to preprocess a source file
+src/view/graphics/GTexture.cpp.i:
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/view/graphics/GTexture.cpp.i
+.PHONY : src/view/graphics/GTexture.cpp.i
+
+src/view/graphics/GTexture.s: src/view/graphics/GTexture.cpp.s
+
+.PHONY : src/view/graphics/GTexture.s
+
+# target to generate assembly for a file
+src/view/graphics/GTexture.cpp.s:
+	$(MAKE) -f CMakeFiles/Largemon.dir/build.make CMakeFiles/Largemon.dir/src/view/graphics/GTexture.cpp.s
+.PHONY : src/view/graphics/GTexture.cpp.s
+
 test/Test.o: test/Test.cpp.o
 
 .PHONY : test/Test.o
@@ -675,15 +675,6 @@ help:
 	@echo "... src/controller/Controller.o"
 	@echo "... src/controller/Controller.i"
 	@echo "... src/controller/Controller.s"
-	@echo "... src/graphics/GButtonTexture.o"
-	@echo "... src/graphics/GButtonTexture.i"
-	@echo "... src/graphics/GButtonTexture.s"
-	@echo "... src/graphics/GProgressBar.o"
-	@echo "... src/graphics/GProgressBar.i"
-	@echo "... src/graphics/GProgressBar.s"
-	@echo "... src/graphics/GTexture.o"
-	@echo "... src/graphics/GTexture.i"
-	@echo "... src/graphics/GTexture.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -729,6 +720,15 @@ help:
 	@echo "... src/view/LargemonMainView.o"
 	@echo "... src/view/LargemonMainView.i"
 	@echo "... src/view/LargemonMainView.s"
+	@echo "... src/view/graphics/GButtonTexture.o"
+	@echo "... src/view/graphics/GButtonTexture.i"
+	@echo "... src/view/graphics/GButtonTexture.s"
+	@echo "... src/view/graphics/GProgressBar.o"
+	@echo "... src/view/graphics/GProgressBar.i"
+	@echo "... src/view/graphics/GProgressBar.s"
+	@echo "... src/view/graphics/GTexture.o"
+	@echo "... src/view/graphics/GTexture.i"
+	@echo "... src/view/graphics/GTexture.s"
 	@echo "... test/Test.o"
 	@echo "... test/Test.i"
 	@echo "... test/Test.s"

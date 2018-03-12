@@ -8,7 +8,7 @@
 
 //using namespace std;
 
-Largemon::Largemon(const int* hp, const int* damage, const int* size, const string * name){
+Largemon::Largemon(const int *hp, const int *damage, const int *size, const string *name) {
     this->name = *name;
     this->hp = *hp;
     this->currentHp = *hp;
@@ -24,7 +24,7 @@ string Largemon::getName() const {
 
 void Largemon::takeDamage(int damage) {
     currentHp -= damage;
-    if(currentHp < 0){
+    if (currentHp < 0) {
         currentHp = 0;
     }
     notify();
@@ -35,17 +35,17 @@ int Largemon::getDamage() {
     return damage;
 }
 
-void Largemon::defend(){
+void Largemon::defend() {
     currentHp += 20;
-    if(currentHp > hp){
+    if (currentHp > hp) {
         currentHp = hp;
     }
     lastAction = "Defend";
     notify();
 }
 
-float Largemon::getCurrentHpPercent(){
-    float hpPercent = (float)getCurrentHp()/(float)getHp();//25/50*100
+float Largemon::getCurrentHpPercent() {
+    float hpPercent = (float) getCurrentHp() / (float) getHp();//25/50*100
     return hpPercent;
 }
 
@@ -58,26 +58,26 @@ std::string Largemon::getLastAction() {
 }
 
 void Largemon::notify() {
-    for (int i = 0; i < views.size(); i++){
+    for (int i = 0; i < views.size(); i++) {
         views[i]->update();
     }
 }
 
-void Largemon::stun(int count){
+void Largemon::stun(int count) {
     stunCount = count;
 }
 
 void Largemon::decrementStun() {
-    if(stunCount > 0){
+    if (stunCount > 0) {
         stunCount--;
     }
 }
 
-bool Largemon::isStunned(){
+bool Largemon::isStunned() {
     return (stunCount != 0);
 }
 
-void Largemon::attach(Observer * obs) {
+void Largemon::attach(Observer *obs) {
     views.push_back(obs);
 }
 
@@ -93,19 +93,19 @@ void Largemon::takeTickDamage(int count) {
     tickDmgCount = count;
 }
 
-void Largemon::applyTickDamage(int damage){
-    if(tickDmgCount > 0) {
+void Largemon::applyTickDamage(int damage) {
+    if (tickDmgCount > 0) {
         takeDamage(damage);
         decrementTickCount();
     }
 }
 
-bool Largemon::isTakingTickDamage(){
+bool Largemon::isTakingTickDamage() {
     return (tickDmgCount != 0);
 }
 
 void Largemon::decrementTickCount() {
-    if(tickDmgCount > 0) {
+    if (tickDmgCount > 0) {
         tickDmgCount--;
     }
 }

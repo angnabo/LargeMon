@@ -9,12 +9,14 @@
 #include "Largemon.h"
 
 
-class WoodLM: public Largemon {
+class WoodLM : public Largemon {
 public:
     WoodLM(const int *, const int *, const int *, const string *);
 
     int specialAttack() const;
+
     int specialAbility() const;
+
     Type getType() const;
 
 };
