@@ -5,9 +5,7 @@
 #ifndef LARGEMON_WATERLM_H
 #define LARGEMON_WATERLM_H
 
-
 #include "Largemon.h"
-
 
 class WaterLM : public Largemon {
 public:
@@ -22,10 +20,6 @@ public:
     bool isShielded();
 
 private:
-    int shieldCount;
-
-
+    int shieldCount = 0;
 };
-
-
 #endif //LARGEMON_WATERLM_H
