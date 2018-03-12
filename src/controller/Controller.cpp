@@ -8,9 +8,7 @@
 #include "../model/utility/DescriptGen.h"
 
 Controller::Controller() {
-
     battleInstance = BattleInstance();
-
 }
 
 /**
@@ -19,7 +17,7 @@ Controller::Controller() {
  * @param event
  * @return
  */
-int Controller::handleMenuKeyPress(MenuButton *selected, int event) {
+int Controller::handleMenuKeyPress(MenuButtonEnum *selected, int event) {
     switch (event) {
         case SDLK_RIGHT:
             switch (*selected) {
@@ -50,7 +48,7 @@ int Controller::handleMenuKeyPress(MenuButton *selected, int event) {
  * @param event
  * @return
  */
-int Controller::handleKeyPress(Button *selected, int event) {
+int Controller::handleKeyPress(ButtonEnum *selected, int event) {
     switch (event) {
         case SDLK_UP:
             switch (*selected) {
@@ -106,6 +104,10 @@ int Controller::handleKeyPress(Button *selected, int event) {
     return *selected;
 }
 
+/**
+ * Creates a new battle, passes arguments to the view and runs the loop to accept user input
+ * @return
+ */
 int Controller::run() {
 
     int exitCode = 0;
@@ -120,21 +122,20 @@ int Controller::run() {
 
     view.run(arguments);
 
-    int pressedButton;
-    Button selected = Button::top_left;
+    int pressedButton = 0;
+    ButtonEnum selected = ButtonEnum::top_left;
 
-    bool quit = false;
+    bool running = true;
 
     SDL_Event e{};
-    while (!quit) {
+    while (running) {
         while (SDL_PollEvent(&e) != 0) {
             if (e.type == SDL_QUIT) {
-                quit = true;
+                running = false;
             }
                 // handle key presses
             else if (e.type == SDL_KEYDOWN) {
                 switch (e.key.keysym.sym) {
-
                     //Handle LEFT key press
                     case SDLK_UP:
                         pressedButton = handleKeyPress(&selected, SDLK_UP);
@@ -161,7 +162,7 @@ int Controller::run() {
                 if (e.key.keysym.sym == SDLK_RETURN) {
                     string textUpdate;
                     if (!battleInstance.isGameOver()) {
-                        textUpdate = battleInstance.action(selected);
+                        textUpdate = battleInstance.playerMove(selected);
                         view.updateText(textUpdate);
                     }
                 }
@@ -180,16 +181,16 @@ int Controller::menuPanel() {
     view.menuPanel(battleInstance.getWinner());
 
     int pressedMenuButton;
-    MenuButton selectedMenu = MenuButton::left;
+    MenuButtonEnum selectedMenu = MenuButtonEnum::left;
 
-    bool quit = false;
+    bool running = true;
 
     //Event handler
     SDL_Event e{};
-    while (!quit) {
+    while (running) {
         while (SDL_WaitEvent(&e) >= 0) {
             if (e.type == SDL_QUIT) {
-                quit = true;
+                running = false;
             }
                 // handle key presses
             else if (e.type == SDL_KEYDOWN) {
@@ -209,7 +210,7 @@ int Controller::menuPanel() {
                         break;
                 }
                 if (e.key.keysym.sym == SDLK_RETURN) {
-                    if (selectedMenu == MenuButton::left) {
+                    if (selectedMenu == MenuButtonEnum::left) {
                         return 2;
                     } else {
                         view.close();
@@ -226,22 +227,19 @@ int Controller::menuPanel() {
 
 
 void Controller::setViewArguments() {
-    //view.
-
     DescriptGen descriptGen = DescriptGen();
     arguments.push_back(descriptGen.getDescription(battleInstance.getEnemyPtr()));
     arguments.push_back(to_string(battleInstance.getPlayerCurrentHp()));
     arguments.push_back(to_string(battleInstance.getEnemyCurrentHp()));
-    arguments.push_back(getLargemonPath(battleInstance.getPlayerLargemonName()));
-    arguments.push_back(getLargemonPath(battleInstance.getEnemyLargemonName()));
-    arguments.push_back(getTypePath(battleInstance.getPlayerLargemonName()));
-    arguments.push_back(getTypePath(battleInstance.getEnemyLargemonName()));
+    arguments.push_back(getLargemonSpritePath(battleInstance.getPlayerLargemonName()));
+    arguments.push_back(getLargemonSpritePath(battleInstance.getEnemyLargemonName()));
+    arguments.push_back(getTypeIconPath(battleInstance.getPlayerLargemonName()));
+    arguments.push_back(getTypeIconPath(battleInstance.getEnemyLargemonName()));
     arguments.push_back(descriptGen.getAttack(battleInstance.getPlayerPtr()->getType()));
     arguments.push_back(descriptGen.getAbility(battleInstance.getPlayerPtr()->getType()));
-
 }
 
-string Controller::getLargemonPath(string type) {
+string Controller::getLargemonSpritePath(string type) {
     string path;
     if (type == "fire troll") {
         path = "../resources/sprites/fire_troll_sprite_sheet.png";
@@ -253,7 +251,7 @@ string Controller::getLargemonPath(string type) {
     return path;
 }
 
-string Controller::getTypePath(string type) {
+string Controller::getTypeIconPath(string type) {
     string path;
     if (type == "fire troll") {
         path = "../resources/ui/fire_type_icon.png";
@@ -267,8 +265,5 @@ string Controller::getTypePath(string type) {
 
 void Controller::close() {
     view.close();
-//    delete &battleInstance;
-//    delete &view;
-//    delete &arguments;
 }
 

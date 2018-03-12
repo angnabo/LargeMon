@@ -1,22 +1,24 @@
 //
 // Created by angelica on 11/11/17.
-using namespace std;
-#ifndef LARGEMON_CONTROLLERBATTLEINSTANCE_H
-#define LARGEMON_CONTROLLERBATTLEINSTANCE_H
-
+#include <chrono>
+#include <thread>
 #include <string>
 #include <vector>
 #include "largemon/Largemon.h"
+#include "LargemonGenerator.h"
+
+#ifndef LARGEMON_CONTROLLERBATTLEINSTANCE_H
+#define LARGEMON_CONTROLLERBATTLEINSTANCE_H
+
+using namespace std;
 
 class BattleInstance {
 public:
     BattleInstance();
 
-    string action(int);
+    string playerMove(int);
 
     string enemyMove();
-
-    int randomInRange(int, int);
 
     bool determineCounter(Largemon *, Largemon *);
 
@@ -32,10 +34,6 @@ public:
 
     int getRound();
 
-    float getEnemyLargemonCurrentHpPercent();
-
-    float getPlayerLargemonCurrentHpPercent();
-
     string getEnemyLargemonName();
 
     string getPlayerLargemonName();
@@ -44,13 +42,9 @@ public:
 
     virtual ~BattleInstance();
 
-    vector<string> *getPlayerArgs();
-
-    vector<string> *getEnemyArgs();
-
     string defend(Largemon *lm);
 
-    string attack(Largemon *lm);
+    string normalAttack(Largemon *lm);
 
     int applyShield(int damage);
 
@@ -76,6 +70,10 @@ public:
 
     string setSpecAttackArgs(Largemon *lm);
 
+    string move(Largemon *lm, int move);
+
+    string setAttackArgs(Largemon *lm);
+
 private:
     Largemon *player;
     Largemon *enemy;
@@ -85,10 +83,10 @@ private:
     vector<string> playerArgs;
     vector<string> enemyArgs;
     vector<class ContrObserver *> views;
-
-    string move(Largemon *lm, int move);
-
-    string setAttackArgs(Largemon *lm);
+    int MAX_STUN_TUNRS = 2;
+    int MAX_TICK_TURNS = 3;
+    int MAX_SHIELD_TURNS = 3;
+    int TICK_DAMAGE_PER_TURN = 10;
 };
 
 

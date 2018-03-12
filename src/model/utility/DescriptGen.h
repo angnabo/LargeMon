@@ -5,10 +5,10 @@
 #include <vector>
 #include "../largemon/Largemon.h"
 
-using namespace std;
+#ifndef LARGEMON_DESCRIPTGEN_H
+#define LARGEMON_DESCRIPTGEN_H
 
-#ifndef LARGEMON_LMDESCRIPTGEN_H
-#define LARGEMON_LMDESCRIPTGEN_H
+using namespace std;
 
 class DescriptGen {
 public:
@@ -19,14 +19,5 @@ public:
     string getAttack(Type type);
 
     string getDescription(Largemon *lm);
-
-private:
-    vector<string> form;
-
-    string getAttack(Largemon *lm);
-
-    string getAbility(Largemon *lm);
 };
-
-//A large/small fire/water/wood dragon/furry/lizard/etc largemon, with a powerful watershot/firebalst/smash attack
-#endif //LARGEMON_LMDESCRIPTGEN_H
+#endif //LARGEMON_DESCRIPTGEN_H

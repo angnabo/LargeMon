@@ -14,34 +14,26 @@ using namespace std;
 
 class Controller {
 public:
-    Controller();
-
-    void close();
-
-    enum Button {
+    enum ButtonEnum {
         top_left = 0,
         top_right = 1,
         bottom_left = 2,
         bottom_right = 3
     };
 
-    enum MenuButton {
+    enum MenuButtonEnum {
         left = 0,
         right = 1,
     };
-
+    Controller();
+    void close();
     int run();
-
-    int handleKeyPress(Button *, int);
-
+    int handleKeyPress(ButtonEnum *, int);
     void setViewArguments();
-
-    string getLargemonPath(string type);
-
-    string getTypePath(string type);
-
+    int handleMenuKeyPress(MenuButtonEnum *selected, int event);
+    string getLargemonSpritePath(string type);
+    string getTypeIconPath(string type);
     int menuPanel();
-
 
 private:
     //model
@@ -49,10 +41,5 @@ private:
     //view
     LargemonMainView view;
     vector<string> arguments;
-
-
-    int handleMenuKeyPress(MenuButton *selected, int event);
 };
-
-
 #endif //LARGEMON_CONTROLLER_H

@@ -12,6 +12,7 @@
 #include "utility/RandomNumber.h"
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 

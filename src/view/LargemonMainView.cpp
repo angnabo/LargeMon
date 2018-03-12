@@ -1,20 +1,7 @@
 //
 // Created by angelica on 11/11/17.
 //
-#include <ctime>
-#include <SDL.h>
-#include <SDL2/SDL_image.h>
-#include <SDL_ttf.h>
-#include <string>
-#include <iostream>
-#include <utility>
-#include "graphics/GTexture.h"
-#include "graphics/GProgressBar.h"
-#include "graphics/GButtonTexture.h"
-#include "../model/BattleInstance.h"
-#include "../model/utility/FileWriter.h"
 #include "LargemonMainView.h"
-
 
 bool LargemonMainView::init() {
     //Initialization flag
@@ -90,7 +77,6 @@ bool LargemonMainView::loadMedia(vector<string> args) {
     loadUI(gPlayerTypeIcon, args[5]);
     loadUI(gEnemyTypeIcon, args[6]);
 
-
     //Load Button Textures
     loadUI(gTopLeftButton, "../resources/ui/button.png");
     loadUI(gTopRightButton, "../resources/ui/button.png");
@@ -144,90 +130,56 @@ bool LargemonMainView::loadMedia(vector<string> args) {
         loadUIText(gPlayerCurrentHPText, gHpFont, args[1]);
         loadUIText(gEnemyCurrentHPText, gHpFont, args[2]);
     }
-
     return success;
-}
-
-
-/*
-   color - Returns an SDL_Color with the appropriate values
-*/
-SDL_Color color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
-    SDL_Color col = {r, g, b, a};
-    return col;
 }
 
 void LargemonMainView::close() {
 
-
-
-
-
-
-//    gPlayerTexture.free();
-//    gEnemyTexture.free();
-//    gBackgroundTexture.free();
-//    gTopLeftButton.free();
-//    gTopRightButton.free();
-//    gBottomLeftButton.free();
-//    gBottomRightButton.free();
-//    gReplayBtn.free();
-//    gExitBtn.free();
-//    gReplayText.free();
-//    gExitText.free();
-//    gWinnerText.free();
-//    gBottomTextPanel.free();
-//    gMenuPanel.free();
-//    gPlayerInfoPanel.free();
-//    gEnemyInfoPanel.free();
-//    gPlayerTypeIcon.free();
-//    gEnemyTypeIcon.free();
-//    gPlayerHpBarBG.free();
-//    gPlayerHpBarFG.free();
-//    gPlayerCurrentHPText.free();
-//    gPlayerHealthText.free();
-//    gEnemyHpBarBG.free();
-//    gEnemyHpBarFG.free();
-//    gEnemyHealthText.free();
-//    gEnemyCurrentHPText.free();
-//    gTopLeftButtonText.free();
-//    gTopRightButtonText.free();
-//    gBottomLeftButtonText.free();
-//    gBottomRightButtonText.free();
-//    gPanelText.free();
-//    buttons[4].free();
-//    gPlayerSpriteSheetTexture.free();
-//    gEnemySpriteSheetTexture.free();
-
-
-    //Free loaded images
     gPlayerTexture.free();
     gEnemyTexture.free();
+
     gBackgroundTexture.free();
-    gBottomTextPanel.free();
-    gMenuPanel.free();
 
-    //Free health bars
-    gPlayerHpBarFG.free();
-    gPlayerHpBarBG.free();
-    gPlayerHealthText.free();
-
-    gEnemyHpBarFG.free();
-    gEnemyHpBarBG.free();
-    gEnemyHealthText.free();
-
-    //Free button text
-    gTopRightButtonText.free();
-    gTopLeftButtonText.free();
-    gBottomRightButtonText.free();
-    gBottomLeftButtonText.free();
-
-    gBottomLeftButton.free();
-    gBottomRightButton.free();
     gTopLeftButton.free();
     gTopRightButton.free();
+    gBottomLeftButton.free();
+    gBottomRightButton.free();
 
+    gReplayBtn.free();
+    gExitBtn.free();
+
+    gReplayText.free();
+    gExitText.free();
+
+    gWinnerText.free();
+
+    gBottomTextPanel.free();
+    gMenuPanel.free();
+    gPlayerInfoPanel.free();
+    gEnemyInfoPanel.free();
+
+    gPlayerTypeIcon.free();
+    gEnemyTypeIcon.free();
+
+    gPlayerHpBarBG.free();
+    gPlayerHpBarFG.free();
+    gPlayerCurrentHPText.free();
+    gPlayerHealthText.free();
+
+    gEnemyHpBarBG.free();
+    gEnemyHpBarFG.free();
+    gEnemyHealthText.free();
+    gEnemyCurrentHPText.free();
+
+    gTopLeftButtonText.free();
+    gTopRightButtonText.free();
+    gBottomLeftButtonText.free();
+    gBottomRightButtonText.free();
     gPanelText.free();
+
+    gPlayerSpriteSheetTexture.free();
+    gEnemySpriteSheetTexture.free();
+
 
     //Free global font
     TTF_CloseFont(gFont);
@@ -250,7 +202,6 @@ void LargemonMainView::close() {
 }
 
 bool LargemonMainView::run(vector<string> args) {
-
     //Start up SDL and create window
     if (!init()) {
         cout << "Failed to initialize!\n";
@@ -261,7 +212,6 @@ bool LargemonMainView::run(vector<string> args) {
     }
     return true;
 }
-
 
 void LargemonMainView::menuPanel(string text) {
     //Top viewport
@@ -316,7 +266,6 @@ void LargemonMainView::updateButtons(int pressedButton) {
     }
     buttons[pressedButton].setColor(slct, slct, slct);
     render();
-
 }
 
 void LargemonMainView::updateMenuButtons(int pressedButton) {
@@ -358,7 +307,6 @@ bool LargemonMainView::render() {
     topViewport.h = SCREEN_HEIGHT;
     SDL_RenderSetViewport(gRenderer, &topViewport);
 
-
     //Render background texture to screen
     gBackgroundTexture.render(gRenderer, 0, 0);
 
@@ -371,7 +319,6 @@ bool LargemonMainView::render() {
 
     //Render enemy to the screen
     gEnemySpriteSheetTexture.renderSprite(gRenderer, 430, 115, &gSpriteClips[1]);
-
 
     // render information panel content
     gPlayerHpBarBG.render(gRenderer, 44, 180);

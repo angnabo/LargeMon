@@ -2,7 +2,6 @@
 // Created by angelica on 11/11/17.
 //
 
-
 #include "HealthBarObserver.h"
 
 HealthBarObserver::HealthBarObserver(Largemon *lm, LargemonMainView *viewPtr) : Observer(lm) {
@@ -16,5 +15,3 @@ void HealthBarObserver::update() const {
         view->updateEnemyHealthBar(largeMon->getCurrentHpPercent(), to_string(largeMon->getCurrentHp()));
     }
 }
-
-

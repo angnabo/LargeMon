@@ -32,10 +32,6 @@ public:
     //Renders texture at given point
     void render(SDL_Renderer *gRenderer, int x, int y);
 
-    bool renderHPBar(SDL_Renderer *, int x, int y, int w, int h, float Percent, SDL_Color FGColor, SDL_Color BGColor);
-
-    void renderEnlarge(SDL_Renderer *gRenderer, int x, int y, float);
-
     void renderSprite(SDL_Renderer *gRenderer, int x, int y, SDL_Rect *clip);
 
     void setColor(Uint8 red, Uint8 green, Uint8 blue);
@@ -46,11 +42,6 @@ public:
     int getHeight();
 
     int getOriginalWidth();
-
-    int getOriginalHeight();
-
-    //void setSize(int, int);
-    void renderClip(SDL_Renderer *gRenderer, int x, int y, float Percent);
 
     //The window renderer
     bool loadFont(SDL_Renderer *gRenderer, TTF_Font *gFont, std::string textureText, SDL_Color textColor);
@@ -63,8 +54,5 @@ private:
     int mHeight;
     int originalWidth;
     int originalHeight;
-
 };
-
-
 #endif //LARGEMON_LTEXTURE_H

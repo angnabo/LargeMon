@@ -6,16 +6,13 @@
 #include "Largemon.h"
 #include "../utility/Observer.h"
 
-//using namespace std;
-
 Largemon::Largemon(const int *hp, const int *damage, const int *size, const string *name) {
     this->name = *name;
-    this->hp = *hp;
+    this->maxHp = *hp;
     this->currentHp = *hp;
     this->damage = *damage;
     this->size = *size;
     this->isLmPlayer = false;
-    //this->type = type;
 }
 
 string Largemon::getName() const {
@@ -30,31 +27,28 @@ void Largemon::takeDamage(int damage) {
     notify();
 }
 
-int Largemon::getDamage() {
+int Largemon::attack() {
     lastAction = "Attack";
     return damage;
 }
 
 void Largemon::defend() {
     currentHp += 20;
-    if (currentHp > hp) {
-        currentHp = hp;
+    if (currentHp > maxHp) {
+        currentHp = maxHp;
     }
     lastAction = "Defend";
     notify();
 }
 
 float Largemon::getCurrentHpPercent() {
-    float hpPercent = (float) getCurrentHp() / (float) getHp();//25/50*100
+    float hpPercent = (float) getCurrentHp() / (float) getHp();
     return hpPercent;
 }
 
-int Largemon::specialAttack() const {
-    return 0;
-}
-
-std::string Largemon::getLastAction() {
-    return lastAction;
+int Largemon::specialAttack(){
+    lastAction = "Special Attack";
+    return static_cast<int>(damage * 1.40);//damage against antagonist types is 40% more effective
 }
 
 void Largemon::notify() {
@@ -89,10 +83,12 @@ bool Largemon::isPlayer() {
     return isLmPlayer;
 }
 
+// start taking tick damage per turn
 void Largemon::takeTickDamage(int count) {
     tickDmgCount = count;
 }
 
+// actually apply the damage as lost health
 void Largemon::applyTickDamage(int damage) {
     if (tickDmgCount > 0) {
         takeDamage(damage);
@@ -100,6 +96,7 @@ void Largemon::applyTickDamage(int damage) {
     }
 }
 
+// to be used when changing the largemon's colour when it takes tick damage
 bool Largemon::isTakingTickDamage() {
     return (tickDmgCount != 0);
 }
@@ -110,10 +107,4 @@ void Largemon::decrementTickCount() {
     }
 }
 
-
 Largemon::~Largemon() = default;
-
-//string Largemon::getType() {
-//    return "";
-//}
-

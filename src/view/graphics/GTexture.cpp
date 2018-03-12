@@ -4,17 +4,11 @@
 
 #include "GTexture.h"
 
-
 GTexture::GTexture() {
     //Initialize
-    mTexture = NULL;
+    mTexture = nullptr;
     mWidth = 0;
     mHeight = 0;
-}
-
-GTexture::~GTexture() {
-    //Deallocate
-    free();
 }
 
 /**
@@ -27,11 +21,11 @@ bool GTexture::loadFromFile(SDL_Renderer *gRenderer, std::string path) {
     //Get rid of preexisting texture
     free();
 
-    SDL_Texture *newTexture = NULL;
+    SDL_Texture *newTexture = nullptr;
 
     //Load image
     SDL_Surface *loadedSurface = IMG_Load(path.c_str());
-    if (loadedSurface == NULL) {
+    if (loadedSurface == nullptr) {
         cout << "Could not load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError();
 
     } else {
@@ -40,7 +34,7 @@ bool GTexture::loadFromFile(SDL_Renderer *gRenderer, std::string path) {
 
         //Create texture from surface pixels
         newTexture = SDL_CreateTextureFromSurface(gRenderer, loadedSurface);
-        if (newTexture == NULL) {
+        if (newTexture == nullptr) {
             cout << "Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError();
         } else {
             //Get image dimensions
@@ -49,14 +43,12 @@ bool GTexture::loadFromFile(SDL_Renderer *gRenderer, std::string path) {
             originalWidth = loadedSurface->w;
             originalHeight = loadedSurface->h;
         }
-
         //Get rid of old loaded surface
         SDL_FreeSurface(loadedSurface);
     }
-
     //Return success
     mTexture = newTexture;
-    return mTexture != NULL;
+    return mTexture != nullptr;
 }
 
 /**
@@ -88,12 +80,12 @@ bool GTexture::loadFont(SDL_Renderer *gRenderer, TTF_Font *gFont, std::string te
 
     //Render text surface
     SDL_Surface *textSurface = TTF_RenderText_Blended_Wrapped(gFont, textureText.c_str(), textColor, mWidth);
-    if (textSurface == NULL) {
+    if (textSurface == nullptr) {
         cout << "Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError();
     } else {
         //Create texture from surface pixels
         mTexture = SDL_CreateTextureFromSurface(gRenderer, textSurface);
-        if (mTexture == NULL) {
+        if (mTexture == nullptr) {
             cout << "Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError();
         } else {
             if (textSurface->w > 225) {
@@ -105,22 +97,20 @@ bool GTexture::loadFont(SDL_Renderer *gRenderer, TTF_Font *gFont, std::string te
             //mWidth = textSurface->w;
             mHeight = textSurface->h;
         }
-
         //Get rid of old surface
         SDL_FreeSurface(textSurface);
     }
-
     //Return success
-    return mTexture != NULL;
+    return mTexture != nullptr;
 }
 
 /**
  * Free existing texture
  */
 void GTexture::free() {
-    if (mTexture != NULL) {
+    if (mTexture != nullptr) {
         SDL_DestroyTexture(mTexture);
-        mTexture = NULL;
+        mTexture = nullptr;
         mWidth = 0;
         mHeight = 0;
     }
@@ -145,7 +135,7 @@ void GTexture::setColor(Uint8 red, Uint8 green, Uint8 blue) {
 void GTexture::render(SDL_Renderer *gRenderer, int x, int y) {
     //Set rendering space and render to screen
     SDL_Rect renderQuad = {x, y, mWidth, mHeight};
-    SDL_RenderCopy(gRenderer, mTexture, NULL, &renderQuad);
+    SDL_RenderCopy(gRenderer, mTexture, nullptr, &renderQuad);
 }
 
 /**
@@ -158,7 +148,6 @@ void GTexture::setSize(int x, int y) {
     mHeight = y;
 }
 
-
 /**
  * Render from a sprite sheet
  * @param gRenderer
@@ -169,13 +158,11 @@ void GTexture::setSize(int x, int y) {
 void GTexture::renderSprite(SDL_Renderer *gRenderer, int x, int y, SDL_Rect *clip) {
     //Set rendering space and render to screen
     SDL_Rect renderQuad = {x, y, mWidth, mHeight};
-
     //Set clip rendering dimensions
-    if (clip != NULL) {
+    if (clip != nullptr) {
         renderQuad.w = clip->w;
         renderQuad.h = clip->h;
     }
-
     //Render to screen
     SDL_RenderCopy(gRenderer, mTexture, clip, &renderQuad);
 }
@@ -192,7 +179,7 @@ int GTexture::getOriginalWidth() {
     return originalWidth;
 }
 
-int GTexture::getOriginalHeight() {
-    return originalHeight;
+GTexture::~GTexture() {
+    //Deallocate
+    free();
 }
-

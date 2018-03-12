@@ -1,9 +1,7 @@
 //
 // Created by angelica on 12/10/17.
 //
-
 #include "DescriptGen.h"
-#include "../largemon/Largemon.h"
 
 DescriptGen::DescriptGen() {
 }
@@ -13,8 +11,8 @@ string DescriptGen::getDescription(Largemon *lm) {
     string description;
     string size;
     Type type = lm->getType();
-    string attack = getAttack(lm->getType());
-    string ability = getAbility(lm->getType());
+    string attack = getAttack(type);
+    string ability = getAbility(type);
     string name = lm->getName();
 
     if (lm->getSize() < 5) {
@@ -22,8 +20,6 @@ string DescriptGen::getDescription(Largemon *lm) {
     } else {
         size = "large";
     }
-
-
     description = "A " + size + " " + name + " with a " + attack + " attack and a " + ability + " ability appears!";
     return description;
 }

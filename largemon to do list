@@ -13,7 +13,7 @@ high priority :
 
 [done] replay and exit buttons at end of round
 
-[] stats bar showing name/type/hp/attack power/status(stunned/shielded etc.)
+[] stats bar showing name/type/maxHp/attack power/status(stunned/shielded etc.)
     [] design an icon for:
         [] stunned
         [] on fire
@@ -45,7 +45,7 @@ Done:
 [done] include sprite sheets for largemon
 [done] reorganize resources directory
 [done] make handle key presses one method
-[done] hp bar in own class with update method
+[done] maxHp bar in own class with update method
 [done] implement special attacks
     [done] stun
     [done] shield

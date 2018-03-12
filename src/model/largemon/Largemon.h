@@ -1,11 +1,11 @@
-
-using namespace std;
 #ifndef LARGEMON_LARGEMON_H
 #define LARGEMON_LARGEMON_H
 
 #include <string>
 #include <vector>
 #include "Type.h"
+
+using namespace std;
 
 class Largemon {
 public:
@@ -27,30 +27,18 @@ public:
 
     void defend();
 
-    virtual int specialAttack() const = 0;
-
-    virtual int specialAbility() const = 0;
+    int specialAttack();
 
     virtual Type getType() const = 0;
 
-    int getDamage();
+    int attack();
 
-    int getHp() { return hp; }
-
+    int getHp() { return maxHp; }
     int getCurrentHp() { return currentHp; }
-
     int getSize() { return size; }
-
-    std::string getLastAction();
-
     void stun(int);
-
     void decrementStun();
-
-    void unstun();
-
     bool isStunned();
-
     bool isPlayer();
 
     void takeTickDamage(int);
@@ -63,31 +51,22 @@ public:
 
     void setAsPlayer();
 
-    //string getType() { return type; }
     float getCurrentHpPercent();
 
     void attach(class Observer *);
 
     void notify();
-
-
 protected:
     string name;
     int currentHp;
-    int hp;
+    int maxHp;
     int damage;
-    int size;
-    //string type; //make Type into class
-    int couterLM;
-    string description;
+    int size; // how big the largemon is
     string lastAction;
     bool isLmPlayer;
     vector<class Observer *> views;
     int tickDmgCount = 0;
     int stunCount = 0;
-
-
-    //string getType();
 };
 
 #endif

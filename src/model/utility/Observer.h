@@ -4,15 +4,11 @@
 
 #ifndef LARGEMON_OBSERVER_H
 #define LARGEMON_OBSERVER_H
-
-
 #include "../largemon/Largemon.h"
 
 class Observer {
 public:
     Observer(Largemon *);
-
-//    Observer();
 
     virtual ~Observer();
 
@@ -21,6 +17,4 @@ public:
     Largemon *largeMon;
 
 };
-
-
 #endif //LARGEMON_OBSERVER_H

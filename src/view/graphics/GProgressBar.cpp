@@ -4,19 +4,16 @@
 
 #include "GProgressBar.h"
 
-
 GProgressBar::GProgressBar()
         : GTexture() {
 
 }
 
-bool
-GProgressBar::updateProgress(SDL_Renderer *gRenderer, GTexture &bar, TTF_Font *gHpFont, GTexture &text, float percent,
+bool GProgressBar::updateProgress(SDL_Renderer *gRenderer, GTexture &bar, TTF_Font *gHpFont, GTexture &text, float percent,
                              string hp) {
-
     SDL_Color textColor = {0, 0, 0};
     bool success = true;
-    string padding = "";
+    string padding;
     if (stoi(hp) < 100) {
         padding = " ";
     }
@@ -31,6 +28,5 @@ GProgressBar::updateProgress(SDL_Renderer *gRenderer, GTexture &bar, TTF_Font *g
     bar.setSize(pw, 17);
     SDL_RenderPresent(gRenderer);
     return success;
-
 }
 

@@ -2,7 +2,6 @@
 // Created by angelica on 07/10/17.
 //
 
-#include <iostream>
 #include "LargemonGenerator.h"
 
 LargemonGenerator::LargemonGenerator() = default;
@@ -37,8 +36,6 @@ Largemon *LargemonGenerator::generateLargemon() {
             auto *lm = new WoodLM(&health, &damage, &size, &name);
             return lm;
         }
-        default:
-            break;
     }
 }
 
@@ -56,13 +53,13 @@ string LargemonGenerator::generateName(Type type) {
     string name;
     switch (type) {
         case Type::fire :
-            name = fireNames[RandomNumber::randomInRange(0, fireNames.size() - 1)];
+            name = fireNames[RandomNumber::randomInRange(0, static_cast<int>(fireNames.size() - 1))];
             break;
         case Type::water :
-            name = waterNames[RandomNumber::randomInRange(0, waterNames.size() - 1)];
+            name = waterNames[RandomNumber::randomInRange(0, static_cast<int>(waterNames.size() - 1))];
             break;
         case Type::wood :
-            name = woodNames[RandomNumber::randomInRange(0, woodNames.size() - 1)];
+            name = woodNames[RandomNumber::randomInRange(0, static_cast<int>(woodNames.size() - 1))];
             break;
     }
     return name;

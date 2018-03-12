@@ -9,6 +9,4 @@ Observer::Observer(Largemon *lm) {
     largeMon->attach(this);
 }
 
-Observer::~Observer() {
-
-}
+Observer::~Observer() = default;
