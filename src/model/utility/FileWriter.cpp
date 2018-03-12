@@ -16,7 +16,7 @@ FileWriter::FileWriter(BattleInstance *btl) : ContrObserver(btl) {
             cerr << "Directory Created: " << DIR_PATH;
         }
     }
-    filePath = DIR_PATH + currentDateTime() + "log.txt";
+    filePath = DIR_PATH + currentDateTime() + "-log.txt";
     ofstream outLogFile(filePath, ios::app);
     if(!outLogFile) {
         cerr << "File could not be opened: " << filePath << endl;

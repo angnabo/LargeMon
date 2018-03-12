@@ -5,10 +5,7 @@
 #ifndef LARGEMON_MAIN_H
 #define LARGEMON_MAIN_H
 
-
 class main {
 
 };
-
-
 #endif //LARGEMON_MAIN_H

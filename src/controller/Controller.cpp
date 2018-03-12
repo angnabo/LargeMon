@@ -2,8 +2,6 @@
 // Created by angelica on 20/10/17.
 //
 
-#include <string>
-#include <vector>
 #include "Controller.h"
 #include "../model/utility/DescriptGen.h"
 

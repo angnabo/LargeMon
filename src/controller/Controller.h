@@ -1,14 +1,15 @@
 //
 // Created by angelica on 20/10/17.
 //
-
-#ifndef LARGEMON_CONTROLLER_H
-#define LARGEMON_CONTROLLER_H
-
 #include "../model/BattleInstance.h"
 #include "../view/LargemonMainView.h"
 #include "../model/utility/HealthBarObserver.h"
 #include <iostream>
+#include <string>
+#include <vector>
+
+#ifndef LARGEMON_CONTROLLER_H
+#define LARGEMON_CONTROLLER_H
 
 using namespace std;
 
