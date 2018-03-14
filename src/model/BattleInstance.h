@@ -87,6 +87,12 @@ private:
     int MAX_TICK_TURNS = 3;
     int MAX_SHIELD_TURNS = 3;
     int TICK_DAMAGE_PER_TURN = 10;
+
+    string playerOrEnemy(Largemon *lm);
+
+    string playerOrEnemy(Largemon *lm, string args);
+
+    void incrCounter(Largemon *lm, string count);
 };
 
 

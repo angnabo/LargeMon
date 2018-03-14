@@ -131,11 +131,7 @@ string BattleInstance::specialAttack(Largemon * lm) {
                                 : "Enemy attacked for " + to_string(enemy->attack()) + " damage. ";
         normalAttack(lm);
     }
-    if(lm->isPlayer()){
-        playerSpecAttkCount++;
-    } else {
-        enemySpecAttkCount++;
-    }
+    incrCounter(lm, "special");
     return action;
 }
 
@@ -151,19 +147,18 @@ string BattleInstance::specialAbility(Largemon * lm) {
     switch(largemon){
         case Type::fire : {
             en->takeTickDamage(MAX_TICK_TURNS);
-            action = lm->isPlayer() ? "Your largemon is damaging enemy over time. "
-                                    : "You are being damaged over time. ";
+            action = playerOrEnemy(getEnemyOf(lm), "ignited") + "is being damaged over time. ";
             break;
         }
         case Type::water : {
             auto *wlm = dynamic_cast<WaterLM *> (lm);
             wlm->shield(MAX_SHIELD_TURNS);
-            action = lm->isPlayer() ? "Your largemon shielded. " : "Enemy largemon shielded. ";
+            action = playerOrEnemy(lm, "shielded") + "shielded. ";
             break;
         }
         case Type::wood : {
             en->stun(MAX_STUN_TUNRS);
-            action = lm->isPlayer() ? "Enemy largemon was stunned. " : "Your largemon was stunned. ";
+            action = playerOrEnemy(getEnemyOf(lm), "stunned") + "was stunned. ";
             break;
         }
     }
@@ -177,16 +172,37 @@ string BattleInstance::specialAbility(Largemon * lm) {
  */
 string BattleInstance::setSpecAttackArgs(Largemon * lm){
     string action;
-    if(lm->isPlayer()){
-        action = "You used a powerful attack for " + to_string(player->specialAttack()) + " damage. ";
-        playerArgs[1] = "Special Attack";
-        playerSpecAttkCount++;
-    } else {
-        action = "Enemy used a powerful attack for " + to_string(enemy->specialAttack()) + " damage. ";
-        enemyArgs[1] = "Special Attack";
-        enemySpecAttkCount++;
-    }
+    action = playerOrEnemy(lm, "Special Attack") +
+            "used a powerful attack for " + to_string(getEnemyOf(lm)->specialAttack()) + " damage. ";
     return action;
+}
+
+string BattleInstance::playerOrEnemy(Largemon * lm, string args){
+    string largemon;
+    if(lm->isPlayer()){
+        largemon = "Your largemon ";
+        playerArgs[1] = args;
+    } else {
+        largemon = "Enemy largemon ";
+        enemyArgs[1] = args;
+    }
+    return largemon;
+}
+
+void BattleInstance::incrCounter(Largemon * lm, string count){
+    if(lm->isPlayer()){
+        if(count == "special"){
+            playerSpecAttkCount++;
+        }
+        if(count == "stun"){
+
+        }
+    } else {
+        if(count == "special") {
+            enemySpecAttkCount++;
+        }
+    }
+
 }
 
 /**
