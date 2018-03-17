@@ -105,6 +105,26 @@ bool GTexture::loadFont(SDL_Renderer *gRenderer, TTF_Font *gFont, std::string te
 }
 
 /**
+ * Set the texture blend mode
+ * @param blending
+ */
+void GTexture::setBlendMode( SDL_BlendMode blending )
+{
+    //Set blending function
+    SDL_SetTextureBlendMode( mTexture, blending );
+}
+
+/**
+ * Set the alpha blend
+ * @param alpha
+ */
+void GTexture::setAlpha( Uint8 alpha )
+{
+    //Modulate texture alpha
+    SDL_SetTextureAlphaMod( mTexture, alpha );
+}
+
+/**
  * Free existing texture
  */
 void GTexture::free() {
@@ -135,6 +155,18 @@ void GTexture::setColor(Uint8 red, Uint8 green, Uint8 blue) {
 void GTexture::render(SDL_Renderer *gRenderer, int x, int y) {
     //Set rendering space and render to screen
     SDL_Rect renderQuad = {x, y, mWidth, mHeight};
+    SDL_RenderCopy(gRenderer, mTexture, nullptr, &renderQuad);
+}
+
+/**
+ * Render the texture
+ * @param gRenderer rendered to which to render
+ * @param x position
+ * @param y position
+ */
+void GTexture::render(SDL_Renderer *gRenderer) {
+    //Set rendering space and render to screen
+    SDL_Rect renderQuad = {x_position, y_position, mWidth, mHeight};
     SDL_RenderCopy(gRenderer, mTexture, nullptr, &renderQuad);
 }
 
@@ -182,4 +214,9 @@ int GTexture::getOriginalWidth() {
 GTexture::~GTexture() {
     //Deallocate
     free();
+}
+
+void GTexture::setPosition(int x, int y) {
+    x_position = x;
+    y_position = y;
 }

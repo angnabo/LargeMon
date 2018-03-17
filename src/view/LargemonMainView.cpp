@@ -8,9 +8,15 @@ bool LargemonMainView::init() {
     bool success = true;
 
     //Initialize SDL
-    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0) {
         success = false;
     } else {
+
+        if( Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 640) < 0 )
+        {
+            cout << "SDL_mixer could not initialize! SDL_mixer Error: %s\n" << Mix_GetError();
+            success = false;
+        }
         //Set texture filtering to linear
         SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 
@@ -37,6 +43,7 @@ bool LargemonMainView::init() {
     }
     return success;
 }
+
 
 bool LargemonMainView::loadUI(GTexture &texture, string path) {
     bool success = true;
@@ -70,6 +77,39 @@ bool LargemonMainView::loadMedia(vector<string> args) {
     loadUI(gEnemyHpBarBG, "../resources/ui/health_bar_bg.bmp");
     loadUI(gEnemyHpBarFG, "../resources/ui/health_bar_fg.bmp");
     loadUI(gMenuPanel, "../resources/ui/menu_panel.png");
+    loadUI(gPlayerShieldSprite, "../resources/ui/shield_sprite.png");
+    loadUI(gEnemyShieldSprite, "../resources/ui/shield_sprite.png");
+    loadUI(gPlayerIgniteSprite, "../resources/ui/ignite_sprite.png");
+    loadUI(gEnemyIgniteSprite, "../resources/ui/ignite_sprite.png");
+    loadUI(gPlayerStunnedSprite, "../resources/ui/stunned_sprite.png");
+    loadUI(gEnemyStunnedSprite, "../resources/ui/stunned_sprite.png");
+
+    gMusic = Mix_LoadMUS("../resources/sound/Rolemusic-02-Leafless-Quince-Tree.mp3");
+    if( gMusic == NULL )
+    {
+        cout << "Failed to load beat music! SDL_mixer Error: %s\n"<< Mix_GetError() ;
+        success = false;
+    }
+
+    if( Mix_PlayingMusic() == 0 )
+    {
+
+        Mix_PlayMusic( gMusic, -1 );
+    }
+    Mix_ResumeMusic();
+
+    gPlayerShieldSprite.setHidden(true);
+    gEnemyShieldSprite.setHidden(true);
+    gPlayerShieldSprite.setBlendMode(SDL_BLENDMODE_BLEND);
+    gPlayerShieldSprite.setAlpha(100);
+    gEnemyShieldSprite.setBlendMode(SDL_BLENDMODE_BLEND);
+    gEnemyShieldSprite.setAlpha(100);
+
+    gPlayerIgniteSprite.setHidden(true);
+    gEnemyIgniteSprite.setHidden(true);
+    gPlayerStunnedSprite.setHidden(true);
+    gEnemyStunnedSprite.setHidden(true);
+
 
     loadUI(gPlayerSpriteSheetTexture, args[3]);
     loadUI(gEnemySpriteSheetTexture, args[4]);
@@ -129,6 +169,8 @@ bool LargemonMainView::loadMedia(vector<string> args) {
         loadUIText(gEnemyHealthText, gHpFont, "/" + args[2]);
         loadUIText(gPlayerCurrentHPText, gHpFont, args[1]);
         loadUIText(gEnemyCurrentHPText, gHpFont, args[2]);
+        loadUIText(gPlayerAttackPoints, gHpFont, "Dmg: " + args[9]);
+        loadUIText(gEnemyAttackPoints, gHpFont, "Dmg: "+ args[10]);
     }
     return success;
 }
@@ -180,6 +222,7 @@ void LargemonMainView::close() {
     gPlayerSpriteSheetTexture.free();
     gEnemySpriteSheetTexture.free();
 
+    Mix_FreeMusic(gMusic);
 
     //Free global font
     TTF_CloseFont(gFont);
@@ -285,13 +328,47 @@ int LargemonMainView::buttonTextPosition(int btnWidth, int txtWidth) {
     return offset;
 }
 
-void LargemonMainView::updatePlayerHealthBar(float percent, string hp) {
-    gPlayerHpBarFG.updateProgress(gRenderer, gPlayerHpBarFG, gHpFont, gPlayerCurrentHPText, percent, std::move(hp));
-    render();
+void LargemonMainView::updateSprites(GTexture & sprite, string state, bool isPlayer){
+    if(state != "normal"){
+        if(state == "stunned"){
+            if(isPlayer){
+                gPlayerStunnedSprite.setHidden(false);
+            } else {
+                gEnemyStunnedSprite.setHidden(false);
+            }
+        }
+        if(state == "shielded") {
+            if(isPlayer){
+                gPlayerShieldSprite.setHidden(false);
+            } else {
+                gEnemyShieldSprite.setHidden(false);
+            }
+        }
+        if(state == "tick"){
+            //sprite.setColor(125, 255, 255);
+            if(isPlayer){
+                gPlayerIgniteSprite.setHidden(false);
+            } else {
+                gEnemyIgniteSprite.setHidden(false);
+            }
+        }
+    } else {
+        //sprite.setColor(255,255,255);
+        if(isPlayer){
+            gPlayerShieldSprite.setHidden(true);
+            gPlayerIgniteSprite.setHidden(true);
+            gPlayerStunnedSprite.setHidden(true);
+        } else {
+            gEnemyShieldSprite.setHidden(true);
+            gEnemyIgniteSprite.setHidden(true);
+            gEnemyStunnedSprite.setHidden(true);
+        }
+    }
+    //SDL_RenderPresent(gRenderer);
 }
 
-void LargemonMainView::updateEnemyHealthBar(float percent, string hp) {
-    gEnemyHpBarFG.updateProgress(gRenderer, gEnemyHpBarFG, gHpFont, gEnemyCurrentHPText, percent, std::move(hp));
+void LargemonMainView::updateHealthBar(GProgressBar & bar, GTexture & hpText, float percent, string hp) {
+    bar.updateProgress(gRenderer, bar, gHpFont, hpText, percent, std::move(hp));
     render();
 }
 
@@ -316,9 +393,11 @@ bool LargemonMainView::render() {
 
     //Render player to the screen
     gPlayerSpriteSheetTexture.renderSprite(gRenderer, 60, 200, &gSpriteClips[0]);
+    gPlayerSpriteSheetTexture.setPosition(60, 200);
 
     //Render enemy to the screen
     gEnemySpriteSheetTexture.renderSprite(gRenderer, 430, 115, &gSpriteClips[1]);
+    gEnemySpriteSheetTexture.setPosition(430, 115);
 
     // render information panel content
     gPlayerHpBarBG.render(gRenderer, 44, 180);
@@ -335,6 +414,34 @@ bool LargemonMainView::render() {
 
     gPlayerTypeIcon.render(gRenderer, 44, 137);
     gEnemyTypeIcon.render(gRenderer, 404, 57);
+
+    gPlayerAttackPoints.render(gRenderer, 153, 200);
+    gEnemyAttackPoints.render(gRenderer, 510, 120);
+
+    //gShieldSprite.render(gRenderer, 60, 200);
+
+    //gShieldSprite.render(gRenderer, 400, 200);
+
+    if(!gPlayerShieldSprite.isHidden()){
+        gPlayerShieldSprite.render(gRenderer, 60, 200);
+    }
+    if(!gEnemyShieldSprite.isHidden()){
+        gEnemyShieldSprite.render(gRenderer, 430, 115);
+    }
+
+    if(!gPlayerIgniteSprite.isHidden()){
+        gPlayerIgniteSprite.render(gRenderer, 60, 200);
+    }
+    if(!gEnemyIgniteSprite.isHidden()){
+        gEnemyIgniteSprite.render(gRenderer, 430, 115);
+    }
+
+    if(!gPlayerStunnedSprite.isHidden()){
+        gPlayerStunnedSprite.render(gRenderer, 60, 200);
+    }
+    if(!gEnemyStunnedSprite.isHidden()){
+        gEnemyStunnedSprite.render(gRenderer, 435, 115);
+    }
 
     //Bottom viewport
     SDL_Rect bottomViewport{};

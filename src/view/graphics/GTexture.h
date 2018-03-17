@@ -43,6 +43,19 @@ public:
 
     int getOriginalWidth();
 
+    void setPosition(int,int);
+
+    int getXposition() { return x_position;}
+    int getYposition() { return y_position;}
+
+    void setHidden(bool b){ hidden = b; }
+    bool isHidden() { return hidden; }
+    void render(SDL_Renderer *gRenderer);
+
+    void setBlendMode(SDL_BlendMode blending);
+
+    void setAlpha(Uint8 alpha);
+
     //The window renderer
     bool loadFont(SDL_Renderer *gRenderer, TTF_Font *gFont, std::string textureText, SDL_Color textColor);
 
@@ -54,5 +67,11 @@ private:
     int mHeight;
     int originalWidth;
     int originalHeight;
+
+    int x_position;
+    int y_position;
+
+    bool hidden = false;
+
 };
 #endif //LARGEMON_LTEXTURE_H

@@ -121,8 +121,8 @@ int Controller::run() {
     FileWriter writer = FileWriter(&battleInstance);
     battleInstance.attach(&writer);
 
-    HealthBarObserver playerhp = HealthBarObserver(battleInstance.getPlayerPtr(), &view);
-    HealthBarObserver enemyhp = HealthBarObserver(battleInstance.getEnemyPtr(), &view);
+    HealthBarObserver playerhp = HealthBarObserver(battleInstance.getPlayerPtr(), &view, &battleInstance);
+    HealthBarObserver enemyhp = HealthBarObserver(battleInstance.getEnemyPtr(), &view, &battleInstance);
 
     setViewArguments();
 
@@ -168,7 +168,6 @@ int Controller::run() {
                 if (e.key.keysym.sym == SDLK_RETURN) {
                     string textUpdate;
                     if (!battleInstance.isGameOver()) {
-                        //try return an array of two strings instead and display them one after the other
                         textUpdate = battleInstance.playerMove(selected);
                         view.updateText(textUpdate);
                     }
@@ -181,7 +180,7 @@ int Controller::run() {
             }
         }
     }
-    view.close();
+    //view.close();
 }
 
 int Controller::menuPanel() {
@@ -245,6 +244,8 @@ void Controller::setViewArguments() {
     arguments.push_back(getTypeIconPath(battleInstance.getEnemyLargemonName()));
     arguments.push_back(descriptGen.getAttack(battleInstance.getPlayerPtr()->getType()));
     arguments.push_back(descriptGen.getAbility(battleInstance.getPlayerPtr()->getType()));
+    arguments.push_back(to_string(battleInstance.getPlayerPtr()->attack()));
+    arguments.push_back(to_string(battleInstance.getEnemyPtr()->attack()));
 }
 
 string Controller::getLargemonSpritePath(string type) {

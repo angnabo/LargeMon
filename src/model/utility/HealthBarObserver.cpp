@@ -4,14 +4,41 @@
 
 #include "HealthBarObserver.h"
 
-HealthBarObserver::HealthBarObserver(Largemon *lm, LargemonMainView *viewPtr) : Observer(lm) {
+HealthBarObserver::HealthBarObserver(Largemon *lm, LargemonMainView *viewPtr, BattleInstance * battle) : Observer(lm) {
     view = viewPtr;
+    this->battle=battle;
 }
 
 void HealthBarObserver::update() const {
     if (largeMon->isPlayer()) {
-        view->updatePlayerHealthBar(largeMon->getCurrentHpPercent(), to_string(largeMon->getCurrentHp()));
+        view->updateHealthBar(*view->getPlayerHealthbar(), *view->getPlayerHpText(), largeMon->getCurrentHpPercent(), to_string(largeMon->getCurrentHp()));
+        view->updateSprites(*view->getPlayerSprite(), getState(largeMon), true);
+        view->updateSprites(*view->getEnemySprite(), getState(battle->getEnemyOf(largeMon)), false);
     } else {
-        view->updateEnemyHealthBar(largeMon->getCurrentHpPercent(), to_string(largeMon->getCurrentHp()));
+        view->updateHealthBar(*view->getEnemyHealthbar(), *view->getEnemyHpText(), largeMon->getCurrentHpPercent(), to_string(largeMon->getCurrentHp()));
+        view->updateSprites(*view->getEnemySprite(), getState(largeMon), false);
+        view->updateSprites(*view->getPlayerSprite(), getState(battle->getEnemyOf(largeMon)), true);
     }
+
+
+}
+
+string HealthBarObserver::getState(Largemon * lm) const{
+    string state = "normal";
+    if(lm->isStunned()){
+        state = "stunned";
+        cout << state;
+    }
+    if(lm->isTakingTickDamage()){
+        state = "tick";
+        cout << state;
+    }
+    if(lm->getType() == Type::water){
+        auto *wlm = dynamic_cast<WaterLM *> (lm);
+        if(wlm->isShielded()){
+            state = "shielded";
+            cout << state;
+        }
+    }
+    return state;
 }

@@ -1,7 +1,7 @@
 //
 // Created by angelica on 11/11/17.
 //
-
+#include <SDL2/SDL_mixer.h>
 #include <ctime>
 #include <SDL.h>
 #include <SDL2/SDL_image.h>
@@ -38,10 +38,6 @@ public:
 
     bool run(vector<string> args);
 
-    void updatePlayerHealthBar(float, string);
-
-    void updateEnemyHealthBar(float, string);
-
     bool loadUI(GTexture &, string);
 
     bool loadUIText(GTexture &, TTF_Font *, string);
@@ -53,6 +49,21 @@ public:
     int buttonTextPosition(int, int);
 
     bool winnerText(string text);
+
+    void updateSprites(GTexture & sprite, string state, bool);
+
+    void updateHealthBar(GProgressBar & bar, GTexture & hpText, float percent, string hp);
+
+    GProgressBar * getPlayerHealthbar() { return &gPlayerHpBarFG;}
+    GProgressBar * getEnemyHealthbar() { return &gEnemyHpBarFG;}
+
+    GTexture * getPlayerHpText() { return &gPlayerCurrentHPText;}
+    GTexture * getEnemyHpText() { return &gEnemyCurrentHPText;}
+
+    GTexture * getPlayerSprite() { return &gPlayerSpriteSheetTexture;}
+    GTexture * getEnemySprite() { return &gEnemySpriteSheetTexture;}
+
+    Mix_Music *gMusic = NULL;
 
 private:
     //Screen dimensions
@@ -121,7 +132,19 @@ private:
     GTexture gPlayerSpriteSheetTexture;
     GTexture gEnemySpriteSheetTexture;
 
+    GTexture gEnemyAttackPoints;
+    GTexture gPlayerAttackPoints;
+    GTexture gPlayerShieldSprite;
+    GTexture gEnemyShieldSprite;
+    GTexture gPlayerIgniteSprite;
+    GTexture gEnemyIgniteSprite;
+    GTexture gPlayerStunnedSprite;
+    GTexture gEnemyStunnedSprite;
+
+
     SDL_Texture *gTexture = NULL;
     SDL_Color textColor;
+
+
 };
 #endif //LARGEMON_LARGEMONMAINVIEW_H

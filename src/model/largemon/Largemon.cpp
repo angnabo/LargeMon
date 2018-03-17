@@ -59,6 +59,7 @@ void Largemon::notify() {
 
 void Largemon::stun(int count) {
     stunCount = count;
+    notify();
 }
 
 void Largemon::decrementStun() {
@@ -86,6 +87,7 @@ bool Largemon::isPlayer() {
 // start taking tick damage per turn
 void Largemon::takeTickDamage(int count) {
     tickDmgCount = count;
+    notify();
 }
 
 // actually apply the damage as lost health
