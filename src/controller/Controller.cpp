@@ -10,6 +10,14 @@ Controller::Controller() {
 }
 
 /**
+ * Delay for 0.6 seconds
+ */
+inline void delay()
+{
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+}
+
+/**
  * Changes the colour of selected button, and unselects the no longer selected button
  * @param selected
  * @param event
@@ -160,11 +168,13 @@ int Controller::run() {
                 if (e.key.keysym.sym == SDLK_RETURN) {
                     string textUpdate;
                     if (!battleInstance.isGameOver()) {
+                        //try return an array of two strings instead and display them one after the other
                         textUpdate = battleInstance.playerMove(selected);
                         view.updateText(textUpdate);
                     }
                 }
                 if (battleInstance.isGameOver()) {
+                    delay();
                     exitCode = menuPanel();
                     return exitCode;
                 }

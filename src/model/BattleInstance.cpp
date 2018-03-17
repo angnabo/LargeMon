@@ -1,6 +1,10 @@
-//
-// Created by angelica on 11/11/17.
-//
+/**
+ * Handles the battle instance of a largemon battle.
+ * Accept user input from the controller to perform a chosen attack.
+ * Generates a move for an enemy largemon.
+ *
+ * Created by angelica on 11/11/17.
+ */
 
 #include "BattleInstance.h"
 #include "utility/FileWriter.h"
