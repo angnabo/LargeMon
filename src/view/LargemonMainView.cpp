@@ -91,12 +91,9 @@ bool LargemonMainView::loadMedia(vector<string> args) {
         success = false;
     }
 
-    if( Mix_PlayingMusic() == 0 )
-    {
+    Mix_PlayMusic( gMusic, -1 );
+    printf("Mix_PlayMusic: %s\n", Mix_GetError());
 
-        Mix_PlayMusic( gMusic, -1 );
-    }
-    Mix_ResumeMusic();
 
     gPlayerShieldSprite.setHidden(true);
     gEnemyShieldSprite.setHidden(true);
@@ -222,7 +219,10 @@ void LargemonMainView::close() {
     gPlayerSpriteSheetTexture.free();
     gEnemySpriteSheetTexture.free();
 
+    Mix_CloseAudio();
+
     Mix_FreeMusic(gMusic);
+    gMusic = nullptr;
 
     //Free global font
     TTF_CloseFont(gFont);
@@ -239,6 +239,7 @@ void LargemonMainView::close() {
     gRenderer = nullptr;
 
     //Quit SDL subsystems
+    Mix_Quit();
     TTF_Quit();
     IMG_Quit();
     SDL_Quit();
@@ -411,6 +412,7 @@ bool LargemonMainView::render() {
 
     gEnemyCurrentHPText.render(gRenderer, 408, 120);
     gEnemyHealthText.render(gRenderer, 432, 120);
+
 
     gPlayerTypeIcon.render(gRenderer, 44, 137);
     gEnemyTypeIcon.render(gRenderer, 404, 57);

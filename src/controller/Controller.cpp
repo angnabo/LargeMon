@@ -162,6 +162,13 @@ int Controller::run() {
                         pressedButton = handleKeyPress(&selected, SDLK_LEFT);
                         view.updateButtons(pressedButton);
                         break;
+                    case SDLK_m:
+                        if(Mix_PausedMusic()){
+                            Mix_ResumeMusic();
+                        } else {
+                            Mix_PauseMusic();
+                        }
+                        break;
                     default:
                         break;
                 }

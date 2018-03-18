@@ -6,13 +6,11 @@
 
 int main(int argc, char *args[]) {
 
-
-    int cont = 2;
-    while (cont == 2) {
-        Controller replay;
-        cont = replay.run();
-        replay.close();
-    }
-    //Mix_FreeMusic(gMusic);
-    return 0;
+        int cont = 2;
+        while (cont == 2) {
+            Controller replay;
+            cont = replay.run();
+            replay.close();
+        }
+        return 0;
 }
