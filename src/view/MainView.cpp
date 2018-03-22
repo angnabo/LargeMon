@@ -219,19 +219,25 @@ void LargemonMainView::close() {
     gPanelText.free();
     gPlayerSpriteSheetTexture.free();
     gEnemySpriteSheetTexture.free();
+    gEnemyAttackPoints.free();
+    gPlayerAttackPoints.free();
+    gPlayerShieldSprite.free();
+    gEnemyShieldSprite.free();
+    gPlayerIgniteSprite.free();
+    gEnemyIgniteSprite.free();
+    gPlayerStunnedSprite.free();
+    gEnemyStunnedSprite.free();
+    gDot.free();
+
 
     Mix_CloseAudio();
 
     Mix_FreeMusic(gMusic);
     gMusic = nullptr;
 
-    //Free global font
+    //Free font
     TTF_CloseFont(gFont);
     gFont = nullptr;
-
-    //Free loaded image
-    SDL_DestroyTexture(gTexture);
-    gTexture = nullptr;
 
     //Destroy window
     SDL_DestroyRenderer(gRenderer);

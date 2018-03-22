@@ -74,6 +74,12 @@ public:
 
     string setAttackArgs(Largemon *lm);
 
+    string playerOrEnemy(Largemon *lm, string args);
+
+    void incrCounter(Largemon *lm, string count);
+
+    void setArgsOfLArgemon(Largemon *lm, string arg);
+
 private:
     Largemon *player;
     Largemon *enemy;
@@ -88,11 +94,11 @@ private:
     int MAX_SHIELD_TURNS = 3;
     int TICK_DAMAGE_PER_TURN = 10;
 
-    string playerOrEnemy(Largemon *lm);
+    void setArgsOfEnemy(string arg);
 
-    string playerOrEnemy(Largemon *lm, string args);
+    void setArgsOfEnemy(Largemon *lm, string arg);
 
-    void incrCounter(Largemon *lm, string count);
+    void setArgsOfLargemon(Largemon *lm, string arg);
 };
 
 

@@ -44,7 +44,7 @@ void FileWriter::update(Largemon * lm, vector<string> args) const {
             cerr << "File could not be opened: " << filePath << endl;
             exit(1);
         }
-        outLogFile << "Turn: " << battle->getRound() << ". " << args[0] << " Largemon: " << lm->getName() << " Action: "
-                   << args[1] << " Health: " << lm->getCurrentHp() << endl;
+        outLogFile << "Turn: " << battle->getRound() << ". " << args[0] << " Largemon: " << lm->getName()
+                   << ". Action: " << args[1] << ". Health: " << lm->getCurrentHp() << endl;
     }
 }

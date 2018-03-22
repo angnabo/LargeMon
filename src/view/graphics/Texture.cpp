@@ -5,7 +5,6 @@
 #include "Texture.h"
 
 Texture::Texture() {
-    //Initializese
     mTexture = nullptr;
     mWidth = 0;
     mHeight = 0;

@@ -53,7 +53,6 @@ string BattleInstance::move(Largemon * lm, int move){
                 break;
             case 3: //special ability
                 action = specialAbility(lm);
-                enemyArgs[1] = "Stunned";
                 break;
             default:
                 action = normalAttack(lm);
@@ -70,6 +69,8 @@ string BattleInstance::move(Largemon * lm, int move){
  * @return
  */
 string BattleInstance::playerMove(int actionID) {
+    playerArgs[1] = "No action";
+    enemyArgs[1] = "No action";
     string action = move(player, actionID);
     action += enemyMove();
     finishTurn(player);
@@ -91,9 +92,15 @@ string BattleInstance::playerMove(int actionID) {
  */
 string BattleInstance::enemyMove() {
     delay();
-    int actionID = RandomNumber::randomInRange(0, 6);
+    int actionID;
+    if(enemySpecAttkCount == 0){ //if enemy hasn't used special attack, then there is a higher chance
+        actionID = RandomNumber::randomInRange(2, 3);
+    }
+    else {
+        actionID = RandomNumber::randomInRange(0, 6);
+    }
     if(enemy->getCurrentHpPercent()*100 < 35){//if under 35% bigger chance to heal
-        actionID = RandomNumber::randomInRange(0, 1);
+        actionID = RandomNumber::randomInRange(0, 3);
     }
     string action = move(enemy, actionID);
     finishTurn(enemy);
@@ -111,6 +118,7 @@ void BattleInstance::finishTurn(Largemon * lm){
     if(lm->getType() == Type::water){
         dynamic_cast<WaterLM*>(lm)->decrementShield();
     }
+
 }
 
 /**
@@ -151,22 +159,37 @@ string BattleInstance::specialAbility(Largemon * lm) {
     switch(largemon){
         case Type::fire : {
             en->takeTickDamage(MAX_TICK_TURNS);
-            action = playerOrEnemy(getEnemyOf(lm), "ignited") + "is being damaged over time. ";
+            action = playerOrEnemy(getEnemyOf(lm), "Ignited") + "is being damaged over time. ";
+            setArgsOfLargemon(lm, "Ignited enemy");
             break;
         }
         case Type::water : {
             auto *wlm = dynamic_cast<WaterLM *> (lm);
             wlm->shield(MAX_SHIELD_TURNS);
-            action = playerOrEnemy(lm, "shielded") + "shielded. ";
+            action = playerOrEnemy(lm, "Shielded") + "shielded. ";
             break;
         }
         case Type::wood : {
             en->stun(MAX_STUN_TUNRS);
-            action = playerOrEnemy(getEnemyOf(lm), "stunned") + "was stunned. ";
+            action = playerOrEnemy(getEnemyOf(lm), "Stunned") + "was stunned. ";
+            setArgsOfLargemon(lm, "Stunned enemy");
             break;
         }
     }
     return action;
+}
+
+/**
+ * Set file writer argiments for a largemon
+ * @param lm
+ * @param arg
+ */
+void BattleInstance::setArgsOfLargemon(Largemon * lm, string arg){
+    if(lm->isPlayer()){
+        playerArgs[1] = arg;
+    } else {
+        enemyArgs[1] = arg;
+    }
 }
 
 /**
@@ -177,7 +200,7 @@ string BattleInstance::specialAbility(Largemon * lm) {
 string BattleInstance::setSpecAttackArgs(Largemon * lm){
     string action;
     action = playerOrEnemy(lm, "Special Attack") +
-            "used a powerful attack for " + to_string(getEnemyOf(lm)->specialAttack()) + " damage. ";
+            "used a powerful attack for " + to_string(lm->specialAttack()) + " damage. ";
     return action;
 }
 
@@ -402,4 +425,6 @@ Largemon * BattleInstance::getEnemyPtr() {
 BattleInstance::~BattleInstance() {
 
 }
+
+
 

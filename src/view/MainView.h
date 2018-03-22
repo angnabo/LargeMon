@@ -65,37 +65,27 @@ public:
 
     void attackAnimation();
 
-    Mix_Music *gMusic = NULL;
-
 private:
     //Screen dimensions
     const int SCREEN_WIDTH = 640;
     const int SCREEN_HEIGHT = 480;
-
     const int PANEL_FONT_SIZE = 30;
     const int HP_FONT_SIZE = 27;
+    int X_LEFT_BTN_OFFSET = 270;//where the left hand-side buttons are on the x-axis
+    int X_RIGHT_BTN_OFFSET = 454;//where the right hand-side buttons are on the x-axis
+    int Y_BUTTON_OFFSET = 30;
 
     //Unselected button colour
     Uint8 unslct = 255;
     //Selected button colour
     Uint8 slct = 70;
 
-    int X_LEFT_BTN_OFFSET = 270;//where the left hand-side buttons are on the x-axis
-    int X_RIGHT_BTN_OFFSET = 454;//where the right hand-side buttons are on the x-axis
-    int Y_BUTTON_OFFSET = 30;
-
-    int BUTTON_WIDTH = 174;
-    int SMALL_BUTTON_WIDTH = 140;
-
-    //Globally used font
     TTF_Font *gFont = NULL;
     TTF_Font *gHpFont = NULL;
-
-    //The window
     SDL_Window *gWindow = NULL;
-
-    //The window renderer
     SDL_Renderer *gRenderer = NULL;
+    Mix_Music *gMusic = NULL;
+    SDL_Color textColor;
 
     //Textures
     Texture gPlayerTexture;
@@ -133,7 +123,6 @@ private:
     SDL_Rect gSpriteClips[2];
     Texture gPlayerSpriteSheetTexture;
     Texture gEnemySpriteSheetTexture;
-
     Texture gEnemyAttackPoints;
     Texture gPlayerAttackPoints;
     Texture gPlayerShieldSprite;
@@ -143,10 +132,5 @@ private:
     Texture gPlayerStunnedSprite;
     Texture gEnemyStunnedSprite;
     Texture gDot;
-
-
-    SDL_Texture *gTexture = NULL;
-    SDL_Color textColor;
-
 };
 #endif //LARGEMON_LARGEMONMAINVIEW_H

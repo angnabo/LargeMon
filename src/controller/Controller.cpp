@@ -119,7 +119,6 @@ int Controller::run() {
     int exitCode = 0;
 
     FileWriter writer = FileWriter(&battleInstance);
-    battleInstance.attach(&writer);
 
     HealthBarObserver playerhp = HealthBarObserver(battleInstance.getPlayerPtr(), &view, &battleInstance);
     HealthBarObserver enemyhp = HealthBarObserver(battleInstance.getEnemyPtr(), &view, &battleInstance);
