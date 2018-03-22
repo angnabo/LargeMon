@@ -2,8 +2,8 @@
 // Created by angelica on 20/10/17.
 //
 #include "../model/BattleInstance.h"
-#include "../view/LargemonMainView.h"
-#include "../model/utility/HealthBarObserver.h"
+#include "../view/MainView.h"
+#include "../model/observer/HealthBarObserver.h"
 #include <iostream>
 #include <string>
 #include <vector>

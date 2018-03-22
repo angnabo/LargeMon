@@ -6,22 +6,21 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(SOURCE_FILES src/model/largemon/Largemon.cpp src/model/largemon/Largemon.h
         src/main.cpp src/main.h
         src/model/LargemonGenerator.cpp src/model/LargemonGenerator.h
-        src/model/utility/DescriptGen.cpp src/model/utility/DescriptGen.h
+        src/model/DescriptGen.cpp src/model/DescriptGen.h
         src/controller/Controller.cpp src/controller/Controller.h
         src/model/largemon/WaterLM.cpp src/model/largemon/WaterLM.h
         src/model/largemon/FireLM.cpp src/model/largemon/FireLM.h
         src/model/largemon/WoodLM.cpp src/model/largemon/WoodLM.h
-        src/model/utility/Observer.cpp src/model/utility/Observer.h
-        src/model/utility/HealthBarObserver.cpp src/model/utility/HealthBarObserver.h
-        src/model/utility/ContrObserver.h src/model/utility/ContrObserver.cpp
-        test/Test.cpp test/Test.h
-        src/model/utility/RandomNumber.h src/model/utility/RandomNumber.cpp
+        src/model/observer/Observer.cpp src/model/observer/Observer.h
+        src/model/observer/HealthBarObserver.cpp src/model/observer/HealthBarObserver.h
+        src/model/observer/ContrObserver.h src/model/observer/ContrObserver.cpp
+        src/model/RandomNumber.h src/model/RandomNumber.cpp
         src/model/largemon/Type.h src/model/largemon/Type.cpp
-        src/model/utility/FileWriter.h src/model/utility/FileWriter.cpp
-        src/view/LargemonMainView.cpp src/view/LargemonMainView.h
-        src/view/graphics/GTexture.cpp src/view/graphics/GTexture.h
+        src/model/observer/FileWriter.h src/model/observer/FileWriter.cpp
+        src/view/MainView.cpp src/view/MainView.h
+        src/view/graphics/Texture.cpp src/view/graphics/Texture.h
         src/model/BattleInstance.cpp src/model/BattleInstance.h
-        src/view/graphics/GProgressBar.cpp src/view/graphics/GProgressBar.h)
+        src/view/graphics/ProgressBar.cpp src/view/graphics/ProgressBar.h)
 add_executable(Largemon ${SOURCE_FILES})
 
 target_link_libraries(Largemon SDL2 SDL2_ttf SDL2_image SDL2_mixer)

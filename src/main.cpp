@@ -2,7 +2,6 @@
 // Created by angelica on 05/01/18.
 //
 #include "controller/Controller.h"
-#include <SDL_mixer.h>
 
 int main(int argc, char *args[]) {
 

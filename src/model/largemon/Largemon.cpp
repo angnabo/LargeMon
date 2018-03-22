@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "Largemon.h"
-#include "../utility/Observer.h"
+#include "../observer/Observer.h"
 
 Largemon::Largemon(const int *hp, const int *damage, const int *size, const string *name) {
     this->name = *name;

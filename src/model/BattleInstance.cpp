@@ -7,7 +7,7 @@
  */
 
 #include "BattleInstance.h"
-#include "utility/FileWriter.h"
+#include "observer/FileWriter.h"
 
 BattleInstance::BattleInstance() {
     LargemonGenerator generator;

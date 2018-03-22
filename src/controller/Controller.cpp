@@ -3,7 +3,7 @@
 //
 
 #include "Controller.h"
-#include "../model/utility/DescriptGen.h"
+#include "../model/DescriptGen.h"
 
 Controller::Controller() {
     battleInstance = BattleInstance();
@@ -169,6 +169,9 @@ int Controller::run() {
                             Mix_PauseMusic();
                         }
                         break;
+                    case SDLK_q:
+                        view.attackAnimation();
+                        break;
                     default:
                         break;
                 }
@@ -205,6 +208,7 @@ int Controller::menuPanel() {
         while (SDL_WaitEvent(&e) >= 0) {
             if (e.type == SDL_QUIT) {
                 running = false;
+                view.close();
             }
                 // handle key presses
             else if (e.type == SDL_KEYDOWN) {

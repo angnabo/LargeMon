@@ -2,24 +2,17 @@ Largemon TO DO:
 
 high priority :
 ------------------------
+[] write report
 
-[] one function in view to update health bar
-
-[]
-
+[] documentation
 ------------------------
-
-[done] largemon description displayed at the beginning
-
-[done] replay and exit buttons at end of round
-
-[] stats bar showing name/type/maxHp/attack power/status(stunned/shielded etc.)
-    [] design an icon for:
+[done] stats bar showing name/type/maxHp/attack power/status(stunned/shielded etc.)
+    [done] design an icon for:
         [] stunned
         [] on fire
         [] shielded
 
-    [done] design an icon for each largemon type
+[done] design an icon for each largemon type
 
 [] implement other largemon creatures(goblin, dragon)
 
@@ -29,7 +22,7 @@ high priority :
 
 [] clean up code :
     [] text texture in own class with update method
-
+--------------------------
 Done:
 [done] have a wait time of a second between player turn and enemy counter attack
 [done] the health bars should go down after each move, rather than each turn
@@ -41,7 +34,7 @@ Done:
 [done] fix the bug that sometimes allows both largemon to end up with 0 health
 [done] put a text file into the resource folder with a licence
 [done] directories for model/view/controller
-[done] generate names for largemon(maybe have a different generator for each type, the only diff is a vector of names for the type)
+[done] generate names for largemon
 [done] include sprite sheets for largemon
 [done] reorganize resources directory
 [done] make handle key presses one method
@@ -53,5 +46,7 @@ Done:
 [done] make new ui buttons
 [done] centre text on buttons
 [done] buttons have each type's attack names
+[done] largemon description displayed at the beginning
+[done] replay and exit buttons at end of turn
 
 

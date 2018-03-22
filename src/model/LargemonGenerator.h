@@ -9,7 +9,7 @@
 #include "largemon/WaterLM.h"
 #include "largemon/FireLM.h"
 #include "largemon/WoodLM.h"
-#include "utility/RandomNumber.h"
+#include "RandomNumber.h"
 #include <string>
 #include <vector>
 #include <iostream>
