@@ -78,13 +78,15 @@ public:
 
     void incrCounter(Largemon *lm, string count);
 
-    void setArgsOfLArgemon(Largemon *lm, string arg);
+    void setArgsOfLargemon(Largemon *lm, string arg);
 
 private:
     Largemon *player;
     Largemon *enemy;
     int playerSpecAttkCount;
     int enemySpecAttkCount;
+    int playerStunCount;
+    int enemyStunCount;
     int round;
     vector<string> playerArgs;
     vector<string> enemyArgs;
@@ -94,11 +96,8 @@ private:
     int MAX_SHIELD_TURNS = 3;
     int TICK_DAMAGE_PER_TURN = 10;
 
-    void setArgsOfEnemy(string arg);
 
-    void setArgsOfEnemy(Largemon *lm, string arg);
-
-    void setArgsOfLargemon(Largemon *lm, string arg);
+    bool isStun(Largemon *lm);
 };
 
 

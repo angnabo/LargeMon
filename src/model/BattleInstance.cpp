@@ -13,6 +13,8 @@ BattleInstance::BattleInstance() {
     LargemonGenerator generator;
     playerSpecAttkCount = 0;
     enemySpecAttkCount = 0;
+    playerStunCount = 0;
+    enemyStunCount = 0;
     player = generator.generateLargemon();
     enemy = generator.generateLargemon();
     player->setAsPlayer();
@@ -118,7 +120,6 @@ void BattleInstance::finishTurn(Largemon * lm){
     if(lm->getType() == Type::water){
         dynamic_cast<WaterLM*>(lm)->decrementShield();
     }
-
 }
 
 /**
@@ -133,6 +134,7 @@ string BattleInstance::specialAttack(Largemon * lm) {
         if (determineCounter(lm, en)) {
             en->takeDamage(lm->specialAttack());
             action = setSpecAttackArgs(lm);
+            lm->isPlayer() ? playerSpecAttkCount++ : enemySpecAttkCount++;
         } else {
             action = lm->isPlayer() ? "Your largemon doesn't counter the enemy. It did a normal attack. "
                                     : "Enemy attacked for " + to_string(enemy->attack()) + " damage. ";
@@ -143,7 +145,6 @@ string BattleInstance::specialAttack(Largemon * lm) {
                                 : "Enemy attacked for " + to_string(enemy->attack()) + " damage. ";
         normalAttack(lm);
     }
-    incrCounter(lm, "special");
     return action;
 }
 
@@ -170,9 +171,16 @@ string BattleInstance::specialAbility(Largemon * lm) {
             break;
         }
         case Type::wood : {
-            en->stun(MAX_STUN_TUNRS);
-            action = playerOrEnemy(getEnemyOf(lm), "Stunned") + "was stunned. ";
-            setArgsOfLargemon(lm, "Stunned enemy");
+            if(isStun(lm)){
+                en->stun(MAX_STUN_TUNRS);
+                action = playerOrEnemy(getEnemyOf(lm), "Stunned") + "was stunned. ";
+                setArgsOfLargemon(lm, "Stunned enemy");
+                lm->isPlayer() ? playerStunCount++ : enemyStunCount++;
+            } else {
+                action = lm->isPlayer() ? "Your largemon can't stun again. It did a normal attack. "
+                                        : "Enemy attacked for " + to_string(enemy->attack()) + " damage. ";
+                normalAttack(lm);
+            }
             break;
         }
     }
@@ -204,6 +212,12 @@ string BattleInstance::setSpecAttackArgs(Largemon * lm){
     return action;
 }
 
+/**
+ * Helper function to return the right beginging for the message to pass to the view
+ * @param lm
+ * @param args
+ * @return
+ */
 string BattleInstance::playerOrEnemy(Largemon * lm, string args){
     string largemon;
     if(lm->isPlayer()){
@@ -214,22 +228,6 @@ string BattleInstance::playerOrEnemy(Largemon * lm, string args){
         enemyArgs[1] = args;
     }
     return largemon;
-}
-
-void BattleInstance::incrCounter(Largemon * lm, string count){
-    if(lm->isPlayer()){
-        if(count == "special"){
-            playerSpecAttkCount++;
-        }
-        if(count == "stun"){
-
-        }
-    } else {
-        if(count == "special") {
-            enemySpecAttkCount++;
-        }
-    }
-
 }
 
 /**
@@ -260,6 +258,21 @@ bool BattleInstance::isSpecAttack(Largemon * lm){
         isAllowed = playerSpecAttkCount == 0;
     } else {
         isAllowed = enemySpecAttkCount == 0;
+    }
+    return isAllowed;
+}
+
+/**
+ * Determine if the largemon can perform a special attack.
+ * @param lm
+ * @return
+ */
+bool BattleInstance::isStun(Largemon * lm){
+    bool isAllowed;
+    if(lm->isPlayer()){
+        isAllowed = playerStunCount == 0;
+    } else {
+        isAllowed = enemyStunCount == 0;
     }
     return isAllowed;
 }
@@ -324,10 +337,10 @@ string BattleInstance::defend(Largemon * lm) {
     lm->defend();
     string action;
     if(lm->isPlayer()){
-        action = "Player healed for 20 health. ";
+        action = "Player healed for 40 health. ";
         playerArgs[1] = "Defend";
     } else {
-        action = "Enemy healed for 20 health. ";
+        action = "Enemy healed for 40 health. ";
         enemyArgs[1] = "Defend";
     }
     return action;

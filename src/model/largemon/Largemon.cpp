@@ -33,7 +33,7 @@ int Largemon::attack() {
 }
 
 void Largemon::defend() {
-    currentHp += 20;
+    currentHp += 40;
     if (currentHp > maxHp) {
         currentHp = maxHp;
     }
