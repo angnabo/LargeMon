@@ -13,7 +13,7 @@ ProgressBar::ProgressBar()
 
 /**
  * Updates the given health bar accepting the max health amount and percentage to reduce it by.
- * @param gRenderer the renderer to render to
+ * @param renderer the renderer to render to
  * @param bar the health bar
  * @param gHpFont the font to render hp text
  * @param text the hp text
@@ -21,7 +21,7 @@ ProgressBar::ProgressBar()
  * @param hp the max hp of largemon
  * @return
  */
-bool ProgressBar::updateProgress(SDL_Renderer *gRenderer, Texture &bar, TTF_Font *gHpFont, Texture &text, float percent,
+bool ProgressBar::updateProgress(SDL_Renderer *renderer, Texture &bar, TTF_Font *gHpFont, Texture &text, float percent,
                              string hp) {
     SDL_Color textColor = {0, 0, 0};
     bool success = true;
@@ -32,13 +32,13 @@ bool ProgressBar::updateProgress(SDL_Renderer *gRenderer, Texture &bar, TTF_Font
     if (stoi(hp) < 10) {
         padding = "  ";
     }
-    if (!text.loadFont(gRenderer, gHpFont, padding + hp, textColor)) {
+    if (!text.loadFont(renderer, gHpFont, padding + hp, textColor)) {
         cout << "Failed to render text texture!\n";
         success = false;
     }
     int pw = (int) ((float) bar.getOriginalWidth() * percent);
     bar.setSize(pw, 17);
-    SDL_RenderPresent(gRenderer);
+    SDL_RenderPresent(renderer);
     return success;
 }
 

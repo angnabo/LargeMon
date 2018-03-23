@@ -23,13 +23,13 @@ public:
 
     void setSize(int, int);
 
-    bool loadFromFile(SDL_Renderer *gRenderer, std::string path);
+    bool loadFromFile(SDL_Renderer *renderer, std::string path);
 
     void free();
 
-    void render(SDL_Renderer *gRenderer, int x, int y);
+    void render(SDL_Renderer *renderer, int x, int y);
 
-    void renderSprite(SDL_Renderer *gRenderer, int x, int y, SDL_Rect *clip);
+    void renderSprite(SDL_Renderer *renderer, int x, int y, SDL_Rect *clip);
 
     void setColor(Uint8 red, Uint8 green, Uint8 blue);
 
@@ -47,7 +47,7 @@ public:
 
     void setAlpha(Uint8 alpha);
 
-    bool loadFont(SDL_Renderer *gRenderer, TTF_Font *gFont, std::string textureText, SDL_Color textColor);
+    bool loadFont(SDL_Renderer *renderer, TTF_Font *gFont, std::string textureText, SDL_Color textColor);
 
 private:
     SDL_Texture *mTexture;

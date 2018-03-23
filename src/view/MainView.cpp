@@ -11,7 +11,6 @@
  * @return
  */
 bool LargemonMainView::init() {
-    //Initialization flag
     bool success = true;
 
     //Initialize SDL
@@ -33,8 +32,8 @@ bool LargemonMainView::init() {
             success = false;
         } else {
             //Create renderer for window
-            gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-            if (gRenderer == nullptr) {
+            renderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+            if (renderer == nullptr) {
                 success = false;
             } else {
                 if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) == 0) {
@@ -57,7 +56,7 @@ bool LargemonMainView::init() {
  * @return
  */
 void LargemonMainView::loadUI(Texture &texture, string path) {
-    if (!texture.loadFromFile(gRenderer, std::move(path))) {
+    if (!texture.loadFromFile(renderer, std::move(path))) {
         cout << "Failed to load texture image!\n";
     }
 }
@@ -70,7 +69,7 @@ void LargemonMainView::loadUI(Texture &texture, string path) {
  * @return success
  */
 void LargemonMainView::loadUIText(Texture &texture, TTF_Font *font, std::string text) {
-    if (!texture.loadFont(gRenderer, font, text, textColor)) {
+    if (!texture.loadFont(renderer, font, text, textColor)) {
         cout << "Failed to load text!\n";
     }
 }
@@ -110,9 +109,7 @@ bool LargemonMainView::loadMedia(vector<string> args) {
         success = false;
     }
 
-    //UNCOMMENT FOR FINAL
     Mix_PlayMusic( gMusic, -1 );
-    printf("Mix_PlayMusic: %s\n", Mix_GetError());
 
     //set buffs/debuffs to hidden
     gPlayerShieldSprite.setHidden(true);
@@ -245,15 +242,14 @@ void LargemonMainView::close() {
     Mix_FreeMusic(gMusic);
     gMusic = nullptr;
 
-    //Free font
     TTF_CloseFont(gFont);
     gFont = nullptr;
 
     //Destroy window
-    SDL_DestroyRenderer(gRenderer);
+    SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(gWindow);
     gWindow = nullptr;
-    gRenderer = nullptr;
+    renderer = nullptr;
 
     //Quit SDL subsystems
     Mix_Quit();
@@ -290,23 +286,26 @@ void LargemonMainView::menuPanel(string text) {
     topViewport.y = 0;
     topViewport.w = SCREEN_WIDTH;
     topViewport.h = SCREEN_HEIGHT;
-    SDL_RenderSetViewport(gRenderer, &topViewport);
+    SDL_RenderSetViewport(renderer, &topViewport);
 
-    gMenuPanel.render(gRenderer, 180, 100);
+    gMenuPanel.render(renderer, 180, 100);
+
+    // winner text
     winnerText(text);
     int winnerTextPos = buttonTextPosition(gMenuPanel.getWidth(), gWinnerText.getWidth());
-    gWinnerText.render(gRenderer, 180+winnerTextPos, 120);
+    gWinnerText.render(renderer, 180+winnerTextPos, 120);
 
-    gReplayBtn.render(gRenderer, 200, 200);
-    gExitBtn.render(gRenderer, 350, 200);
+    // buttons
+    gReplayBtn.render(renderer, 200, 200);
+    gExitBtn.render(renderer, 350, 200);
 
     int playAgainTxtPos = 200 + buttonTextPosition(gReplayBtn.getWidth(), gReplayText.getWidth());
     int exitTxtPos = 350 + buttonTextPosition(gExitBtn.getWidth(), gExitText.getWidth());
 
-    gReplayText.render(gRenderer, playAgainTxtPos, 210);
-    gExitText.render(gRenderer, exitTxtPos, 210);
+    gReplayText.render(renderer, playAgainTxtPos, 210);
+    gExitText.render(renderer, exitTxtPos, 210);
 
-    SDL_RenderPresent(gRenderer);
+    SDL_RenderPresent(renderer);
 }
 
 bool LargemonMainView::updateText(string text) {
@@ -411,7 +410,7 @@ void LargemonMainView::updateSprites(Texture & sprite, string state, bool isPlay
  * @param hp
  */
 void LargemonMainView::updateHealthBar(ProgressBar & bar, Texture & hpText, float percent, string hp) {
-    bar.updateProgress(gRenderer, bar, gHpFont, hpText, percent, std::move(hp));
+    bar.updateProgress(renderer, bar, gHpFont, hpText, percent, std::move(hp));
     render();
 }
 
@@ -420,8 +419,8 @@ void LargemonMainView::updateHealthBar(ProgressBar & bar, Texture & hpText, floa
  * @return
  */
 bool LargemonMainView::render() {
-    SDL_RenderClear(gRenderer);
-    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+    SDL_RenderClear(renderer);
+    SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
     //Top viewport
     SDL_Rect topViewport{};
@@ -429,61 +428,61 @@ bool LargemonMainView::render() {
     topViewport.y = 0;
     topViewport.w = SCREEN_WIDTH;
     topViewport.h = SCREEN_HEIGHT;
-    SDL_RenderSetViewport(gRenderer, &topViewport);
+    SDL_RenderSetViewport(renderer, &topViewport);
 
     //Render background texture to screen
-    gBackgroundTexture.render(gRenderer, 0, 0);
+    gBackgroundTexture.render(renderer, 0, 0);
 
-    gPlayerInfoPanel.render(gRenderer, 30, 170);
+    gPlayerInfoPanel.render(renderer, 30, 170);
 
-    gEnemyInfoPanel.render(gRenderer, 390, 90);
+    gEnemyInfoPanel.render(renderer, 390, 90);
 
     //Render player to the screen
-    gPlayerSpriteSheetTexture.renderSprite(gRenderer, 60, 200, &gSpriteClips[0]);
+    gPlayerSpriteSheetTexture.renderSprite(renderer, 60, 200, &gSpriteClips[0]);
 
     //Render enemy to the screen
-    gEnemySpriteSheetTexture.renderSprite(gRenderer, 430, 115, &gSpriteClips[1]);
+    gEnemySpriteSheetTexture.renderSprite(renderer, 430, 115, &gSpriteClips[1]);
 
     // render information panel content
-    gPlayerHpBarBG.render(gRenderer, 44, 180);
-    gPlayerHpBarFG.render(gRenderer, 46, 182);
+    gPlayerHpBarBG.render(renderer, 44, 180);
+    gPlayerHpBarFG.render(renderer, 46, 182);
 
-    gPlayerCurrentHPText.render(gRenderer, 48, 200);
-    gPlayerHealthText.render(gRenderer, 72, 200);
+    gPlayerCurrentHPText.render(renderer, 48, 200);
+    gPlayerHealthText.render(renderer, 72, 200);
 
-    gEnemyHpBarBG.render(gRenderer, 404, 100);
-    gEnemyHpBarFG.render(gRenderer, 406, 102);
+    gEnemyHpBarBG.render(renderer, 404, 100);
+    gEnemyHpBarFG.render(renderer, 406, 102);
 
-    gEnemyCurrentHPText.render(gRenderer, 408, 120);
-    gEnemyHealthText.render(gRenderer, 432, 120);
+    gEnemyCurrentHPText.render(renderer, 408, 120);
+    gEnemyHealthText.render(renderer, 432, 120);
 
 
-    gPlayerTypeIcon.render(gRenderer, 44, 137);
-    gEnemyTypeIcon.render(gRenderer, 404, 57);
+    gPlayerTypeIcon.render(renderer, 44, 137);
+    gEnemyTypeIcon.render(renderer, 404, 57);
 
-    gPlayerAttackPoints.render(gRenderer, 153, 200);
-    gEnemyAttackPoints.render(gRenderer, 510, 120);
+    gPlayerAttackPoints.render(renderer, 153, 200);
+    gEnemyAttackPoints.render(renderer, 510, 120);
 
     // render shield/bubble/ignite if not hidden
     if(!gPlayerShieldSprite.isHidden()){
-        gPlayerShieldSprite.render(gRenderer, 60, 200);
+        gPlayerShieldSprite.render(renderer, 60, 200);
     }
     if(!gEnemyShieldSprite.isHidden()){
-        gEnemyShieldSprite.render(gRenderer, 430, 115);
+        gEnemyShieldSprite.render(renderer, 430, 115);
     }
 
     if(!gPlayerIgniteSprite.isHidden()){
-        gPlayerIgniteSprite.render(gRenderer, 60, 200);
+        gPlayerIgniteSprite.render(renderer, 60, 200);
     }
     if(!gEnemyIgniteSprite.isHidden()){
-        gEnemyIgniteSprite.render(gRenderer, 430, 115);
+        gEnemyIgniteSprite.render(renderer, 430, 115);
     }
 
     if(!gPlayerStunnedSprite.isHidden()){
-        gPlayerStunnedSprite.render(gRenderer, 60, 200);
+        gPlayerStunnedSprite.render(renderer, 60, 200);
     }
     if(!gEnemyStunnedSprite.isHidden()){
-        gEnemyStunnedSprite.render(gRenderer, 435, 115);
+        gEnemyStunnedSprite.render(renderer, 435, 115);
     }
 
     //Bottom viewport
@@ -492,12 +491,12 @@ bool LargemonMainView::render() {
     bottomViewport.y = static_cast<int>(SCREEN_HEIGHT / 1.5);
     bottomViewport.w = SCREEN_WIDTH;
     bottomViewport.h = SCREEN_HEIGHT / 3;
-    SDL_RenderSetViewport(gRenderer, &bottomViewport);
+    SDL_RenderSetViewport(renderer, &bottomViewport);
 
-    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+    SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
-    gBottomTextPanel.render(gRenderer, 10, 0);
-    gPanelText.render(gRenderer, 30, 10);
+    gBottomTextPanel.render(renderer, 10, 0);
+    gPanelText.render(renderer, 30, 10);
 
     //calculate the x-positions of button text
     int topLeftBtnTxtPos =
@@ -509,18 +508,18 @@ bool LargemonMainView::render() {
     int bottomRightBtnTxtPos =
             X_RIGHT_BTN_OFFSET + buttonTextPosition(gTopRightButton.getWidth(), gBottomRightButtonText.getWidth());
     //render buttons
-    gTopLeftButton.render(gRenderer, X_LEFT_BTN_OFFSET, Y_BUTTON_OFFSET);
-    gTopRightButton.render(gRenderer, X_RIGHT_BTN_OFFSET, Y_BUTTON_OFFSET);
-    gBottomLeftButton.render(gRenderer, X_LEFT_BTN_OFFSET, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 5);
-    gBottomRightButton.render(gRenderer, X_RIGHT_BTN_OFFSET, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 5);
+    gTopLeftButton.render(renderer, X_LEFT_BTN_OFFSET, Y_BUTTON_OFFSET);
+    gTopRightButton.render(renderer, X_RIGHT_BTN_OFFSET, Y_BUTTON_OFFSET);
+    gBottomLeftButton.render(renderer, X_LEFT_BTN_OFFSET, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 5);
+    gBottomRightButton.render(renderer, X_RIGHT_BTN_OFFSET, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 5);
     //render button text
-    gTopLeftButtonText.render(gRenderer, topLeftBtnTxtPos, Y_BUTTON_OFFSET + 9);
-    gTopRightButtonText.render(gRenderer, topRightBtnTxtPos, Y_BUTTON_OFFSET + 9);
-    gBottomLeftButtonText.render(gRenderer, bottomLeftBtnTxtPos, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 14);
-    gBottomRightButtonText.render(gRenderer, bottomRightBtnTxtPos, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 14);
+    gTopLeftButtonText.render(renderer, topLeftBtnTxtPos, Y_BUTTON_OFFSET + 9);
+    gTopRightButtonText.render(renderer, topRightBtnTxtPos, Y_BUTTON_OFFSET + 9);
+    gBottomLeftButtonText.render(renderer, bottomLeftBtnTxtPos, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 14);
+    gBottomRightButtonText.render(renderer, bottomRightBtnTxtPos, Y_BUTTON_OFFSET + gTopRightButton.getHeight() + 14);
 
     //Update screen
-    SDL_RenderPresent(gRenderer);
+    SDL_RenderPresent(renderer);
 }
 
 

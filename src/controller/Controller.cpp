@@ -17,7 +17,7 @@ inline void delay()
 }
 
 /**
- * Changes the colour of selected button, and unselects the no longer selected button
+ * Changes the selected button on the menu, and un-selects the no longer selected button
  * @param selected
  * @param event
  * @return
@@ -48,7 +48,7 @@ int Controller::handleMenuKeyPress(MenuButtonEnum *selected, int event) {
 }
 
 /**
- * Changes the colour of selected button, and unselects the no longer selected button
+ * Changes the selected button, and un-selects the no longer selected button
  * @param selected
  * @param event
  * @return
@@ -127,6 +127,7 @@ int Controller::run() {
     view.run(arguments);
 
     int pressedButton = 0;
+
     ButtonEnum selected = ButtonEnum::top_left;
 
     bool running = true;
@@ -160,6 +161,7 @@ int Controller::run() {
                         pressedButton = handleKeyPress(&selected, SDLK_LEFT);
                         view.updateButtons(pressedButton);
                         break;
+                        //Handle M key press for pause music
                     case SDLK_m:
                         if(Mix_PausedMusic()){
                             Mix_ResumeMusic();
@@ -171,28 +173,35 @@ int Controller::run() {
                         break;
                 }
                 if (e.key.keysym.sym == SDLK_RETURN) {
-                    string textUpdate;
                     if (!battleInstance.isGameOver()) {
+                        string textUpdate;
+                        // pass the action to the battle
                         textUpdate = battleInstance.playerMove(selected);
+                        // update the view and
                         view.updateText(textUpdate);
                     }
                 }
                 if (battleInstance.isGameOver()) {
                     delay();
+                    // open menu panel
                     exitCode = menuPanel();
                     return exitCode;
                 }
             }
         }
     }
-    //view.close();
 }
 
+/**
+ * Creates and opens the menu panel
+ * @return
+ */
 int Controller::menuPanel() {
 
     view.menuPanel(battleInstance.getWinner());
 
     int pressedMenuButton;
+
     MenuButtonEnum selectedMenu = MenuButtonEnum::left;
 
     bool running = true;
@@ -208,7 +217,6 @@ int Controller::menuPanel() {
                 // handle key presses
             else if (e.type == SDL_KEYDOWN) {
                 switch (e.key.keysym.sym) {
-
                     //Handle RIGHT key press
                     case SDLK_RIGHT:
                         pressedMenuButton = handleMenuKeyPress(&selectedMenu, SDLK_RIGHT);
@@ -238,7 +246,9 @@ int Controller::menuPanel() {
     }
 }
 
-
+/**
+ * Set the arguments to init the view with
+ */
 void Controller::setViewArguments() {
     DescriptGen descriptGen = DescriptGen();
     arguments.push_back(descriptGen.getDescription(battleInstance.getEnemyPtr()));

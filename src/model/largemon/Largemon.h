@@ -37,11 +37,17 @@ public:
     int attack();
 
     int getHp() { return maxHp; }
+
     int getCurrentHp() { return currentHp; }
+
     int getSize() { return size; }
+
     void stun(int);
+
     void decrementStun();
+
     bool isStunned();
+
     bool isPlayer();
 
     void takeTickDamage(int);
@@ -65,7 +71,6 @@ protected:
     int maxHp;
     int damage;
     int size; // how big the largemon is
-    string lastAction;
     bool isLmPlayer;
     vector<class Observer *> views;
     int tickDmgCount = 0;

@@ -28,7 +28,6 @@ void Largemon::takeDamage(int damage) {
 }
 
 int Largemon::attack() {
-    lastAction = "Attack";
     return damage;
 }
 
@@ -37,7 +36,6 @@ void Largemon::defend() {
     if (currentHp > maxHp) {
         currentHp = maxHp;
     }
-    lastAction = "Defend";
     notify();
 }
 
@@ -47,8 +45,7 @@ float Largemon::getCurrentHpPercent() {
 }
 
 int Largemon::specialAttack(){
-    lastAction = "Special Attack";
-    return static_cast<int>(damage * 1.40);//damage against antagonist types is 40% more effective
+    return (damage * 2);//damage against antagonist types is 100% more effective
 }
 
 void Largemon::notify() {

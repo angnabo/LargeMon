@@ -4,6 +4,10 @@
 
 #include "FileWriter.h"
 
+/**
+ * Constructor. Will create a directory for game logs if it doesn't exist.
+ * @param btl
+ */
 FileWriter::FileWriter(BattleInstance *btl) : ContrObserver(btl) {
     struct stat info;
     if(stat( DIR_PATH.c_str(), &info ) != 0) {
@@ -25,7 +29,7 @@ FileWriter::FileWriter(BattleInstance *btl) : ContrObserver(btl) {
 }
 
 /**
- * Get current data and time
+ * Get current date and time
  * @return
  */
 const std::string FileWriter::currentDateTime() {
@@ -37,6 +41,11 @@ const std::string FileWriter::currentDateTime() {
     return buf;
 }
 
+/**
+ * Update the game log
+ * @param lm
+ * @param args
+ */
 void FileWriter::update(Largemon * lm, vector<string> args) const {
     if(!args.empty()) {
         ofstream outLogFile(filePath, ios::app);

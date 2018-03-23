@@ -97,7 +97,7 @@ string BattleInstance::playerMove(int actionID) {
 string BattleInstance::enemyMove() {
     delay();
     int actionID;
-    if(enemySpecAttkCount == 0){ //if enemy hasn't used special attack, then there is a higher chance
+    if(enemySpecAttkCount == 0){ //if enemy hasn't used special attack, then there is a higher chance it will try to use it
         actionID = RandomNumber::randomInRange(2, 3);
     }
     else {
@@ -136,7 +136,6 @@ string BattleInstance::specialAttack(Largemon * lm) {
         if (determineCounter(lm, en)) {
             en->takeDamage(lm->specialAttack());
             action = setSpecAttackArgs(lm);
-            lm->isPlayer() ? playerSpecAttkCount++ : enemySpecAttkCount++;
         } else {
             action = lm->isPlayer() ? "Your largemon doesn't counter the enemy. It did a normal attack. "
                                     : "Enemy attacked for " + to_string(enemy->attack()) + " damage. ";
@@ -147,6 +146,7 @@ string BattleInstance::specialAttack(Largemon * lm) {
                                 : "Enemy attacked for " + to_string(enemy->attack()) + " damage. ";
         normalAttack(lm);
     }
+    lm->isPlayer() ? playerSpecAttkCount++ : enemySpecAttkCount++;
     return action;
 }
 

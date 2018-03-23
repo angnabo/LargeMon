@@ -6,6 +6,10 @@
 
 LargemonGenerator::LargemonGenerator() = default;
 
+/**
+ * Generate a random largemon
+ * @return
+ */
 Largemon *LargemonGenerator::generateLargemon() {
 
     // get health points
@@ -39,6 +43,11 @@ Largemon *LargemonGenerator::generateLargemon() {
     }
 }
 
+/**
+ * Generate a damage value based on a health value
+ * @param health
+ * @return
+ */
 int LargemonGenerator::getDamage(int health) {
     int damage;
     if (health < DAMAGE_FACTOR) {
@@ -49,6 +58,11 @@ int LargemonGenerator::getDamage(int health) {
     return damage;
 }
 
+/**
+ * Generate a largemon name
+ * @param type
+ * @return
+ */
 string LargemonGenerator::generateName(Type type) {
     string name;
     switch (type) {

@@ -82,7 +82,7 @@ private:
     TTF_Font *gFont = NULL;
     TTF_Font *gHpFont = NULL;
     SDL_Window *gWindow = NULL;
-    SDL_Renderer *gRenderer = NULL;
+    SDL_Renderer *renderer = NULL;
     Mix_Music *gMusic = NULL;
     SDL_Color textColor;
 

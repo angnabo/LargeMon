@@ -13,6 +13,6 @@ class ProgressBar : public Texture {
 public:
     ProgressBar();
 
-    bool updateProgress(SDL_Renderer *gRenderer, Texture &bar, TTF_Font *gHpFont, Texture &text, float percent, string hp);
+    bool updateProgress(SDL_Renderer *renderer, Texture &bar, TTF_Font *gHpFont, Texture &text, float percent, string hp);
 };
 #endif //LARGEMON_HEALTHBARTEXTURE_H

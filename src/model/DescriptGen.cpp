@@ -6,6 +6,11 @@
 DescriptGen::DescriptGen() {
 }
 
+/**
+ * Generate a description for a largemon
+ * @param lm
+ * @return
+ */
 string DescriptGen::getDescription(Largemon *lm) {
 
     string description;
@@ -24,6 +29,11 @@ string DescriptGen::getDescription(Largemon *lm) {
     return description;
 }
 
+/**
+ * Return a type's special attack
+ * @param type
+ * @return
+ */
 string DescriptGen::getAttack(Type type) {
     string attack;
     switch (type) {
@@ -40,6 +50,11 @@ string DescriptGen::getAttack(Type type) {
     return attack;
 }
 
+/**
+ * Return a type's special ability
+ * @param type
+ * @return
+ */
 string DescriptGen::getAbility(Type type) {
     string ability;
     switch (type) {
