@@ -22,7 +22,7 @@ ProgressBar::ProgressBar()
  * @return
  */
 bool ProgressBar::updateProgress(SDL_Renderer *renderer, Texture &bar, TTF_Font *gHpFont, Texture &text, float percent,
-                             string hp) {
+                                 string hp) {
     SDL_Color textColor = {0, 0, 0};
     bool success = true;
     string padding;

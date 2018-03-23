@@ -39,7 +39,7 @@ public:
 
     int getOriginalWidth();
 
-    void setHidden(bool b){ hidden = b; }
+    void setHidden(bool b) { hidden = b; }
 
     bool isHidden() { return hidden; }
 
@@ -57,4 +57,5 @@ private:
     int originalHeight;
     bool hidden = false;
 };
+
 #endif //LARGEMON_LTEXTURE_H

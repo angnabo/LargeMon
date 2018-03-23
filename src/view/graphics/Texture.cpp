@@ -105,19 +105,17 @@ bool Texture::loadFont(SDL_Renderer *renderer, TTF_Font *gFont, std::string text
  * Set the texture blend mode
  * @param blending
  */
-void Texture::setBlendMode( SDL_BlendMode blending )
-{
+void Texture::setBlendMode(SDL_BlendMode blending) {
     //Set blending function
-    SDL_SetTextureBlendMode( mTexture, blending );
+    SDL_SetTextureBlendMode(mTexture, blending);
 }
 
 /**
  * Set the alpha to make the texture transparent
  * @param alpha
  */
-void Texture::setAlpha( Uint8 alpha )
-{
-    SDL_SetTextureAlphaMod( mTexture, alpha );
+void Texture::setAlpha(Uint8 alpha) {
+    SDL_SetTextureAlphaMod(mTexture, alpha);
 }
 
 /**

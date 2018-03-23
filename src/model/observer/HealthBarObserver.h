@@ -12,14 +12,16 @@
 
 class HealthBarObserver : public Observer {
 public:
-    HealthBarObserver(Largemon *, LargemonMainView *, BattleInstance * battle);
+    HealthBarObserver(Largemon *, LargemonMainView *, BattleInstance *battle);
+
     void update() const override;
+
 private:
     LargemonMainView *view;
 
     string getState(Largemon *lm) const;
 
-    BattleInstance * battle;
+    BattleInstance *battle;
 };
 
 #endif //LARGEMON_HealthBarObserver_H

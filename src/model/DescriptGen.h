@@ -22,4 +22,5 @@ public:
 
     string getDescription(Largemon *lm);
 };
+
 #endif //LARGEMON_DESCRIPTGEN_H

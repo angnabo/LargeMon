@@ -10,7 +10,7 @@
  */
 FileWriter::FileWriter(BattleInstance *btl) : ContrObserver(btl) {
     struct stat info;
-    if(stat( DIR_PATH.c_str(), &info ) != 0) {
+    if (stat(DIR_PATH.c_str(), &info) != 0) {
         string path = "mkdir -p " + DIR_PATH;
         const char *p = path.c_str();
         const int dir = system(p);
@@ -22,7 +22,7 @@ FileWriter::FileWriter(BattleInstance *btl) : ContrObserver(btl) {
     }
     filePath = DIR_PATH + currentDateTime() + "-log.txt";
     ofstream outLogFile(filePath, ios::app);
-    if(!outLogFile) {
+    if (!outLogFile) {
         cerr << "File could not be opened: " << filePath << endl;
         exit(1);
     }
@@ -33,9 +33,9 @@ FileWriter::FileWriter(BattleInstance *btl) : ContrObserver(btl) {
  * @return
  */
 const std::string FileWriter::currentDateTime() {
-    time_t     now = time(0);
-    struct tm  tstruct;
-    char       buf[80];
+    time_t now = time(0);
+    struct tm tstruct;
+    char buf[80];
     tstruct = *localtime(&now);
     strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
     return buf;
@@ -46,8 +46,8 @@ const std::string FileWriter::currentDateTime() {
  * @param lm
  * @param args
  */
-void FileWriter::update(Largemon * lm, vector<string> args) const {
-    if(!args.empty()) {
+void FileWriter::update(Largemon *lm, vector<string> args) const {
+    if (!args.empty()) {
         ofstream outLogFile(filePath, ios::app);
         if (!outLogFile) {
             cerr << "File could not be opened: " << filePath << endl;

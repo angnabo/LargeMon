@@ -11,4 +11,5 @@ class RandomNumber {
 public:
     static int randomInRange(int, int);
 };
+
 #endif //LARGEMON_RANDOMNUMBER_H

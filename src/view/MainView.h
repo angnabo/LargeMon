@@ -49,18 +49,21 @@ public:
 
     bool winnerText(string text);
 
-    void updateSprites(Texture & sprite, string state, bool);
+    void updateSprites(Texture &sprite, string state, bool);
 
-    void updateHealthBar(ProgressBar & bar, Texture & hpText, float percent, string hp);
+    void updateHealthBar(ProgressBar &bar, Texture &hpText, float percent, string hp);
 
-    ProgressBar * getPlayerHealthbar() { return &gPlayerHpBarFG;}
-    ProgressBar * getEnemyHealthbar() { return &gEnemyHpBarFG;}
+    ProgressBar *getPlayerHealthbar() { return &gPlayerHpBarFG; }
 
-    Texture * getPlayerHpText() { return &gPlayerCurrentHPText;}
-    Texture * getEnemyHpText() { return &gEnemyCurrentHPText;}
+    ProgressBar *getEnemyHealthbar() { return &gEnemyHpBarFG; }
 
-    Texture * getPlayerSprite() { return &gPlayerSpriteSheetTexture;}
-    Texture * getEnemySprite() { return &gEnemySpriteSheetTexture;}
+    Texture *getPlayerHpText() { return &gPlayerCurrentHPText; }
+
+    Texture *getEnemyHpText() { return &gEnemyCurrentHPText; }
+
+    Texture *getPlayerSprite() { return &gPlayerSpriteSheetTexture; }
+
+    Texture *getEnemySprite() { return &gEnemySpriteSheetTexture; }
 
     void attackAnimation();
 
@@ -132,4 +135,5 @@ private:
     Texture gEnemyStunnedSprite;
     Texture gDot;
 };
+
 #endif //LARGEMON_LARGEMONMAINVIEW_H

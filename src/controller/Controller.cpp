@@ -11,8 +11,7 @@ Controller::Controller() {
 /**
  * Delay for 0.6 seconds
  */
-inline void delay()
-{
+inline void delay() {
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
@@ -163,7 +162,7 @@ int Controller::run() {
                         break;
                         //Handle M key press for pause music
                     case SDLK_m:
-                        if(Mix_PausedMusic()){
+                        if (Mix_PausedMusic()) {
                             Mix_ResumeMusic();
                         } else {
                             Mix_PauseMusic();

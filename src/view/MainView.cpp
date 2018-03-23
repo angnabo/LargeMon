@@ -17,8 +17,7 @@ bool LargemonMainView::init() {
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0) {
         success = false;
     } else {
-        if( Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 640) < 0 )
-        {
+        if (Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 640) < 0) {
             cout << "SDL_mixer could not initialize! SDL_mixer Error: %s\n" << Mix_GetError();
             success = false;
         }
@@ -103,13 +102,15 @@ bool LargemonMainView::loadMedia(vector<string> args) {
 
     //load music
     gMusic = Mix_LoadMUS("../resources/sound/Rolemusic-02-Leafless-Quince-Tree.mp3");
-    if( gMusic == NULL )
-    {
-        cout << "Failed to load music! SDL_mixer Error: %s\n"<< Mix_GetError() ;
+    if (gMusic == NULL) {
+        cout << "Failed to load music! SDL_mixer Error: %s\n" << Mix_GetError();
         success = false;
     }
 
-    Mix_PlayMusic( gMusic, -1 );
+    // play the music
+    Mix_PlayMusic(gMusic, -1);
+    // set volume to 1/8 of max volume
+    Mix_VolumeMusic(MIX_MAX_VOLUME/8);
 
     //set buffs/debuffs to hidden
     gPlayerShieldSprite.setHidden(true);
@@ -183,7 +184,7 @@ bool LargemonMainView::loadMedia(vector<string> args) {
         loadUIText(gPlayerCurrentHPText, gHpFont, args[1]);
         loadUIText(gEnemyCurrentHPText, gHpFont, args[2]);
         loadUIText(gPlayerAttackPoints, gHpFont, "Dmg: " + args[9]);
-        loadUIText(gEnemyAttackPoints, gHpFont, "Dmg: "+ args[10]);
+        loadUIText(gEnemyAttackPoints, gHpFont, "Dmg: " + args[10]);
     }
     return success;
 }
@@ -293,7 +294,7 @@ void LargemonMainView::menuPanel(string text) {
     // winner text
     winnerText(text);
     int winnerTextPos = buttonTextPosition(gMenuPanel.getWidth(), gWinnerText.getWidth());
-    gWinnerText.render(renderer, 180+winnerTextPos, 120);
+    gWinnerText.render(renderer, 180 + winnerTextPos, 120);
 
     // buttons
     gReplayBtn.render(renderer, 200, 200);
@@ -366,31 +367,31 @@ int LargemonMainView::buttonTextPosition(int btnWidth, int txtWidth) {
  * @param state buff or bebuff
  * @param isPlayer
  */
-void LargemonMainView::updateSprites(Texture & sprite, string state, bool isPlayer){
-    if(state != "normal"){
-        if(state == "stunned"){
-            if(isPlayer){
+void LargemonMainView::updateSprites(Texture &sprite, string state, bool isPlayer) {
+    if (state != "normal") {
+        if (state == "stunned") {
+            if (isPlayer) {
                 gPlayerStunnedSprite.setHidden(false);
             } else {
                 gEnemyStunnedSprite.setHidden(false);
             }
         }
-        if(state == "shielded") {
-            if(isPlayer){
+        if (state == "shielded") {
+            if (isPlayer) {
                 gPlayerShieldSprite.setHidden(false);
             } else {
                 gEnemyShieldSprite.setHidden(false);
             }
         }
-        if(state == "tick"){
-            if(isPlayer){
+        if (state == "tick") {
+            if (isPlayer) {
                 gPlayerIgniteSprite.setHidden(false);
             } else {
                 gEnemyIgniteSprite.setHidden(false);
             }
         }
     } else {
-        if(isPlayer){
+        if (isPlayer) {
             gPlayerShieldSprite.setHidden(true);
             gPlayerIgniteSprite.setHidden(true);
             gPlayerStunnedSprite.setHidden(true);
@@ -409,7 +410,7 @@ void LargemonMainView::updateSprites(Texture & sprite, string state, bool isPlay
  * @param percent
  * @param hp
  */
-void LargemonMainView::updateHealthBar(ProgressBar & bar, Texture & hpText, float percent, string hp) {
+void LargemonMainView::updateHealthBar(ProgressBar &bar, Texture &hpText, float percent, string hp) {
     bar.updateProgress(renderer, bar, gHpFont, hpText, percent, std::move(hp));
     render();
 }
@@ -433,8 +434,8 @@ bool LargemonMainView::render() {
     //Render background texture to screen
     gBackgroundTexture.render(renderer, 0, 0);
 
+    //Render info panels
     gPlayerInfoPanel.render(renderer, 30, 170);
-
     gEnemyInfoPanel.render(renderer, 390, 90);
 
     //Render player to the screen
@@ -443,7 +444,7 @@ bool LargemonMainView::render() {
     //Render enemy to the screen
     gEnemySpriteSheetTexture.renderSprite(renderer, 430, 115, &gSpriteClips[1]);
 
-    // render information panel content
+    //Render information panel content
     gPlayerHpBarBG.render(renderer, 44, 180);
     gPlayerHpBarFG.render(renderer, 46, 182);
 
@@ -456,32 +457,31 @@ bool LargemonMainView::render() {
     gEnemyCurrentHPText.render(renderer, 408, 120);
     gEnemyHealthText.render(renderer, 432, 120);
 
-
     gPlayerTypeIcon.render(renderer, 44, 137);
     gEnemyTypeIcon.render(renderer, 404, 57);
 
     gPlayerAttackPoints.render(renderer, 153, 200);
     gEnemyAttackPoints.render(renderer, 510, 120);
 
-    // render shield/bubble/ignite if not hidden
-    if(!gPlayerShieldSprite.isHidden()){
+    //Render shield/bubble/ignite if not hidden
+    if (!gPlayerShieldSprite.isHidden()) {
         gPlayerShieldSprite.render(renderer, 60, 200);
     }
-    if(!gEnemyShieldSprite.isHidden()){
+    if (!gEnemyShieldSprite.isHidden()) {
         gEnemyShieldSprite.render(renderer, 430, 115);
     }
 
-    if(!gPlayerIgniteSprite.isHidden()){
+    if (!gPlayerIgniteSprite.isHidden()) {
         gPlayerIgniteSprite.render(renderer, 60, 200);
     }
-    if(!gEnemyIgniteSprite.isHidden()){
+    if (!gEnemyIgniteSprite.isHidden()) {
         gEnemyIgniteSprite.render(renderer, 430, 115);
     }
 
-    if(!gPlayerStunnedSprite.isHidden()){
+    if (!gPlayerStunnedSprite.isHidden()) {
         gPlayerStunnedSprite.render(renderer, 60, 200);
     }
-    if(!gEnemyStunnedSprite.isHidden()){
+    if (!gEnemyStunnedSprite.isHidden()) {
         gEnemyStunnedSprite.render(renderer, 435, 115);
     }
 

@@ -10,6 +10,7 @@
 class FireLM : public Largemon {
 public:
     FireLM(const int *, const int *, const int *, const string *);
+
     Type getType() const;
 };
 

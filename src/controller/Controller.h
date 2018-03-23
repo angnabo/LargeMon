@@ -27,14 +27,23 @@ public:
         left = 0,
         right = 1,
     };
+
     Controller();
+
     void close();
+
     int run();
+
     int handleKeyPress(ButtonEnum *, int);
+
     void setViewArguments();
+
     int handleMenuKeyPress(MenuButtonEnum *selected, int event);
+
     string getLargemonSpritePath(string type);
+
     string getTypeIconPath(string type);
+
     int menuPanel();
 
 private:
@@ -44,4 +53,5 @@ private:
     LargemonMainView view;
     vector<string> arguments;
 };
+
 #endif //LARGEMON_CONTROLLER_H

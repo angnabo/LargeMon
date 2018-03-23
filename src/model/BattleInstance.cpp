@@ -28,8 +28,7 @@ BattleInstance::BattleInstance() {
 /**
  * Delay for 0.6 seconds
  */
-inline void delay()
-{
+inline void delay() {
     std::this_thread::sleep_for(std::chrono::milliseconds(600));
 }
 
@@ -39,9 +38,9 @@ inline void delay()
  * @param move
  * @return
  */
-string BattleInstance::move(Largemon * lm, int move){
+string BattleInstance::move(Largemon *lm, int move) {
     string action;
-    if(!isGameOver() && !lm->isStunned()) {
+    if (!isGameOver() && !lm->isStunned()) {
         switch (move) {
             case 0: //attack
                 action = normalAttack(lm);
@@ -77,9 +76,9 @@ string BattleInstance::playerMove(int actionID) {
     action += enemyMove();
     finishTurn(player);
 
-    if(isEnemyDead()){
+    if (isEnemyDead()) {
         enemyArgs[1] = "Fainted";
-    }else if(isPlayerDead()){
+    } else if (isPlayerDead()) {
         playerArgs[1] = "Fainted";
     }
     round++;
@@ -97,13 +96,13 @@ string BattleInstance::playerMove(int actionID) {
 string BattleInstance::enemyMove() {
     delay();
     int actionID;
-    if(enemySpecAttkCount == 0){ //if enemy hasn't used special attack, then there is a higher chance it will try to use it
+    if (enemySpecAttkCount ==
+        0) { //if enemy hasn't used special attack, then there is a higher chance it will try to use it
         actionID = RandomNumber::randomInRange(2, 3);
-    }
-    else {
+    } else {
         actionID = RandomNumber::randomInRange(0, 6);
     }
-    if(enemy->getCurrentHpPercent()*100 < 35){//if under 35% bigger chance to heal
+    if (enemy->getCurrentHpPercent() * 100 < 35) {//if under 35% bigger chance to heal
         actionID = RandomNumber::randomInRange(0, 3);
     }
     string action = move(enemy, actionID);
@@ -115,12 +114,12 @@ string BattleInstance::enemyMove() {
  * Finish the turn
  * @param lm
  */
-void BattleInstance::finishTurn(Largemon * lm){
+void BattleInstance::finishTurn(Largemon *lm) {
     lm->decrementStun();
-    Largemon * en = getEnemyOf(lm);
+    Largemon *en = getEnemyOf(lm);
     en->applyTickDamage(TICK_DAMAGE_PER_TURN);
-    if(lm->getType() == Type::water){
-        dynamic_cast<WaterLM*>(lm)->decrementShield();
+    if (lm->getType() == Type::water) {
+        dynamic_cast<WaterLM *>(lm)->decrementShield();
     }
 }
 
@@ -129,9 +128,9 @@ void BattleInstance::finishTurn(Largemon * lm){
  * @param lm
  * @return
  */
-string BattleInstance::specialAttack(Largemon * lm) {
+string BattleInstance::specialAttack(Largemon *lm) {
     string action;
-    Largemon * en = getEnemyOf(lm);
+    Largemon *en = getEnemyOf(lm);
     if (isSpecAttack(lm)) {
         if (determineCounter(lm, en)) {
             en->takeDamage(lm->specialAttack());
@@ -155,11 +154,11 @@ string BattleInstance::specialAttack(Largemon * lm) {
  * @param lm
  * @return
  */
-string BattleInstance::specialAbility(Largemon * lm) {
+string BattleInstance::specialAbility(Largemon *lm) {
     string action;
     Type largemon = lm->getType();
-    Largemon * en = getEnemyOf(lm);
-    switch(largemon){
+    Largemon *en = getEnemyOf(lm);
+    switch (largemon) {
         case Type::fire : {
             en->takeTickDamage(MAX_TICK_TURNS);
             action = playerOrEnemy(getEnemyOf(lm), "Ignited") + "is being damaged over time. ";
@@ -173,7 +172,7 @@ string BattleInstance::specialAbility(Largemon * lm) {
             break;
         }
         case Type::wood : {
-            if(isStun(lm)){
+            if (isStun(lm)) {
                 en->stun(MAX_STUN_TUNRS);
                 action = playerOrEnemy(getEnemyOf(lm), "Stunned") + "was stunned. ";
                 setArgsOfLargemon(lm, "Stunned enemy");
@@ -194,8 +193,8 @@ string BattleInstance::specialAbility(Largemon * lm) {
  * @param lm
  * @param arg
  */
-void BattleInstance::setArgsOfLargemon(Largemon * lm, string arg){
-    if(lm->isPlayer()){
+void BattleInstance::setArgsOfLargemon(Largemon *lm, string arg) {
+    if (lm->isPlayer()) {
         playerArgs[1] = arg;
     } else {
         enemyArgs[1] = arg;
@@ -207,10 +206,10 @@ void BattleInstance::setArgsOfLargemon(Largemon * lm, string arg){
  * @param lm
  * @return
  */
-string BattleInstance::setSpecAttackArgs(Largemon * lm){
+string BattleInstance::setSpecAttackArgs(Largemon *lm) {
     string action;
     action = playerOrEnemy(lm, "Special Attack") +
-            "used a powerful attack for " + to_string(lm->specialAttack()) + " damage. ";
+             "used a powerful attack for " + to_string(lm->specialAttack()) + " damage. ";
     return action;
 }
 
@@ -220,9 +219,9 @@ string BattleInstance::setSpecAttackArgs(Largemon * lm){
  * @param args
  * @return
  */
-string BattleInstance::playerOrEnemy(Largemon * lm, string args){
+string BattleInstance::playerOrEnemy(Largemon *lm, string args) {
     string largemon;
-    if(lm->isPlayer()){
+    if (lm->isPlayer()) {
         largemon = "Your largemon ";
         playerArgs[1] = args;
     } else {
@@ -237,9 +236,9 @@ string BattleInstance::playerOrEnemy(Largemon * lm, string args){
  * @param lm
  * @return
  */
-string BattleInstance::setAttackArgs(Largemon * lm){
+string BattleInstance::setAttackArgs(Largemon *lm) {
     string action;
-    if(lm->isPlayer()){
+    if (lm->isPlayer()) {
         action = "You attacked for " + to_string(player->attack()) + " damage. ";
         playerArgs[1] = "Attack";
     } else {
@@ -254,9 +253,9 @@ string BattleInstance::setAttackArgs(Largemon * lm){
  * @param lm
  * @return
  */
-bool BattleInstance::isSpecAttack(Largemon * lm){
+bool BattleInstance::isSpecAttack(Largemon *lm) {
     bool isAllowed;
-    if(lm->isPlayer()){
+    if (lm->isPlayer()) {
         isAllowed = playerSpecAttkCount == 0;
     } else {
         isAllowed = enemySpecAttkCount == 0;
@@ -269,9 +268,9 @@ bool BattleInstance::isSpecAttack(Largemon * lm){
  * @param lm
  * @return
  */
-bool BattleInstance::isStun(Largemon * lm){
+bool BattleInstance::isStun(Largemon *lm) {
     bool isAllowed;
-    if(lm->isPlayer()){
+    if (lm->isPlayer()) {
         isAllowed = playerStunCount == 0;
     } else {
         isAllowed = enemyStunCount == 0;
@@ -284,13 +283,13 @@ bool BattleInstance::isStun(Largemon * lm){
  * @param lm
  * @return
  */
-string BattleInstance::normalAttack(Largemon *lm){
+string BattleInstance::normalAttack(Largemon *lm) {
     string shieldAction;
     string action;
-    Largemon * en = getEnemyOf(lm);
-    if(en->getType() == Type::water){
+    Largemon *en = getEnemyOf(lm);
+    if (en->getType() == Type::water) {
         shieldAction = attackWaterLm(en, lm->attack());
-    } else{
+    } else {
         en->takeDamage(lm->attack());
 
     }
@@ -302,8 +301,8 @@ string BattleInstance::normalAttack(Largemon *lm){
  * @param damage
  * @return
  */
-int BattleInstance::applyShield(int damage){
-    return (damage/10);
+int BattleInstance::applyShield(int damage) {
+    return (damage / 10);
 }
 
 /**
@@ -312,19 +311,19 @@ int BattleInstance::applyShield(int damage){
  * @param damage
  * @return
  */
-string BattleInstance::attackWaterLm(Largemon * lm, int damage){
+string BattleInstance::attackWaterLm(Largemon *lm, int damage) {
     string damageTaken;
-    auto * waterlm = dynamic_cast<WaterLM *> (lm);
-    if(waterlm->isShielded()){
+    auto *waterlm = dynamic_cast<WaterLM *> (lm);
+    if (waterlm->isShielded()) {
         int shield = applyShield(damage);
-        int newDamage = damage-shield;
+        int newDamage = damage - shield;
         waterlm->takeDamage(newDamage);
-        if(lm->isPlayer()){
+        if (lm->isPlayer()) {
             damageTaken = "Player shielded " + to_string(shield) + " damage. ";
         } else {
             damageTaken = "Enemy shielded " + to_string(shield) + " damage. ";
         }
-    } else{
+    } else {
         lm->takeDamage(damage);
     }
     return damageTaken;
@@ -335,10 +334,10 @@ string BattleInstance::attackWaterLm(Largemon * lm, int damage){
  * @param lm
  * @return
  */
-string BattleInstance::defend(Largemon * lm) {
+string BattleInstance::defend(Largemon *lm) {
     lm->defend();
     string action;
-    if(lm->isPlayer()){
+    if (lm->isPlayer()) {
         action = "Player healed for 40 health. ";
         playerArgs[1] = "Defend";
     } else {
@@ -354,21 +353,21 @@ string BattleInstance::defend(Largemon * lm) {
  * @param lmEnemy
  * @return
  */
-bool BattleInstance::determineCounter(Largemon * lm, Largemon * lmEnemy) {
+bool BattleInstance::determineCounter(Largemon *lm, Largemon *lmEnemy) {
     Type largemon = lm->getType();
     Type enemy = lmEnemy->getType();
     bool counter = false;
-    switch(largemon){
+    switch (largemon) {
         case Type::water :
-            if(enemy == Type::fire)
+            if (enemy == Type::fire)
                 counter = true;
             break;
         case Type::fire :
-            if(enemy == Type::wood)
+            if (enemy == Type::wood)
                 counter = true;
             break;
         case Type::wood :
-            if(enemy == Type::water)
+            if (enemy == Type::water)
                 counter = true;
             break;
     }
@@ -380,23 +379,23 @@ bool BattleInstance::determineCounter(Largemon * lm, Largemon * lmEnemy) {
  * @param lm
  * @return
  */
-Largemon * BattleInstance::getEnemyOf(Largemon * lm) {
-    if(lm == player){
+Largemon *BattleInstance::getEnemyOf(Largemon *lm) {
+    if (lm == player) {
         return enemy;
     } else {
         return player;
     }
 }
 
-string BattleInstance::getEnemyLargemonName(){
+string BattleInstance::getEnemyLargemonName() {
     return enemy->getName();
 }
 
-string BattleInstance::getPlayerLargemonName(){
+string BattleInstance::getPlayerLargemonName() {
     return player->getName();
 }
 
-int BattleInstance::getPlayerCurrentHp(){
+int BattleInstance::getPlayerCurrentHp() {
     return player->getCurrentHp();
 }
 
@@ -424,11 +423,11 @@ string BattleInstance::getWinner() {
     return (isEnemyDead() ? "Player Won!" : "Enemy Won!");
 }
 
-void BattleInstance::attach(class ContrObserver * obs) {
+void BattleInstance::attach(class ContrObserver *obs) {
     views.push_back(obs);
 }
 
-void BattleInstance::notify(Largemon * lm, vector<string> args) {
+void BattleInstance::notify(Largemon *lm, vector<string> args) {
     for (int i = 0; i < views.size(); i++) {
         views[i]->update(lm, args);
     }
@@ -438,11 +437,11 @@ int BattleInstance::getRound() {
     return round;
 }
 
-Largemon * BattleInstance::getPlayerPtr() {
+Largemon *BattleInstance::getPlayerPtr() {
     return player;
 }
 
-Largemon * BattleInstance::getEnemyPtr() {
+Largemon *BattleInstance::getEnemyPtr() {
     return enemy;
 }
 

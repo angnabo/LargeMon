@@ -44,7 +44,7 @@ float Largemon::getCurrentHpPercent() {
     return hpPercent;
 }
 
-int Largemon::specialAttack(){
+int Largemon::specialAttack() {
     return (damage * 2);//damage against antagonist types is 100% more effective
 }
 

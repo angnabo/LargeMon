@@ -22,4 +22,5 @@ public:
 private:
     int shieldCount = 0;
 };
+
 #endif //LARGEMON_WATERLM_H

@@ -65,6 +65,7 @@ public:
     void attach(class Observer *);
 
     void notify();
+
 protected:
     string name;
     int currentHp;

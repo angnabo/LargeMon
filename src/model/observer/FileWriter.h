@@ -13,13 +13,16 @@
 
 using namespace std;
 
-class FileWriter : public ContrObserver{
+class FileWriter : public ContrObserver {
 public:
     explicit FileWriter(BattleInstance *);
+
     void update(Largemon *, vector<string>) const override;
+
 private:
     string filePath;
     string DIR_PATH = "../game_logs/";
+
     const string currentDateTime();
 };
 
