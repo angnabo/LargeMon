@@ -5,6 +5,7 @@
 
 int main(int argc, char *args[]) {
 
+        // run the game until the user exits
         int cont = 2;
         while (cont == 2) {
             Controller replay;

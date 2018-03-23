@@ -1,10 +1,12 @@
-//
-// Created by angelica on 22/10/17.
-//
-
+/**
+ * Testure class to load textures and font from files and represent them
+ * as SDL textures to be rendered to the screen.
+ *
+ * Created by angelica on 22/10/17.
+ */
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include <SDL_ttf.h>
+#include <SDL2/SDL_ttf.h>
 #include <string>
 #include <iostream>
 

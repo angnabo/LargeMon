@@ -2,10 +2,9 @@
 // Created by angelica on 11/11/17.
 //
 #include <SDL2/SDL_mixer.h>
-#include <ctime>
-#include <SDL.h>
 #include <SDL2/SDL_image.h>
-#include <SDL_ttf.h>
+#include <SDL2/SDL_ttf.h>
+#include <ctime>
 #include <string>
 #include <iostream>
 #include <utility>

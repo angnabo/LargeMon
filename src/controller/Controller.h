@@ -4,6 +4,7 @@
 #include "../model/BattleInstance.h"
 #include "../view/MainView.h"
 #include "../model/observer/HealthBarObserver.h"
+#include "../model/DescriptGen.h"
 #include <iostream>
 #include <string>
 #include <vector>

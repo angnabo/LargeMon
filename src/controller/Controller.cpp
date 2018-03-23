@@ -3,7 +3,6 @@
 //
 
 #include "Controller.h"
-#include "../model/DescriptGen.h"
 
 Controller::Controller() {
     battleInstance = BattleInstance();
@@ -167,9 +166,6 @@ int Controller::run() {
                         } else {
                             Mix_PauseMusic();
                         }
-                        break;
-                    case SDLK_q:
-                        view.attackAnimation();
                         break;
                     default:
                         break;
