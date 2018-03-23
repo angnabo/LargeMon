@@ -76,9 +76,9 @@ public:
 
     string playerOrEnemy(Largemon *lm, string args);
 
-    void incrCounter(Largemon *lm, string count);
-
     void setArgsOfLargemon(Largemon *lm, string arg);
+
+    bool isStun(Largemon *lm);
 
 private:
     Largemon *player;
@@ -95,9 +95,6 @@ private:
     int MAX_TICK_TURNS = 3;
     int MAX_SHIELD_TURNS = 3;
     int TICK_DAMAGE_PER_TURN = 10;
-
-
-    bool isStun(Largemon *lm);
 };
 
 

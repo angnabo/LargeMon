@@ -1,6 +1,8 @@
-//
-// Created by angelica on 12/10/17.
-//
+/**
+ * Generates a description of largemon
+ *
+ * Created by angelica on 12/10/17.
+ */
 #include <string>
 #include <vector>
 #include "largemon/Largemon.h"

@@ -1,6 +1,8 @@
-//
-// Created by angelica on 12/02/18.
-//
+/**
+ * Random number generator
+ *
+ * Created by angelica on 12/02/18.
+ */
 
 #ifndef LARGEMON_RANDOMNUMBER_H
 #define LARGEMON_RANDOMNUMBER_H

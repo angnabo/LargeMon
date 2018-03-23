@@ -1,7 +1,9 @@
-//
-// Created by angelica on 22/10/17.
-//
-
+/**
+ * Testure class to load textures and font from files and represent them
+ * as SDL textures to be rendered to the screen.
+ *
+ * Created by angelica on 22/10/17.
+ */
 #include "Texture.h"
 
 Texture::Texture() {

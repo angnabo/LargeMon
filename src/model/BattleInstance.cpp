@@ -89,7 +89,9 @@ string BattleInstance::playerMove(int actionID) {
 }
 
 /**
- * Deals with the enemy turn
+ * Deals with the enemy turn, picking a generated pseudo-random umber for the move
+ * The AI is likely to chose special attack if it hasn't been used yet
+ * If it gets to less than 35% health, it is 33% more likely to chose to heal
  * @return
  */
 string BattleInstance::enemyMove() {
@@ -373,6 +375,11 @@ bool BattleInstance::determineCounter(Largemon * lm, Largemon * lmEnemy) {
     return counter;
 }
 
+/**
+ * Return the enemy of a given largemon
+ * @param lm
+ * @return
+ */
 Largemon * BattleInstance::getEnemyOf(Largemon * lm) {
     if(lm == player){
         return enemy;
@@ -397,6 +404,10 @@ int BattleInstance::getEnemyCurrentHp() {
     return enemy->getCurrentHp();
 }
 
+/**
+ * Return if the game is over
+ * @return
+ */
 bool BattleInstance::isGameOver() {
     return isPlayerDead() || isEnemyDead();
 }

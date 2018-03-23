@@ -1,3 +1,6 @@
+/**
+ * Defines a largemon
+ */
 #ifndef LARGEMON_LARGEMON_H
 #define LARGEMON_LARGEMON_H
 

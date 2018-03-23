@@ -1,6 +1,8 @@
-//
-// Created by angelica on 07/10/17.
-//
+/**
+ * Generates random largemon
+ *
+ * Created by angelica on 07/10/17.
+ */
 
 #ifndef LARGEMON_LARGEMONGENERATOR_H
 #define LARGEMON_LARGEMONGENERATOR_H

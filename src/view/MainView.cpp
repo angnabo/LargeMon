@@ -1,11 +1,13 @@
-//
-// Created by angelica on 11/11/17.
-//
-#include <zconf.h>
+/**
+ * The main view for the largmeon game
+ *
+ * Created by angelica on 11/11/17.
+ */
+
 #include "MainView.h"
 
 /**
- * Initialise the view and SDL
+ * Initialise the window and SDL
  * @return
  */
 bool LargemonMainView::init() {
@@ -73,6 +75,11 @@ void LargemonMainView::loadUIText(Texture &texture, TTF_Font *font, std::string 
     }
 }
 
+/**
+ * Load textures, fonts and music
+ * @param args
+ * @return
+ */
 bool LargemonMainView::loadMedia(vector<string> args) {
     bool success = true;
     textColor = {0, 0, 0};
@@ -104,8 +111,8 @@ bool LargemonMainView::loadMedia(vector<string> args) {
     }
 
     //UNCOMMENT FOR FINAL
-    //Mix_PlayMusic( gMusic, -1 );
-    //printf("Mix_PlayMusic: %s\n", Mix_GetError());
+    Mix_PlayMusic( gMusic, -1 );
+    printf("Mix_PlayMusic: %s\n", Mix_GetError());
 
     //set buffs/debuffs to hidden
     gPlayerShieldSprite.setHidden(true);
@@ -184,6 +191,9 @@ bool LargemonMainView::loadMedia(vector<string> args) {
     return success;
 }
 
+/**
+ * Free loaded textures
+ */
 void LargemonMainView::close() {
     // free textures
     gPlayerTexture.free();
@@ -308,6 +318,11 @@ bool LargemonMainView::winnerText(string text) {
     loadUIText(gWinnerText, gFont, text);
 }
 
+
+/**
+ * Colour the selected button and un-colour the un-selected buttons
+ * @param pressedButton
+ */
 void LargemonMainView::updateButtons(int pressedButton) {
 
     for (int i = 0; i < 4; i++) {
@@ -319,6 +334,10 @@ void LargemonMainView::updateButtons(int pressedButton) {
     render();
 }
 
+/**
+ * Colour the selected button and un-colour the un-selected buttons in the menu
+ * @param pressedButton
+ */
 void LargemonMainView::updateMenuButtons(int pressedButton) {
     if (pressedButton == 0) {
         gExitBtn.setColor(unslct, unslct, unslct);
@@ -329,6 +348,12 @@ void LargemonMainView::updateMenuButtons(int pressedButton) {
     }
 }
 
+/**
+ * Calculates the position in pixels to centre the given text on a button
+ * @param btnWidth button width
+ * @param txtWidth  text width
+ * @return
+ */
 int LargemonMainView::buttonTextPosition(int btnWidth, int txtWidth) {
     int buttonWidth = btnWidth;
     int textWidth = txtWidth;
@@ -378,28 +403,22 @@ void LargemonMainView::updateSprites(Texture & sprite, string state, bool isPlay
     }
 }
 
+/**
+ * Updates the health bar by calling the ProgressBar's method
+ * @param bar
+ * @param hpText
+ * @param percent
+ * @param hp
+ */
 void LargemonMainView::updateHealthBar(ProgressBar & bar, Texture & hpText, float percent, string hp) {
     bar.updateProgress(gRenderer, bar, gHpFont, hpText, percent, std::move(hp));
     render();
 }
 
-void LargemonMainView::attackAnimation() {
-    //Top viewport
-    for(int i = 0; i < 100; i+=10){
-        usleep( 150000 );
-        render();
-        SDL_Rect topViewport{};
-        topViewport.x = 0;
-        topViewport.y = 0;
-        topViewport.w = SCREEN_WIDTH;
-        topViewport.h = SCREEN_HEIGHT;
-        SDL_RenderSetViewport(gRenderer, &topViewport);
-
-        gDot.render(gRenderer, static_cast<int>(160 + (i * 2.9)), 270 - i);
-        SDL_RenderPresent(gRenderer);
-    }
-}
-
+/**
+ * Renders the textures to screen
+ * @return
+ */
 bool LargemonMainView::render() {
     SDL_RenderClear(gRenderer);
     SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
